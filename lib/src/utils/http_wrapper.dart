@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:ravepay/src/models/response.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/log.dart';
+import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/log.dart';
 
 class HttpWrapper {
-  HttpWrapper() : baseUrl = Ravepay().baseUrl;
+  HttpWrapper() : baseUrl = Quidpay().baseUrl;
 
   static final Map<String, String> _headers = {
     'Accept': 'application/json',

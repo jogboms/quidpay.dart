@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:ravepay/src/utils/log.dart';
+import 'package:quidpay/src/utils/log.dart';
 import 'package:test/test.dart';
 
 String readInputSync({Encoding encoding = systemEncoding}) {

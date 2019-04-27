@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/models/main.dart';
+import 'package:quidpay/src/models/main.dart';
 
 class Bank extends Model {
   Bank({

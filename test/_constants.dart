@@ -1,4 +1,4 @@
-const PROD_BASE_URI = "https://api.ravepay.co/";
+const PROD_BASE_URI = "https://api.quidpay.co/";
 const STAGING_BASE_URI = "https://ravesandboxapi.flutterwave.com/";
 const PUBK_TEST = "FLWPUBK-e634d14d9ded04eaf05d5b63a0a06d2f-X";
 const SECK_TEST = "FLWSECK-bb971402072265fb156e90a3578fe5e6-X";

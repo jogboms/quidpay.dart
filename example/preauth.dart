@@ -1,4 +1,4 @@
-import 'package:ravepay/ravepay.dart';
+import 'package:quidpay/quidpay.dart';
 
 import '_keys.dart';
 
@@ -52,7 +52,7 @@ void refundCard() async {
 }
 
 void main() async {
-  Ravepay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
   // preauth();
   voidCard();

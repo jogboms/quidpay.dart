@@ -1,14 +1,14 @@
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/charge.dart';
-import 'package:ravepay/src/constants/countries.dart';
-import 'package:ravepay/src/constants/currencies.dart';
-import 'package:ravepay/src/models/meta.dart';
-import 'package:ravepay/src/models/response.dart';
-import 'package:ravepay/src/models/result.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
-import 'package:ravepay/src/utils/log.dart';
+import 'package:quidpay/src/charge.dart';
+import 'package:quidpay/src/constants/countries.dart';
+import 'package:quidpay/src/constants/currencies.dart';
+import 'package:quidpay/src/models/meta.dart';
+import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/models/result.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
 
 class PreAuth {
   PreAuth() : _http = HttpWrapper();
@@ -85,7 +85,7 @@ class PreAuth {
     final _res = await _http.post(
       Endpoints.refundOrVoidPreauthorization,
       <String, dynamic>{
-        'SECKEY': Ravepay().secretKey,
+        'SECKEY': Quidpay().secretKey,
         'ref': flwRef,
         'action': action,
       },
@@ -118,7 +118,7 @@ class PreAuth {
     final _res = await _http.post(
       Endpoints.capturePreauthorizeCard,
       <String, dynamic>{
-        'SECKEY': Ravepay().secretKey,
+        'SECKEY': Quidpay().secretKey,
         'flwRef': flwRef,
         'amount': amount,
       },

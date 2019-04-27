@@ -1,4 +1,4 @@
-import 'package:ravepay/src/models/main.dart';
+import 'package:quidpay/src/models/main.dart';
 
 class Meta extends Model {
   Meta(this.name, this.value);

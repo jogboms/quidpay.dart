@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
 
 class Disburse {
   Disburse() : _http = HttpWrapper();
@@ -22,7 +22,7 @@ class Disburse {
     return _http.post(
       Endpoints.disburse,
       <String, dynamic>{
-        'seckey': Ravepay().secretKey,
+        'seckey': Quidpay().secretKey,
         'bank_code': bankCode,
         'account_number': accountNumber,
         'currency': currency,

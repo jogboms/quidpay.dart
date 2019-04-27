@@ -1,6 +1,6 @@
-import 'package:ravepay/src/models/card.dart';
-import 'package:ravepay/src/models/customer.dart';
-import 'package:ravepay/src/models/main.dart';
+import 'package:quidpay/src/models/card.dart';
+import 'package:quidpay/src/models/customer.dart';
+import 'package:quidpay/src/models/main.dart';
 
 class Result extends Model {
   Result.fromJson(Map<String, dynamic> json)

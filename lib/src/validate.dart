@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
 
 class Validate {
   Validate() : _http = HttpWrapper();
@@ -17,7 +17,7 @@ class Validate {
     return _http.post(
       Endpoints.validateCardCharge,
       <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
+        'PBFPubKey': Quidpay().publicKey,
         'transaction_reference': flwRef,
         'otp': otp,
       },
@@ -31,7 +31,7 @@ class Validate {
     return _http.post(
       Endpoints.validateAccountCharge,
       <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
+        'PBFPubKey': Quidpay().publicKey,
         'transactionreference': flwRef,
         'otp': otp,
       },

@@ -1,8 +1,8 @@
-name: ravepay
-description: RavePay by Flutterwave Dart SDK. http://rave.flutterwave.com
+name: quidpay
+description: Quidpay
 version: 0.0.1
 author: Jeremiah Ogbomo <jeremiahogbomo@gmail.com>
-homepage: https://github.com/jogboms/ravepay_dart
+homepage: https://github.com/jogboms/quidpay.dart
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

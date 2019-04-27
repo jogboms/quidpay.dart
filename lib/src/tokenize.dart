@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
 
 class Tokenize {
   Tokenize() : _http = HttpWrapper();
@@ -31,7 +31,7 @@ class Tokenize {
     return _http.post(
       url,
       <String, dynamic>{
-        'SECKEY': Ravepay().secretKey,
+        'SECKEY': Quidpay().secretKey,
         'token': token,
         'currency': currency,
         'country': country,

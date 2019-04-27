@@ -1,4 +1,4 @@
-import 'package:ravepay/ravepay.dart';
+import 'package:quidpay/quidpay.dart';
 
 import '_keys.dart';
 
@@ -78,7 +78,7 @@ Future<Response<Result>> ussd() async {
 }
 
 void main() async {
-  Ravepay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
   await card();
   await pin();

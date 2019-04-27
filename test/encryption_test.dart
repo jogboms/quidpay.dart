@@ -1,4 +1,4 @@
-import 'package:ravepay/src/encryption.dart';
+import 'package:quidpay/src/encryption.dart';
 import 'package:test/test.dart';
 
 import '_constants.dart';

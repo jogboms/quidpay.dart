@@ -1,3 +1,3 @@
-# ChangeLog for RavePay SDK
+# ChangeLog for Quidpay SDK
 
-RavePay by Flutterwave Dart SDK. http://rave.flutterwave.com
+Quidpay

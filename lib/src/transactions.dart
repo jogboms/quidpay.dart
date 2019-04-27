@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
 
 class Transactions {
   Transactions() : _http = HttpWrapper();
@@ -17,7 +17,7 @@ class Transactions {
     return _http.post(
       Endpoints.verifyTransaction,
       <String, dynamic>{
-        'SECKEY': Ravepay().secretKey,
+        'SECKEY': Quidpay().secretKey,
         'flwref': flwRef,
         'txref': txRef,
       },
@@ -35,7 +35,7 @@ class Transactions {
     return _http.post(
       Endpoints.requeryTransaction,
       <String, dynamic>{
-        'SECKEY': Ravepay().secretKey,
+        'SECKEY': Quidpay().secretKey,
         'flwref': flwRef,
         'txref': txRef,
         'last_attempt': lastAttempt,

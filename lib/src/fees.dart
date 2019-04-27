@@ -1,8 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
 
 class Fees {
   Fees() : _http = HttpWrapper();
@@ -20,7 +20,7 @@ class Fees {
     return _http.post(
       Endpoints.getFees,
       <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
+        'PBFPubKey': Quidpay().publicKey,
         'amount': amount,
         'currency': currency,
         'card6': card6,
@@ -38,7 +38,7 @@ class Fees {
     return _http.post(
       Endpoints.getFees,
       <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
+        'PBFPubKey': Quidpay().publicKey,
         'amount': amount,
         'currency': currency,
         'ptype': ptype ?? 2

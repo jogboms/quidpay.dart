@@ -1,17 +1,17 @@
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/constants/auth.dart';
-import 'package:ravepay/src/constants/countries.dart';
-import 'package:ravepay/src/constants/currencies.dart';
-import 'package:ravepay/src/constants/payment.dart';
-import 'package:ravepay/src/encryption.dart';
-import 'package:ravepay/src/models/meta.dart';
-import 'package:ravepay/src/models/response.dart';
-import 'package:ravepay/src/models/result.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
-import 'package:ravepay/src/utils/log.dart';
-import 'package:ravepay/src/utils/payload.dart';
+import 'package:quidpay/src/constants/auth.dart';
+import 'package:quidpay/src/constants/countries.dart';
+import 'package:quidpay/src/constants/currencies.dart';
+import 'package:quidpay/src/constants/payment.dart';
+import 'package:quidpay/src/encryption.dart';
+import 'package:quidpay/src/models/meta.dart';
+import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/models/result.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/payload.dart';
 
 class Charge {
   Charge({
@@ -323,7 +323,7 @@ class Charge {
 
   final HttpWrapper _http;
   final Payload payload;
-  static final _encryption = Encryption(secretKey: Ravepay().secretKey);
+  static final _encryption = Encryption(secretKey: Quidpay().secretKey);
 
   Future<Response<Result>> charge() async {
     if (payload.getItem(Keys.IncludeIntegrityHash) == true) {
@@ -342,7 +342,7 @@ class Charge {
     final _res = await _http.post(
       Endpoints.directCharge,
       <String, dynamic>{
-        "PBFPubKey": Ravepay().publicKey,
+        "PBFPubKey": Quidpay().publicKey,
         "client": _encryption.encrypt(payload.toMap()),
         "alg": Encryption.ALGORITHM,
       },

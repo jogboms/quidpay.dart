@@ -1,5 +1,5 @@
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/payload.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/payload.dart';
 import 'package:test/test.dart';
 
 import '_constants.dart';
@@ -7,10 +7,10 @@ import '_constants.dart';
 const String Key = 'Hey';
 
 void main() {
-  setUp(() => Ravepay.init(
+  setUp(() => Quidpay.init(
       production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST));
 
-  tearDown(() => Ravepay.reset());
+  tearDown(() => Quidpay.reset());
 
   group('Payload', () {
     test('-> empty length', () {
