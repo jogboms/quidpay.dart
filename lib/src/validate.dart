@@ -12,7 +12,7 @@ class Validate {
 
   final HttpWrapper _http;
 
-  Future<Response<dynamic>> card({
+  Future<Response<ValidateResult>> card({
     @required String flwRef,
     @required String otp,
   }) async {
@@ -36,11 +36,12 @@ class Validate {
     return _response;
   }
 
-  Future<http.Response> account({
+  Future<Response<ValidateResult>> account({
     @required String flwRef,
     @required String otp,
-  }) {
-    return _http.post(
+  }) async {
+    assert(flwRef != null);
+    final _res = await _http.post(
       Endpoints.validateAccountCharge,
       <String, dynamic>{
         'PBFPubKey': Quidpay().publicKey,
@@ -48,5 +49,14 @@ class Validate {
         'otp': otp,
       },
     );
+
+    final _response = Response<ValidateResult>(
+      _res,
+      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
+    );
+
+    Log().debug("Validate.account() -> Response", _response);
+
+    return _response;
   }
 }
