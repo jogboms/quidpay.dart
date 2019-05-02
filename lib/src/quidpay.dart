@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+import 'package:quidpay/src/constants/url.dart';
 import 'package:quidpay/src/utils/log.dart';
 
 class Quidpay {
@@ -12,7 +13,7 @@ class Quidpay {
     @required this.publicKey,
     @required this.secretKey,
     @required this.production,
-  }) : baseUrl = production ? PROD_BASE_URI : STAGING_BASE_URI;
+  }) : baseUrl = production ? Url.Prod : Url.Staging;
 
   @visibleForTesting
   static void reset() {
@@ -39,8 +40,6 @@ class Quidpay {
   }
 
   static Quidpay _instance;
-  static const PROD_BASE_URI = "https://api.quidpay.co/";
-  static const STAGING_BASE_URI = "https://ravesandboxapi.flutterwave.com/";
 
   final String publicKey;
   final String secretKey;

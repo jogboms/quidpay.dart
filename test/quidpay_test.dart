@@ -1,3 +1,4 @@
+import 'package:quidpay/src/constants/url.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:test/test.dart';
 
@@ -23,17 +24,9 @@ void main() {
       test('-> secretKey', () => expect(Quidpay().secretKey, SECK_TEST));
       test(
         '-> baseUrl',
-        () => expect(Quidpay().baseUrl, Quidpay.PROD_BASE_URI),
+        () => expect(Quidpay().baseUrl, Url.Prod),
       );
 
-      test(
-        '-> productionUrl',
-        () => expect(Quidpay.PROD_BASE_URI, PROD_BASE_URI),
-      );
-      test(
-        '-> developmentUrl',
-        () => expect(Quidpay.STAGING_BASE_URI, STAGING_BASE_URI),
-      );
       test('-> Single Instance', () => expect(Quidpay(), same(Quidpay())));
       test('-> toString', () {
         final string = Quidpay().toString();
@@ -54,13 +47,13 @@ void main() {
         Quidpay.reset();
         Quidpay.init(
             production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
-        expect(Quidpay().baseUrl, Quidpay.PROD_BASE_URI);
+        expect(Quidpay().baseUrl, Url.Prod);
       });
       test('-> staging', () {
         Quidpay.reset();
         Quidpay.init(
             production: false, publicKey: PUBK_TEST, secretKey: SECK_TEST);
-        expect(Quidpay().baseUrl, Quidpay.STAGING_BASE_URI);
+        expect(Quidpay().baseUrl, Url.Staging);
       });
     });
 
