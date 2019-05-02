@@ -1,7 +1,5 @@
-const PROD_BASE_URI = "https://api.quidpay.co/";
-const STAGING_BASE_URI = "https://ravesandboxapi.flutterwave.com/";
-const PUBK_TEST = "FLWPUBK-e634d14d9ded04eaf05d5b63a0a06d2f-X";
-const SECK_TEST = "FLWSECK-bb971402072265fb156e90a3578fe5e6-X";
+const PUBK_TEST = "FLWPUBK-e8c4f36df52a58eac2033b76c8c58432-X";
+const SECK_TEST = "FLWSECK-b42f2eacd6b92bda2f560c7e85b41cfd-X";
 const RAW_DATA = <String, int>{"a": 1, "b": 2, "c": 3};
 const ENCRYPTED_DATA = 'Z6L8BhZ9rcTku0YJiaYa6+eyH0yAEaar';
 const GENERATED_KEY = 'bb9714020722eb4cf7a169f2';
