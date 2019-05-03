@@ -1,19 +1,20 @@
-library result;
+library tx;
 
 import 'dart:convert';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:quidpay/src/models/charge_token.dart';
 import 'package:quidpay/src/models/customer.dart';
 import 'package:quidpay/src/models/serializers.dart';
 
-part 'result.g.dart';
+part 'tx.g.dart';
 
-abstract class Result implements Built<Result, ResultBuilder> {
-  Result._();
+abstract class Tx implements Built<Tx, TxBuilder> {
+  Tx._();
 
-  factory Result([updates(ResultBuilder b)]) = _$Result;
+  factory Tx([updates(TxBuilder b)]) = _$Tx;
 
   @BuiltValueField(wireName: 'id')
   int get id;
@@ -101,16 +102,16 @@ abstract class Result implements Built<Result, ResultBuilder> {
   int get accountId;
   @BuiltValueField(wireName: 'customer', compare: false)
   Customer get customer;
-  @BuiltValueField(wireName: 'customercandosubsequentnoauth', compare: false)
-  bool get customercandosubsequentnoauth;
+  @BuiltValueField(wireName: 'chargeToken', compare: false)
+  ChargeToken get chargeToken;
 
   String toJson() {
-    return json.encode(serializers.serializeWith(Result.serializer, this));
+    return json.encode(serializers.serializeWith(Tx.serializer, this));
   }
 
-  static Result fromJson(Map<String, dynamic> map) {
-    return serializers.deserializeWith(Result.serializer, map);
+  static Tx fromJson(Map<String, dynamic> map) {
+    return serializers.deserializeWith(Tx.serializer, map);
   }
 
-  static Serializer<Result> get serializer => _$resultSerializer;
+  static Serializer<Tx> get serializer => _$txSerializer;
 }

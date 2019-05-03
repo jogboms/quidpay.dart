@@ -1,51 +1,48 @@
-import 'package:quidpay/src/models/main.dart';
+library customer;
 
-class Customer extends Model {
-  Customer({
-    this.id,
-    this.phone,
-    this.fullName,
-    this.customertoken,
-    this.email,
-    this.createdAt,
-    this.updatedAt,
-    this.deletedAt,
-    this.accountId,
-  });
+import 'dart:convert';
 
-  Customer.fromJson(Map<String, dynamic> json)
-      : id = Model.parseInt(json['id']),
-        phone = json['phone'],
-        fullName = json['fullName'],
-        customertoken = json['customertoken'],
-        email = json['email'],
-        createdAt = Model.parseTimestamp(json['createdAt']),
-        updatedAt = Model.parseTimestamp(json['updatedAt']),
-        deletedAt = Model.parseTimestamp(json['deletedAt']),
-        accountId = Model.parseInt(json['AccountId']);
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+import 'package:quidpay/src/models/serializers.dart';
 
-  int id;
-  dynamic phone;
-  String fullName;
-  dynamic customertoken;
-  String email;
-  DateTime createdAt;
-  DateTime updatedAt;
-  DateTime deletedAt;
-  int accountId;
+part 'customer.g.dart';
 
-  @override
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'id': id,
-      'phone': phone,
-      'fullName': fullName,
-      'customertoken': customertoken,
-      'email': email,
-      'createdAt': createdAt.toString(),
-      'updatedAt': updatedAt.toString(),
-      'deletedAt': deletedAt.toString(),
-      'accountId': accountId,
-    };
+abstract class Customer implements Built<Customer, CustomerBuilder> {
+  Customer._();
+
+  factory Customer([updates(CustomerBuilder b)]) = _$Customer;
+
+  @BuiltValueField(wireName: 'id')
+  int get id;
+  @nullable
+  @BuiltValueField(wireName: 'phone', compare: false)
+  String get phone;
+  @BuiltValueField(wireName: 'fullName', compare: false)
+  String get fullName;
+  @nullable
+  @BuiltValueField(wireName: 'customertoken', compare: false)
+  String get customertoken;
+  @BuiltValueField(wireName: 'email', compare: false)
+  String get email;
+  @BuiltValueField(wireName: 'createdAt', compare: false)
+  String get createdAt;
+  @BuiltValueField(wireName: 'updatedAt', compare: false)
+  String get updatedAt;
+  @nullable
+  @BuiltValueField(wireName: 'deletedAt', compare: false)
+  String get deletedAt;
+  @BuiltValueField(wireName: 'AccountId', compare: false)
+  int get accountId;
+
+  String toJson() {
+    return json.encode(serializers.serializeWith(Customer.serializer, this));
   }
+
+  static Customer fromJson(Map<String, dynamic> map) {
+    return serializers.deserializeWith(Customer.serializer, map);
+  }
+
+  static Serializer<Customer> get serializer => _$customerSerializer;
 }
