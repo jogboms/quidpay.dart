@@ -25,5 +25,5 @@ void main() async {
   Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
   card();
-  account();
+  // account();
 }
