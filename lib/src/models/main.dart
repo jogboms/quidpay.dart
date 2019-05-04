@@ -5,12 +5,8 @@ abstract class ModelInterface {
 
   Map<String, dynamic> toJson() => toMap();
 
-  static String mapToString(Map<String, dynamic> map) {
-    return json.encode(map);
-  }
-  
   @override
-  String toString() => mapToString(toMap());
+  String toString() => Model.mapToString(toMap());
 }
 
 abstract class Model implements ModelInterface {

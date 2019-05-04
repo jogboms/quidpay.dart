@@ -27,8 +27,8 @@ abstract class Card with ModelInterface implements Built<Card, CardBuilder> {
   Map<String, dynamic> toMap() =>
       serializers.serializeWith(Card.serializer, this);
 
-  static Card fromJson(Map<String, dynamic> jsonString) =>
-      serializers.deserializeWith(Card.serializer, jsonString);
+  static Card fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Card.serializer, map);
 
   static Serializer<Card> get serializer => _$cardSerializer;
 }

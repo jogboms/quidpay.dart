@@ -7,7 +7,6 @@ import 'package:quidpay/src/models/charge_token.dart';
 import 'package:quidpay/src/models/customer.dart';
 import 'package:quidpay/src/models/metadata.dart';
 import 'package:quidpay/src/models/result.dart';
-import 'package:quidpay/src/models/validate/data.dart';
 import 'package:quidpay/src/models/validate/tx.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
 

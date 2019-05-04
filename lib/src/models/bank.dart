@@ -20,8 +20,8 @@ abstract class Bank with ModelInterface implements Built<Bank, BankBuilder> {
   Map<String, dynamic> toMap() =>
       serializers.serializeWith(Bank.serializer, this);
 
-  static Bank fromJson(Map<String, dynamic> jsonString) =>
-      serializers.deserializeWith(Bank.serializer, jsonString);
+  static Bank fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Bank.serializer, map);
 
   static Serializer<Bank> get serializer => _$bankSerializer;
 }
