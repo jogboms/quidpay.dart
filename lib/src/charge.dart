@@ -4,7 +4,7 @@ import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
 import 'package:quidpay/src/constants/payment.dart';
 import 'package:quidpay/src/encryption.dart';
-import 'package:quidpay/src/models/meta.dart';
+import 'package:quidpay/src/models/metadata.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/models/result.dart';
 import 'package:quidpay/src/quidpay.dart';
@@ -38,7 +38,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String pin,
     String bvn,
     String chargeType,
@@ -100,7 +100,7 @@ class Charge {
     String country = Countries.NIGERIA,
     String txRef,
     String paymentType,
-    List<Meta> meta,
+    List<Metadata> meta,
     String iP,
     String chargeType,
     bool includeIntegrityHash,
@@ -157,7 +157,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String pin,
     String bvn,
     String deviceFingerprint,
@@ -225,7 +225,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String bvn,
     String deviceFingerprint,
     String recurringStop,
@@ -285,7 +285,7 @@ class Charge {
     String txRef,
     String iP,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String deviceFingerprint,
     bool includeIntegrityHash,
   }) {

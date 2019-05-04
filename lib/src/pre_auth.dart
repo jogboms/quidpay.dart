@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:quidpay/src/charge.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
-import 'package:quidpay/src/models/meta.dart';
+import 'package:quidpay/src/models/metadata.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/models/result.dart';
 import 'package:quidpay/src/quidpay.dart';
@@ -35,7 +35,7 @@ class PreAuth {
     String firstname,
     String lastname,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String pin,
     String bvn,
     String deviceFingerprint,

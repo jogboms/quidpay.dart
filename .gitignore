@@ -9,6 +9,8 @@ pubspec.lock
 test/.test_coverage.dart
 coverage/
 
+*.g.dart
+
 # Directory created by dartdoc
 doc/api/
 

@@ -1,4 +1,4 @@
-import 'package:quidpay/src/models/banks.dart';
+import 'package:quidpay/src/models/bank.dart';
 import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/utils/endpoints.dart';

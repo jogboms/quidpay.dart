@@ -1,19 +1,18 @@
-library result;
+library tx;
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:quidpay/src/models/charge_token.dart';
 import 'package:quidpay/src/models/customer.dart';
 import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/serializers.dart';
 
-part 'result.g.dart';
+part 'tx.g.dart';
 
-abstract class Result
-    with ModelInterface
-    implements Built<Result, ResultBuilder> {
-  Result._();
+abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
+  Tx._();
 
-  factory Result([updates(ResultBuilder b)]) = _$Result;
+  factory Tx([updates(TxBuilder b)]) = _$Tx;
 
   int get id;
   @BuiltValueField(compare: false)
@@ -101,14 +100,14 @@ abstract class Result
   @BuiltValueField(compare: false)
   Customer get customer;
   @BuiltValueField(compare: false)
-  bool get customercandosubsequentnoauth;
+  ChargeToken get chargeToken;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Result.serializer, this);
+      serializers.serializeWith(Tx.serializer, this);
 
-  static Result fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Result.serializer, map);
+  static Tx fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Tx.serializer, map);
 
-  static Serializer<Result> get serializer => _$resultSerializer;
+  static Serializer<Tx> get serializer => _$txSerializer;
 }

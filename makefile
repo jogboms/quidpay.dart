@@ -1,3 +1,6 @@
+built_value:
+	pub run build_runner build
+
 test_coverage:
 	pub run test_coverage
 

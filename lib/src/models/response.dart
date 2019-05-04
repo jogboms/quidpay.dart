@@ -45,7 +45,7 @@ class ResponseException implements Exception {
   String toString() => '$runtimeType($statusCode, $status, $message)';
 }
 
-class Response<T> extends Model {
+class Response<T> {
   Response(
     this._response, {
     TransformFunction<T> onTransform,
@@ -63,7 +63,9 @@ class Response<T> extends Model {
               responseJson.containsKey("message") &&
               responseJson["message"] != null
           ? responseJson["message"]
-          : !Quidpay().production ? _response.reasonPhrase : Strings.errorMessage;
+          : !Quidpay().production
+              ? _response.reasonPhrase
+              : Strings.errorMessage;
 
       if (_response.statusCode >= 300) {
         throw ResponseException(_response.statusCode, status, message);
@@ -161,8 +163,9 @@ class Response<T> extends Model {
 
   bool get isTooLarge => statusCode == 413;
 
+  Map<String, dynamic> toMap() =>
+      rawData is Map ? rawData : <String, dynamic>{':( Rave': rawData};
+
   @override
-  Map<String, dynamic> toMap() {
-    return rawData is Map ? rawData : <String, dynamic>{':( Rave': rawData};
-  }
+  String toString() => Model.mapToString(toMap());
 }

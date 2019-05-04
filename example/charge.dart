@@ -13,7 +13,13 @@ Future<Response<Result>> card() async {
     expiryyear: '19',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
-    meta: [Meta("hello", "world")],
+    meta: [
+      Metadata(
+        (builder) => builder
+          ..metaname = "hello"
+          ..metavalue = "world",
+      )
+    ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
