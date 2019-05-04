@@ -1,31 +1,28 @@
 library metadata;
 
-import 'dart:convert';
-
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/serializers.dart';
 
 part 'metadata.g.dart';
 
-abstract class Metadata implements Built<Metadata, MetadataBuilder> {
+abstract class Metadata
+    with ModelInterface
+    implements Built<Metadata, MetadataBuilder> {
   Metadata._();
 
   factory Metadata([updates(MetadataBuilder b)]) = _$Metadata;
 
-  @BuiltValueField(wireName: 'metaname')
   String get metaname;
-  @BuiltValueField(wireName: 'metavalue')
   String get metavalue;
 
-  String toJson() {
-    return json.encode(serializers.serializeWith(Metadata.serializer, this));
-  }
+  @override
+  Map<String, dynamic> toMap() =>
+      serializers.serializeWith(Metadata.serializer, this);
 
-  static Metadata fromJson(Map<String, dynamic> jsonString) {
-    return serializers.deserializeWith(Metadata.serializer, jsonString);
-  }
+  static Metadata fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Metadata.serializer, map);
 
   static Serializer<Metadata> get serializer => _$metadataSerializer;
 }

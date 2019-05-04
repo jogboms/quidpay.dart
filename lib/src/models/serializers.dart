@@ -17,14 +17,8 @@ part 'serializers.g.dart';
 
 @SerializersFor(const [
   Result,
-  Customer,
-  ChargeToken,
   ValidateResult,
-  Tx,
-  Data,
   Bank,
-  Card,
-  CardTokens,
   Metadata,
 ])
 final Serializers serializers =
