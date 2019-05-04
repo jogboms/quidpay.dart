@@ -1,10 +1,8 @@
 library serializers;
 
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
 import 'package:quidpay/src/models/bank.dart';
-import 'package:quidpay/src/models/card.dart';
 import 'package:quidpay/src/models/charge_token.dart';
 import 'package:quidpay/src/models/customer.dart';
 import 'package:quidpay/src/models/metadata.dart';
