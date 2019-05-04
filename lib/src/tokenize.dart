@@ -1,15 +1,19 @@
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+import 'package:quidpay/src/models/main.dart';
+import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
 
 class Tokenize {
   Tokenize() : _http = HttpWrapper();
 
   final HttpWrapper _http;
 
-  Future<http.Response> _charge(
+  // TODO
+  Future<Response<dynamic>> _charge(
     String url, {
     @required String amount,
     @required String email,
@@ -23,12 +27,12 @@ class Tokenize {
     String narration,
     String meta,
     String deviceFingerprint,
-  }) {
+  }) async {
     assert(amount != null);
     assert(email != null);
     assert(iP != null);
     assert(txRef != null);
-    return _http.post(
+    final _res = await _http.post(
       url,
       <String, dynamic>{
         'SECKEY': Quidpay().secretKey,
@@ -46,9 +50,22 @@ class Tokenize {
         'device_fingerprint': deviceFingerprint,
       },
     );
+    final _response = Response<dynamic>(
+      _res,
+      onTransform: (dynamic data, _) {
+        return Model.generator<dynamic>(
+          data,
+          (dynamic bank) => bank,
+        );
+      },
+    );
+
+    Log().debug("Tokenize._charge() -> Response", _response);
+
+    return _response;
   }
 
-  Future<http.Response> card({
+  Future<Response> card({
     @required String amount,
     @required String email,
     @required String iP,
@@ -79,7 +96,7 @@ class Tokenize {
     );
   }
 
-  Future<http.Response> account({
+  Future<Response> account({
     @required String amount,
     @required String email,
     @required String iP,
