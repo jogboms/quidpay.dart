@@ -16,21 +16,21 @@ class Validate {
     @required String otp,
   }) async {
     assert(flwRef != null);
-    final _res = await _http.post(
-      Endpoints.validateCardCharge,
-      <String, dynamic>{
-        'PBFPubKey': Quidpay().publicKey,
-        'transaction_reference': flwRef,
-        'otp': otp,
-      },
-    );
+
+    var payload = <String, dynamic>{
+      'PBFPubKey': Quidpay().publicKey,
+      'transaction_reference': flwRef,
+      'otp': otp,
+    };
+
+    Log().debug("$runtimeType.card()", payload);
 
     final _response = Response<ValidateResult>(
-      _res,
+      await _http.post(Endpoints.validateCardCharge, payload),
       onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
 
-    Log().debug("Validate.card() -> Response", _response);
+    Log().debug("$runtimeType.card() -> Response", _response);
 
     return _response;
   }
@@ -40,21 +40,21 @@ class Validate {
     @required String otp,
   }) async {
     assert(flwRef != null);
-    final _res = await _http.post(
-      Endpoints.validateAccountCharge,
-      <String, dynamic>{
-        'PBFPubKey': Quidpay().publicKey,
-        'transactionreference': flwRef,
-        'otp': otp,
-      },
-    );
+
+    var payload = <String, dynamic>{
+      'PBFPubKey': Quidpay().publicKey,
+      'transactionreference': flwRef,
+      'otp': otp,
+    };
+
+    Log().debug("$runtimeType.account()", payload);
 
     final _response = Response<ValidateResult>(
-      _res,
+      await _http.post(Endpoints.validateAccountCharge, payload),
       onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
 
-    Log().debug("Validate.account() -> Response", _response);
+    Log().debug("$runtimeType.account() -> Response", _response);
 
     return _response;
   }

@@ -21,7 +21,7 @@ class Banks {
       },
     );
 
-    Log().debug("Banks.fetch() -> Response", _response);
+    Log().debug("$runtimeType.fetch() -> Response", _response);
 
     return _response;
   }

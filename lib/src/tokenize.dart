@@ -32,35 +32,31 @@ class Tokenize {
     assert(email != null);
     assert(iP != null);
     assert(txRef != null);
-    final _res = await _http.post(
-      url,
-      <String, dynamic>{
-        'SECKEY': Quidpay().secretKey,
-        'token': token,
-        'currency': currency,
-        'country': country,
-        'amount': amount,
-        'email': email,
-        'firstname': firstname,
-        'lastname': lastname,
-        'IP': iP,
-        'narration': narration,
-        'txRef': txRef,
-        'meta': meta,
-        'device_fingerprint': deviceFingerprint,
-      },
-    );
+
+    final payload = <String, dynamic>{
+      'SECKEY': Quidpay().secretKey,
+      'token': token,
+      'currency': currency,
+      'country': country,
+      'amount': amount,
+      'email': email,
+      'firstname': firstname,
+      'lastname': lastname,
+      'IP': iP,
+      'narration': narration,
+      'txRef': txRef,
+      'meta': meta,
+      'device_fingerprint': deviceFingerprint,
+    };
+
+    Log().debug("$runtimeType.charge()", payload);
+
     final _response = Response<dynamic>(
-      _res,
-      onTransform: (dynamic data, _) {
-        return Model.generator<dynamic>(
-          data,
-          (dynamic bank) => bank,
-        );
-      },
+      await _http.post(url, payload),
+      onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("Tokenize._charge() -> Response", _response);
+    Log().debug("$runtimeType._charge() -> Response", _response);
 
     return _response;
   }

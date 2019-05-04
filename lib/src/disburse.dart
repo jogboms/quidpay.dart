@@ -22,27 +22,23 @@ class Disburse {
     assert(accountNumber != null);
     assert(currency != null);
     assert(amount != null);
-    final _res = await _http.post(
-      Endpoints.disburse,
-      <String, dynamic>{
-        'seckey': Quidpay().secretKey,
-        'bank_code': bankCode,
-        'account_number': accountNumber,
-        'currency': currency,
-        'amount': amount,
-      },
-    );
+
+    var payload = <String, dynamic>{
+      'seckey': Quidpay().secretKey,
+      'bank_code': bankCode,
+      'account_number': accountNumber,
+      'currency': currency,
+      'amount': amount,
+    };
+
+    Log().debug("$runtimeType.disburse()", payload);
+
     final _response = Response<dynamic>(
-      _res,
-      onTransform: (dynamic data, _) {
-        return Model.generator<dynamic>(
-          data,
-          (dynamic bank) => bank,
-        );
-      },
+      await _http.post(Endpoints.disburse, payload),
+      onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("Disburse.disburse() -> Response", _response);
+    Log().debug("$runtimeType.disburse() -> Response", _response);
 
     return _response;
   }

@@ -82,20 +82,23 @@ class PreAuth {
     @required String flwRef,
     @required String action,
   }) async {
-    final _res = await _http.post(
-      Endpoints.refundOrVoidPreauthorization,
-      <String, dynamic>{
-        'SECKEY': Quidpay().secretKey,
-        'ref': flwRef,
-        'action': action,
-      },
-    );
+    var payload = <String, dynamic>{
+      'SECKEY': Quidpay().secretKey,
+      'ref': flwRef,
+      'action': action,
+    };
+
+    Log().debug("$runtimeType.refundOrVoidCard()", payload);
+
     final _response = Response<Result>(
-      _res,
+      await _http.post(Endpoints.refundOrVoidPreauthorization, payload),
       onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("PreAuth.refundOrVoidCard($action) -> Response", _response);
+    Log().debug(
+      "$runtimeType.refundOrVoidCard($action) -> Response",
+      _response,
+    );
 
     return _response;
   }
@@ -115,20 +118,23 @@ class PreAuth {
   }
 
   Future<Response> captureCard(String flwRef, String amount) async {
-    final _res = await _http.post(
-      Endpoints.capturePreauthorizeCard,
-      <String, dynamic>{
-        'SECKEY': Quidpay().secretKey,
-        'flwRef': flwRef,
-        'amount': amount,
-      },
-    );
+    var payload = <String, dynamic>{
+      'SECKEY': Quidpay().secretKey,
+      'flwRef': flwRef,
+      'amount': amount,
+    };
+
+    Log().debug("$runtimeType.captureCard()", payload);
+
     final _response = Response<Result>(
-      _res,
+      await _http.post(Endpoints.capturePreauthorizeCard, payload),
       onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("PreAuth.captureCard() -> Response", _response);
+    Log().debug(
+      "$runtimeType.captureCard() -> Response",
+      _response,
+    );
 
     return _response;
   }

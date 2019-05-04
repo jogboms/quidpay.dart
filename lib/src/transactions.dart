@@ -1,5 +1,3 @@
-import 'package:http/http.dart' as http;
-import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
@@ -18,25 +16,21 @@ class Transactions {
   }) async {
     assert(!(flwRef == null && txRef == null),
         'You must pass either flwRef or txRef');
-    final _res = await _http.post(
-      Endpoints.verifyTransaction,
-      <String, dynamic>{
-        'SECKEY': Quidpay().secretKey,
-        'flwref': flwRef,
-        'txref': txRef,
-      },
-    );
+
+    var payload = <String, dynamic>{
+      'SECKEY': Quidpay().secretKey,
+      'flwref': flwRef,
+      'txref': txRef,
+    };
+
+    Log().debug("$runtimeType.verify()", payload);
+
     final _response = Response<dynamic>(
-      _res,
-      onTransform: (dynamic data, _) {
-        return Model.generator<dynamic>(
-          data,
-          (dynamic bank) => bank,
-        );
-      },
+      await _http.post(Endpoints.verifyTransaction, payload),
+      onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("Transactions.verify() -> Response", _response);
+    Log().debug("$runtimeType.verify() -> Response", _response);
 
     return _response;
   }
@@ -50,27 +44,23 @@ class Transactions {
   }) async {
     assert(!(flwRef == null && txRef == null),
         'You must pass either flwRef or txRef');
-    final _res = await _http.post(
-      Endpoints.requeryTransaction,
-      <String, dynamic>{
-        'SECKEY': Quidpay().secretKey,
-        'flwref': flwRef,
-        'txref': txRef,
-        'last_attempt': lastAttempt,
-        'only_successful': onlySuccessful,
-      },
-    );
+
+    final payload = <String, dynamic>{
+      'SECKEY': Quidpay().secretKey,
+      'flwref': flwRef,
+      'txref': txRef,
+      'last_attempt': lastAttempt,
+      'only_successful': onlySuccessful,
+    };
+
+    Log().debug("$runtimeType.charge()", payload);
+
     final _response = Response<dynamic>(
-      _res,
-      onTransform: (dynamic data, _) {
-        return Model.generator<dynamic>(
-          data,
-          (dynamic bank) => bank,
-        );
-      },
+      await _http.post(Endpoints.requeryTransaction, payload),
+      onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("Tokenize.requery() -> Response", _response);
+    Log().debug("$runtimeType.requery() -> Response", _response);
 
     return _response;
   }

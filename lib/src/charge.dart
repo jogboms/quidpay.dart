@@ -3,7 +3,7 @@ import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
 import 'package:quidpay/src/constants/payment.dart';
-import 'package:quidpay/src/encryption.dart';
+import 'package:quidpay/src/utils/encryption.dart';
 import 'package:quidpay/src/models/metadata.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/models/result.dart';
@@ -337,7 +337,7 @@ class Charge {
       payload..add(Keys.QueryStringData, queryStringData);
     }
 
-    Log().debug("Charge.charge()", payload);
+    Log().debug("$runtimeType.charge()", payload);
 
     final _res = await _http.post(
       Endpoints.directCharge,
@@ -353,7 +353,7 @@ class Charge {
       onTransform: (dynamic data, _) => Result.fromJson(data),
     );
 
-    Log().debug("Charge.charge() -> Response", _response);
+    Log().debug("$runtimeType.charge() -> Response", _response);
 
     return _response;
   }
