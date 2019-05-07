@@ -37,6 +37,7 @@ Future<Response<Result>> pin() async {
     email: 'jeremiahogbomo@gmail.com',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
+    txRef: 'LM5GVOUW3TYF',
     pin: "3310",
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
