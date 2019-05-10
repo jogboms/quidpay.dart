@@ -12,8 +12,12 @@ abstract class Bank with ModelInterface implements Built<Bank, BankBuilder> {
 
   factory Bank([updates(BankBuilder b)]) = _$Bank;
 
-  String get bankname;
-  String get bankcode;
+  @BuiltValueField(wireName: 'bankname')
+  String get name;
+
+  @BuiltValueField(wireName: 'bankcode')
+  String get code;
+
   bool get internetbanking;
 
   @override

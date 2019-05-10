@@ -16,92 +16,155 @@ abstract class Result
   factory Result([updates(ResultBuilder b)]) = _$Result;
 
   int get id;
+
   @BuiltValueField(compare: false)
   String get txRef;
+
   @BuiltValueField(compare: false)
   String get orderRef;
+
   @BuiltValueField(compare: false)
   String get flwRef;
+
   @BuiltValueField(compare: false)
   String get redirectUrl;
+
   @BuiltValueField(wireName: 'device_fingerprint', compare: false)
   String get deviceFingerprint;
+
   @nullable
   @BuiltValueField(wireName: 'settlement_token', compare: false)
   String get settlementToken;
+
   @BuiltValueField(compare: false)
   String get cycle;
+
   @BuiltValueField(compare: false)
   int get amount;
+
   @BuiltValueField(wireName: 'charged_amount', compare: false)
   int get chargedAmount;
+
   @BuiltValueField(compare: false)
   int get appfee;
+
   @BuiltValueField(compare: false)
   int get merchantfee;
+
   @BuiltValueField(compare: false)
   int get merchantbearsfee;
+
   @BuiltValueField(compare: false)
   String get chargeResponseCode;
+
   @BuiltValueField(compare: false)
   String get raveRef;
+
   @BuiltValueField(compare: false)
   String get chargeResponseMessage;
+
   @BuiltValueField(compare: false)
   String get authModelUsed;
+
   @BuiltValueField(compare: false)
   String get currency;
+
   @BuiltValueField(wireName: 'IP', compare: false)
   String get iP;
+
   @BuiltValueField(compare: false)
   String get narration;
+
   @BuiltValueField(compare: false)
   String get status;
+
   @BuiltValueField(compare: false)
   String get modalauditid;
+
   @BuiltValueField(compare: false)
   String get vbvrespmessage;
+
   @BuiltValueField(compare: false)
   String get authurl;
+
   @BuiltValueField(compare: false)
   String get vbvrespcode;
+
   @nullable
   @BuiltValueField(compare: false)
   String get acctvalrespmsg;
+
   @nullable
   @BuiltValueField(compare: false)
   String get acctvalrespcode;
+
   @BuiltValueField(compare: false)
   String get paymentType;
+
   @nullable
   @BuiltValueField(compare: false)
   String get paymentPlan;
+
   @nullable
   @BuiltValueField(compare: false)
   String get paymentPage;
+
   @BuiltValueField(compare: false)
   String get paymentId;
+
   @BuiltValueField(wireName: 'fraud_status', compare: false)
   String get fraudStatus;
+
   @BuiltValueField(wireName: 'charge_type', compare: false)
   String get chargeType;
+
   @BuiltValueField(wireName: 'is_live', compare: false)
   int get isLive;
+
   @BuiltValueField(compare: false)
   String get createdAt;
+
   @BuiltValueField(compare: false)
   String get updatedAt;
   @nullable
   @BuiltValueField(compare: false)
   String get deletedAt;
+
   @BuiltValueField(compare: false)
   int get customerId;
+
   @BuiltValueField(wireName: 'AccountId', compare: false)
   int get accountId;
+
   @BuiltValueField(compare: false)
   Customer get customer;
+
   @BuiltValueField(compare: false)
   bool get customercandosubsequentnoauth;
+
+  @memoized
+  bool get requiresValidation => chargeResponseCode == "02";
+
+  @memoized
+  String get otpMessage => authurl;
+
+  @memoized
+  bool get hasValidReferenceAndTrans => (txRef != null) && (id != null);
+
+  @memoized
+  bool get hasValidUrl {
+    if (otpMessage == null || otpMessage.isEmpty) {
+      return false;
+    }
+
+    return RegExp(r'^https?://', caseSensitive: false).hasMatch(otpMessage);
+  }
+
+  @memoized
+  bool get hasValidOtpMessage => otpMessage != null;
+
+  @memoized
+  bool get hasValidAuth => authurl != null;
 
   @override
   Map<String, dynamic> toMap() =>

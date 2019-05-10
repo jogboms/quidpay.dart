@@ -145,6 +145,8 @@ abstract class VerifyResult
 
   BuiltList<Metadata> get meta;
 
+  bool get isSuccessful => status == "successful";
+
   @override
   Map<String, dynamic> toMap() =>
       serializers.serializeWith(VerifyResult.serializer, this);

@@ -6,11 +6,11 @@ import '_keys.dart';
 Future<Response<Result>> card() async {
   final charge = Charge.card(
     amount: '2000',
-    cardno: '4242424242424242',
-    cvv: '812',
+    cardno: '5399838383838381',
+    cvv: '470',
     email: 'jeremiahogbomo@gmail.com',
-    expirymonth: '01',
-    expiryyear: '19',
+    expirymonth: '10',
+    expiryyear: '22',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
     meta: [
@@ -56,7 +56,7 @@ Future<Response<Result>> account() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.bankcode;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.account(
     amount: '2000',
@@ -75,7 +75,7 @@ Future<Response<Result>> ussd() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.bankcode;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.ussd(
     amount: '2000',
@@ -94,8 +94,8 @@ Future<Response<Result>> ussd() async {
 void main() async {
   Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
-  // await card();
-  await pin();
+  await card();
+  // await pin();
   // await account();
   // await ussd();
 }
