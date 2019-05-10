@@ -8,6 +8,7 @@ class Endpoints {
   static const String validateAccountCharge = "$_base/validate";
   static const String getBanks = "$_base/flwpbf-banks.js?json=1";
   static const String verifyTransaction = "$_base/v2/verify";
+  // TODO: somehow returns a 404
   static const String requeryTransaction = "$_base/v2/xrequery";
   static const String capturePreauthorizeCard = "$_base/capture";
   static const String refundOrVoidPreauthorization = "$_base/refundorvoid";

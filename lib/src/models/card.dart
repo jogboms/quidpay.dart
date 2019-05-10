@@ -40,9 +40,14 @@ abstract class CardTokens
 
   factory CardTokens([updates(CardTokensBuilder b)]) = _$CardTokens;
 
-  // TODO
-  @BuiltValueField(wireName: 'unknown')
-  String get unknown;
+  @nullable
+  String get embedtoken;
+
+  @nullable
+  String get shortcode;
+
+  @nullable
+  String get expiry;
 
   @override
   Map<String, dynamic> toMap() =>

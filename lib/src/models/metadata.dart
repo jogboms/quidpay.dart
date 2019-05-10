@@ -14,8 +14,24 @@ abstract class Metadata
 
   factory Metadata([updates(MetadataBuilder b)]) = _$Metadata;
 
+  @nullable
+  int get id;
+
   String get metaname;
+
   String get metavalue;
+
+  @nullable
+  DateTime get createdAt;
+
+  @nullable
+  DateTime get updatedAt;
+
+  @nullable
+  String get deletedAt;
+
+  @nullable
+  int get getpaidTransactionId;
 
   @override
   Map<String, dynamic> toMap() =>

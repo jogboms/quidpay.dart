@@ -1,6 +1,4 @@
-import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';

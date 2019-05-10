@@ -1,4 +1,5 @@
 import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/models/verify/verify_result.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
@@ -9,8 +10,7 @@ class Transactions {
 
   final HttpWrapper _http;
 
-  // TODO
-  Future<Response<dynamic>> verify({
+  Future<Response<VerifyResult>> verify({
     String flwRef,
     String txRef,
   }) async {
@@ -25,13 +25,12 @@ class Transactions {
 
     Log().debug("$runtimeType.verify()", payload);
 
-    final _response = Response<dynamic>(
+    final _response = Response<VerifyResult>(
       await _http.post(Endpoints.verifyTransaction, payload),
-      onTransform: (dynamic data, _) => data,
+      onTransform: (dynamic data, _) => VerifyResult.fromJson(data),
     );
 
     Log().debug("$runtimeType.verify() -> Response", _response);
-
     return _response;
   }
 
@@ -53,7 +52,7 @@ class Transactions {
       'only_successful': onlySuccessful,
     };
 
-    Log().debug("$runtimeType.charge()", payload);
+    Log().debug("$runtimeType.requery()", payload);
 
     final _response = Response<dynamic>(
       await _http.post(Endpoints.requeryTransaction, payload),
