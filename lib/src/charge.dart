@@ -13,36 +13,6 @@ import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
 import 'package:quidpay/src/utils/payload.dart';
 
-class ChargeModel {
-  ChargeModel({
-    @required String cardno,
-    @required String cvv,
-    @required String amount,
-    @required String expiryyear,
-    @required String expirymonth,
-    @required String email,
-    @required String firstname,
-    @required String lastname,
-    String redirectUrl,
-    String currency = Currencies.NAIRA,
-    String country = Countries.NIGERIA,
-    String txRef,
-    String suggestedAuth,
-    String iP,
-    String settlementToken,
-    String phonenumber,
-    String billingzip,
-    String narration,
-    List<Metadata> meta,
-    String pin,
-    String bvn,
-    String chargeType,
-    String deviceFingerprint,
-    String recurringStop,
-    bool includeIntegrityHash,
-  });
-}
-
 class Charge {
   Charge({
     @required this.payload,
