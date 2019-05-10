@@ -39,6 +39,13 @@ Future<Response<Result>> pin() async {
     lastname: "Ogbomo",
     txRef: 'LM5GVOUW3TYF',
     pin: "3310",
+    meta: [
+      Metadata(
+        (builder) => builder
+          ..metaname = "hello"
+          ..metavalue = "world",
+      )
+    ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 

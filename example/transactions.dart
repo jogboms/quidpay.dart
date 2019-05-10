@@ -1,22 +1,22 @@
 import 'package:quidpay/quidpay.dart';
 
 import '_keys.dart';
-import 'charge.dart' as charge;
+import 'validate.dart' as validate;
 
-void card() async {
-  final response = await charge.pin();
+void verify() async {
+  final response = await validate.card();
   final resp = await Transactions().verify(
-    flwRef: response.data.flwRef,
-    txRef: response.data.txRef,
+    flwRef: response.data.tx.flwRef,
+    txRef: response.data.tx.txRef,
   );
   print(resp);
 }
 
-void account() async {
-  final response = await charge.pin();
+void requery() async {
+  final response = await validate.card();
   final resp = await Transactions().requery(
-    flwRef: response.data.flwRef,
-    txRef: response.data.txRef,
+    flwRef: response.data.tx.flwRef,
+    txRef: response.data.tx.txRef,
   );
   print(resp);
 }
@@ -24,6 +24,6 @@ void account() async {
 void main() async {
   Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
-  card();
-  // account();
+  verify();
+  // requery();
 }
