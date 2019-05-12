@@ -17,8 +17,10 @@ abstract class ValidateResult
 
   @BuiltValueField(compare: false)
   Data get data;
+
   @BuiltValueField(compare: false)
   Tx get tx;
+
   @nullable
   @BuiltValueField(wireName: 'airtime_flag', compare: false)
   String get airtimeFlag;

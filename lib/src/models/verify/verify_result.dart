@@ -27,17 +27,17 @@ abstract class VerifyResult
 
   String get cycle;
 
-  int get amount;
+  double get amount;
 
   String get currency;
 
-  int get chargedamount;
+  double get chargedamount;
 
-  int get appfee;
+  double get appfee;
 
-  int get merchantfee;
+  double get merchantfee;
 
-  int get merchantbearsfee;
+  double get merchantbearsfee;
 
   String get chargecode;
 

@@ -1,9 +1,9 @@
 import 'package:quidpay/src/models/bank.dart';
 import 'package:quidpay/src/models/main.dart';
-import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Banks {
   Banks() : _http = HttpWrapper();

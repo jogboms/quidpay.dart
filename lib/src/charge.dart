@@ -5,7 +5,7 @@ import 'package:quidpay/src/constants/currencies.dart';
 import 'package:quidpay/src/constants/payment.dart';
 import 'package:quidpay/src/utils/encryption.dart';
 import 'package:quidpay/src/models/metadata.dart';
-import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/result.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';

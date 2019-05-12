@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:quidpay/src/models/response.dart';
+import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';

@@ -2,9 +2,9 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:quidpay/src/models/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class HttpWrapper {
   HttpWrapper() : baseUrl = Quidpay().baseUrl;
