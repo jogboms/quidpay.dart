@@ -15,23 +15,31 @@ abstract class Customer
   factory Customer([updates(CustomerBuilder b)]) = _$Customer;
 
   int get id;
+
   @nullable
   @BuiltValueField(compare: false)
   String get phone;
+
   @BuiltValueField(compare: false)
   String get fullName;
+
   @nullable
   @BuiltValueField(compare: false)
   String get customertoken;
+
   @BuiltValueField(compare: false)
   String get email;
+
   @BuiltValueField(compare: false)
   String get createdAt;
+
   @BuiltValueField(compare: false)
   String get updatedAt;
+
   @nullable
   @BuiltValueField(compare: false)
   String get deletedAt;
+
   @BuiltValueField(wireName: 'AccountId', compare: false)
   int get accountId;
 

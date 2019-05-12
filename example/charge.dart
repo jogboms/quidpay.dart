@@ -14,11 +14,7 @@ Future<Response<Result>> card() async {
     firstname: "Jeremiah",
     lastname: "Ogbomo",
     meta: [
-      Metadata(
-        (builder) => builder
-          ..metaname = "hello"
-          ..metavalue = "world",
-      )
+      Metadata.named(name: "hello", value: "world"),
     ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
@@ -33,18 +29,14 @@ Future<Response<Result>> pin() async {
     cvv: '470',
     expirymonth: '10',
     expiryyear: '22',
-    amount: '2000',
+    amount: '12345',
     email: 'jeremiahogbomo@gmail.com',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
     txRef: 'LM5GVOUW3TYF',
-    pin: "3310",
+    pin: "1234",
     meta: [
-      Metadata(
-        (builder) => builder
-          ..metaname = "hello"
-          ..metavalue = "world",
-      )
+      Metadata.named(name: "hello", value: "world"),
     ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
