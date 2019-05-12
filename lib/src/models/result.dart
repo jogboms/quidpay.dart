@@ -40,19 +40,19 @@ abstract class Result
   String get cycle;
 
   @BuiltValueField(compare: false)
-  int get amount;
+  double get amount;
 
   @BuiltValueField(wireName: 'charged_amount', compare: false)
-  int get chargedAmount;
+  double get chargedAmount;
 
   @BuiltValueField(compare: false)
-  int get appfee;
+  double get appfee;
 
   @BuiltValueField(compare: false)
-  int get merchantfee;
+  double get merchantfee;
 
   @BuiltValueField(compare: false)
-  int get merchantbearsfee;
+  double get merchantbearsfee;
 
   @BuiltValueField(compare: false)
   String get chargeResponseCode;
@@ -126,6 +126,7 @@ abstract class Result
 
   @BuiltValueField(compare: false)
   String get updatedAt;
+
   @nullable
   @BuiltValueField(compare: false)
   String get deletedAt;
