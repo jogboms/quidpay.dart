@@ -24,11 +24,12 @@ class Quidpay {
     @required String publicKey,
     @required String secretKey,
     @required bool production,
+    bool restart = false,
   }) {
     assert(publicKey != null);
     assert(secretKey != null);
     assert(production != null);
-    assert(_instance == null,
+    assert((_instance != null && restart == true) || _instance == null,
         'Are you trying to reset the previous keys by calling Quidpay.init() again?.');
     _instance = Quidpay._(
       publicKey: publicKey,
