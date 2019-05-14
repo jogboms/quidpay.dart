@@ -1,40 +1,61 @@
-import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/response.dart';
+import 'package:quidpay/src/models/validate/validate_result.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
 
 class Validate {
   Validate() : _http = HttpWrapper();
 
   final HttpWrapper _http;
 
-  Future<http.Response> card({
+  Future<Response<ValidateResult>> card({
     @required String flwRef,
     @required String otp,
-  }) {
+  }) async {
     assert(flwRef != null);
-    return _http.post(
-      Endpoints.validateCardCharge,
-      <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
-        'transaction_reference': flwRef,
-        'otp': otp,
-      },
+
+    var payload = <String, dynamic>{
+      'PBFPubKey': Quidpay().publicKey,
+      'transaction_reference': flwRef,
+      'otp': otp,
+    };
+
+    Log().debug("$runtimeType.card()", payload);
+
+    final _response = Response<ValidateResult>(
+      await _http.post(Endpoints.validateCardCharge, payload),
+      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
+
+    Log().debug("$runtimeType.card() -> Response", _response);
+
+    return _response;
   }
 
-  Future<http.Response> account({
+  Future<Response<ValidateResult>> account({
     @required String flwRef,
     @required String otp,
-  }) {
-    return _http.post(
-      Endpoints.validateAccountCharge,
-      <String, dynamic>{
-        'PBFPubKey': Ravepay().publicKey,
-        'transactionreference': flwRef,
-        'otp': otp,
-      },
+  }) async {
+    assert(flwRef != null);
+
+    var payload = <String, dynamic>{
+      'PBFPubKey': Quidpay().publicKey,
+      'transactionreference': flwRef,
+      'otp': otp,
+    };
+
+    Log().debug("$runtimeType.account()", payload);
+
+    final _response = Response<ValidateResult>(
+      await _http.post(Endpoints.validateAccountCharge, payload),
+      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
+
+    Log().debug("$runtimeType.account() -> Response", _response);
+
+    return _response;
   }
 }

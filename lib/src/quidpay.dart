@@ -1,18 +1,19 @@
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/utils/log.dart';
+import 'package:quidpay/src/constants/url.dart';
+import 'package:quidpay/src/utils/log.dart';
 
-class Ravepay {
-  factory Ravepay() {
+class Quidpay {
+  factory Quidpay() {
     assert(_instance != null,
-        'Please make sure to call Ravepay.init() at the top of your app or before using the other functions.');
+        'Please make sure to call Quidpay.init() at the top of your app or before using the other functions.');
     return _instance;
   }
 
-  Ravepay._({
+  Quidpay._({
     @required this.publicKey,
     @required this.secretKey,
     @required this.production,
-  }) : baseUrl = production ? PROD_BASE_URI : STAGING_BASE_URI;
+  }) : baseUrl = production ? Url.Prod : Url.Staging;
 
   @visibleForTesting
   static void reset() {
@@ -23,13 +24,14 @@ class Ravepay {
     @required String publicKey,
     @required String secretKey,
     @required bool production,
+    bool restart = false,
   }) {
     assert(publicKey != null);
     assert(secretKey != null);
     assert(production != null);
-    assert(_instance == null,
-        'Are you trying to reset the previous keys by calling Ravepay.init() again?.');
-    _instance = Ravepay._(
+    assert((_instance != null && restart == true) || _instance == null,
+        'Are you trying to reset the previous keys by calling Quidpay.init() again?.');
+    _instance = Quidpay._(
       publicKey: publicKey,
       secretKey: secretKey,
       production: production,
@@ -38,9 +40,7 @@ class Ravepay {
     Log.init(production);
   }
 
-  static Ravepay _instance;
-  static const PROD_BASE_URI = "https://api.ravepay.co/";
-  static const STAGING_BASE_URI = "https://ravesandboxapi.flutterwave.com/";
+  static Quidpay _instance;
 
   final String publicKey;
   final String secretKey;

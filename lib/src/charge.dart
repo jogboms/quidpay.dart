@@ -1,17 +1,17 @@
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/constants/auth.dart';
-import 'package:ravepay/src/constants/countries.dart';
-import 'package:ravepay/src/constants/currencies.dart';
-import 'package:ravepay/src/constants/payment.dart';
-import 'package:ravepay/src/encryption.dart';
-import 'package:ravepay/src/models/meta.dart';
-import 'package:ravepay/src/models/response.dart';
-import 'package:ravepay/src/models/result.dart';
-import 'package:ravepay/src/ravepay.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
-import 'package:ravepay/src/utils/log.dart';
-import 'package:ravepay/src/utils/payload.dart';
+import 'package:quidpay/src/constants/auth.dart';
+import 'package:quidpay/src/constants/countries.dart';
+import 'package:quidpay/src/constants/currencies.dart';
+import 'package:quidpay/src/constants/payment.dart';
+import 'package:quidpay/src/utils/encryption.dart';
+import 'package:quidpay/src/models/metadata.dart';
+import 'package:quidpay/src/utils/response.dart';
+import 'package:quidpay/src/models/result.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/payload.dart';
 
 class Charge {
   Charge({
@@ -28,7 +28,7 @@ class Charge {
     @required String email,
     @required String firstname,
     @required String lastname,
-    @required String redirectUrl,
+    String redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
     String txRef,
@@ -38,7 +38,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String pin,
     String bvn,
     String chargeType,
@@ -95,12 +95,12 @@ class Charge {
     @required String cvv,
     @required String expiryyear,
     @required String expirymonth,
-    @required String redirectUrl,
+    String redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
     String txRef,
     String paymentType,
-    List<Meta> meta,
+    List<Metadata> meta,
     String iP,
     String chargeType,
     bool includeIntegrityHash,
@@ -146,7 +146,7 @@ class Charge {
     @required String accountnumber,
     @required String firstname,
     @required String lastname,
-    @required String redirectUrl,
+    String redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
     String iP,
@@ -157,8 +157,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
-    String pin,
+    List<Metadata> meta,
     String bvn,
     String deviceFingerprint,
     String paymentType,
@@ -189,7 +188,6 @@ class Charge {
         ..add(Keys.Narration, narration)
         ..add(Keys.TxRef, txRef)
         ..add(Keys.Meta, meta)
-        ..add(Keys.Pin, pin)
         ..add(Keys.Bvn, bvn)
         ..add(Keys.ChargeType, chargeType)
         ..add(Keys.DeviceFingerprint, deviceFingerprint)
@@ -214,7 +212,7 @@ class Charge {
     @required String firstname,
     @required String lastname,
     @required String pin,
-    @required String redirectUrl,
+    String redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
     String txRef,
@@ -225,7 +223,7 @@ class Charge {
     String phonenumber,
     String billingzip,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String bvn,
     String deviceFingerprint,
     String recurringStop,
@@ -279,13 +277,13 @@ class Charge {
     @required String accountnumber,
     @required String firstname,
     @required String lastname,
-    @required String redirectUrl,
+    String redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
     String txRef,
     String iP,
     String narration,
-    List<Meta> meta,
+    List<Metadata> meta,
     String deviceFingerprint,
     bool includeIntegrityHash,
   }) {
@@ -323,7 +321,7 @@ class Charge {
 
   final HttpWrapper _http;
   final Payload payload;
-  static final _encryption = Encryption(secretKey: Ravepay().secretKey);
+  static final _encryption = Encryption(secretKey: Quidpay().secretKey);
 
   Future<Response<Result>> charge() async {
     if (payload.getItem(Keys.IncludeIntegrityHash) == true) {
@@ -337,12 +335,12 @@ class Charge {
       payload..add(Keys.QueryStringData, queryStringData);
     }
 
-    Log().debug("Charge.charge()", payload);
+    Log().debug("$runtimeType.charge()", payload);
 
     final _res = await _http.post(
       Endpoints.directCharge,
       <String, dynamic>{
-        "PBFPubKey": Ravepay().publicKey,
+        "PBFPubKey": Quidpay().publicKey,
         "client": _encryption.encrypt(payload.toMap()),
         "alg": Encryption.ALGORITHM,
       },
@@ -353,7 +351,7 @@ class Charge {
       onTransform: (dynamic data, _) => Result.fromJson(data),
     );
 
-    Log().debug("Charge.charge() -> Response", _response);
+    Log().debug("$runtimeType.charge() -> Response", _response);
 
     return _response;
   }

@@ -1,7 +1,7 @@
 import 'dart:convert' show json;
 
 import 'package:meta/meta.dart';
-import 'package:ravepay/src/ravepay.dart';
+import 'package:quidpay/src/quidpay.dart';
 
 typedef dynamic PayloadBuilder(Map<String, dynamic> params);
 
@@ -48,7 +48,7 @@ class Keys {
 
 class Payload {
   Payload() {
-    add(Keys.PublicKey, Ravepay().publicKey);
+    add(Keys.PublicKey, Quidpay().publicKey);
     add(Keys.TxRef, 'txref-${DateTime.now().millisecondsSinceEpoch}');
   }
 

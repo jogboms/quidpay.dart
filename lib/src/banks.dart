@@ -1,9 +1,9 @@
-import 'package:ravepay/src/models/banks.dart';
-import 'package:ravepay/src/models/main.dart';
-import 'package:ravepay/src/models/response.dart';
-import 'package:ravepay/src/utils/endpoints.dart';
-import 'package:ravepay/src/utils/http_wrapper.dart';
-import 'package:ravepay/src/utils/log.dart';
+import 'package:quidpay/src/models/bank.dart';
+import 'package:quidpay/src/models/main.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Banks {
   Banks() : _http = HttpWrapper();
@@ -21,7 +21,7 @@ class Banks {
       },
     );
 
-    Log().debug("Banks.fetch() -> Response", _response);
+    Log().debug("$runtimeType.fetch() -> Response", _response);
 
     return _response;
   }

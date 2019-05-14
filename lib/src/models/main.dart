@@ -1,6 +1,15 @@
 import 'dart:convert' show json;
 
-abstract class Model {
+abstract class ModelInterface {
+  Map<String, dynamic> toMap();
+
+  Map<String, dynamic> toJson() => toMap();
+
+  @override
+  String toString() => Model.mapToString(toMap());
+}
+
+abstract class Model implements ModelInterface {
   Map<String, dynamic> toMap();
 
   Model clone() => null;

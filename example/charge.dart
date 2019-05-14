@@ -1,4 +1,4 @@
-import 'package:ravepay/ravepay.dart';
+import 'package:quidpay/quidpay.dart';
 
 import '_keys.dart';
 
@@ -6,14 +6,16 @@ import '_keys.dart';
 Future<Response<Result>> card() async {
   final charge = Charge.card(
     amount: '2000',
-    cardno: '4556052704172643',
-    cvv: '899',
+    cardno: '5399838383838381',
+    cvv: '470',
     email: 'jeremiahogbomo@gmail.com',
-    expirymonth: '08',
-    expiryyear: '21',
+    expirymonth: '10',
+    expiryyear: '22',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
-    meta: [Meta("hello", "world")],
+    meta: [
+      Metadata.named(name: "hello", value: "world"),
+    ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
@@ -23,15 +25,19 @@ Future<Response<Result>> card() async {
 // TODO
 Future<Response<Result>> pin() async {
   final charge = Charge.pin(
-    cardno: '5438898014560229',
-    cvv: '789',
-    expirymonth: '12',
-    expiryyear: '21',
-    amount: '2000',
+    cardno: '5399838383838381',
+    cvv: '470',
+    expirymonth: '10',
+    expiryyear: '22',
+    amount: '12345',
     email: 'jeremiahogbomo@gmail.com',
     firstname: "Jeremiah",
     lastname: "Ogbomo",
-    pin: "3310",
+    txRef: 'LM5GVOUW3TYF',
+    pin: "1234",
+    meta: [
+      Metadata.named(name: "hello", value: "world"),
+    ],
     redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
@@ -42,7 +48,7 @@ Future<Response<Result>> account() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.bankcode;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.account(
     amount: '2000',
@@ -61,7 +67,7 @@ Future<Response<Result>> ussd() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.bankcode;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.ussd(
     amount: '2000',
@@ -78,10 +84,10 @@ Future<Response<Result>> ussd() async {
 }
 
 void main() async {
-  Ravepay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
   await card();
-  await pin();
-  await account();
-  await ussd();
+  // await pin();
+  // await account();
+  // await ussd();
 }
