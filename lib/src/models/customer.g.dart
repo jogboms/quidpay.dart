@@ -17,29 +17,23 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
   @override
   Iterable serialize(Serializers serializers, Customer object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(int)),
-      'fullName',
-      serializers.serialize(object.fullName,
-          specifiedType: const FullType(String)),
-      'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
-      'createdAt',
-      serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String)),
-      'updatedAt',
-      serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(String)),
-      'AccountId',
-      serializers.serialize(object.accountId,
-          specifiedType: const FullType(int)),
-    ];
+    final result = <Object>[];
+    if (object.id != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(int)));
+    }
     if (object.phone != null) {
       result
         ..add('phone')
         ..add(serializers.serialize(object.phone,
+            specifiedType: const FullType(String)));
+    }
+    if (object.fullName != null) {
+      result
+        ..add('fullName')
+        ..add(serializers.serialize(object.fullName,
             specifiedType: const FullType(String)));
     }
     if (object.customertoken != null) {
@@ -48,11 +42,35 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
         ..add(serializers.serialize(object.customertoken,
             specifiedType: const FullType(String)));
     }
+    if (object.email != null) {
+      result
+        ..add('email')
+        ..add(serializers.serialize(object.email,
+            specifiedType: const FullType(String)));
+    }
+    if (object.createdAt != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(object.createdAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.updatedAt != null) {
+      result
+        ..add('updatedAt')
+        ..add(serializers.serialize(object.updatedAt,
+            specifiedType: const FullType(String)));
+    }
     if (object.deletedAt != null) {
       result
         ..add('deletedAt')
         ..add(serializers.serialize(object.deletedAt,
             specifiedType: const FullType(String)));
+    }
+    if (object.accountId != null) {
+      result
+        ..add('AccountId')
+        ..add(serializers.serialize(object.accountId,
+            specifiedType: const FullType(int)));
     }
 
     return result;
@@ -145,26 +163,7 @@ class _$Customer extends Customer {
       this.updatedAt,
       this.deletedAt,
       this.accountId})
-      : super._() {
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Customer', 'id');
-    }
-    if (fullName == null) {
-      throw new BuiltValueNullFieldError('Customer', 'fullName');
-    }
-    if (email == null) {
-      throw new BuiltValueNullFieldError('Customer', 'email');
-    }
-    if (createdAt == null) {
-      throw new BuiltValueNullFieldError('Customer', 'createdAt');
-    }
-    if (updatedAt == null) {
-      throw new BuiltValueNullFieldError('Customer', 'updatedAt');
-    }
-    if (accountId == null) {
-      throw new BuiltValueNullFieldError('Customer', 'accountId');
-    }
-  }
+      : super._();
 
   @override
   Customer rebuild(void Function(CustomerBuilder) updates) =>

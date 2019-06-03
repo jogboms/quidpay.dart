@@ -17,114 +17,155 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
   @override
   Iterable serialize(Serializers serializers, Result object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(int)),
-      'txRef',
-      serializers.serialize(object.txRef,
-          specifiedType: const FullType(String)),
-      'orderRef',
-      serializers.serialize(object.orderRef,
-          specifiedType: const FullType(String)),
-      'flwRef',
-      serializers.serialize(object.flwRef,
-          specifiedType: const FullType(String)),
-      'redirectUrl',
-      serializers.serialize(object.redirectUrl,
-          specifiedType: const FullType(String)),
-      'device_fingerprint',
-      serializers.serialize(object.deviceFingerprint,
-          specifiedType: const FullType(String)),
-      'cycle',
-      serializers.serialize(object.cycle,
-          specifiedType: const FullType(String)),
-      'amount',
-      serializers.serialize(object.amount,
-          specifiedType: const FullType(double)),
-      'charged_amount',
-      serializers.serialize(object.chargedAmount,
-          specifiedType: const FullType(double)),
-      'appfee',
-      serializers.serialize(object.appfee,
-          specifiedType: const FullType(double)),
-      'merchantfee',
-      serializers.serialize(object.merchantfee,
-          specifiedType: const FullType(double)),
-      'merchantbearsfee',
-      serializers.serialize(object.merchantbearsfee,
-          specifiedType: const FullType(double)),
-      'chargeResponseCode',
-      serializers.serialize(object.chargeResponseCode,
-          specifiedType: const FullType(String)),
-      'raveRef',
-      serializers.serialize(object.raveRef,
-          specifiedType: const FullType(String)),
-      'chargeResponseMessage',
-      serializers.serialize(object.chargeResponseMessage,
-          specifiedType: const FullType(String)),
-      'authModelUsed',
-      serializers.serialize(object.authModelUsed,
-          specifiedType: const FullType(String)),
-      'currency',
-      serializers.serialize(object.currency,
-          specifiedType: const FullType(String)),
-      'IP',
-      serializers.serialize(object.iP, specifiedType: const FullType(String)),
-      'narration',
-      serializers.serialize(object.narration,
-          specifiedType: const FullType(String)),
-      'status',
-      serializers.serialize(object.status,
-          specifiedType: const FullType(String)),
-      'modalauditid',
-      serializers.serialize(object.modalauditid,
-          specifiedType: const FullType(String)),
-      'vbvrespmessage',
-      serializers.serialize(object.vbvrespmessage,
-          specifiedType: const FullType(String)),
-      'authurl',
-      serializers.serialize(object.authurl,
-          specifiedType: const FullType(String)),
-      'vbvrespcode',
-      serializers.serialize(object.vbvrespcode,
-          specifiedType: const FullType(String)),
-      'paymentType',
-      serializers.serialize(object.paymentType,
-          specifiedType: const FullType(String)),
-      'paymentId',
-      serializers.serialize(object.paymentId,
-          specifiedType: const FullType(String)),
-      'fraud_status',
-      serializers.serialize(object.fraudStatus,
-          specifiedType: const FullType(String)),
-      'charge_type',
-      serializers.serialize(object.chargeType,
-          specifiedType: const FullType(String)),
-      'is_live',
-      serializers.serialize(object.isLive, specifiedType: const FullType(int)),
-      'createdAt',
-      serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String)),
-      'updatedAt',
-      serializers.serialize(object.updatedAt,
-          specifiedType: const FullType(String)),
-      'customerId',
-      serializers.serialize(object.customerId,
-          specifiedType: const FullType(int)),
-      'AccountId',
-      serializers.serialize(object.accountId,
-          specifiedType: const FullType(int)),
-      'customer',
-      serializers.serialize(object.customer,
-          specifiedType: const FullType(Customer)),
-      'customercandosubsequentnoauth',
-      serializers.serialize(object.customercandosubsequentnoauth,
-          specifiedType: const FullType(bool)),
-    ];
+    final result = <Object>[];
+    if (object.id != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(int)));
+    }
+    if (object.txRef != null) {
+      result
+        ..add('txRef')
+        ..add(serializers.serialize(object.txRef,
+            specifiedType: const FullType(String)));
+    }
+    if (object.orderRef != null) {
+      result
+        ..add('orderRef')
+        ..add(serializers.serialize(object.orderRef,
+            specifiedType: const FullType(String)));
+    }
+    if (object.flwRef != null) {
+      result
+        ..add('flwRef')
+        ..add(serializers.serialize(object.flwRef,
+            specifiedType: const FullType(String)));
+    }
+    if (object.redirectUrl != null) {
+      result
+        ..add('redirectUrl')
+        ..add(serializers.serialize(object.redirectUrl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.deviceFingerprint != null) {
+      result
+        ..add('device_fingerprint')
+        ..add(serializers.serialize(object.deviceFingerprint,
+            specifiedType: const FullType(String)));
+    }
     if (object.settlementToken != null) {
       result
         ..add('settlement_token')
         ..add(serializers.serialize(object.settlementToken,
+            specifiedType: const FullType(String)));
+    }
+    if (object.cycle != null) {
+      result
+        ..add('cycle')
+        ..add(serializers.serialize(object.cycle,
+            specifiedType: const FullType(String)));
+    }
+    if (object.amount != null) {
+      result
+        ..add('amount')
+        ..add(serializers.serialize(object.amount,
+            specifiedType: const FullType(double)));
+    }
+    if (object.chargedAmount != null) {
+      result
+        ..add('charged_amount')
+        ..add(serializers.serialize(object.chargedAmount,
+            specifiedType: const FullType(double)));
+    }
+    if (object.appfee != null) {
+      result
+        ..add('appfee')
+        ..add(serializers.serialize(object.appfee,
+            specifiedType: const FullType(double)));
+    }
+    if (object.merchantfee != null) {
+      result
+        ..add('merchantfee')
+        ..add(serializers.serialize(object.merchantfee,
+            specifiedType: const FullType(double)));
+    }
+    if (object.merchantbearsfee != null) {
+      result
+        ..add('merchantbearsfee')
+        ..add(serializers.serialize(object.merchantbearsfee,
+            specifiedType: const FullType(double)));
+    }
+    if (object.chargeResponseCode != null) {
+      result
+        ..add('chargeResponseCode')
+        ..add(serializers.serialize(object.chargeResponseCode,
+            specifiedType: const FullType(String)));
+    }
+    if (object.raveRef != null) {
+      result
+        ..add('raveRef')
+        ..add(serializers.serialize(object.raveRef,
+            specifiedType: const FullType(String)));
+    }
+    if (object.chargeResponseMessage != null) {
+      result
+        ..add('chargeResponseMessage')
+        ..add(serializers.serialize(object.chargeResponseMessage,
+            specifiedType: const FullType(String)));
+    }
+    if (object.authModelUsed != null) {
+      result
+        ..add('authModelUsed')
+        ..add(serializers.serialize(object.authModelUsed,
+            specifiedType: const FullType(String)));
+    }
+    if (object.currency != null) {
+      result
+        ..add('currency')
+        ..add(serializers.serialize(object.currency,
+            specifiedType: const FullType(String)));
+    }
+    if (object.iP != null) {
+      result
+        ..add('IP')
+        ..add(serializers.serialize(object.iP,
+            specifiedType: const FullType(String)));
+    }
+    if (object.narration != null) {
+      result
+        ..add('narration')
+        ..add(serializers.serialize(object.narration,
+            specifiedType: const FullType(String)));
+    }
+    if (object.status != null) {
+      result
+        ..add('status')
+        ..add(serializers.serialize(object.status,
+            specifiedType: const FullType(String)));
+    }
+    if (object.modalauditid != null) {
+      result
+        ..add('modalauditid')
+        ..add(serializers.serialize(object.modalauditid,
+            specifiedType: const FullType(String)));
+    }
+    if (object.vbvrespmessage != null) {
+      result
+        ..add('vbvrespmessage')
+        ..add(serializers.serialize(object.vbvrespmessage,
+            specifiedType: const FullType(String)));
+    }
+    if (object.authurl != null) {
+      result
+        ..add('authurl')
+        ..add(serializers.serialize(object.authurl,
+            specifiedType: const FullType(String)));
+    }
+    if (object.vbvrespcode != null) {
+      result
+        ..add('vbvrespcode')
+        ..add(serializers.serialize(object.vbvrespcode,
             specifiedType: const FullType(String)));
     }
     if (object.acctvalrespmsg != null) {
@@ -139,6 +180,12 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
         ..add(serializers.serialize(object.acctvalrespcode,
             specifiedType: const FullType(String)));
     }
+    if (object.paymentType != null) {
+      result
+        ..add('paymentType')
+        ..add(serializers.serialize(object.paymentType,
+            specifiedType: const FullType(String)));
+    }
     if (object.paymentPlan != null) {
       result
         ..add('paymentPlan')
@@ -151,11 +198,77 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
         ..add(serializers.serialize(object.paymentPage,
             specifiedType: const FullType(String)));
     }
+    if (object.paymentId != null) {
+      result
+        ..add('paymentId')
+        ..add(serializers.serialize(object.paymentId,
+            specifiedType: const FullType(String)));
+    }
+    if (object.fraudStatus != null) {
+      result
+        ..add('fraud_status')
+        ..add(serializers.serialize(object.fraudStatus,
+            specifiedType: const FullType(String)));
+    }
+    if (object.chargeType != null) {
+      result
+        ..add('charge_type')
+        ..add(serializers.serialize(object.chargeType,
+            specifiedType: const FullType(String)));
+    }
+    if (object.isLive != null) {
+      result
+        ..add('is_live')
+        ..add(serializers.serialize(object.isLive,
+            specifiedType: const FullType(int)));
+    }
+    if (object.suggestedAuth != null) {
+      result
+        ..add('suggested_auth')
+        ..add(serializers.serialize(object.suggestedAuth,
+            specifiedType: const FullType(String)));
+    }
+    if (object.createdAt != null) {
+      result
+        ..add('createdAt')
+        ..add(serializers.serialize(object.createdAt,
+            specifiedType: const FullType(String)));
+    }
+    if (object.updatedAt != null) {
+      result
+        ..add('updatedAt')
+        ..add(serializers.serialize(object.updatedAt,
+            specifiedType: const FullType(String)));
+    }
     if (object.deletedAt != null) {
       result
         ..add('deletedAt')
         ..add(serializers.serialize(object.deletedAt,
             specifiedType: const FullType(String)));
+    }
+    if (object.customerId != null) {
+      result
+        ..add('customerId')
+        ..add(serializers.serialize(object.customerId,
+            specifiedType: const FullType(int)));
+    }
+    if (object.accountId != null) {
+      result
+        ..add('AccountId')
+        ..add(serializers.serialize(object.accountId,
+            specifiedType: const FullType(int)));
+    }
+    if (object.customer != null) {
+      result
+        ..add('customer')
+        ..add(serializers.serialize(object.customer,
+            specifiedType: const FullType(Customer)));
+    }
+    if (object.customercandosubsequentnoauth != null) {
+      result
+        ..add('customercandosubsequentnoauth')
+        ..add(serializers.serialize(object.customercandosubsequentnoauth,
+            specifiedType: const FullType(bool)));
     }
 
     return result;
@@ -308,6 +421,10 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
           result.isLive = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'suggested_auth':
+          result.suggestedAuth = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'createdAt':
           result.createdAt = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -413,6 +530,8 @@ class _$Result extends Result {
   @override
   final int isLive;
   @override
+  final String suggestedAuth;
+  @override
   final String createdAt;
   @override
   final String updatedAt;
@@ -471,6 +590,7 @@ class _$Result extends Result {
       this.fraudStatus,
       this.chargeType,
       this.isLive,
+      this.suggestedAuth,
       this.createdAt,
       this.updatedAt,
       this.deletedAt,
@@ -478,114 +598,7 @@ class _$Result extends Result {
       this.accountId,
       this.customer,
       this.customercandosubsequentnoauth})
-      : super._() {
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Result', 'id');
-    }
-    if (txRef == null) {
-      throw new BuiltValueNullFieldError('Result', 'txRef');
-    }
-    if (orderRef == null) {
-      throw new BuiltValueNullFieldError('Result', 'orderRef');
-    }
-    if (flwRef == null) {
-      throw new BuiltValueNullFieldError('Result', 'flwRef');
-    }
-    if (redirectUrl == null) {
-      throw new BuiltValueNullFieldError('Result', 'redirectUrl');
-    }
-    if (deviceFingerprint == null) {
-      throw new BuiltValueNullFieldError('Result', 'deviceFingerprint');
-    }
-    if (cycle == null) {
-      throw new BuiltValueNullFieldError('Result', 'cycle');
-    }
-    if (amount == null) {
-      throw new BuiltValueNullFieldError('Result', 'amount');
-    }
-    if (chargedAmount == null) {
-      throw new BuiltValueNullFieldError('Result', 'chargedAmount');
-    }
-    if (appfee == null) {
-      throw new BuiltValueNullFieldError('Result', 'appfee');
-    }
-    if (merchantfee == null) {
-      throw new BuiltValueNullFieldError('Result', 'merchantfee');
-    }
-    if (merchantbearsfee == null) {
-      throw new BuiltValueNullFieldError('Result', 'merchantbearsfee');
-    }
-    if (chargeResponseCode == null) {
-      throw new BuiltValueNullFieldError('Result', 'chargeResponseCode');
-    }
-    if (raveRef == null) {
-      throw new BuiltValueNullFieldError('Result', 'raveRef');
-    }
-    if (chargeResponseMessage == null) {
-      throw new BuiltValueNullFieldError('Result', 'chargeResponseMessage');
-    }
-    if (authModelUsed == null) {
-      throw new BuiltValueNullFieldError('Result', 'authModelUsed');
-    }
-    if (currency == null) {
-      throw new BuiltValueNullFieldError('Result', 'currency');
-    }
-    if (iP == null) {
-      throw new BuiltValueNullFieldError('Result', 'iP');
-    }
-    if (narration == null) {
-      throw new BuiltValueNullFieldError('Result', 'narration');
-    }
-    if (status == null) {
-      throw new BuiltValueNullFieldError('Result', 'status');
-    }
-    if (modalauditid == null) {
-      throw new BuiltValueNullFieldError('Result', 'modalauditid');
-    }
-    if (vbvrespmessage == null) {
-      throw new BuiltValueNullFieldError('Result', 'vbvrespmessage');
-    }
-    if (authurl == null) {
-      throw new BuiltValueNullFieldError('Result', 'authurl');
-    }
-    if (vbvrespcode == null) {
-      throw new BuiltValueNullFieldError('Result', 'vbvrespcode');
-    }
-    if (paymentType == null) {
-      throw new BuiltValueNullFieldError('Result', 'paymentType');
-    }
-    if (paymentId == null) {
-      throw new BuiltValueNullFieldError('Result', 'paymentId');
-    }
-    if (fraudStatus == null) {
-      throw new BuiltValueNullFieldError('Result', 'fraudStatus');
-    }
-    if (chargeType == null) {
-      throw new BuiltValueNullFieldError('Result', 'chargeType');
-    }
-    if (isLive == null) {
-      throw new BuiltValueNullFieldError('Result', 'isLive');
-    }
-    if (createdAt == null) {
-      throw new BuiltValueNullFieldError('Result', 'createdAt');
-    }
-    if (updatedAt == null) {
-      throw new BuiltValueNullFieldError('Result', 'updatedAt');
-    }
-    if (customerId == null) {
-      throw new BuiltValueNullFieldError('Result', 'customerId');
-    }
-    if (accountId == null) {
-      throw new BuiltValueNullFieldError('Result', 'accountId');
-    }
-    if (customer == null) {
-      throw new BuiltValueNullFieldError('Result', 'customer');
-    }
-    if (customercandosubsequentnoauth == null) {
-      throw new BuiltValueNullFieldError(
-          'Result', 'customercandosubsequentnoauth');
-    }
-  }
+      : super._();
 
   @override
   bool get requiresValidation =>
@@ -663,6 +676,7 @@ class _$Result extends Result {
           ..add('fraudStatus', fraudStatus)
           ..add('chargeType', chargeType)
           ..add('isLive', isLive)
+          ..add('suggestedAuth', suggestedAuth)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt)
           ..add('deletedAt', deletedAt)
@@ -823,6 +837,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   int get isLive => _$this._isLive;
   set isLive(int isLive) => _$this._isLive = isLive;
 
+  String _suggestedAuth;
+  String get suggestedAuth => _$this._suggestedAuth;
+  set suggestedAuth(String suggestedAuth) =>
+      _$this._suggestedAuth = suggestedAuth;
+
   String _createdAt;
   String get createdAt => _$this._createdAt;
   set createdAt(String createdAt) => _$this._createdAt = createdAt;
@@ -891,6 +910,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
       _fraudStatus = _$v.fraudStatus;
       _chargeType = _$v.chargeType;
       _isLive = _$v.isLive;
+      _suggestedAuth = _$v.suggestedAuth;
       _createdAt = _$v.createdAt;
       _updatedAt = _$v.updatedAt;
       _deletedAt = _$v.deletedAt;
@@ -956,18 +976,19 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
               fraudStatus: fraudStatus,
               chargeType: chargeType,
               isLive: isLive,
+              suggestedAuth: suggestedAuth,
               createdAt: createdAt,
               updatedAt: updatedAt,
               deletedAt: deletedAt,
               customerId: customerId,
               accountId: accountId,
-              customer: customer.build(),
+              customer: _customer?.build(),
               customercandosubsequentnoauth: customercandosubsequentnoauth);
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'customer';
-        customer.build();
+        _customer?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Result', _$failedField, e.toString());
