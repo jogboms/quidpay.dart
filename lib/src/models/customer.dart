@@ -14,6 +14,7 @@ abstract class Customer
 
   factory Customer([updates(CustomerBuilder b)]) = _$Customer;
 
+  @nullable
   int get id;
 
   @nullable
