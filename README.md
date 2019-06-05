@@ -14,4 +14,3 @@ dependencies:
 ```dart
 import 'package:quidpay/quidpay.dart';
 ```
-
