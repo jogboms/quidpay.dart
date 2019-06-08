@@ -21,6 +21,7 @@ abstract class Customer
   @BuiltValueField(compare: false)
   String get phone;
 
+  @nullable
   @BuiltValueField(compare: false)
   String get fullName;
 
@@ -28,12 +29,15 @@ abstract class Customer
   @BuiltValueField(compare: false)
   String get customertoken;
 
+  @nullable
   @BuiltValueField(compare: false)
   String get email;
 
+  @nullable
   @BuiltValueField(compare: false)
   String get createdAt;
 
+  @nullable
   @BuiltValueField(compare: false)
   String get updatedAt;
 
@@ -41,6 +45,7 @@ abstract class Customer
   @BuiltValueField(compare: false)
   String get deletedAt;
 
+  @nullable
   @BuiltValueField(wireName: 'AccountId', compare: false)
   int get accountId;
 
