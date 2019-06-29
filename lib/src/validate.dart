@@ -1,7 +1,10 @@
 import 'package:meta/meta.dart';
+import 'package:quidpay/src/constants/auth.dart';
+import 'package:quidpay/src/constants/strings.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/exceptions.dart';
 import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
-import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
@@ -11,50 +14,74 @@ class Validate {
 
   final HttpWrapper _http;
 
-  Future<Response<ValidateResult>> card({
+  Future<Response<ValidateResult>> charge({
+    @required String authModelUsed,
+    @required String authUrl,
     @required String flwRef,
     @required String otp,
   }) async {
     assert(flwRef != null);
+    assert(authModelUsed != null);
 
-    var payload = <String, dynamic>{
+    final String logTag = "$runtimeType.charge()";
+
+    if (authUrl != null) {
+      Log().debug(logTag, Strings.authUrlProvidedValidationMessage + " " + authUrl);
+      throw RedirectException(authUrl, Strings.authUrlProvidedValidationMessage);
+    }
+
+    if (authModelUsed == null) {
+      Log().debug(logTag, 'No authModel provided');
+      throw Exception('No authModel provided');
+    }
+
+    String url;
+    Map<String, String> payload = <String, String>{
       'PBFPubKey': Quidpay().publicKey,
-      'transaction_reference': flwRef,
-      'otp': otp,
+      'otp': otp
     };
 
-    Log().debug("$runtimeType.card()", payload);
+    switch (authModelUsed.toLowerCase()) {
+      case AuthType.PIN:
+        Log().debug(logTag, 'Using OTP for ${AuthType.PIN}.');
+
+        url = Endpoints.validateCardCharge;
+        payload["transaction_reference"] = flwRef;
+        break;
+
+      case AuthType.AUTH:
+        Log().debug(logTag, 'Using OTP for ${AuthType.AUTH}.');
+
+        url = Endpoints.validateAccountCharge;
+        payload["transactionreference"] = flwRef;
+        break;
+
+      case AuthType.VBVSECURECODE:
+        Log().debug(logTag, 'Using ${AuthType.VBVSECURECODE}.');
+
+        // Validation for foreign cards
+        Log().error(logTag, Strings.authUrlValidationMessage);
+        throw Exception(Strings.authUrlValidationMessage);
+        break;
+
+      default:
+        Log().error(logTag, Strings.invalidValidationMessage);
+        throw Exception(Strings.invalidValidationMessage);
+    }
+
+    if (url == null) {
+      Log().debug(logTag, Strings.cannotCompleteValidationMessage);
+      throw Exception(Strings.cannotCompleteValidationMessage);
+    }
+
+    Log().debug(logTag, payload);
 
     final _response = Response<ValidateResult>(
-      await _http.post(Endpoints.validateCardCharge, payload),
+      await _http.post(url, payload),
       onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
 
-    Log().debug("$runtimeType.card() -> Response", _response);
-
-    return _response;
-  }
-
-  Future<Response<ValidateResult>> account({
-    @required String flwRef,
-    @required String otp,
-  }) async {
-    assert(flwRef != null);
-
-    var payload = <String, dynamic>{
-      'PBFPubKey': Quidpay().publicKey,
-      'transactionreference': flwRef,
-      'otp': otp,
-    };
-
-    Log().debug("$runtimeType.account()", payload);
-
-    final _response = Response<ValidateResult>(
-      await _http.post(Endpoints.validateAccountCharge, payload),
-      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
-    );
-
-    Log().debug("$runtimeType.account() -> Response", _response);
+    Log().debug("$logTag -> Response", _response);
 
     return _response;
   }
