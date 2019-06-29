@@ -6,18 +6,22 @@ import 'charge.dart' as charge;
 
 Future<Response<ValidateResult>> card() async {
   final response = await charge.pin();
-  final resp = await Validate().card(
+  final resp = await Validate().charge(
+    authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
+    authUrl: response.data.authurl,
   );
   return resp;
 }
 
 Future<Response<ValidateResult>> account() async {
   final response = await charge.account();
-  final resp = await Validate().account(
+  final resp = await Validate().charge(
+    authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
+    authUrl: response.data.authurl,
   );
   return resp;
 }
@@ -25,6 +29,10 @@ Future<Response<ValidateResult>> account() async {
 void main() async {
   Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
 
-  await card();
-  // await account();
+  try {
+    await card();
+    // await account();
+  } catch(e) {
+    print(e);
+  }
 }
