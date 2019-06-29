@@ -191,6 +191,16 @@ abstract class Result
           suggestedAuth.toLowerCase() == AuthType.PIN);
 
   @memoized
+  bool get isInternational =>
+      chargeResponseCode == null &&
+      suggestedAuth != null &&
+      (suggestedAuth.toLowerCase() == AuthType.NOAUTH_INTERNATIONAL ||
+          suggestedAuth.toLowerCase() == AuthType.AVS_VBVSECURECODE);
+
+  @memoized
+  bool get isSuccessful => status.toUpperCase() == "SUCCESSFUL";
+
+  @memoized
   String get otpMessage => authurl;
 
   @memoized

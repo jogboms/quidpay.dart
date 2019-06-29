@@ -1,49 +1,13 @@
 import 'dart:convert' show json;
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'package:quidpay/src/constants/strings.dart';
 import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/exceptions.dart';
 import 'package:quidpay/src/utils/log.dart';
 
 typedef T TransformFunction<T>(dynamic data, String status);
-
-class ForbiddenException extends ResponseException {
-  ForbiddenException(String status, [String message])
-      : super(HttpStatus.forbidden, status, message);
-}
-
-class TimeOutException extends ResponseException {
-  TimeOutException()
-      : super(
-            HttpStatus.requestTimeout, 'UNKNOWN', Strings.timeoutErrorMessage);
-}
-
-class BadRequestException extends ResponseException {
-  BadRequestException(String status, [String message])
-      : super(HttpStatus.badRequest, status, message);
-}
-
-class NotAuthorisedException extends ResponseException {
-  NotAuthorisedException(String status, [String message])
-      : super(HttpStatus.unauthorized, status, message);
-}
-
-class ResponseException implements Exception {
-  ResponseException(
-    this.statusCode,
-    this.status, [
-    this.message,
-  ]);
-
-  final int statusCode;
-  final String status;
-  final String message;
-
-  @override
-  String toString() => '$runtimeType($statusCode, $status, $message)';
-}
 
 class Response<T> {
   Response(
