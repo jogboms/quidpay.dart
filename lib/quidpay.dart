@@ -13,6 +13,7 @@ export './src/models/charge_token.dart';
 export './src/models/charge_param.dart';
 export './src/models/customer.dart';
 export './src/models/metadata.dart';
+export './src/utils/exceptions.dart';
 export './src/utils/response.dart';
 export './src/models/result.dart';
 
