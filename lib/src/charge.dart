@@ -3,15 +3,16 @@ import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
 import 'package:quidpay/src/constants/payment.dart';
-import 'package:quidpay/src/utils/encryption.dart';
 import 'package:quidpay/src/models/metadata.dart';
-import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/result.dart';
 import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/encryption.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
+import 'package:quidpay/src/utils/local_server.dart';
 import 'package:quidpay/src/utils/log.dart';
 import 'package:quidpay/src/utils/payload.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Charge {
   Charge({
@@ -77,7 +78,7 @@ class Charge {
         ..add(Keys.Meta, meta)
         ..add(Keys.Pin, pin)
         ..add(Keys.Bvn, bvn)
-        ..add(Keys.RedirectUrl, redirectUrl)
+        ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
         ..add(Keys.ChargeType, chargeType)
         ..add(Keys.DeviceFingerprint, deviceFingerprint)
         ..add(Keys.RecurringStop, recurringStop)
@@ -132,7 +133,7 @@ class Charge {
         ..add(Keys.Lastname, lastname)
         ..add(Keys.Meta, meta)
         ..add(Keys.IP, iP)
-        ..add(Keys.RedirectUrl, redirectUrl)
+        ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
         ..add(Keys.ChargeType, chargeType)
         ..add(Keys.SuggestedAuth, AuthType.PIN)
         ..add(Keys.IncludeIntegrityHash, includeIntegrityHash),
@@ -194,7 +195,7 @@ class Charge {
         ..add(Keys.RecurringStop, recurringStop)
         ..add(Keys.Accountbank, accountbank)
         ..add(Keys.Accountnumber, accountnumber)
-        ..add(Keys.RedirectUrl, redirectUrl)
+        ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
         ..add(Keys.SuggestedAuth, AuthType.PIN)
         ..add(Keys.Payment_Type, paymentType ?? PaymentType.ACCOUNT)
         ..add(Keys.IsInternetBanking, isInternetBanking)
@@ -261,7 +262,7 @@ class Charge {
         ..add(Keys.Meta, meta)
         ..add(Keys.Pin, pin)
         ..add(Keys.Bvn, bvn)
-        ..add(Keys.RedirectUrl, redirectUrl)
+        ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
         ..add(Keys.ChargeType, chargeType ?? "preauth")
         ..add(Keys.DeviceFingerprint, deviceFingerprint)
         ..add(Keys.RecurringStop, recurringStop)
@@ -312,7 +313,7 @@ class Charge {
         ..add(Keys.Accountbank, accountbank)
         ..add(Keys.Accountnumber, accountnumber)
         ..add(Keys.IsUssd, AuthType.USSD)
-        ..add(Keys.RedirectUrl, redirectUrl)
+        ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
         ..add(Keys.OrderRef, DateTime.now().millisecondsSinceEpoch)
         ..add(Keys.Payment_Type, PaymentType.ACCOUNT)
         ..add(Keys.IncludeIntegrityHash, includeIntegrityHash),
