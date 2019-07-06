@@ -10,7 +10,7 @@ Future<Response<ValidateResult>> card() async {
     authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
-    authUrl: response.data.authurl,
+    authUrl: response.data.authUrl,
   );
   return resp;
 }
@@ -21,7 +21,7 @@ Future<Response<ValidateResult>> account() async {
     authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
-    authUrl: response.data.authurl,
+    authUrl: response.data.authUrl,
   );
   return resp;
 }

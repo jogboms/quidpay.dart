@@ -16,7 +16,6 @@ Future<Response<Result>> card() async {
     meta: [
       Metadata.named(name: "hello", value: "world"),
     ],
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
   return await charge.charge();
@@ -38,7 +37,6 @@ Future<Response<Result>> pin() async {
     meta: [
       Metadata.named(name: "hello", value: "world"),
     ],
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
   return await charge.charge();
@@ -57,7 +55,6 @@ Future<Response<Result>> account() async {
     lastname: "Ogbomo",
     accountbank: accessBankCode,
     accountnumber: '0690000031',
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
   return await charge.charge();
@@ -77,7 +74,6 @@ Future<Response<Result>> ussd() async {
     accountbank: accessBankCode,
     accountnumber: '0690000031',
     phonenumber: '081245554343',
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
   );
 
   return await charge.charge();
