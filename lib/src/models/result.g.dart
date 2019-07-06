@@ -546,11 +546,11 @@ class _$Result extends Result {
   @override
   final bool customercandosubsequentnoauth;
   bool __requiresValidation;
-  String __otpMessage;
+  bool __isInternational;
+  bool __isSuccessful;
   bool __hasValidReferenceAndTrans;
   bool __hasValidUrl;
-  bool __hasValidOtpMessage;
-  bool __hasValidAuth;
+  String __authUrl;
 
   factory _$Result([void Function(ResultBuilder) updates]) =>
       (new ResultBuilder()..update(updates)).build();
@@ -605,7 +605,10 @@ class _$Result extends Result {
       __requiresValidation ??= super.requiresValidation;
 
   @override
-  String get otpMessage => __otpMessage ??= super.otpMessage;
+  bool get isInternational => __isInternational ??= super.isInternational;
+
+  @override
+  bool get isSuccessful => __isSuccessful ??= super.isSuccessful;
 
   @override
   bool get hasValidReferenceAndTrans =>
@@ -615,11 +618,7 @@ class _$Result extends Result {
   bool get hasValidUrl => __hasValidUrl ??= super.hasValidUrl;
 
   @override
-  bool get hasValidOtpMessage =>
-      __hasValidOtpMessage ??= super.hasValidOtpMessage;
-
-  @override
-  bool get hasValidAuth => __hasValidAuth ??= super.hasValidAuth;
+  String get authUrl => __authUrl ??= super.authUrl;
 
   @override
   Result rebuild(void Function(ResultBuilder) updates) =>

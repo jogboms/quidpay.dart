@@ -107,6 +107,9 @@ abstract class Result
   @BuiltValueField(compare: false)
   String get vbvrespmessage;
 
+  ///
+  /// Make sure to use `authUrl` instead of this
+  @deprecated
   @nullable
   @BuiltValueField(compare: false)
   String get authurl;
@@ -201,25 +204,19 @@ abstract class Result
   bool get isSuccessful => status.toUpperCase() == "SUCCESSFUL";
 
   @memoized
-  String get otpMessage => authurl;
-
-  @memoized
   bool get hasValidReferenceAndTrans => (txRef != null) && (id != null);
 
   @memoized
   bool get hasValidUrl {
-    if (otpMessage == null || otpMessage.isEmpty) {
+    if (authurl == null || authurl.isEmpty) {
       return false;
     }
 
-    return RegExp(r'^https?://', caseSensitive: false).hasMatch(otpMessage);
+    return RegExp(r'^https?://', caseSensitive: false).hasMatch(authurl);
   }
 
   @memoized
-  bool get hasValidOtpMessage => otpMessage != null;
-
-  @memoized
-  bool get hasValidAuth => authurl != null;
+  String get authUrl => hasValidUrl ? authurl : null;
 
   @override
   Map<String, dynamic> toMap() =>
