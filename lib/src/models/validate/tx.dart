@@ -83,6 +83,7 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   @BuiltValueField(compare: false)
   String get vbvrespmessage;
 
+  @nullable
   @BuiltValueField(compare: false)
   String get authurl;
 
@@ -130,15 +131,18 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   @BuiltValueField(compare: false)
   String get deletedAt;
 
+  @nullable
   @BuiltValueField(compare: false)
   int get customerId;
 
   @BuiltValueField(wireName: 'AccountId', compare: false)
   int get accountId;
 
+  @nullable
   @BuiltValueField(compare: false)
   Customer get customer;
 
+  @nullable
   @BuiltValueField(compare: false)
   ChargeToken get chargeToken;
 

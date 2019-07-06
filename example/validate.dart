@@ -1,7 +1,7 @@
 import 'package:quidpay/quidpay.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
 
-import '_keys.dart';
+import '_bootstrap.dart';
 import 'charge.dart' as charge;
 
 Future<Response<ValidateResult>> card() async {
@@ -10,7 +10,7 @@ Future<Response<ValidateResult>> card() async {
     authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
-    authUrl: response.data.authUrl,
+    authUrl: response.data.authurl,
   );
   return resp;
 }
@@ -21,18 +21,18 @@ Future<Response<ValidateResult>> account() async {
     authModelUsed: response.data.authModelUsed,
     otp: '12345',
     flwRef: response.data.flwRef,
-    authUrl: response.data.authUrl,
+    authUrl: response.data.authurl,
   );
   return resp;
 }
 
 void main() async {
-  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  init();
 
   try {
     await card();
     // await account();
-  } catch(e) {
+  } catch (e) {
     print(e);
   }
 }

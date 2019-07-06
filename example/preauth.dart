@@ -1,6 +1,6 @@
 import 'package:quidpay/quidpay.dart';
 
-import '_keys.dart';
+import '_bootstrap.dart';
 
 void preauth() async {
   await PreAuth().preauth(
@@ -52,7 +52,7 @@ void refundCard() async {
 }
 
 void main() async {
-  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  init();
 
   // preauth();
   voidCard();

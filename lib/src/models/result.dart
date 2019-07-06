@@ -107,12 +107,9 @@ abstract class Result
   @BuiltValueField(compare: false)
   String get vbvrespmessage;
 
-  ///
-  /// Make sure to use `authUrl` instead of this
-  @deprecated
   @nullable
-  @BuiltValueField(compare: false)
-  String get authurl;
+  @BuiltValueField(wireName: 'authurl', compare: false)
+  String get invalidAuthUrl;
 
   @nullable
   @BuiltValueField(compare: false)
@@ -208,15 +205,15 @@ abstract class Result
 
   @memoized
   bool get hasValidUrl {
-    if (authurl == null || authurl.isEmpty) {
+    if (invalidAuthUrl == null || invalidAuthUrl.isEmpty) {
       return false;
     }
 
-    return RegExp(r'^https?://', caseSensitive: false).hasMatch(authurl);
+    return RegExp(r'^https?://', caseSensitive: false).hasMatch(invalidAuthUrl);
   }
 
   @memoized
-  String get authUrl => hasValidUrl ? authurl : null;
+  String get authurl => hasValidUrl ? invalidAuthUrl : null;
 
   @override
   Map<String, dynamic> toMap() =>

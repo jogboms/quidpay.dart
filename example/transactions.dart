@@ -1,6 +1,6 @@
 import 'package:quidpay/quidpay.dart';
 
-import '_keys.dart';
+import '_bootstrap.dart';
 import 'validate.dart' as validate;
 
 Future<Response<VerifyResult>> verify() async {
@@ -24,7 +24,7 @@ Future<Response<VerifyResult>> requery() async {
 }
 
 void main() async {
-  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  init();
 
   try {
     await verify();

@@ -1,6 +1,6 @@
 import 'package:quidpay/quidpay.dart';
 
-import '_keys.dart';
+import '_bootstrap.dart';
 
 // TODO
 Future<Response<Result>> card() async {
@@ -80,7 +80,7 @@ Future<Response<Result>> ussd() async {
 }
 
 void main() async {
-  Quidpay.init(production: false, publicKey: PUBK, secretKey: SECK);
+  init();
 
   await card();
   // await pin();

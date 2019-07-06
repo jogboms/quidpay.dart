@@ -1,13 +1,13 @@
 import 'package:meta/meta.dart';
 import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/strings.dart';
-import 'package:quidpay/src/quidpay.dart';
-import 'package:quidpay/src/utils/exceptions.dart';
-import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
+import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
+import 'package:quidpay/src/utils/exceptions.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Validate {
   Validate() : _http = HttpWrapper();
@@ -26,8 +26,10 @@ class Validate {
     final String logTag = "$runtimeType.charge()";
 
     if (authUrl != null) {
-      Log().debug(logTag, Strings.authUrlProvidedValidationMessage + " " + authUrl);
-      throw RedirectException(authUrl, Strings.authUrlProvidedValidationMessage);
+      Log().debug(
+          logTag, Strings.authUrlProvidedValidationMessage + " " + authUrl);
+      throw RedirectException(
+          authUrl, Strings.authUrlProvidedValidationMessage);
     }
 
     if (authModelUsed == null) {
