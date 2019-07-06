@@ -55,7 +55,6 @@ class Charge {
     assert(email != null);
     assert(firstname != null);
     assert(lastname != null);
-    assert(redirectUrl != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -115,7 +114,6 @@ class Charge {
     assert(cvv != null);
     assert(expiryyear != null);
     assert(expirymonth != null);
-    assert(redirectUrl != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -172,7 +170,6 @@ class Charge {
     assert(email != null);
     assert(firstname != null);
     assert(lastname != null);
-    assert(redirectUrl != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
@@ -239,7 +236,6 @@ class Charge {
     assert(firstname != null);
     assert(lastname != null);
     assert(pin != null);
-    assert(redirectUrl != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -295,7 +291,6 @@ class Charge {
     assert(phonenumber != null);
     assert(firstname != null);
     assert(lastname != null);
-    assert(redirectUrl != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
