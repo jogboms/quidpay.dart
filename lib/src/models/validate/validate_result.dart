@@ -25,6 +25,8 @@ abstract class ValidateResult
   @BuiltValueField(wireName: 'airtime_flag', compare: false)
   String get airtimeFlag;
 
+  bool get isSuccessful => tx.status == "successful";
+
   @override
   Map<String, dynamic> toMap() =>
       serializers.serializeWith(ValidateResult.serializer, this);

@@ -9,7 +9,7 @@ Future<Response<VerifyResult>> verify() async {
     flwRef: response.data.tx.flwRef,
     txRef: response.data.tx.txRef,
   );
-  print(resp);
+  print("isSuccessful:--> " + resp.data.isSuccessful.toString());
   return resp;
 }
 

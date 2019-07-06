@@ -12,6 +12,7 @@ Future<Response<ValidateResult>> card() async {
     flwRef: response.data.flwRef,
     authUrl: response.data.authurl,
   );
+  print("isSuccessful:--> " + resp.data.isSuccessful.toString());
   return resp;
 }
 
