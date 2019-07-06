@@ -79,13 +79,16 @@ class _$DataSerializer implements StructuredSerializer<Data> {
       'responsecode',
       serializers.serialize(object.responsecode,
           specifiedType: const FullType(String)),
-      'responsetoken',
-      serializers.serialize(object.responsetoken,
-          specifiedType: const FullType(String)),
       'responsemessage',
       serializers.serialize(object.responsemessage,
           specifiedType: const FullType(String)),
     ];
+    if (object.responsetoken != null) {
+      result
+        ..add('responsetoken')
+        ..add(serializers.serialize(object.responsetoken,
+            specifiedType: const FullType(String)));
+    }
 
     return result;
   }
@@ -101,12 +104,12 @@ class _$DataSerializer implements StructuredSerializer<Data> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
-        case 'responsecode':
-          result.responsecode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'responsetoken':
           result.responsetoken = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'responsecode':
+          result.responsecode = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'responsemessage':
@@ -237,22 +240,19 @@ class ValidateResultBuilder
 
 class _$Data extends Data {
   @override
-  final String responsecode;
-  @override
   final String responsetoken;
+  @override
+  final String responsecode;
   @override
   final String responsemessage;
 
   factory _$Data([void Function(DataBuilder) updates]) =>
       (new DataBuilder()..update(updates)).build();
 
-  _$Data._({this.responsecode, this.responsetoken, this.responsemessage})
+  _$Data._({this.responsetoken, this.responsecode, this.responsemessage})
       : super._() {
     if (responsecode == null) {
       throw new BuiltValueNullFieldError('Data', 'responsecode');
-    }
-    if (responsetoken == null) {
-      throw new BuiltValueNullFieldError('Data', 'responsetoken');
     }
     if (responsemessage == null) {
       throw new BuiltValueNullFieldError('Data', 'responsemessage');
@@ -270,22 +270,22 @@ class _$Data extends Data {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Data &&
-        responsecode == other.responsecode &&
         responsetoken == other.responsetoken &&
+        responsecode == other.responsecode &&
         responsemessage == other.responsemessage;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, responsecode.hashCode), responsetoken.hashCode),
+    return $jf($jc($jc($jc(0, responsetoken.hashCode), responsecode.hashCode),
         responsemessage.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Data')
-          ..add('responsecode', responsecode)
           ..add('responsetoken', responsetoken)
+          ..add('responsecode', responsecode)
           ..add('responsemessage', responsemessage))
         .toString();
   }
@@ -294,14 +294,14 @@ class _$Data extends Data {
 class DataBuilder implements Builder<Data, DataBuilder> {
   _$Data _$v;
 
-  String _responsecode;
-  String get responsecode => _$this._responsecode;
-  set responsecode(String responsecode) => _$this._responsecode = responsecode;
-
   String _responsetoken;
   String get responsetoken => _$this._responsetoken;
   set responsetoken(String responsetoken) =>
       _$this._responsetoken = responsetoken;
+
+  String _responsecode;
+  String get responsecode => _$this._responsecode;
+  set responsecode(String responsecode) => _$this._responsecode = responsecode;
 
   String _responsemessage;
   String get responsemessage => _$this._responsemessage;
@@ -312,8 +312,8 @@ class DataBuilder implements Builder<Data, DataBuilder> {
 
   DataBuilder get _$this {
     if (_$v != null) {
-      _responsecode = _$v.responsecode;
       _responsetoken = _$v.responsetoken;
+      _responsecode = _$v.responsecode;
       _responsemessage = _$v.responsemessage;
       _$v = null;
     }
@@ -337,8 +337,8 @@ class DataBuilder implements Builder<Data, DataBuilder> {
   _$Data build() {
     final _$result = _$v ??
         new _$Data._(
-            responsecode: responsecode,
             responsetoken: responsetoken,
+            responsecode: responsecode,
             responsemessage: responsemessage);
     replace(_$result);
     return _$result;

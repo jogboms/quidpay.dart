@@ -3,8 +3,8 @@ library validate_result;
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:quidpay/src/models/main.dart';
-import 'package:quidpay/src/models/validate/tx.dart';
 import 'package:quidpay/src/models/serializers.dart';
+import 'package:quidpay/src/models/validate/tx.dart';
 
 part 'validate_result.g.dart';
 
@@ -41,8 +41,9 @@ abstract class Data with ModelInterface implements Built<Data, DataBuilder> {
 
   factory Data([updates(DataBuilder b)]) = _$Data;
 
-  String get responsecode;
+  @nullable
   String get responsetoken;
+  String get responsecode;
   String get responsemessage;
 
   @override

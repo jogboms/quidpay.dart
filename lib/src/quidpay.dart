@@ -24,6 +24,7 @@ class Quidpay {
     @required String publicKey,
     @required String secretKey,
     @required bool production,
+    bool useLogger = false,
     bool restart = false,
   }) {
     assert(publicKey != null);
@@ -37,7 +38,7 @@ class Quidpay {
       production: production,
     );
     // Initialize logger
-    Log.init(production);
+    Log.init(!useLogger);
   }
 
   static Quidpay _instance;
