@@ -12,7 +12,7 @@ abstract class Customer
     implements Built<Customer, CustomerBuilder> {
   Customer._();
 
-  factory Customer([updates(CustomerBuilder b)]) = _$Customer;
+  factory Customer([Function(CustomerBuilder b)? updates]) = _$Customer;
 
   int? get id;
 
@@ -41,12 +41,12 @@ abstract class Customer
   int? get accountId;
 
   @override
-  Map<String, dynamic> toMap() =>
+  Map<String, dynamic>? toMap() =>
       serializers.serializeWith(Customer.serializer, this)
-          as Map<String, dynamic>;
+          as Map<String, dynamic>?;
 
   static Customer? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Customer.serializer, map) as Customer?;
+      serializers.deserializeWith(Customer.serializer, map);
 
   static Serializer<Customer> get serializer => _$customerSerializer;
 }

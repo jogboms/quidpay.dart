@@ -59,7 +59,7 @@ class _$ValidateResultSerializer
           break;
         case 'airtime_flag':
           result.airtimeFlag = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -78,9 +78,6 @@ class _$DataSerializer implements StructuredSerializer<Data> {
   Iterable<Object?> serialize(Serializers serializers, Data object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'responsetoken',
-      serializers.serialize(object.responsetoken,
-          specifiedType: const FullType(String)),
       'responsecode',
       serializers.serialize(object.responsecode,
           specifiedType: const FullType(String)),
@@ -88,7 +85,14 @@ class _$DataSerializer implements StructuredSerializer<Data> {
       serializers.serialize(object.responsemessage,
           specifiedType: const FullType(String)),
     ];
-
+    Object? value;
+    value = object.responsetoken;
+    if (value != null) {
+      result
+        ..add('responsetoken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -226,7 +230,7 @@ class ValidateResultBuilder
 
 class _$Data extends Data {
   @override
-  final String responsetoken;
+  final String? responsetoken;
   @override
   final String responsecode;
   @override
@@ -236,12 +240,10 @@ class _$Data extends Data {
       (new DataBuilder()..update(updates)).build();
 
   _$Data._(
-      {required this.responsetoken,
+      {this.responsetoken,
       required this.responsecode,
       required this.responsemessage})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        responsetoken, 'Data', 'responsetoken');
     BuiltValueNullFieldError.checkNotNull(responsecode, 'Data', 'responsecode');
     BuiltValueNullFieldError.checkNotNull(
         responsemessage, 'Data', 'responsemessage');
@@ -315,8 +317,7 @@ class DataBuilder implements Builder<Data, DataBuilder> {
   _$Data build() {
     final _$result = _$v ??
         new _$Data._(
-            responsetoken: BuiltValueNullFieldError.checkNotNull(
-                responsetoken, 'Data', 'responsetoken'),
+            responsetoken: responsetoken,
             responsecode: BuiltValueNullFieldError.checkNotNull(
                 responsecode, 'Data', 'responsecode'),
             responsemessage: BuiltValueNullFieldError.checkNotNull(
@@ -326,4 +327,4 @@ class DataBuilder implements Builder<Data, DataBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

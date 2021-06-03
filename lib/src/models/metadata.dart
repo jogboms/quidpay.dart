@@ -2,7 +2,6 @@ library metadata;
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/serializers.dart';
 
@@ -13,7 +12,7 @@ abstract class Metadata
     implements Built<Metadata, MetadataBuilder> {
   Metadata._();
 
-  factory Metadata([updates(MetadataBuilder b)]) = _$Metadata;
+  factory Metadata([Function(MetadataBuilder b)? updates]) = _$Metadata;
 
   factory Metadata.named({
     required String name,
@@ -43,12 +42,12 @@ abstract class Metadata
   int? get getpaidTransactionId;
 
   @override
-  Map<String, dynamic> toMap() =>
+  Map<String, dynamic>? toMap() =>
       serializers.serializeWith(Metadata.serializer, this)
-          as Map<String, dynamic>;
+          as Map<String, dynamic>?;
 
   static Metadata? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Metadata.serializer, map) as Metadata?;
+      serializers.deserializeWith(Metadata.serializer, map);
 
   static Serializer<Metadata> get serializer => _$metadataSerializer;
 }

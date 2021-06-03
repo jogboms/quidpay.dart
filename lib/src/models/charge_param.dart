@@ -10,9 +10,8 @@ part 'charge_param.g.dart';
 abstract class ChargeParam
     with ModelInterface
     implements Built<ChargeParam, ChargeParamBuilder> {
-  factory ChargeParam([
-    void Function(ChargeParamBuilder b) updates,
-  ]) = _$ChargeParam;
+  factory ChargeParam([void Function(ChargeParamBuilder b)? updates]) =
+      _$ChargeParam;
 
   ChargeParam._();
 
@@ -45,9 +44,9 @@ abstract class ChargeParam
   String? get pin;
 
   @override
-  Map<String, dynamic> toMap() =>
+  Map<String, dynamic>? toMap() =>
       serializers.serializeWith(ChargeParam.serializer, this)
-          as Map<String, dynamic>;
+          as Map<String, dynamic>?;
 
   static ChargeParam? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(ChargeParam.serializer, map);

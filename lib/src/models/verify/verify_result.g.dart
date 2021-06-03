@@ -323,11 +323,11 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'acctcode':
           result.acctcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'acctmessage':
           result.acctmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymenttype':
           result.paymenttype = serializers.deserialize(value,
@@ -403,7 +403,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'custphone':
           result.custphone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'custnetworkprovider':
           result.custnetworkprovider = serializers.deserialize(value,
@@ -455,7 +455,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'acctalias':
           result.acctalias = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'acctisliveapproved':
           result.acctisliveapproved = serializers.deserialize(value,
@@ -467,11 +467,11 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'paymentplan':
           result.paymentplan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymentpage':
           result.paymentpage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'raveref':
           result.raveref = serializers.deserialize(value,
@@ -485,7 +485,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           result.meta.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(Metadata)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
       }
     }
@@ -1339,4 +1339,4 @@ class VerifyResultBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

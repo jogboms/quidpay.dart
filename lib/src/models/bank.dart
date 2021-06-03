@@ -10,7 +10,7 @@ part 'bank.g.dart';
 abstract class Bank with ModelInterface implements Built<Bank, BankBuilder> {
   Bank._();
 
-  factory Bank([Function(BankBuilder b) updates]) = _$Bank;
+  factory Bank([Function(BankBuilder b)? updates]) = _$Bank;
 
   @BuiltValueField(wireName: 'bankname')
   String get name;
@@ -21,10 +21,10 @@ abstract class Bank with ModelInterface implements Built<Bank, BankBuilder> {
   bool get internetbanking;
 
   @override
-  Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Bank.serializer, this) as Map<String, dynamic>;
+  Map<String, dynamic>? toMap() =>
+      serializers.serializeWith(Bank.serializer, this) as Map<String, dynamic>?;
 
-  static Bank? fromJson(Map<String, dynamic> map) =>
+  static Bank? fromJson(Map<String, dynamic>? map) =>
       serializers.deserializeWith(Bank.serializer, map);
 
   static Serializer<Bank> get serializer => _$bankSerializer;

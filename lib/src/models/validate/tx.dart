@@ -12,7 +12,7 @@ part 'tx.g.dart';
 abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   Tx._();
 
-  factory Tx([Function(TxBuilder b) updates]) = _$Tx;
+  factory Tx([Function(TxBuilder b)? updates]) = _$Tx;
 
   int get id;
 
@@ -137,8 +137,8 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   ChargeToken? get chargeToken;
 
   @override
-  Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Tx.serializer, this) as Map<String, dynamic>;
+  Map<String, dynamic>? toMap() =>
+      serializers.serializeWith(Tx.serializer, this) as Map<String, dynamic>?;
 
   static Tx? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(Tx.serializer, map);
