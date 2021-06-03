@@ -7,7 +7,7 @@ import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/exceptions.dart';
 import 'package:quidpay/src/utils/log.dart';
 
-typedef TransformFunction<T> = T Function(dynamic data, String status);
+typedef TransformFunction<T> = T Function(dynamic data, String? status);
 
 class Response<T> {
   Response(
@@ -46,7 +46,8 @@ class Response<T> {
           : null;
     } on ResponseException catch (e) {
       status = e.status;
-      message = e.message;
+      message = e.message ??
+          (Quidpay().production ? Strings.errorMessage : e.toString());
       rawData = null;
       Log().error('ResponseException', e);
     } catch (e) {
@@ -90,7 +91,7 @@ class Response<T> {
 
   final http.Response _response;
   late String status;
-  String? message;
+  late String message;
   dynamic rawData;
   late T data;
 
@@ -129,7 +130,7 @@ class Response<T> {
 
   bool get isTooLarge => statusCode == 413;
 
-  Map<String, dynamic> toMap() =>
+  Map<String, dynamic>? toMap() =>
       rawData is Map ? rawData : <String, dynamic>{':( Rave': rawData};
 
   @override

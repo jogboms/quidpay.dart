@@ -23,7 +23,7 @@ class Encryption {
         .encodeB64(json.encode(data));
   }
 
-  Map<String, dynamic> decrypt(String data) {
+  Map<String, dynamic>? decrypt(String data) {
     final _data = BlockCipher(
       TripleDESEngine(),
       generateKey(secretKey),
