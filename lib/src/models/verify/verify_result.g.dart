@@ -16,7 +16,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
   final String wireName = 'VerifyResult';
 
   @override
-  Iterable serialize(Serializers serializers, VerifyResult object,
+  Iterable<Object> serialize(Serializers serializers, VerifyResult object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'txid',
@@ -183,48 +183,54 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(Metadata)])),
     ];
-    if (object.acctcode != null) {
+    Object value;
+    value = object.acctcode;
+    if (value != null) {
       result
         ..add('acctcode')
-        ..add(serializers.serialize(object.acctcode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctmessage != null) {
+    value = object.acctmessage;
+    if (value != null) {
       result
         ..add('acctmessage')
-        ..add(serializers.serialize(object.acctmessage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.custphone != null) {
+    value = object.custphone;
+    if (value != null) {
       result
         ..add('custphone')
-        ..add(serializers.serialize(object.custphone,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctalias != null) {
+    value = object.acctalias;
+    if (value != null) {
       result
         ..add('acctalias')
-        ..add(serializers.serialize(object.acctalias,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentplan != null) {
+    value = object.paymentplan;
+    if (value != null) {
       result
         ..add('paymentplan')
-        ..add(serializers.serialize(object.paymentplan,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentpage != null) {
+    value = object.paymentpage;
+    if (value != null) {
       result
         ..add('paymentpage')
-        ..add(serializers.serialize(object.paymentpage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
     return result;
   }
 
   @override
-  VerifyResult deserialize(Serializers serializers, Iterable serialized,
+  VerifyResult deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VerifyResultBuilder();
 
@@ -232,7 +238,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'txid':
           result.txid = serializers.deserialize(value,
@@ -476,8 +482,9 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
-              specifiedType: const FullType(
-                  BuiltList, const [const FullType(Metadata)])) as BuiltList);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Metadata)]))
+              as BuiltList<Object>);
           break;
       }
     }
@@ -676,173 +683,99 @@ class _$VerifyResult extends VerifyResult {
       this.card,
       this.meta})
       : super._() {
-    if (txid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'txid');
-    }
-    if (txref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'txref');
-    }
-    if (flwref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'flwref');
-    }
-    if (devicefingerprint == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'devicefingerprint');
-    }
-    if (cycle == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'cycle');
-    }
-    if (amount == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'amount');
-    }
-    if (currency == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'currency');
-    }
-    if (chargedamount == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargedamount');
-    }
-    if (appfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'appfee');
-    }
-    if (merchantfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'merchantfee');
-    }
-    if (merchantbearsfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'merchantbearsfee');
-    }
-    if (chargecode == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargecode');
-    }
-    if (chargemessage == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargemessage');
-    }
-    if (authmodel == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'authmodel');
-    }
-    if (ip == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'ip');
-    }
-    if (narration == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'narration');
-    }
-    if (status == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'status');
-    }
-    if (vbvcode == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'vbvcode');
-    }
-    if (vbvmessage == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'vbvmessage');
-    }
-    if (authurl == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'authurl');
-    }
-    if (paymenttype == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'paymenttype');
-    }
-    if (paymentid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'paymentid');
-    }
-    if (fraudstatus == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'fraudstatus');
-    }
-    if (chargetype == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargetype');
-    }
-    if (createdday == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdday');
-    }
-    if (createddayname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createddayname');
-    }
-    if (createdweek == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdweek');
-    }
-    if (createdmonth == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdmonth');
-    }
-    if (createdmonthname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdmonthname');
-    }
-    if (createdquarter == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdquarter');
-    }
-    if (createdyear == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdyear');
-    }
-    if (createdyearisleap == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdyearisleap');
-    }
-    if (createddayispublicholiday == null) {
-      throw new BuiltValueNullFieldError(
-          'VerifyResult', 'createddayispublicholiday');
-    }
-    if (createdhour == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdhour');
-    }
-    if (createdminute == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdminute');
-    }
-    if (createdpmam == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdpmam');
-    }
-    if (created == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'created');
-    }
-    if (customerid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'customerid');
-    }
-    if (custnetworkprovider == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custnetworkprovider');
-    }
-    if (custname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custname');
-    }
-    if (custemail == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custemail');
-    }
-    if (custemailprovider == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custemailprovider');
-    }
-    if (custcreated == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custcreated');
-    }
-    if (accountid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'accountid');
-    }
-    if (acctbusinessname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctbusinessname');
-    }
-    if (acctcontactperson == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctcontactperson');
-    }
-    if (acctcountry == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctcountry');
-    }
-    if (acctbearsfeeattransactiontime == null) {
-      throw new BuiltValueNullFieldError(
-          'VerifyResult', 'acctbearsfeeattransactiontime');
-    }
-    if (acctparent == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctparent');
-    }
-    if (acctvpcmerchant == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctvpcmerchant');
-    }
-    if (acctisliveapproved == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctisliveapproved');
-    }
-    if (orderref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'orderref');
-    }
-    if (raveref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'raveref');
-    }
-    if (card == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'card');
-    }
-    if (meta == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'meta');
-    }
+    BuiltValueNullFieldError.checkNotNull(txid, 'VerifyResult', 'txid');
+    BuiltValueNullFieldError.checkNotNull(txref, 'VerifyResult', 'txref');
+    BuiltValueNullFieldError.checkNotNull(flwref, 'VerifyResult', 'flwref');
+    BuiltValueNullFieldError.checkNotNull(
+        devicefingerprint, 'VerifyResult', 'devicefingerprint');
+    BuiltValueNullFieldError.checkNotNull(cycle, 'VerifyResult', 'cycle');
+    BuiltValueNullFieldError.checkNotNull(amount, 'VerifyResult', 'amount');
+    BuiltValueNullFieldError.checkNotNull(currency, 'VerifyResult', 'currency');
+    BuiltValueNullFieldError.checkNotNull(
+        chargedamount, 'VerifyResult', 'chargedamount');
+    BuiltValueNullFieldError.checkNotNull(appfee, 'VerifyResult', 'appfee');
+    BuiltValueNullFieldError.checkNotNull(
+        merchantfee, 'VerifyResult', 'merchantfee');
+    BuiltValueNullFieldError.checkNotNull(
+        merchantbearsfee, 'VerifyResult', 'merchantbearsfee');
+    BuiltValueNullFieldError.checkNotNull(
+        chargecode, 'VerifyResult', 'chargecode');
+    BuiltValueNullFieldError.checkNotNull(
+        chargemessage, 'VerifyResult', 'chargemessage');
+    BuiltValueNullFieldError.checkNotNull(
+        authmodel, 'VerifyResult', 'authmodel');
+    BuiltValueNullFieldError.checkNotNull(ip, 'VerifyResult', 'ip');
+    BuiltValueNullFieldError.checkNotNull(
+        narration, 'VerifyResult', 'narration');
+    BuiltValueNullFieldError.checkNotNull(status, 'VerifyResult', 'status');
+    BuiltValueNullFieldError.checkNotNull(vbvcode, 'VerifyResult', 'vbvcode');
+    BuiltValueNullFieldError.checkNotNull(
+        vbvmessage, 'VerifyResult', 'vbvmessage');
+    BuiltValueNullFieldError.checkNotNull(authurl, 'VerifyResult', 'authurl');
+    BuiltValueNullFieldError.checkNotNull(
+        paymenttype, 'VerifyResult', 'paymenttype');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentid, 'VerifyResult', 'paymentid');
+    BuiltValueNullFieldError.checkNotNull(
+        fraudstatus, 'VerifyResult', 'fraudstatus');
+    BuiltValueNullFieldError.checkNotNull(
+        chargetype, 'VerifyResult', 'chargetype');
+    BuiltValueNullFieldError.checkNotNull(
+        createdday, 'VerifyResult', 'createdday');
+    BuiltValueNullFieldError.checkNotNull(
+        createddayname, 'VerifyResult', 'createddayname');
+    BuiltValueNullFieldError.checkNotNull(
+        createdweek, 'VerifyResult', 'createdweek');
+    BuiltValueNullFieldError.checkNotNull(
+        createdmonth, 'VerifyResult', 'createdmonth');
+    BuiltValueNullFieldError.checkNotNull(
+        createdmonthname, 'VerifyResult', 'createdmonthname');
+    BuiltValueNullFieldError.checkNotNull(
+        createdquarter, 'VerifyResult', 'createdquarter');
+    BuiltValueNullFieldError.checkNotNull(
+        createdyear, 'VerifyResult', 'createdyear');
+    BuiltValueNullFieldError.checkNotNull(
+        createdyearisleap, 'VerifyResult', 'createdyearisleap');
+    BuiltValueNullFieldError.checkNotNull(
+        createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday');
+    BuiltValueNullFieldError.checkNotNull(
+        createdhour, 'VerifyResult', 'createdhour');
+    BuiltValueNullFieldError.checkNotNull(
+        createdminute, 'VerifyResult', 'createdminute');
+    BuiltValueNullFieldError.checkNotNull(
+        createdpmam, 'VerifyResult', 'createdpmam');
+    BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created');
+    BuiltValueNullFieldError.checkNotNull(
+        customerid, 'VerifyResult', 'customerid');
+    BuiltValueNullFieldError.checkNotNull(
+        custnetworkprovider, 'VerifyResult', 'custnetworkprovider');
+    BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname');
+    BuiltValueNullFieldError.checkNotNull(
+        custemail, 'VerifyResult', 'custemail');
+    BuiltValueNullFieldError.checkNotNull(
+        custemailprovider, 'VerifyResult', 'custemailprovider');
+    BuiltValueNullFieldError.checkNotNull(
+        custcreated, 'VerifyResult', 'custcreated');
+    BuiltValueNullFieldError.checkNotNull(
+        accountid, 'VerifyResult', 'accountid');
+    BuiltValueNullFieldError.checkNotNull(
+        acctbusinessname, 'VerifyResult', 'acctbusinessname');
+    BuiltValueNullFieldError.checkNotNull(
+        acctcontactperson, 'VerifyResult', 'acctcontactperson');
+    BuiltValueNullFieldError.checkNotNull(
+        acctcountry, 'VerifyResult', 'acctcountry');
+    BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime,
+        'VerifyResult', 'acctbearsfeeattransactiontime');
+    BuiltValueNullFieldError.checkNotNull(
+        acctparent, 'VerifyResult', 'acctparent');
+    BuiltValueNullFieldError.checkNotNull(
+        acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant');
+    BuiltValueNullFieldError.checkNotNull(
+        acctisliveapproved, 'VerifyResult', 'acctisliveapproved');
+    BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref');
+    BuiltValueNullFieldError.checkNotNull(raveref, 'VerifyResult', 'raveref');
+    BuiltValueNullFieldError.checkNotNull(card, 'VerifyResult', 'card');
+    BuiltValueNullFieldError.checkNotNull(meta, 'VerifyResult', 'meta');
   }
 
   @override
@@ -959,73 +892,6 @@ class _$VerifyResult extends VerifyResult {
                 raveref.hashCode),
             card.hashCode),
         meta.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('VerifyResult')
-          ..add('txid', txid)
-          ..add('txref', txref)
-          ..add('flwref', flwref)
-          ..add('devicefingerprint', devicefingerprint)
-          ..add('cycle', cycle)
-          ..add('amount', amount)
-          ..add('currency', currency)
-          ..add('chargedamount', chargedamount)
-          ..add('appfee', appfee)
-          ..add('merchantfee', merchantfee)
-          ..add('merchantbearsfee', merchantbearsfee)
-          ..add('chargecode', chargecode)
-          ..add('chargemessage', chargemessage)
-          ..add('authmodel', authmodel)
-          ..add('ip', ip)
-          ..add('narration', narration)
-          ..add('status', status)
-          ..add('vbvcode', vbvcode)
-          ..add('vbvmessage', vbvmessage)
-          ..add('authurl', authurl)
-          ..add('acctcode', acctcode)
-          ..add('acctmessage', acctmessage)
-          ..add('paymenttype', paymenttype)
-          ..add('paymentid', paymentid)
-          ..add('fraudstatus', fraudstatus)
-          ..add('chargetype', chargetype)
-          ..add('createdday', createdday)
-          ..add('createddayname', createddayname)
-          ..add('createdweek', createdweek)
-          ..add('createdmonth', createdmonth)
-          ..add('createdmonthname', createdmonthname)
-          ..add('createdquarter', createdquarter)
-          ..add('createdyear', createdyear)
-          ..add('createdyearisleap', createdyearisleap)
-          ..add('createddayispublicholiday', createddayispublicholiday)
-          ..add('createdhour', createdhour)
-          ..add('createdminute', createdminute)
-          ..add('createdpmam', createdpmam)
-          ..add('created', created)
-          ..add('customerid', customerid)
-          ..add('custphone', custphone)
-          ..add('custnetworkprovider', custnetworkprovider)
-          ..add('custname', custname)
-          ..add('custemail', custemail)
-          ..add('custemailprovider', custemailprovider)
-          ..add('custcreated', custcreated)
-          ..add('accountid', accountid)
-          ..add('acctbusinessname', acctbusinessname)
-          ..add('acctcontactperson', acctcontactperson)
-          ..add('acctcountry', acctcountry)
-          ..add('acctbearsfeeattransactiontime', acctbearsfeeattransactiontime)
-          ..add('acctparent', acctparent)
-          ..add('acctvpcmerchant', acctvpcmerchant)
-          ..add('acctalias', acctalias)
-          ..add('acctisliveapproved', acctisliveapproved)
-          ..add('orderref', orderref)
-          ..add('paymentplan', paymentplan)
-          ..add('paymentpage', paymentpage)
-          ..add('raveref', raveref)
-          ..add('card', card)
-          ..add('meta', meta))
-        .toString();
   }
 }
 
@@ -1298,68 +1164,69 @@ class VerifyResultBuilder
   VerifyResultBuilder();
 
   VerifyResultBuilder get _$this {
-    if (_$v != null) {
-      _txid = _$v.txid;
-      _txref = _$v.txref;
-      _flwref = _$v.flwref;
-      _devicefingerprint = _$v.devicefingerprint;
-      _cycle = _$v.cycle;
-      _amount = _$v.amount;
-      _currency = _$v.currency;
-      _chargedamount = _$v.chargedamount;
-      _appfee = _$v.appfee;
-      _merchantfee = _$v.merchantfee;
-      _merchantbearsfee = _$v.merchantbearsfee;
-      _chargecode = _$v.chargecode;
-      _chargemessage = _$v.chargemessage;
-      _authmodel = _$v.authmodel;
-      _ip = _$v.ip;
-      _narration = _$v.narration;
-      _status = _$v.status;
-      _vbvcode = _$v.vbvcode;
-      _vbvmessage = _$v.vbvmessage;
-      _authurl = _$v.authurl;
-      _acctcode = _$v.acctcode;
-      _acctmessage = _$v.acctmessage;
-      _paymenttype = _$v.paymenttype;
-      _paymentid = _$v.paymentid;
-      _fraudstatus = _$v.fraudstatus;
-      _chargetype = _$v.chargetype;
-      _createdday = _$v.createdday;
-      _createddayname = _$v.createddayname;
-      _createdweek = _$v.createdweek;
-      _createdmonth = _$v.createdmonth;
-      _createdmonthname = _$v.createdmonthname;
-      _createdquarter = _$v.createdquarter;
-      _createdyear = _$v.createdyear;
-      _createdyearisleap = _$v.createdyearisleap;
-      _createddayispublicholiday = _$v.createddayispublicholiday;
-      _createdhour = _$v.createdhour;
-      _createdminute = _$v.createdminute;
-      _createdpmam = _$v.createdpmam;
-      _created = _$v.created;
-      _customerid = _$v.customerid;
-      _custphone = _$v.custphone;
-      _custnetworkprovider = _$v.custnetworkprovider;
-      _custname = _$v.custname;
-      _custemail = _$v.custemail;
-      _custemailprovider = _$v.custemailprovider;
-      _custcreated = _$v.custcreated;
-      _accountid = _$v.accountid;
-      _acctbusinessname = _$v.acctbusinessname;
-      _acctcontactperson = _$v.acctcontactperson;
-      _acctcountry = _$v.acctcountry;
-      _acctbearsfeeattransactiontime = _$v.acctbearsfeeattransactiontime;
-      _acctparent = _$v.acctparent;
-      _acctvpcmerchant = _$v.acctvpcmerchant;
-      _acctalias = _$v.acctalias;
-      _acctisliveapproved = _$v.acctisliveapproved;
-      _orderref = _$v.orderref;
-      _paymentplan = _$v.paymentplan;
-      _paymentpage = _$v.paymentpage;
-      _raveref = _$v.raveref;
-      _card = _$v.card?.toBuilder();
-      _meta = _$v.meta?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _txid = $v.txid;
+      _txref = $v.txref;
+      _flwref = $v.flwref;
+      _devicefingerprint = $v.devicefingerprint;
+      _cycle = $v.cycle;
+      _amount = $v.amount;
+      _currency = $v.currency;
+      _chargedamount = $v.chargedamount;
+      _appfee = $v.appfee;
+      _merchantfee = $v.merchantfee;
+      _merchantbearsfee = $v.merchantbearsfee;
+      _chargecode = $v.chargecode;
+      _chargemessage = $v.chargemessage;
+      _authmodel = $v.authmodel;
+      _ip = $v.ip;
+      _narration = $v.narration;
+      _status = $v.status;
+      _vbvcode = $v.vbvcode;
+      _vbvmessage = $v.vbvmessage;
+      _authurl = $v.authurl;
+      _acctcode = $v.acctcode;
+      _acctmessage = $v.acctmessage;
+      _paymenttype = $v.paymenttype;
+      _paymentid = $v.paymentid;
+      _fraudstatus = $v.fraudstatus;
+      _chargetype = $v.chargetype;
+      _createdday = $v.createdday;
+      _createddayname = $v.createddayname;
+      _createdweek = $v.createdweek;
+      _createdmonth = $v.createdmonth;
+      _createdmonthname = $v.createdmonthname;
+      _createdquarter = $v.createdquarter;
+      _createdyear = $v.createdyear;
+      _createdyearisleap = $v.createdyearisleap;
+      _createddayispublicholiday = $v.createddayispublicholiday;
+      _createdhour = $v.createdhour;
+      _createdminute = $v.createdminute;
+      _createdpmam = $v.createdpmam;
+      _created = $v.created;
+      _customerid = $v.customerid;
+      _custphone = $v.custphone;
+      _custnetworkprovider = $v.custnetworkprovider;
+      _custname = $v.custname;
+      _custemail = $v.custemail;
+      _custemailprovider = $v.custemailprovider;
+      _custcreated = $v.custcreated;
+      _accountid = $v.accountid;
+      _acctbusinessname = $v.acctbusinessname;
+      _acctcontactperson = $v.acctcontactperson;
+      _acctcountry = $v.acctcountry;
+      _acctbearsfeeattransactiontime = $v.acctbearsfeeattransactiontime;
+      _acctparent = $v.acctparent;
+      _acctvpcmerchant = $v.acctvpcmerchant;
+      _acctalias = $v.acctalias;
+      _acctisliveapproved = $v.acctisliveapproved;
+      _orderref = $v.orderref;
+      _paymentplan = $v.paymentplan;
+      _paymentpage = $v.paymentpage;
+      _raveref = $v.raveref;
+      _card = $v.card.toBuilder();
+      _meta = $v.meta.toBuilder();
       _$v = null;
     }
     return this;
@@ -1367,9 +1234,7 @@ class VerifyResultBuilder
 
   @override
   void replace(VerifyResult other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$VerifyResult;
   }
 
@@ -1384,65 +1249,74 @@ class VerifyResultBuilder
     try {
       _$result = _$v ??
           new _$VerifyResult._(
-              txid: txid,
-              txref: txref,
-              flwref: flwref,
-              devicefingerprint: devicefingerprint,
-              cycle: cycle,
-              amount: amount,
-              currency: currency,
-              chargedamount: chargedamount,
-              appfee: appfee,
-              merchantfee: merchantfee,
-              merchantbearsfee: merchantbearsfee,
-              chargecode: chargecode,
-              chargemessage: chargemessage,
-              authmodel: authmodel,
-              ip: ip,
-              narration: narration,
-              status: status,
-              vbvcode: vbvcode,
-              vbvmessage: vbvmessage,
-              authurl: authurl,
+              txid: BuiltValueNullFieldError.checkNotNull(
+                  txid, 'VerifyResult', 'txid'),
+              txref: BuiltValueNullFieldError.checkNotNull(
+                  txref, 'VerifyResult', 'txref'),
+              flwref: BuiltValueNullFieldError.checkNotNull(
+                  flwref, 'VerifyResult', 'flwref'),
+              devicefingerprint: BuiltValueNullFieldError.checkNotNull(
+                  devicefingerprint, 'VerifyResult', 'devicefingerprint'),
+              cycle: BuiltValueNullFieldError.checkNotNull(
+                  cycle, 'VerifyResult', 'cycle'),
+              amount: BuiltValueNullFieldError.checkNotNull(
+                  amount, 'VerifyResult', 'amount'),
+              currency: BuiltValueNullFieldError.checkNotNull(
+                  currency, 'VerifyResult', 'currency'),
+              chargedamount: BuiltValueNullFieldError.checkNotNull(
+                  chargedamount, 'VerifyResult', 'chargedamount'),
+              appfee: BuiltValueNullFieldError.checkNotNull(
+                  appfee, 'VerifyResult', 'appfee'),
+              merchantfee: BuiltValueNullFieldError.checkNotNull(merchantfee, 'VerifyResult', 'merchantfee'),
+              merchantbearsfee: BuiltValueNullFieldError.checkNotNull(merchantbearsfee, 'VerifyResult', 'merchantbearsfee'),
+              chargecode: BuiltValueNullFieldError.checkNotNull(chargecode, 'VerifyResult', 'chargecode'),
+              chargemessage: BuiltValueNullFieldError.checkNotNull(chargemessage, 'VerifyResult', 'chargemessage'),
+              authmodel: BuiltValueNullFieldError.checkNotNull(authmodel, 'VerifyResult', 'authmodel'),
+              ip: BuiltValueNullFieldError.checkNotNull(ip, 'VerifyResult', 'ip'),
+              narration: BuiltValueNullFieldError.checkNotNull(narration, 'VerifyResult', 'narration'),
+              status: BuiltValueNullFieldError.checkNotNull(status, 'VerifyResult', 'status'),
+              vbvcode: BuiltValueNullFieldError.checkNotNull(vbvcode, 'VerifyResult', 'vbvcode'),
+              vbvmessage: BuiltValueNullFieldError.checkNotNull(vbvmessage, 'VerifyResult', 'vbvmessage'),
+              authurl: BuiltValueNullFieldError.checkNotNull(authurl, 'VerifyResult', 'authurl'),
               acctcode: acctcode,
               acctmessage: acctmessage,
-              paymenttype: paymenttype,
-              paymentid: paymentid,
-              fraudstatus: fraudstatus,
-              chargetype: chargetype,
-              createdday: createdday,
-              createddayname: createddayname,
-              createdweek: createdweek,
-              createdmonth: createdmonth,
-              createdmonthname: createdmonthname,
-              createdquarter: createdquarter,
-              createdyear: createdyear,
-              createdyearisleap: createdyearisleap,
-              createddayispublicholiday: createddayispublicholiday,
-              createdhour: createdhour,
-              createdminute: createdminute,
-              createdpmam: createdpmam,
-              created: created,
-              customerid: customerid,
+              paymenttype: BuiltValueNullFieldError.checkNotNull(paymenttype, 'VerifyResult', 'paymenttype'),
+              paymentid: BuiltValueNullFieldError.checkNotNull(paymentid, 'VerifyResult', 'paymentid'),
+              fraudstatus: BuiltValueNullFieldError.checkNotNull(fraudstatus, 'VerifyResult', 'fraudstatus'),
+              chargetype: BuiltValueNullFieldError.checkNotNull(chargetype, 'VerifyResult', 'chargetype'),
+              createdday: BuiltValueNullFieldError.checkNotNull(createdday, 'VerifyResult', 'createdday'),
+              createddayname: BuiltValueNullFieldError.checkNotNull(createddayname, 'VerifyResult', 'createddayname'),
+              createdweek: BuiltValueNullFieldError.checkNotNull(createdweek, 'VerifyResult', 'createdweek'),
+              createdmonth: BuiltValueNullFieldError.checkNotNull(createdmonth, 'VerifyResult', 'createdmonth'),
+              createdmonthname: BuiltValueNullFieldError.checkNotNull(createdmonthname, 'VerifyResult', 'createdmonthname'),
+              createdquarter: BuiltValueNullFieldError.checkNotNull(createdquarter, 'VerifyResult', 'createdquarter'),
+              createdyear: BuiltValueNullFieldError.checkNotNull(createdyear, 'VerifyResult', 'createdyear'),
+              createdyearisleap: BuiltValueNullFieldError.checkNotNull(createdyearisleap, 'VerifyResult', 'createdyearisleap'),
+              createddayispublicholiday: BuiltValueNullFieldError.checkNotNull(createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday'),
+              createdhour: BuiltValueNullFieldError.checkNotNull(createdhour, 'VerifyResult', 'createdhour'),
+              createdminute: BuiltValueNullFieldError.checkNotNull(createdminute, 'VerifyResult', 'createdminute'),
+              createdpmam: BuiltValueNullFieldError.checkNotNull(createdpmam, 'VerifyResult', 'createdpmam'),
+              created: BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created'),
+              customerid: BuiltValueNullFieldError.checkNotNull(customerid, 'VerifyResult', 'customerid'),
               custphone: custphone,
-              custnetworkprovider: custnetworkprovider,
-              custname: custname,
-              custemail: custemail,
-              custemailprovider: custemailprovider,
-              custcreated: custcreated,
-              accountid: accountid,
-              acctbusinessname: acctbusinessname,
-              acctcontactperson: acctcontactperson,
-              acctcountry: acctcountry,
-              acctbearsfeeattransactiontime: acctbearsfeeattransactiontime,
-              acctparent: acctparent,
-              acctvpcmerchant: acctvpcmerchant,
+              custnetworkprovider: BuiltValueNullFieldError.checkNotNull(custnetworkprovider, 'VerifyResult', 'custnetworkprovider'),
+              custname: BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname'),
+              custemail: BuiltValueNullFieldError.checkNotNull(custemail, 'VerifyResult', 'custemail'),
+              custemailprovider: BuiltValueNullFieldError.checkNotNull(custemailprovider, 'VerifyResult', 'custemailprovider'),
+              custcreated: BuiltValueNullFieldError.checkNotNull(custcreated, 'VerifyResult', 'custcreated'),
+              accountid: BuiltValueNullFieldError.checkNotNull(accountid, 'VerifyResult', 'accountid'),
+              acctbusinessname: BuiltValueNullFieldError.checkNotNull(acctbusinessname, 'VerifyResult', 'acctbusinessname'),
+              acctcontactperson: BuiltValueNullFieldError.checkNotNull(acctcontactperson, 'VerifyResult', 'acctcontactperson'),
+              acctcountry: BuiltValueNullFieldError.checkNotNull(acctcountry, 'VerifyResult', 'acctcountry'),
+              acctbearsfeeattransactiontime: BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime, 'VerifyResult', 'acctbearsfeeattransactiontime'),
+              acctparent: BuiltValueNullFieldError.checkNotNull(acctparent, 'VerifyResult', 'acctparent'),
+              acctvpcmerchant: BuiltValueNullFieldError.checkNotNull(acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant'),
               acctalias: acctalias,
-              acctisliveapproved: acctisliveapproved,
-              orderref: orderref,
+              acctisliveapproved: BuiltValueNullFieldError.checkNotNull(acctisliveapproved, 'VerifyResult', 'acctisliveapproved'),
+              orderref: BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref'),
               paymentplan: paymentplan,
               paymentpage: paymentpage,
-              raveref: raveref,
+              raveref: BuiltValueNullFieldError.checkNotNull(raveref, 'VerifyResult', 'raveref'),
               card: card.build(),
               meta: meta.build());
     } catch (_) {

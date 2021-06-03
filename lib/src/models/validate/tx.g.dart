@@ -15,7 +15,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
   final String wireName = 'Tx';
 
   @override
-  Iterable serialize(Serializers serializers, Tx object,
+  Iterable<Object> serialize(Serializers serializers, Tx object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
@@ -82,9 +82,6 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
       'vbvrespmessage',
       serializers.serialize(object.vbvrespmessage,
           specifiedType: const FullType(String)),
-      'authurl',
-      serializers.serialize(object.authurl,
-          specifiedType: const FullType(String)),
       'vbvrespcode',
       serializers.serialize(object.vbvrespcode,
           specifiedType: const FullType(String)),
@@ -108,61 +105,85 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
       'updatedAt',
       serializers.serialize(object.updatedAt,
           specifiedType: const FullType(String)),
-      'customerId',
-      serializers.serialize(object.customerId,
-          specifiedType: const FullType(int)),
       'AccountId',
       serializers.serialize(object.accountId,
           specifiedType: const FullType(int)),
-      'customer',
-      serializers.serialize(object.customer,
-          specifiedType: const FullType(Customer)),
-      'chargeToken',
-      serializers.serialize(object.chargeToken,
-          specifiedType: const FullType(ChargeToken)),
     ];
-    if (object.settlementToken != null) {
+    Object value;
+    value = object.settlementToken;
+    if (value != null) {
       result
         ..add('settlement_token')
-        ..add(serializers.serialize(object.settlementToken,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctvalrespmsg != null) {
+    value = object.authurl;
+    if (value != null) {
+      result
+        ..add('authurl')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.acctvalrespmsg;
+    if (value != null) {
       result
         ..add('acctvalrespmsg')
-        ..add(serializers.serialize(object.acctvalrespmsg,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctvalrespcode != null) {
+    value = object.acctvalrespcode;
+    if (value != null) {
       result
         ..add('acctvalrespcode')
-        ..add(serializers.serialize(object.acctvalrespcode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentPlan != null) {
+    value = object.paymentPlan;
+    if (value != null) {
       result
         ..add('paymentPlan')
-        ..add(serializers.serialize(object.paymentPlan,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentPage != null) {
+    value = object.paymentPage;
+    if (value != null) {
       result
         ..add('paymentPage')
-        ..add(serializers.serialize(object.paymentPage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.deletedAt != null) {
+    value = object.deletedAt;
+    if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(object.deletedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
+    value = object.customerId;
+    if (value != null) {
+      result
+        ..add('customerId')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    value = object.customer;
+    if (value != null) {
+      result
+        ..add('customer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(Customer)));
+    }
+    value = object.chargeToken;
+    if (value != null) {
+      result
+        ..add('chargeToken')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(ChargeToken)));
+    }
     return result;
   }
 
   @override
-  Tx deserialize(Serializers serializers, Iterable serialized,
+  Tx deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TxBuilder();
 
@@ -170,7 +191,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -473,111 +494,42 @@ class _$Tx extends Tx {
       this.customer,
       this.chargeToken})
       : super._() {
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Tx', 'id');
-    }
-    if (txRef == null) {
-      throw new BuiltValueNullFieldError('Tx', 'txRef');
-    }
-    if (orderRef == null) {
-      throw new BuiltValueNullFieldError('Tx', 'orderRef');
-    }
-    if (flwRef == null) {
-      throw new BuiltValueNullFieldError('Tx', 'flwRef');
-    }
-    if (redirectUrl == null) {
-      throw new BuiltValueNullFieldError('Tx', 'redirectUrl');
-    }
-    if (deviceFingerprint == null) {
-      throw new BuiltValueNullFieldError('Tx', 'deviceFingerprint');
-    }
-    if (cycle == null) {
-      throw new BuiltValueNullFieldError('Tx', 'cycle');
-    }
-    if (amount == null) {
-      throw new BuiltValueNullFieldError('Tx', 'amount');
-    }
-    if (chargedAmount == null) {
-      throw new BuiltValueNullFieldError('Tx', 'chargedAmount');
-    }
-    if (appfee == null) {
-      throw new BuiltValueNullFieldError('Tx', 'appfee');
-    }
-    if (merchantfee == null) {
-      throw new BuiltValueNullFieldError('Tx', 'merchantfee');
-    }
-    if (merchantbearsfee == null) {
-      throw new BuiltValueNullFieldError('Tx', 'merchantbearsfee');
-    }
-    if (chargeResponseCode == null) {
-      throw new BuiltValueNullFieldError('Tx', 'chargeResponseCode');
-    }
-    if (raveRef == null) {
-      throw new BuiltValueNullFieldError('Tx', 'raveRef');
-    }
-    if (chargeResponseMessage == null) {
-      throw new BuiltValueNullFieldError('Tx', 'chargeResponseMessage');
-    }
-    if (authModelUsed == null) {
-      throw new BuiltValueNullFieldError('Tx', 'authModelUsed');
-    }
-    if (currency == null) {
-      throw new BuiltValueNullFieldError('Tx', 'currency');
-    }
-    if (iP == null) {
-      throw new BuiltValueNullFieldError('Tx', 'iP');
-    }
-    if (narration == null) {
-      throw new BuiltValueNullFieldError('Tx', 'narration');
-    }
-    if (status == null) {
-      throw new BuiltValueNullFieldError('Tx', 'status');
-    }
-    if (modalauditid == null) {
-      throw new BuiltValueNullFieldError('Tx', 'modalauditid');
-    }
-    if (vbvrespmessage == null) {
-      throw new BuiltValueNullFieldError('Tx', 'vbvrespmessage');
-    }
-    if (authurl == null) {
-      throw new BuiltValueNullFieldError('Tx', 'authurl');
-    }
-    if (vbvrespcode == null) {
-      throw new BuiltValueNullFieldError('Tx', 'vbvrespcode');
-    }
-    if (paymentType == null) {
-      throw new BuiltValueNullFieldError('Tx', 'paymentType');
-    }
-    if (paymentId == null) {
-      throw new BuiltValueNullFieldError('Tx', 'paymentId');
-    }
-    if (fraudStatus == null) {
-      throw new BuiltValueNullFieldError('Tx', 'fraudStatus');
-    }
-    if (chargeType == null) {
-      throw new BuiltValueNullFieldError('Tx', 'chargeType');
-    }
-    if (isLive == null) {
-      throw new BuiltValueNullFieldError('Tx', 'isLive');
-    }
-    if (createdAt == null) {
-      throw new BuiltValueNullFieldError('Tx', 'createdAt');
-    }
-    if (updatedAt == null) {
-      throw new BuiltValueNullFieldError('Tx', 'updatedAt');
-    }
-    if (customerId == null) {
-      throw new BuiltValueNullFieldError('Tx', 'customerId');
-    }
-    if (accountId == null) {
-      throw new BuiltValueNullFieldError('Tx', 'accountId');
-    }
-    if (customer == null) {
-      throw new BuiltValueNullFieldError('Tx', 'customer');
-    }
-    if (chargeToken == null) {
-      throw new BuiltValueNullFieldError('Tx', 'chargeToken');
-    }
+    BuiltValueNullFieldError.checkNotNull(id, 'Tx', 'id');
+    BuiltValueNullFieldError.checkNotNull(txRef, 'Tx', 'txRef');
+    BuiltValueNullFieldError.checkNotNull(orderRef, 'Tx', 'orderRef');
+    BuiltValueNullFieldError.checkNotNull(flwRef, 'Tx', 'flwRef');
+    BuiltValueNullFieldError.checkNotNull(redirectUrl, 'Tx', 'redirectUrl');
+    BuiltValueNullFieldError.checkNotNull(
+        deviceFingerprint, 'Tx', 'deviceFingerprint');
+    BuiltValueNullFieldError.checkNotNull(cycle, 'Tx', 'cycle');
+    BuiltValueNullFieldError.checkNotNull(amount, 'Tx', 'amount');
+    BuiltValueNullFieldError.checkNotNull(chargedAmount, 'Tx', 'chargedAmount');
+    BuiltValueNullFieldError.checkNotNull(appfee, 'Tx', 'appfee');
+    BuiltValueNullFieldError.checkNotNull(merchantfee, 'Tx', 'merchantfee');
+    BuiltValueNullFieldError.checkNotNull(
+        merchantbearsfee, 'Tx', 'merchantbearsfee');
+    BuiltValueNullFieldError.checkNotNull(
+        chargeResponseCode, 'Tx', 'chargeResponseCode');
+    BuiltValueNullFieldError.checkNotNull(raveRef, 'Tx', 'raveRef');
+    BuiltValueNullFieldError.checkNotNull(
+        chargeResponseMessage, 'Tx', 'chargeResponseMessage');
+    BuiltValueNullFieldError.checkNotNull(authModelUsed, 'Tx', 'authModelUsed');
+    BuiltValueNullFieldError.checkNotNull(currency, 'Tx', 'currency');
+    BuiltValueNullFieldError.checkNotNull(iP, 'Tx', 'iP');
+    BuiltValueNullFieldError.checkNotNull(narration, 'Tx', 'narration');
+    BuiltValueNullFieldError.checkNotNull(status, 'Tx', 'status');
+    BuiltValueNullFieldError.checkNotNull(modalauditid, 'Tx', 'modalauditid');
+    BuiltValueNullFieldError.checkNotNull(
+        vbvrespmessage, 'Tx', 'vbvrespmessage');
+    BuiltValueNullFieldError.checkNotNull(vbvrespcode, 'Tx', 'vbvrespcode');
+    BuiltValueNullFieldError.checkNotNull(paymentType, 'Tx', 'paymentType');
+    BuiltValueNullFieldError.checkNotNull(paymentId, 'Tx', 'paymentId');
+    BuiltValueNullFieldError.checkNotNull(fraudStatus, 'Tx', 'fraudStatus');
+    BuiltValueNullFieldError.checkNotNull(chargeType, 'Tx', 'chargeType');
+    BuiltValueNullFieldError.checkNotNull(isLive, 'Tx', 'isLive');
+    BuiltValueNullFieldError.checkNotNull(createdAt, 'Tx', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(updatedAt, 'Tx', 'updatedAt');
+    BuiltValueNullFieldError.checkNotNull(accountId, 'Tx', 'accountId');
   }
 
   @override
@@ -596,53 +548,6 @@ class _$Tx extends Tx {
   @override
   int get hashCode {
     return $jf($jc(0, id.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Tx')
-          ..add('id', id)
-          ..add('txRef', txRef)
-          ..add('orderRef', orderRef)
-          ..add('flwRef', flwRef)
-          ..add('redirectUrl', redirectUrl)
-          ..add('deviceFingerprint', deviceFingerprint)
-          ..add('settlementToken', settlementToken)
-          ..add('cycle', cycle)
-          ..add('amount', amount)
-          ..add('chargedAmount', chargedAmount)
-          ..add('appfee', appfee)
-          ..add('merchantfee', merchantfee)
-          ..add('merchantbearsfee', merchantbearsfee)
-          ..add('chargeResponseCode', chargeResponseCode)
-          ..add('raveRef', raveRef)
-          ..add('chargeResponseMessage', chargeResponseMessage)
-          ..add('authModelUsed', authModelUsed)
-          ..add('currency', currency)
-          ..add('iP', iP)
-          ..add('narration', narration)
-          ..add('status', status)
-          ..add('modalauditid', modalauditid)
-          ..add('vbvrespmessage', vbvrespmessage)
-          ..add('authurl', authurl)
-          ..add('vbvrespcode', vbvrespcode)
-          ..add('acctvalrespmsg', acctvalrespmsg)
-          ..add('acctvalrespcode', acctvalrespcode)
-          ..add('paymentType', paymentType)
-          ..add('paymentPlan', paymentPlan)
-          ..add('paymentPage', paymentPage)
-          ..add('paymentId', paymentId)
-          ..add('fraudStatus', fraudStatus)
-          ..add('chargeType', chargeType)
-          ..add('isLive', isLive)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('deletedAt', deletedAt)
-          ..add('customerId', customerId)
-          ..add('accountId', accountId)
-          ..add('customer', customer)
-          ..add('chargeToken', chargeToken))
-        .toString();
   }
 }
 
@@ -828,48 +733,49 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
   TxBuilder();
 
   TxBuilder get _$this {
-    if (_$v != null) {
-      _id = _$v.id;
-      _txRef = _$v.txRef;
-      _orderRef = _$v.orderRef;
-      _flwRef = _$v.flwRef;
-      _redirectUrl = _$v.redirectUrl;
-      _deviceFingerprint = _$v.deviceFingerprint;
-      _settlementToken = _$v.settlementToken;
-      _cycle = _$v.cycle;
-      _amount = _$v.amount;
-      _chargedAmount = _$v.chargedAmount;
-      _appfee = _$v.appfee;
-      _merchantfee = _$v.merchantfee;
-      _merchantbearsfee = _$v.merchantbearsfee;
-      _chargeResponseCode = _$v.chargeResponseCode;
-      _raveRef = _$v.raveRef;
-      _chargeResponseMessage = _$v.chargeResponseMessage;
-      _authModelUsed = _$v.authModelUsed;
-      _currency = _$v.currency;
-      _iP = _$v.iP;
-      _narration = _$v.narration;
-      _status = _$v.status;
-      _modalauditid = _$v.modalauditid;
-      _vbvrespmessage = _$v.vbvrespmessage;
-      _authurl = _$v.authurl;
-      _vbvrespcode = _$v.vbvrespcode;
-      _acctvalrespmsg = _$v.acctvalrespmsg;
-      _acctvalrespcode = _$v.acctvalrespcode;
-      _paymentType = _$v.paymentType;
-      _paymentPlan = _$v.paymentPlan;
-      _paymentPage = _$v.paymentPage;
-      _paymentId = _$v.paymentId;
-      _fraudStatus = _$v.fraudStatus;
-      _chargeType = _$v.chargeType;
-      _isLive = _$v.isLive;
-      _createdAt = _$v.createdAt;
-      _updatedAt = _$v.updatedAt;
-      _deletedAt = _$v.deletedAt;
-      _customerId = _$v.customerId;
-      _accountId = _$v.accountId;
-      _customer = _$v.customer?.toBuilder();
-      _chargeToken = _$v.chargeToken?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _txRef = $v.txRef;
+      _orderRef = $v.orderRef;
+      _flwRef = $v.flwRef;
+      _redirectUrl = $v.redirectUrl;
+      _deviceFingerprint = $v.deviceFingerprint;
+      _settlementToken = $v.settlementToken;
+      _cycle = $v.cycle;
+      _amount = $v.amount;
+      _chargedAmount = $v.chargedAmount;
+      _appfee = $v.appfee;
+      _merchantfee = $v.merchantfee;
+      _merchantbearsfee = $v.merchantbearsfee;
+      _chargeResponseCode = $v.chargeResponseCode;
+      _raveRef = $v.raveRef;
+      _chargeResponseMessage = $v.chargeResponseMessage;
+      _authModelUsed = $v.authModelUsed;
+      _currency = $v.currency;
+      _iP = $v.iP;
+      _narration = $v.narration;
+      _status = $v.status;
+      _modalauditid = $v.modalauditid;
+      _vbvrespmessage = $v.vbvrespmessage;
+      _authurl = $v.authurl;
+      _vbvrespcode = $v.vbvrespcode;
+      _acctvalrespmsg = $v.acctvalrespmsg;
+      _acctvalrespcode = $v.acctvalrespcode;
+      _paymentType = $v.paymentType;
+      _paymentPlan = $v.paymentPlan;
+      _paymentPage = $v.paymentPage;
+      _paymentId = $v.paymentId;
+      _fraudStatus = $v.fraudStatus;
+      _chargeType = $v.chargeType;
+      _isLive = $v.isLive;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
+      _deletedAt = $v.deletedAt;
+      _customerId = $v.customerId;
+      _accountId = $v.accountId;
+      _customer = $v.customer?.toBuilder();
+      _chargeToken = $v.chargeToken?.toBuilder();
       _$v = null;
     }
     return this;
@@ -877,9 +783,7 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
 
   @override
   void replace(Tx other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Tx;
   }
 
@@ -894,54 +798,67 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
     try {
       _$result = _$v ??
           new _$Tx._(
-              id: id,
-              txRef: txRef,
-              orderRef: orderRef,
-              flwRef: flwRef,
-              redirectUrl: redirectUrl,
-              deviceFingerprint: deviceFingerprint,
+              id: BuiltValueNullFieldError.checkNotNull(id, 'Tx', 'id'),
+              txRef:
+                  BuiltValueNullFieldError.checkNotNull(txRef, 'Tx', 'txRef'),
+              orderRef: BuiltValueNullFieldError.checkNotNull(
+                  orderRef, 'Tx', 'orderRef'),
+              flwRef:
+                  BuiltValueNullFieldError.checkNotNull(flwRef, 'Tx', 'flwRef'),
+              redirectUrl: BuiltValueNullFieldError.checkNotNull(
+                  redirectUrl, 'Tx', 'redirectUrl'),
+              deviceFingerprint: BuiltValueNullFieldError.checkNotNull(
+                  deviceFingerprint, 'Tx', 'deviceFingerprint'),
               settlementToken: settlementToken,
-              cycle: cycle,
-              amount: amount,
-              chargedAmount: chargedAmount,
-              appfee: appfee,
-              merchantfee: merchantfee,
-              merchantbearsfee: merchantbearsfee,
-              chargeResponseCode: chargeResponseCode,
-              raveRef: raveRef,
-              chargeResponseMessage: chargeResponseMessage,
-              authModelUsed: authModelUsed,
-              currency: currency,
-              iP: iP,
-              narration: narration,
-              status: status,
-              modalauditid: modalauditid,
-              vbvrespmessage: vbvrespmessage,
+              cycle:
+                  BuiltValueNullFieldError.checkNotNull(cycle, 'Tx', 'cycle'),
+              amount:
+                  BuiltValueNullFieldError.checkNotNull(amount, 'Tx', 'amount'),
+              chargedAmount: BuiltValueNullFieldError.checkNotNull(
+                  chargedAmount, 'Tx', 'chargedAmount'),
+              appfee:
+                  BuiltValueNullFieldError.checkNotNull(appfee, 'Tx', 'appfee'),
+              merchantfee: BuiltValueNullFieldError.checkNotNull(
+                  merchantfee, 'Tx', 'merchantfee'),
+              merchantbearsfee: BuiltValueNullFieldError.checkNotNull(
+                  merchantbearsfee, 'Tx', 'merchantbearsfee'),
+              chargeResponseCode: BuiltValueNullFieldError.checkNotNull(
+                  chargeResponseCode, 'Tx', 'chargeResponseCode'),
+              raveRef: BuiltValueNullFieldError.checkNotNull(
+                  raveRef, 'Tx', 'raveRef'),
+              chargeResponseMessage: BuiltValueNullFieldError.checkNotNull(chargeResponseMessage, 'Tx', 'chargeResponseMessage'),
+              authModelUsed: BuiltValueNullFieldError.checkNotNull(authModelUsed, 'Tx', 'authModelUsed'),
+              currency: BuiltValueNullFieldError.checkNotNull(currency, 'Tx', 'currency'),
+              iP: BuiltValueNullFieldError.checkNotNull(iP, 'Tx', 'iP'),
+              narration: BuiltValueNullFieldError.checkNotNull(narration, 'Tx', 'narration'),
+              status: BuiltValueNullFieldError.checkNotNull(status, 'Tx', 'status'),
+              modalauditid: BuiltValueNullFieldError.checkNotNull(modalauditid, 'Tx', 'modalauditid'),
+              vbvrespmessage: BuiltValueNullFieldError.checkNotNull(vbvrespmessage, 'Tx', 'vbvrespmessage'),
               authurl: authurl,
-              vbvrespcode: vbvrespcode,
+              vbvrespcode: BuiltValueNullFieldError.checkNotNull(vbvrespcode, 'Tx', 'vbvrespcode'),
               acctvalrespmsg: acctvalrespmsg,
               acctvalrespcode: acctvalrespcode,
-              paymentType: paymentType,
+              paymentType: BuiltValueNullFieldError.checkNotNull(paymentType, 'Tx', 'paymentType'),
               paymentPlan: paymentPlan,
               paymentPage: paymentPage,
-              paymentId: paymentId,
-              fraudStatus: fraudStatus,
-              chargeType: chargeType,
-              isLive: isLive,
-              createdAt: createdAt,
-              updatedAt: updatedAt,
+              paymentId: BuiltValueNullFieldError.checkNotNull(paymentId, 'Tx', 'paymentId'),
+              fraudStatus: BuiltValueNullFieldError.checkNotNull(fraudStatus, 'Tx', 'fraudStatus'),
+              chargeType: BuiltValueNullFieldError.checkNotNull(chargeType, 'Tx', 'chargeType'),
+              isLive: BuiltValueNullFieldError.checkNotNull(isLive, 'Tx', 'isLive'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Tx', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, 'Tx', 'updatedAt'),
               deletedAt: deletedAt,
               customerId: customerId,
-              accountId: accountId,
-              customer: customer.build(),
-              chargeToken: chargeToken.build());
+              accountId: BuiltValueNullFieldError.checkNotNull(accountId, 'Tx', 'accountId'),
+              customer: _customer?.build(),
+              chargeToken: _chargeToken?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'customer';
-        customer.build();
+        _customer?.build();
         _$failedField = 'chargeToken';
-        chargeToken.build();
+        _chargeToken?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError('Tx', _$failedField, e.toString());
       }
