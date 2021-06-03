@@ -2,19 +2,19 @@ import 'package:quidpay/src/charge.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
 import 'package:quidpay/src/models/metadata.dart';
-import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/models/result.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class PreAuth {
   PreAuth() : _http = HttpWrapper();
 
   final HttpWrapper _http;
 
-  Future<Response<Result>> preauth({
+  Future<Response<Result?>> preauth({
     required String cardno,
     required String cvv,
     required String amount,
@@ -22,8 +22,8 @@ class PreAuth {
     required String expirymonth,
     required String email,
     required String redirectUrl,
-    String? country = Countries.NIGERIA,
-    String? currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
     String? suggestedAuth,
     String? chargeType,
     String? txRef,
@@ -31,11 +31,11 @@ class PreAuth {
     String? settlementToken,
     String? phonenumber,
     String? billingzip,
-    String? firstname,
-    String? lastname,
+    required String firstname,
+    required String lastname,
     String? narration,
     List<Metadata>? meta,
-    String? pin,
+    required String pin,
     String? bvn,
     String? deviceFingerprint,
     String? recurringStop,
@@ -71,7 +71,7 @@ class PreAuth {
   }
 
   Future<Response> _refundOrVoidCard({
-    required String flwRef,
+    required String? flwRef,
     required String action,
   }) async {
     var payload = <String, dynamic>{
@@ -82,7 +82,7 @@ class PreAuth {
 
     Log().debug('$runtimeType.refundOrVoidCard()', payload);
 
-    final _response = Response<Result>(
+    final _response = Response<Result?>(
       await _http.post(Endpoints.refundOrVoidPreauthorization, payload),
       onTransform: (dynamic data, _) => data,
     );
@@ -95,14 +95,14 @@ class PreAuth {
     return _response;
   }
 
-  Future<Response> voidCard(String flwRef) {
+  Future<Response> voidCard(String? flwRef) {
     return _refundOrVoidCard(
       flwRef: flwRef,
       action: 'void',
     );
   }
 
-  Future<Response> refundCard(String flwRef) {
+  Future<Response> refundCard(String? flwRef) {
     return _refundOrVoidCard(
       flwRef: flwRef,
       action: 'refund',
@@ -118,7 +118,7 @@ class PreAuth {
 
     Log().debug('$runtimeType.captureCard()', payload);
 
-    final _response = Response<Result>(
+    final _response = Response<Result?>(
       await _http.post(Endpoints.capturePreauthorizeCard, payload),
       onTransform: (dynamic data, _) => data,
     );

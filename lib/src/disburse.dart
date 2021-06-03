@@ -1,8 +1,7 @@
-import 'package:quidpay/src/utils/response.dart';
-import 'package:quidpay/src/quidpay.dart';
-import 'package:quidpay/src/utils/endpoints.dart';
+nts.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Disburse {
   Disburse() : _http = HttpWrapper();
@@ -16,7 +15,6 @@ class Disburse {
     required String currency,
     required String amount,
   }) async {
-
     var payload = <String, dynamic>{
       'seckey': Quidpay().secretKey,
       'bank_code': bankCode,

@@ -1,8 +1,7 @@
-import 'package:quidpay/src/utils/response.dart';
-import 'package:quidpay/src/quidpay.dart';
-import 'package:quidpay/src/utils/endpoints.dart';
+nts.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Fees {
   Fees() : _http = HttpWrapper();
@@ -15,7 +14,6 @@ class Fees {
     required String currency,
     required String card6,
   }) async {
-
     var payload = <String, dynamic>{
       'PBFPubKey': Quidpay().publicKey,
       'amount': amount,
@@ -41,7 +39,6 @@ class Fees {
     required String currency,
     int? ptype,
   }) async {
-
     var payload = <String, dynamic>{
       'PBFPubKey': Quidpay().publicKey,
       'amount': amount,

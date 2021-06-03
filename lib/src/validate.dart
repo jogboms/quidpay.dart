@@ -13,8 +13,8 @@ class Validate {
 
   final HttpWrapper _http;
 
-  Future<Response<ValidateResult>> charge({
-    required String? authModelUsed,
+  Future<Response<ValidateResult?>> charge({
+    required String authModelUsed,
     required String? authUrl,
     required String flwRef,
     required String otp,
@@ -23,17 +23,12 @@ class Validate {
 
     if (authUrl != null) {
       Log().debug(
-          logTag, Strings.authUrlProvidedValidationMessage + " " + authUrl);
+          logTag, Strings.authUrlProvidedValidationMessage + ' ' + authUrl);
       throw RedirectException(
           authUrl, Strings.authUrlProvidedValidationMessage);
     }
 
-    if (authModelUsed == null) {
-      Log().debug(logTag, 'No authModel provided');
-      throw Exception('No authModel provided');
-    }
-
-    String? url;
+    late String url;
     var payload = <String, String>{
       'PBFPubKey': Quidpay().publicKey,
       'otp': otp
@@ -66,16 +61,11 @@ class Validate {
         throw Exception(Strings.invalidValidationMessage);
     }
 
-    if (url == null) {
-      Log().debug(logTag, Strings.cannotCompleteValidationMessage);
-      throw Exception(Strings.cannotCompleteValidationMessage);
-    }
-
     Log().debug(logTag, payload);
 
-    final _response = Response<ValidateResult>(
+    final _response = Response<ValidateResult?>(
       await _http.post(url, payload),
-      onTransform: (dynamic data, _) => ValidateResult.fromJson(data)!,
+      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
     );
 
     Log().debug('$logTag -> Response', _response);
