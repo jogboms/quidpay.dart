@@ -10,18 +10,18 @@ class Banks {
 
   final HttpWrapper _http;
 
-  Future<Response<List<Bank>>> fetch() async {
-    final _response = Response<List<Bank>>(
+  Future<Response<List<Bank?>>> fetch() async {
+    final _response = Response<List<Bank?>>(
       await _http.get(Endpoints.getBanks),
       onTransform: (dynamic data, _) {
-        return Model.generator<Bank>(
+        return Model.generator<Bank?>(
           data,
           (dynamic bank) => Bank.fromJson(bank),
         );
       },
     );
 
-    Log().debug("$runtimeType.fetch() -> Response", _response);
+    Log().debug('$runtimeType.fetch() -> Response', _response);
 
     return _response;
   }

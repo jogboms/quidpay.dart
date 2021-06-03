@@ -6,13 +6,13 @@ class Quidpay {
   factory Quidpay() {
     assert(_instance != null,
         'Please make sure to call Quidpay.init() at the top of your app or before using the other functions.');
-    return _instance;
+    return _instance!;
   }
 
   Quidpay._({
-    @required this.publicKey,
-    @required this.secretKey,
-    @required this.production,
+    required this.publicKey,
+    required this.secretKey,
+    required this.production,
   }) : baseUrl = production ? Url.Prod : Url.Staging;
 
   @visibleForTesting
@@ -21,15 +21,12 @@ class Quidpay {
   }
 
   static void init({
-    @required String publicKey,
-    @required String secretKey,
-    @required bool production,
+    required String publicKey,
+    required String secretKey,
+    required bool production,
     bool useLogger = false,
     bool restart = false,
   }) {
-    assert(publicKey != null);
-    assert(secretKey != null);
-    assert(production != null);
     assert((_instance != null && restart == true) || _instance == null,
         'Are you trying to reset the previous keys by calling Quidpay.init() again?.');
     _instance = Quidpay._(
@@ -41,7 +38,7 @@ class Quidpay {
     Log.init(!useLogger);
   }
 
-  static Quidpay _instance;
+  static Quidpay? _instance;
 
   final String publicKey;
   final String secretKey;

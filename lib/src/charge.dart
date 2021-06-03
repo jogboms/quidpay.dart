@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
@@ -16,45 +15,36 @@ import 'package:quidpay/src/utils/response.dart';
 
 class Charge {
   Charge({
-    @required this.payload,
-  })  : assert(payload != null),
-        _http = HttpWrapper();
+    required this.payload,
+  }) : _http = HttpWrapper();
 
   factory Charge.card({
-    @required String cardno,
-    @required String cvv,
-    @required String amount,
-    @required String expiryyear,
-    @required String expirymonth,
-    @required String email,
-    @required String firstname,
-    @required String lastname,
-    String redirectUrl,
+    required String cardno,
+    required String cvv,
+    required String amount,
+    required String expiryyear,
+    required String expirymonth,
+    required String email,
+    required String firstname,
+    required String lastname,
+    String? redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
-    String txRef,
-    String suggestedAuth,
-    String iP,
-    String settlementToken,
-    String phonenumber,
-    String billingzip,
-    String narration,
-    List<Metadata> meta,
-    String pin,
-    String bvn,
-    String chargeType,
-    String deviceFingerprint,
-    String recurringStop,
-    bool includeIntegrityHash,
+    String? txRef,
+    String? suggestedAuth,
+    String? iP,
+    String? settlementToken,
+    String? phonenumber,
+    String? billingzip,
+    String? narration,
+    List<Metadata>? meta,
+    String? pin,
+    String? bvn,
+    String? chargeType,
+    String? deviceFingerprint,
+    String? recurringStop,
+    bool? includeIntegrityHash,
   }) {
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(amount != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -86,34 +76,25 @@ class Charge {
   }
 
   factory Charge.pin({
-    @required String amount,
-    @required String email,
-    @required String firstname,
-    @required String lastname,
-    @required String pin,
-    @required String cardno,
-    @required String cvv,
-    @required String expiryyear,
-    @required String expirymonth,
-    String redirectUrl,
+    required String amount,
+    required String email,
+    required String firstname,
+    required String lastname,
+    required String pin,
+    required String cardno,
+    required String cvv,
+    required String expiryyear,
+    required String expirymonth,
+    String? redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
-    String txRef,
-    String paymentType,
-    List<Metadata> meta,
-    String iP,
-    String chargeType,
-    bool includeIntegrityHash,
+    String? txRef,
+    String? paymentType,
+    List<Metadata>? meta,
+    String? iP,
+    String? chargeType,
+    bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(pin != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -139,37 +120,31 @@ class Charge {
   }
 
   factory Charge.account({
-    @required String amount,
-    @required String email,
-    @required String accountbank,
-    @required String accountnumber,
-    @required String firstname,
-    @required String lastname,
-    String redirectUrl,
+    required String amount,
+    required String email,
+    required String accountbank,
+    required String accountnumber,
+    required String firstname,
+    required String lastname,
+    String? redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
-    String iP,
-    String txRef,
-    String chargeType,
-    String suggestedAuth,
-    String settlementToken,
-    String phonenumber,
-    String billingzip,
-    String narration,
-    List<Metadata> meta,
-    String bvn,
-    String deviceFingerprint,
-    String paymentType,
-    String recurringStop,
-    String isInternetBanking,
-    bool includeIntegrityHash,
+    String? iP,
+    String? txRef,
+    String? chargeType,
+    String? suggestedAuth,
+    String? settlementToken,
+    String? phonenumber,
+    String? billingzip,
+    String? narration,
+    List<Metadata>? meta,
+    String? bvn,
+    String? deviceFingerprint,
+    String? paymentType,
+    String? recurringStop,
+    String? isInternetBanking,
+    bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(accountbank != null);
-    assert(accountnumber != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
@@ -201,41 +176,32 @@ class Charge {
   }
 
   factory Charge.preauth({
-    @required String cardno,
-    @required String cvv,
-    @required String amount,
-    @required String expiryyear,
-    @required String expirymonth,
-    @required String email,
-    @required String firstname,
-    @required String lastname,
-    @required String pin,
-    String redirectUrl,
+    required String cardno,
+    required String cvv,
+    required String amount,
+    required String expiryyear,
+    required String expirymonth,
+    required String email,
+    required String firstname,
+    required String lastname,
+    required String pin,
+    String? redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
-    String txRef,
-    String chargeType,
-    String iP,
-    String suggestedAuth,
-    String settlementToken,
-    String phonenumber,
-    String billingzip,
-    String narration,
-    List<Metadata> meta,
-    String bvn,
-    String deviceFingerprint,
-    String recurringStop,
-    bool includeIntegrityHash,
+    String? txRef,
+    String? chargeType,
+    String? iP,
+    String? suggestedAuth,
+    String? settlementToken,
+    String? phonenumber,
+    String? billingzip,
+    String? narration,
+    List<Metadata>? meta,
+    String? bvn,
+    String? deviceFingerprint,
+    String? recurringStop,
+    bool? includeIntegrityHash,
   }) {
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(amount != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
-    assert(pin != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -259,7 +225,7 @@ class Charge {
         ..add(Keys.Pin, pin)
         ..add(Keys.Bvn, bvn)
         ..add(Keys.RedirectUrl, redirectUrl ?? LOCAL_REDIRECT_URL)
-        ..add(Keys.ChargeType, chargeType ?? "preauth")
+        ..add(Keys.ChargeType, chargeType ?? 'preauth')
         ..add(Keys.DeviceFingerprint, deviceFingerprint)
         ..add(Keys.RecurringStop, recurringStop)
         ..add(Keys.IncludeIntegrityHash, includeIntegrityHash),
@@ -267,30 +233,23 @@ class Charge {
   }
 
   factory Charge.ussd({
-    @required String amount,
-    @required String phonenumber,
-    @required String email,
-    @required String accountbank,
-    @required String accountnumber,
-    @required String firstname,
-    @required String lastname,
-    String redirectUrl,
+    required String amount,
+    required String phonenumber,
+    required String email,
+    required String accountbank,
+    required String accountnumber,
+    required String firstname,
+    required String lastname,
+    String? redirectUrl,
     String currency = Currencies.NAIRA,
     String country = Countries.NIGERIA,
-    String txRef,
-    String iP,
-    String narration,
-    List<Metadata> meta,
-    String deviceFingerprint,
-    bool includeIntegrityHash,
+    String? txRef,
+    String? iP,
+    String? narration,
+    List<Metadata>? meta,
+    String? deviceFingerprint,
+    bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(accountbank != null);
-    assert(accountnumber != null);
-    assert(email != null);
-    assert(phonenumber != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
@@ -319,7 +278,7 @@ class Charge {
   final Payload payload;
   static final _encryption = Encryption(secretKey: Quidpay().secretKey);
 
-  Future<Response<Result>> charge() async {
+  Future<Response<Result?>> charge() async {
     if (payload.getItem(Keys.IncludeIntegrityHash) == true) {
       payload.remove(Keys.IncludeIntegrityHash);
       final integrityHash = _encryption.integrityHash(payload.toMap());
@@ -328,26 +287,26 @@ class Charge {
           Keys.IntegrityHash,
           () => integrityHash,
         );
-      payload..add(Keys.QueryStringData, queryStringData);
+      payload.add(Keys.QueryStringData, queryStringData);
     }
 
-    Log().debug("$runtimeType.charge()", payload);
+    Log().debug('$runtimeType.charge()', payload);
 
     final _res = await _http.post(
       Endpoints.directCharge,
       <String, dynamic>{
-        "PBFPubKey": Quidpay().publicKey,
-        "client": _encryption.encrypt(payload.toMap()),
-        "alg": Encryption.ALGORITHM,
+        'PBFPubKey': Quidpay().publicKey,
+        'client': _encryption.encrypt(payload.toMap()),
+        'alg': Encryption.ALGORITHM,
       },
     );
 
-    final _response = Response<Result>(
+    final _response = Response<Result?>(
       _res,
       onTransform: (dynamic data, _) => Result.fromJson(data),
     );
 
-    Log().debug("$runtimeType.charge() -> Response", _response);
+    Log().debug('$runtimeType.charge() -> Response', _response);
 
     return _response;
   }

@@ -1,9 +1,8 @@
-import 'package:meta/meta.dart';
-import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Tokenize {
   Tokenize() : _http = HttpWrapper();
@@ -13,24 +12,19 @@ class Tokenize {
   // TODO
   Future<Response<dynamic>> _charge(
     String url, {
-    @required String amount,
-    @required String email,
-    @required String iP,
-    @required String txRef,
-    String token,
-    String currency,
-    String country,
-    String firstname,
-    String lastname,
-    String narration,
-    String meta,
-    String deviceFingerprint,
+    required String amount,
+    required String email,
+    required String iP,
+    required String txRef,
+    String? token,
+    String? currency,
+    String? country,
+    String? firstname,
+    String? lastname,
+    String? narration,
+    String? meta,
+    String? deviceFingerprint,
   }) async {
-    assert(amount != null);
-    assert(email != null);
-    assert(iP != null);
-    assert(txRef != null);
-
     final payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,
       'token': token,
@@ -47,31 +41,31 @@ class Tokenize {
       'device_fingerprint': deviceFingerprint,
     };
 
-    Log().debug("$runtimeType.charge()", payload);
+    Log().debug('$runtimeType.charge()', payload);
 
     final _response = Response<dynamic>(
       await _http.post(url, payload),
       onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("$runtimeType._charge() -> Response", _response);
+    Log().debug('$runtimeType._charge() -> Response', _response);
 
     return _response;
   }
 
   Future<Response> card({
-    @required String amount,
-    @required String email,
-    @required String iP,
-    @required String txRef,
-    String token,
-    String currency,
-    String country,
-    String firstname,
-    String lastname,
-    String narration,
-    String meta,
-    String deviceFingerprint,
+    required String amount,
+    required String email,
+    required String iP,
+    required String txRef,
+    String? token,
+    String? currency,
+    String? country,
+    String? firstname,
+    String? lastname,
+    String? narration,
+    String? meta,
+    String? deviceFingerprint,
   }) {
     return _charge(
       Endpoints.tokenizeCard,
@@ -91,18 +85,18 @@ class Tokenize {
   }
 
   Future<Response> account({
-    @required String amount,
-    @required String email,
-    @required String iP,
-    @required String txRef,
-    String token,
-    String currency,
-    String country,
-    String firstname,
-    String lastname,
-    String narration,
-    String meta,
-    String deviceFingerprint,
+    required String amount,
+    required String email,
+    required String iP,
+    required String txRef,
+    String? token,
+    String? currency,
+    String? country,
+    String? firstname,
+    String? lastname,
+    String? narration,
+    String? meta,
+    String? deviceFingerprint,
   }) {
     return _charge(
       Endpoints.tokenizeAccount,
