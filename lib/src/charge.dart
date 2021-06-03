@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
@@ -17,8 +16,7 @@ import 'package:quidpay/src/utils/response.dart';
 class Charge {
   Charge({
     required this.payload,
-  })  : assert(payload != null),
-        _http = HttpWrapper();
+  }) : _http = HttpWrapper();
 
   factory Charge.card({
     required String cardno,
@@ -30,8 +28,8 @@ class Charge {
     required String firstname,
     required String lastname,
     String? redirectUrl,
-    String? currency = Currencies.NAIRA,
-    String? country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
     String? txRef,
     String? suggestedAuth,
     String? iP,
@@ -47,14 +45,6 @@ class Charge {
     String? recurringStop,
     bool? includeIntegrityHash,
   }) {
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(amount != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -96,8 +86,8 @@ class Charge {
     required String expiryyear,
     required String expirymonth,
     String? redirectUrl,
-    String? currency = Currencies.NAIRA,
-    String? country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
     String? txRef,
     String? paymentType,
     List<Metadata>? meta,
@@ -105,15 +95,6 @@ class Charge {
     String? chargeType,
     bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(pin != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -141,13 +122,13 @@ class Charge {
   factory Charge.account({
     required String amount,
     required String email,
-    required String? accountbank,
-    required String? accountnumber,
+    required String accountbank,
+    required String accountnumber,
     required String firstname,
     required String lastname,
     String? redirectUrl,
-    String? currency = Currencies.NAIRA,
-    String? country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
     String? iP,
     String? txRef,
     String? chargeType,
@@ -164,12 +145,6 @@ class Charge {
     String? isInternetBanking,
     bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(accountbank != null);
-    assert(accountnumber != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
@@ -207,12 +182,12 @@ class Charge {
     required String expiryyear,
     required String expirymonth,
     required String email,
-    required String? firstname,
-    required String? lastname,
-    required String? pin,
+    required String firstname,
+    required String lastname,
+    required String pin,
     String? redirectUrl,
-    String? currency = Currencies.NAIRA,
-    String? country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
     String? txRef,
     String? chargeType,
     String? iP,
@@ -227,15 +202,6 @@ class Charge {
     String? recurringStop,
     bool? includeIntegrityHash,
   }) {
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(amount != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
-    assert(email != null);
-    assert(firstname != null);
-    assert(lastname != null);
-    assert(pin != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Cardno, cardno)
@@ -275,8 +241,8 @@ class Charge {
     required String firstname,
     required String lastname,
     String? redirectUrl,
-    String? currency = Currencies.NAIRA,
-    String? country = Countries.NIGERIA,
+    String currency = Currencies.NAIRA,
+    String country = Countries.NIGERIA,
     String? txRef,
     String? iP,
     String? narration,
@@ -284,13 +250,6 @@ class Charge {
     String? deviceFingerprint,
     bool? includeIntegrityHash,
   }) {
-    assert(amount != null);
-    assert(accountbank != null);
-    assert(accountnumber != null);
-    assert(email != null);
-    assert(phonenumber != null);
-    assert(firstname != null);
-    assert(lastname != null);
     return Charge(
       payload: Payload()
         ..add(Keys.Currency, currency)
@@ -319,7 +278,7 @@ class Charge {
   final Payload payload;
   static final _encryption = Encryption(secretKey: Quidpay().secretKey);
 
-  Future<Response<Result>> charge() async {
+  Future<Response<Result?>> charge() async {
     if (payload.getItem(Keys.IncludeIntegrityHash) == true) {
       payload.remove(Keys.IncludeIntegrityHash);
       final integrityHash = _encryption.integrityHash(payload.toMap());
@@ -328,7 +287,7 @@ class Charge {
           Keys.IntegrityHash,
           () => integrityHash,
         );
-      payload..add(Keys.QueryStringData, queryStringData);
+      payload.add(Keys.QueryStringData, queryStringData);
     }
 
     Log().debug('$runtimeType.charge()', payload);
@@ -342,9 +301,9 @@ class Charge {
       },
     );
 
-    final _response = Response<Result>(
+    final _response = Response<Result?>(
       _res,
-      onTransform: (dynamic data, _) => Result.fromJson(data)!,
+      onTransform: (dynamic data, _) => Result.fromJson(data),
     );
 
     Log().debug('$runtimeType.charge() -> Response', _response);

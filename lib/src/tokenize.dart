@@ -1,8 +1,7 @@
-import 'package:quidpay/src/utils/response.dart';
-import 'package:quidpay/src/quidpay.dart';
-import 'package:quidpay/src/utils/endpoints.dart';
+nts.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
+import 'package:quidpay/src/utils/response.dart';
 
 class Tokenize {
   Tokenize() : _http = HttpWrapper();
@@ -25,7 +24,6 @@ class Tokenize {
     String? meta,
     String? deviceFingerprint,
   }) async {
-
     final payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,
       'token': token,

@@ -31,7 +31,7 @@ void voidCard() async {
     redirectUrl: 'https://rave-web.herokuapp.com/receivepayment',
   );
 
-  await PreAuth().voidCard(_charge.data!.flwRef!);
+  await PreAuth().voidCard(_charge.data!.flwRef);
 }
 
 void refundCard() async {
@@ -48,7 +48,7 @@ void refundCard() async {
     redirectUrl: 'https://rave-web.herokuapp.com/receivepayment',
   );
 
-  await PreAuth().refundCard(_charge.data!.flwRef!);
+  await PreAuth().refundCard(_charge.data!.flwRef);
 }
 
 void main() async {

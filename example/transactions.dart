@@ -3,7 +3,7 @@ import 'package:quidpay/quidpay.dart';
 import '_bootstrap.dart';
 import 'validate.dart' as validate;
 
-Future<Response<VerifyResult>> verify() async {
+Future<Response<VerifyResult?>> verify() async {
   final response = await validate.card();
   final resp = await Transactions().verify(
     flwRef: response.data!.tx.flwRef,
@@ -13,13 +13,13 @@ Future<Response<VerifyResult>> verify() async {
   return resp;
 }
 
-Future<Response<dynamic>> requery() async {
+Future<Response<VerifyResult?>> requery() async {
   final response = await validate.card();
   final resp = await Transactions().requery(
     flwRef: response.data!.tx.flwRef,
     txRef: response.data!.tx.txRef,
   );
-  print(resp);
+  print('isSuccessful:--> ' + resp.data!.isSuccessful.toString());
   return resp;
 }
 
