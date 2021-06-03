@@ -1,6 +1,6 @@
 name: quidpay
 description: Quidpay payment SDK for Dart
-version: 0.4.0
+version: 0.5.0
 author: Jeremiah Ogbomo <jeremiahogbomo@gmail.com>
 homepage: https://github.com/jogboms/quidpay.dart
 
