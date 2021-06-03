@@ -325,163 +325,163 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'txRef':
           result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'orderRef':
           result.orderRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'flwRef':
           result.flwRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'redirectUrl':
           result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'device_fingerprint':
           result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'settlement_token':
           result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'cycle':
           result.cycle = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'charged_amount':
           result.chargedAmount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'appfee':
           result.appfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'merchantfee':
           result.merchantfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'merchantbearsfee':
           result.merchantbearsfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double?;
+              specifiedType: const FullType(double)) as double;
           break;
         case 'chargeResponseCode':
           result.chargeResponseCode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'raveRef':
           result.raveRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'chargeResponseMessage':
           result.chargeResponseMessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'authModelUsed':
           result.authModelUsed = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'currency':
           result.currency = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'IP':
           result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'narration':
           result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'status':
           result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'modalauditid':
           result.modalauditid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'vbvrespmessage':
           result.vbvrespmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'authurl':
           result.invalidAuthUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'vbvrespcode':
           result.vbvrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'acctvalrespmsg':
           result.acctvalrespmsg = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'acctvalrespcode':
           result.acctvalrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymentType':
           result.paymentType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymentPlan':
           result.paymentPlan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymentPage':
           result.paymentPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'paymentId':
           result.paymentId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'fraud_status':
           result.fraudStatus = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'charge_type':
           result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'is_live':
           result.isLive = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'suggested_auth':
           result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'createdAt':
           result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'updatedAt':
           result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'deletedAt':
           result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'customerId':
           result.customerId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'AccountId':
           result.accountId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'customer':
           result.customer.replace(serializers.deserialize(value,
@@ -489,7 +489,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
           break;
         case 'customercandosubsequentnoauth':
           result.customercandosubsequentnoauth = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -996,4 +996,4 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

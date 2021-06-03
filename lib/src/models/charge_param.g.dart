@@ -212,85 +212,85 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
           break;
         case 'lastname':
           result.lastname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'redirectUrl':
           result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'txRef':
           result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'suggestedAuth':
           result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'iP':
           result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'settlementToken':
           result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'phonenumber':
           result.phonenumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'billingzip':
           result.billingzip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'narration':
           result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
                       BuiltList, const [const FullType(Metadata)]))!
-              as BuiltList<Object?>);
+              as BuiltList<Object>);
           break;
         case 'bvn':
           result.bvn = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'chargeType':
           result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'deviceFingerprint':
           result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'recurringStop':
           result.recurringStop = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'includeIntegrityHash':
           result.includeIntegrityHash = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
+              specifiedType: const FullType(bool)) as bool;
           break;
         case 'cardno':
           result.cardno = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'cvv':
           result.cvv = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'expiryyear':
           result.expiryyear = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'expirymonth':
           result.expirymonth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
         case 'pin':
           result.pin = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -677,4 +677,4 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

@@ -1,9 +1,9 @@
 import 'dart:convert' show json;
 
 abstract class ModelInterface {
-  Map<String, dynamic> toMap();
+  Map<String, dynamic>? toMap();
 
-  Map<String, dynamic> toJson() => toMap();
+  Map<String, dynamic>? toJson() => toMap();
 
   @override
   String toString() => Model.mapToString(toMap());
@@ -41,12 +41,12 @@ abstract class Model implements ModelInterface {
   @override
   Map<String, dynamic> toJson() => toMap();
 
-  static String mapToString(Map<String, dynamic> map) {
+  static String mapToString(Map<String, dynamic>? map) {
     return json.encode(map);
   }
 
-  static Map<String, dynamic>? stringToMap(String? string) {
-    if (string == null || string.isEmpty) {
+  static Map<String, dynamic>? stringToMap(String string) {
+    if (string.isEmpty) {
       return null;
     }
     try {

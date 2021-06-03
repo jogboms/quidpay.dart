@@ -14,7 +14,7 @@ abstract class Result
     implements Built<Result, ResultBuilder> {
   Result._();
 
-  factory Result([Function(ResultBuilder b) updates]) = _$Result;
+  factory Result([Function(ResultBuilder b)? updates]) = _$Result;
 
   int? get id;
 
@@ -156,14 +156,14 @@ abstract class Result
           suggestedAuth!.toLowerCase() == AuthType.AVS_VBVSECURECODE);
 
   @memoized
-  bool get isSuccessful => status?.toUpperCase() == 'SUCCESSFUL';
+  bool get isSuccessful => status!.toUpperCase() == 'SUCCESSFUL';
 
   @memoized
   bool get hasValidReferenceAndTrans => (txRef != null) && (id != null);
 
   @memoized
   bool get hasValidUrl {
-    if (invalidAuthUrl == null || invalidAuthUrl!.isEmpty) {
+    if (invalidAuthUrl?.isEmpty ?? false) {
       return false;
     }
 
@@ -175,11 +175,11 @@ abstract class Result
   String? get authurl => hasValidUrl ? invalidAuthUrl : null;
 
   @override
-  Map<String, dynamic> toMap() =>
+  Map<String, dynamic>? toMap() =>
       serializers.serializeWith(Result.serializer, this)
-          as Map<String, dynamic>;
+          as Map<String, dynamic>?;
 
-  static Result? fromJson(Map<String, dynamic> map) =>
+  static Result? fromJson(Map<String, dynamic>? map) =>
       serializers.deserializeWith(Result.serializer, map);
 
   static Serializer<Result> get serializer => _$resultSerializer;
