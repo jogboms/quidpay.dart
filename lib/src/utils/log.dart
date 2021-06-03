@@ -7,7 +7,7 @@ class Log {
 
   static void init([bool production = false]) => _instance = Log._(production);
 
-  static Log _instance;
+  static late Log _instance;
 
   final bool production;
 
@@ -25,7 +25,7 @@ class Log {
 
   @visibleForTesting
   String generator(String delim, String tag, [dynamic payload]) {
-    String _ = '';
+    var _ = '';
     if (!production) {
       final _d = delim.padRight(20, delim);
       _ += '\n$delim $tag $_d\n';
