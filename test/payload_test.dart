@@ -7,8 +7,7 @@ import '_constants.dart';
 const String Key = 'Hey';
 
 void main() {
-  setUp(() => Quidpay.init(
-      production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST));
+  setUp(() => Quidpay.init(production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST));
 
   tearDown(() => Quidpay.reset());
 
@@ -26,11 +25,7 @@ void main() {
       expect(payload.length, 3);
     });
     test('-> add multiple length', () {
-      final payload = Payload()
-        ..add(Key, 20)
-        ..add(Key, 20)
-        ..add(Key, 20)
-        ..add(Key, 20);
+      final payload = Payload()..add(Key, 20)..add(Key, 20)..add(Key, 20)..add(Key, 20);
 
       expect(payload.length, 3);
     });
@@ -43,13 +38,6 @@ void main() {
       final payload = Payload()..addBuilder(Key, (_) => 20);
 
       expect(payload.length, 3);
-    });
-    test('-> add null length', () {
-      final payload = Payload()
-        ..add(Key, null)
-        ..addBuilder(Key, (_) => null);
-
-      expect(payload.length, 2);
     });
     test('-> remove length', () {
       final payload = Payload()
