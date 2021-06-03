@@ -18,7 +18,7 @@ class _$ValidateResultSerializer
   final String wireName = 'ValidateResult';
 
   @override
-  Iterable serialize(Serializers serializers, ValidateResult object,
+  Iterable<Object> serialize(Serializers serializers, ValidateResult object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
@@ -26,18 +26,20 @@ class _$ValidateResultSerializer
       'tx',
       serializers.serialize(object.tx, specifiedType: const FullType(Tx)),
     ];
-    if (object.airtimeFlag != null) {
+    Object value;
+    value = object.airtimeFlag;
+    if (value != null) {
       result
         ..add('airtime_flag')
-        ..add(serializers.serialize(object.airtimeFlag,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
     return result;
   }
 
   @override
-  ValidateResult deserialize(Serializers serializers, Iterable serialized,
+  ValidateResult deserialize(
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ValidateResultBuilder();
 
@@ -45,7 +47,7 @@ class _$ValidateResultSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'data':
           result.data.replace(serializers.deserialize(value,
@@ -73,7 +75,7 @@ class _$DataSerializer implements StructuredSerializer<Data> {
   final String wireName = 'Data';
 
   @override
-  Iterable serialize(Serializers serializers, Data object,
+  Iterable<Object> serialize(Serializers serializers, Data object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'responsecode',
@@ -83,18 +85,19 @@ class _$DataSerializer implements StructuredSerializer<Data> {
       serializers.serialize(object.responsemessage,
           specifiedType: const FullType(String)),
     ];
-    if (object.responsetoken != null) {
+    Object value;
+    value = object.responsetoken;
+    if (value != null) {
       result
         ..add('responsetoken')
-        ..add(serializers.serialize(object.responsetoken,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
     return result;
   }
 
   @override
-  Data deserialize(Serializers serializers, Iterable serialized,
+  Data deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataBuilder();
 
@@ -102,7 +105,7 @@ class _$DataSerializer implements StructuredSerializer<Data> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'responsetoken':
           result.responsetoken = serializers.deserialize(value,
@@ -135,12 +138,8 @@ class _$ValidateResult extends ValidateResult {
       (new ValidateResultBuilder()..update(updates)).build();
 
   _$ValidateResult._({this.data, this.tx, this.airtimeFlag}) : super._() {
-    if (data == null) {
-      throw new BuiltValueNullFieldError('ValidateResult', 'data');
-    }
-    if (tx == null) {
-      throw new BuiltValueNullFieldError('ValidateResult', 'tx');
-    }
+    BuiltValueNullFieldError.checkNotNull(data, 'ValidateResult', 'data');
+    BuiltValueNullFieldError.checkNotNull(tx, 'ValidateResult', 'tx');
   }
 
   @override
@@ -160,15 +159,6 @@ class _$ValidateResult extends ValidateResult {
   @override
   int get hashCode {
     return 718007461;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('ValidateResult')
-          ..add('data', data)
-          ..add('tx', tx)
-          ..add('airtimeFlag', airtimeFlag))
-        .toString();
   }
 }
 
@@ -191,10 +181,11 @@ class ValidateResultBuilder
   ValidateResultBuilder();
 
   ValidateResultBuilder get _$this {
-    if (_$v != null) {
-      _data = _$v.data?.toBuilder();
-      _tx = _$v.tx?.toBuilder();
-      _airtimeFlag = _$v.airtimeFlag;
+    final $v = _$v;
+    if ($v != null) {
+      _data = $v.data.toBuilder();
+      _tx = $v.tx.toBuilder();
+      _airtimeFlag = $v.airtimeFlag;
       _$v = null;
     }
     return this;
@@ -202,9 +193,7 @@ class ValidateResultBuilder
 
   @override
   void replace(ValidateResult other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ValidateResult;
   }
 
@@ -251,12 +240,9 @@ class _$Data extends Data {
 
   _$Data._({this.responsetoken, this.responsecode, this.responsemessage})
       : super._() {
-    if (responsecode == null) {
-      throw new BuiltValueNullFieldError('Data', 'responsecode');
-    }
-    if (responsemessage == null) {
-      throw new BuiltValueNullFieldError('Data', 'responsemessage');
-    }
+    BuiltValueNullFieldError.checkNotNull(responsecode, 'Data', 'responsecode');
+    BuiltValueNullFieldError.checkNotNull(
+        responsemessage, 'Data', 'responsemessage');
   }
 
   @override
@@ -280,15 +266,6 @@ class _$Data extends Data {
     return $jf($jc($jc($jc(0, responsetoken.hashCode), responsecode.hashCode),
         responsemessage.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Data')
-          ..add('responsetoken', responsetoken)
-          ..add('responsecode', responsecode)
-          ..add('responsemessage', responsemessage))
-        .toString();
-  }
 }
 
 class DataBuilder implements Builder<Data, DataBuilder> {
@@ -311,10 +288,11 @@ class DataBuilder implements Builder<Data, DataBuilder> {
   DataBuilder();
 
   DataBuilder get _$this {
-    if (_$v != null) {
-      _responsetoken = _$v.responsetoken;
-      _responsecode = _$v.responsecode;
-      _responsemessage = _$v.responsemessage;
+    final $v = _$v;
+    if ($v != null) {
+      _responsetoken = $v.responsetoken;
+      _responsecode = $v.responsecode;
+      _responsemessage = $v.responsemessage;
       _$v = null;
     }
     return this;
@@ -322,9 +300,7 @@ class DataBuilder implements Builder<Data, DataBuilder> {
 
   @override
   void replace(Data other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Data;
   }
 
@@ -338,8 +314,10 @@ class DataBuilder implements Builder<Data, DataBuilder> {
     final _$result = _$v ??
         new _$Data._(
             responsetoken: responsetoken,
-            responsecode: responsecode,
-            responsemessage: responsemessage);
+            responsecode: BuiltValueNullFieldError.checkNotNull(
+                responsecode, 'Data', 'responsecode'),
+            responsemessage: BuiltValueNullFieldError.checkNotNull(
+                responsemessage, 'Data', 'responsemessage'));
     replace(_$result);
     return _$result;
   }

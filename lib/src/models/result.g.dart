@@ -15,267 +15,305 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
   final String wireName = 'Result';
 
   @override
-  Iterable serialize(Serializers serializers, Result object,
+  Iterable<Object> serialize(Serializers serializers, Result object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
-    if (object.id != null) {
+    Object value;
+    value = object.id;
+    if (value != null) {
       result
         ..add('id')
-        ..add(serializers.serialize(object.id,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.txRef != null) {
+    value = object.txRef;
+    if (value != null) {
       result
         ..add('txRef')
-        ..add(serializers.serialize(object.txRef,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.orderRef != null) {
+    value = object.orderRef;
+    if (value != null) {
       result
         ..add('orderRef')
-        ..add(serializers.serialize(object.orderRef,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.flwRef != null) {
+    value = object.flwRef;
+    if (value != null) {
       result
         ..add('flwRef')
-        ..add(serializers.serialize(object.flwRef,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.redirectUrl != null) {
+    value = object.redirectUrl;
+    if (value != null) {
       result
         ..add('redirectUrl')
-        ..add(serializers.serialize(object.redirectUrl,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.deviceFingerprint != null) {
+    value = object.deviceFingerprint;
+    if (value != null) {
       result
         ..add('device_fingerprint')
-        ..add(serializers.serialize(object.deviceFingerprint,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.settlementToken != null) {
+    value = object.settlementToken;
+    if (value != null) {
       result
         ..add('settlement_token')
-        ..add(serializers.serialize(object.settlementToken,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.cycle != null) {
+    value = object.cycle;
+    if (value != null) {
       result
         ..add('cycle')
-        ..add(serializers.serialize(object.cycle,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.amount != null) {
+    value = object.amount;
+    if (value != null) {
       result
         ..add('amount')
-        ..add(serializers.serialize(object.amount,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
-    if (object.chargedAmount != null) {
+    value = object.chargedAmount;
+    if (value != null) {
       result
         ..add('charged_amount')
-        ..add(serializers.serialize(object.chargedAmount,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
-    if (object.appfee != null) {
+    value = object.appfee;
+    if (value != null) {
       result
         ..add('appfee')
-        ..add(serializers.serialize(object.appfee,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
-    if (object.merchantfee != null) {
+    value = object.merchantfee;
+    if (value != null) {
       result
         ..add('merchantfee')
-        ..add(serializers.serialize(object.merchantfee,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
-    if (object.merchantbearsfee != null) {
+    value = object.merchantbearsfee;
+    if (value != null) {
       result
         ..add('merchantbearsfee')
-        ..add(serializers.serialize(object.merchantbearsfee,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(double)));
     }
-    if (object.chargeResponseCode != null) {
+    value = object.chargeResponseCode;
+    if (value != null) {
       result
         ..add('chargeResponseCode')
-        ..add(serializers.serialize(object.chargeResponseCode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.raveRef != null) {
+    value = object.raveRef;
+    if (value != null) {
       result
         ..add('raveRef')
-        ..add(serializers.serialize(object.raveRef,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.chargeResponseMessage != null) {
+    value = object.chargeResponseMessage;
+    if (value != null) {
       result
         ..add('chargeResponseMessage')
-        ..add(serializers.serialize(object.chargeResponseMessage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.authModelUsed != null) {
+    value = object.authModelUsed;
+    if (value != null) {
       result
         ..add('authModelUsed')
-        ..add(serializers.serialize(object.authModelUsed,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.currency != null) {
+    value = object.currency;
+    if (value != null) {
       result
         ..add('currency')
-        ..add(serializers.serialize(object.currency,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.iP != null) {
+    value = object.iP;
+    if (value != null) {
       result
         ..add('IP')
-        ..add(serializers.serialize(object.iP,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.narration != null) {
+    value = object.narration;
+    if (value != null) {
       result
         ..add('narration')
-        ..add(serializers.serialize(object.narration,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.status != null) {
+    value = object.status;
+    if (value != null) {
       result
         ..add('status')
-        ..add(serializers.serialize(object.status,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.modalauditid != null) {
+    value = object.modalauditid;
+    if (value != null) {
       result
         ..add('modalauditid')
-        ..add(serializers.serialize(object.modalauditid,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.vbvrespmessage != null) {
+    value = object.vbvrespmessage;
+    if (value != null) {
       result
         ..add('vbvrespmessage')
-        ..add(serializers.serialize(object.vbvrespmessage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.authurl != null) {
+    value = object.invalidAuthUrl;
+    if (value != null) {
       result
         ..add('authurl')
-        ..add(serializers.serialize(object.authurl,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.vbvrespcode != null) {
+    value = object.vbvrespcode;
+    if (value != null) {
       result
         ..add('vbvrespcode')
-        ..add(serializers.serialize(object.vbvrespcode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctvalrespmsg != null) {
+    value = object.acctvalrespmsg;
+    if (value != null) {
       result
         ..add('acctvalrespmsg')
-        ..add(serializers.serialize(object.acctvalrespmsg,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctvalrespcode != null) {
+    value = object.acctvalrespcode;
+    if (value != null) {
       result
         ..add('acctvalrespcode')
-        ..add(serializers.serialize(object.acctvalrespcode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentType != null) {
+    value = object.paymentType;
+    if (value != null) {
       result
         ..add('paymentType')
-        ..add(serializers.serialize(object.paymentType,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentPlan != null) {
+    value = object.paymentPlan;
+    if (value != null) {
       result
         ..add('paymentPlan')
-        ..add(serializers.serialize(object.paymentPlan,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentPage != null) {
+    value = object.paymentPage;
+    if (value != null) {
       result
         ..add('paymentPage')
-        ..add(serializers.serialize(object.paymentPage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentId != null) {
+    value = object.paymentId;
+    if (value != null) {
       result
         ..add('paymentId')
-        ..add(serializers.serialize(object.paymentId,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.fraudStatus != null) {
+    value = object.fraudStatus;
+    if (value != null) {
       result
         ..add('fraud_status')
-        ..add(serializers.serialize(object.fraudStatus,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.chargeType != null) {
+    value = object.chargeType;
+    if (value != null) {
       result
         ..add('charge_type')
-        ..add(serializers.serialize(object.chargeType,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.isLive != null) {
+    value = object.isLive;
+    if (value != null) {
       result
         ..add('is_live')
-        ..add(serializers.serialize(object.isLive,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.suggestedAuth != null) {
+    value = object.suggestedAuth;
+    if (value != null) {
       result
         ..add('suggested_auth')
-        ..add(serializers.serialize(object.suggestedAuth,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.createdAt != null) {
+    value = object.createdAt;
+    if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(object.createdAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.updatedAt != null) {
+    value = object.updatedAt;
+    if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(object.updatedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.deletedAt != null) {
+    value = object.deletedAt;
+    if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(object.deletedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.customerId != null) {
+    value = object.customerId;
+    if (value != null) {
       result
         ..add('customerId')
-        ..add(serializers.serialize(object.customerId,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.accountId != null) {
+    value = object.accountId;
+    if (value != null) {
       result
         ..add('AccountId')
-        ..add(serializers.serialize(object.accountId,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.customer != null) {
+    value = object.customer;
+    if (value != null) {
       result
         ..add('customer')
-        ..add(serializers.serialize(object.customer,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(Customer)));
     }
-    if (object.customercandosubsequentnoauth != null) {
+    value = object.customercandosubsequentnoauth;
+    if (value != null) {
       result
         ..add('customercandosubsequentnoauth')
-        ..add(serializers.serialize(object.customercandosubsequentnoauth,
-            specifiedType: const FullType(bool)));
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-
     return result;
   }
 
   @override
-  Result deserialize(Serializers serializers, Iterable serialized,
+  Result deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ResultBuilder();
 
@@ -283,7 +321,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -378,7 +416,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
               specifiedType: const FullType(String)) as String;
           break;
         case 'authurl':
-          result.authurl = serializers.deserialize(value,
+          result.invalidAuthUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'vbvrespcode':
@@ -508,7 +546,7 @@ class _$Result extends Result {
   @override
   final String vbvrespmessage;
   @override
-  final String authurl;
+  final String invalidAuthUrl;
   @override
   final String vbvrespcode;
   @override
@@ -550,7 +588,7 @@ class _$Result extends Result {
   bool __isSuccessful;
   bool __hasValidReferenceAndTrans;
   bool __hasValidUrl;
-  String __authUrl;
+  String __authurl;
 
   factory _$Result([void Function(ResultBuilder) updates]) =>
       (new ResultBuilder()..update(updates)).build();
@@ -579,7 +617,7 @@ class _$Result extends Result {
       this.status,
       this.modalauditid,
       this.vbvrespmessage,
-      this.authurl,
+      this.invalidAuthUrl,
       this.vbvrespcode,
       this.acctvalrespmsg,
       this.acctvalrespcode,
@@ -618,7 +656,7 @@ class _$Result extends Result {
   bool get hasValidUrl => __hasValidUrl ??= super.hasValidUrl;
 
   @override
-  String get authUrl => __authUrl ??= super.authUrl;
+  String get authurl => __authurl ??= super.authurl;
 
   @override
   Result rebuild(void Function(ResultBuilder) updates) =>
@@ -636,54 +674,6 @@ class _$Result extends Result {
   @override
   int get hashCode {
     return $jf($jc(0, id.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Result')
-          ..add('id', id)
-          ..add('txRef', txRef)
-          ..add('orderRef', orderRef)
-          ..add('flwRef', flwRef)
-          ..add('redirectUrl', redirectUrl)
-          ..add('deviceFingerprint', deviceFingerprint)
-          ..add('settlementToken', settlementToken)
-          ..add('cycle', cycle)
-          ..add('amount', amount)
-          ..add('chargedAmount', chargedAmount)
-          ..add('appfee', appfee)
-          ..add('merchantfee', merchantfee)
-          ..add('merchantbearsfee', merchantbearsfee)
-          ..add('chargeResponseCode', chargeResponseCode)
-          ..add('raveRef', raveRef)
-          ..add('chargeResponseMessage', chargeResponseMessage)
-          ..add('authModelUsed', authModelUsed)
-          ..add('currency', currency)
-          ..add('iP', iP)
-          ..add('narration', narration)
-          ..add('status', status)
-          ..add('modalauditid', modalauditid)
-          ..add('vbvrespmessage', vbvrespmessage)
-          ..add('authurl', authurl)
-          ..add('vbvrespcode', vbvrespcode)
-          ..add('acctvalrespmsg', acctvalrespmsg)
-          ..add('acctvalrespcode', acctvalrespcode)
-          ..add('paymentType', paymentType)
-          ..add('paymentPlan', paymentPlan)
-          ..add('paymentPage', paymentPage)
-          ..add('paymentId', paymentId)
-          ..add('fraudStatus', fraudStatus)
-          ..add('chargeType', chargeType)
-          ..add('isLive', isLive)
-          ..add('suggestedAuth', suggestedAuth)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('deletedAt', deletedAt)
-          ..add('customerId', customerId)
-          ..add('accountId', accountId)
-          ..add('customer', customer)
-          ..add('customercandosubsequentnoauth', customercandosubsequentnoauth))
-        .toString();
   }
 }
 
@@ -790,9 +780,10 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   set vbvrespmessage(String vbvrespmessage) =>
       _$this._vbvrespmessage = vbvrespmessage;
 
-  String _authurl;
-  String get authurl => _$this._authurl;
-  set authurl(String authurl) => _$this._authurl = authurl;
+  String _invalidAuthUrl;
+  String get invalidAuthUrl => _$this._invalidAuthUrl;
+  set invalidAuthUrl(String invalidAuthUrl) =>
+      _$this._invalidAuthUrl = invalidAuthUrl;
 
   String _vbvrespcode;
   String get vbvrespcode => _$this._vbvrespcode;
@@ -874,49 +865,50 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   ResultBuilder();
 
   ResultBuilder get _$this {
-    if (_$v != null) {
-      _id = _$v.id;
-      _txRef = _$v.txRef;
-      _orderRef = _$v.orderRef;
-      _flwRef = _$v.flwRef;
-      _redirectUrl = _$v.redirectUrl;
-      _deviceFingerprint = _$v.deviceFingerprint;
-      _settlementToken = _$v.settlementToken;
-      _cycle = _$v.cycle;
-      _amount = _$v.amount;
-      _chargedAmount = _$v.chargedAmount;
-      _appfee = _$v.appfee;
-      _merchantfee = _$v.merchantfee;
-      _merchantbearsfee = _$v.merchantbearsfee;
-      _chargeResponseCode = _$v.chargeResponseCode;
-      _raveRef = _$v.raveRef;
-      _chargeResponseMessage = _$v.chargeResponseMessage;
-      _authModelUsed = _$v.authModelUsed;
-      _currency = _$v.currency;
-      _iP = _$v.iP;
-      _narration = _$v.narration;
-      _status = _$v.status;
-      _modalauditid = _$v.modalauditid;
-      _vbvrespmessage = _$v.vbvrespmessage;
-      _authurl = _$v.authurl;
-      _vbvrespcode = _$v.vbvrespcode;
-      _acctvalrespmsg = _$v.acctvalrespmsg;
-      _acctvalrespcode = _$v.acctvalrespcode;
-      _paymentType = _$v.paymentType;
-      _paymentPlan = _$v.paymentPlan;
-      _paymentPage = _$v.paymentPage;
-      _paymentId = _$v.paymentId;
-      _fraudStatus = _$v.fraudStatus;
-      _chargeType = _$v.chargeType;
-      _isLive = _$v.isLive;
-      _suggestedAuth = _$v.suggestedAuth;
-      _createdAt = _$v.createdAt;
-      _updatedAt = _$v.updatedAt;
-      _deletedAt = _$v.deletedAt;
-      _customerId = _$v.customerId;
-      _accountId = _$v.accountId;
-      _customer = _$v.customer?.toBuilder();
-      _customercandosubsequentnoauth = _$v.customercandosubsequentnoauth;
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _txRef = $v.txRef;
+      _orderRef = $v.orderRef;
+      _flwRef = $v.flwRef;
+      _redirectUrl = $v.redirectUrl;
+      _deviceFingerprint = $v.deviceFingerprint;
+      _settlementToken = $v.settlementToken;
+      _cycle = $v.cycle;
+      _amount = $v.amount;
+      _chargedAmount = $v.chargedAmount;
+      _appfee = $v.appfee;
+      _merchantfee = $v.merchantfee;
+      _merchantbearsfee = $v.merchantbearsfee;
+      _chargeResponseCode = $v.chargeResponseCode;
+      _raveRef = $v.raveRef;
+      _chargeResponseMessage = $v.chargeResponseMessage;
+      _authModelUsed = $v.authModelUsed;
+      _currency = $v.currency;
+      _iP = $v.iP;
+      _narration = $v.narration;
+      _status = $v.status;
+      _modalauditid = $v.modalauditid;
+      _vbvrespmessage = $v.vbvrespmessage;
+      _invalidAuthUrl = $v.invalidAuthUrl;
+      _vbvrespcode = $v.vbvrespcode;
+      _acctvalrespmsg = $v.acctvalrespmsg;
+      _acctvalrespcode = $v.acctvalrespcode;
+      _paymentType = $v.paymentType;
+      _paymentPlan = $v.paymentPlan;
+      _paymentPage = $v.paymentPage;
+      _paymentId = $v.paymentId;
+      _fraudStatus = $v.fraudStatus;
+      _chargeType = $v.chargeType;
+      _isLive = $v.isLive;
+      _suggestedAuth = $v.suggestedAuth;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
+      _deletedAt = $v.deletedAt;
+      _customerId = $v.customerId;
+      _accountId = $v.accountId;
+      _customer = $v.customer?.toBuilder();
+      _customercandosubsequentnoauth = $v.customercandosubsequentnoauth;
       _$v = null;
     }
     return this;
@@ -924,9 +916,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   @override
   void replace(Result other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Result;
   }
 
@@ -964,7 +954,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
               status: status,
               modalauditid: modalauditid,
               vbvrespmessage: vbvrespmessage,
-              authurl: authurl,
+              invalidAuthUrl: invalidAuthUrl,
               vbvrespcode: vbvrespcode,
               acctvalrespmsg: acctvalrespmsg,
               acctvalrespcode: acctvalrespcode,

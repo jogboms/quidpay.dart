@@ -15,7 +15,7 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
   final String wireName = 'ChargeToken';
 
   @override
-  Iterable serialize(Serializers serializers, ChargeToken object,
+  Iterable<Object> serialize(Serializers serializers, ChargeToken object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'user_token',
@@ -30,7 +30,7 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
   }
 
   @override
-  ChargeToken deserialize(Serializers serializers, Iterable serialized,
+  ChargeToken deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChargeTokenBuilder();
 
@@ -38,7 +38,7 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'user_token':
           result.userToken = serializers.deserialize(value,
@@ -65,12 +65,10 @@ class _$ChargeToken extends ChargeToken {
       (new ChargeTokenBuilder()..update(updates)).build();
 
   _$ChargeToken._({this.userToken, this.embedToken}) : super._() {
-    if (userToken == null) {
-      throw new BuiltValueNullFieldError('ChargeToken', 'userToken');
-    }
-    if (embedToken == null) {
-      throw new BuiltValueNullFieldError('ChargeToken', 'embedToken');
-    }
+    BuiltValueNullFieldError.checkNotNull(
+        userToken, 'ChargeToken', 'userToken');
+    BuiltValueNullFieldError.checkNotNull(
+        embedToken, 'ChargeToken', 'embedToken');
   }
 
   @override
@@ -90,14 +88,6 @@ class _$ChargeToken extends ChargeToken {
   int get hashCode {
     return 79382666;
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('ChargeToken')
-          ..add('userToken', userToken)
-          ..add('embedToken', embedToken))
-        .toString();
-  }
 }
 
 class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
@@ -114,9 +104,10 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
   ChargeTokenBuilder();
 
   ChargeTokenBuilder get _$this {
-    if (_$v != null) {
-      _userToken = _$v.userToken;
-      _embedToken = _$v.embedToken;
+    final $v = _$v;
+    if ($v != null) {
+      _userToken = $v.userToken;
+      _embedToken = $v.embedToken;
       _$v = null;
     }
     return this;
@@ -124,9 +115,7 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
 
   @override
   void replace(ChargeToken other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ChargeToken;
   }
 
@@ -138,7 +127,11 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
   @override
   _$ChargeToken build() {
     final _$result = _$v ??
-        new _$ChargeToken._(userToken: userToken, embedToken: embedToken);
+        new _$ChargeToken._(
+            userToken: BuiltValueNullFieldError.checkNotNull(
+                userToken, 'ChargeToken', 'userToken'),
+            embedToken: BuiltValueNullFieldError.checkNotNull(
+                embedToken, 'ChargeToken', 'embedToken'));
     replace(_$result);
     return _$result;
   }
