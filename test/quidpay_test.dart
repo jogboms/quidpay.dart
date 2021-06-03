@@ -45,14 +45,12 @@ void main() {
     group('-> BaseUrl', () {
       test('-> production', () {
         Quidpay.reset();
-        Quidpay.init(
-            production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
+        Quidpay.init(production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
         expect(Quidpay().baseUrl, Url.Prod);
       });
       test('-> staging', () {
         Quidpay.reset();
-        Quidpay.init(
-            production: false, publicKey: PUBK_TEST, secretKey: SECK_TEST);
+        Quidpay.init(production: false, publicKey: PUBK_TEST, secretKey: SECK_TEST);
         expect(Quidpay().baseUrl, Url.Staging);
       });
     });
@@ -66,33 +64,9 @@ void main() {
       test('-> Multiple init', () {
         expect(
           () {
-            Quidpay.init(
-                production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
-            Quidpay.init(
-                production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
+            Quidpay.init(production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
+            Quidpay.init(production: true, publicKey: PUBK_TEST, secretKey: SECK_TEST);
           },
-          throwsAssertionError,
-        );
-      });
-
-      test('-> production = null', () {
-        expect(
-          () => Quidpay.init(
-              production: null, publicKey: PUBK_TEST, secretKey: SECK_TEST),
-          throwsAssertionError,
-        );
-      });
-      test('-> publicKey = null', () {
-        expect(
-          () => Quidpay.init(
-              production: true, publicKey: null, secretKey: SECK_TEST),
-          throwsAssertionError,
-        );
-      });
-      test('-> secretKey = null', () {
-        expect(
-          () => Quidpay.init(
-              production: true, publicKey: PUBK_TEST, secretKey: null),
           throwsAssertionError,
         );
       });
