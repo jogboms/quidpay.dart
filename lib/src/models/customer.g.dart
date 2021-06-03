@@ -15,69 +15,76 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
   final String wireName = 'Customer';
 
   @override
-  Iterable serialize(Serializers serializers, Customer object,
+  Iterable<Object?> serialize(Serializers serializers, Customer object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    if (object.id != null) {
+    final result = <Object?>[];
+    Object? value;
+    value = object.id;
+    if (value != null) {
       result
         ..add('id')
-        ..add(serializers.serialize(object.id,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.phone != null) {
+    value = object.phone;
+    if (value != null) {
       result
         ..add('phone')
-        ..add(serializers.serialize(object.phone,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.fullName != null) {
+    value = object.fullName;
+    if (value != null) {
       result
         ..add('fullName')
-        ..add(serializers.serialize(object.fullName,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.customertoken != null) {
+    value = object.customertoken;
+    if (value != null) {
       result
         ..add('customertoken')
-        ..add(serializers.serialize(object.customertoken,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.email != null) {
+    value = object.email;
+    if (value != null) {
       result
         ..add('email')
-        ..add(serializers.serialize(object.email,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.createdAt != null) {
+    value = object.createdAt;
+    if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(object.createdAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.updatedAt != null) {
+    value = object.updatedAt;
+    if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(object.updatedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.deletedAt != null) {
+    value = object.deletedAt;
+    if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(object.deletedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.accountId != null) {
+    value = object.accountId;
+    if (value != null) {
       result
         ..add('AccountId')
-        ..add(serializers.serialize(object.accountId,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-
     return result;
   }
 
   @override
-  Customer deserialize(Serializers serializers, Iterable serialized,
+  Customer deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CustomerBuilder();
 
@@ -85,7 +92,7 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -132,25 +139,25 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
 
 class _$Customer extends Customer {
   @override
-  final int id;
+  final int? id;
   @override
-  final String phone;
+  final String? phone;
   @override
-  final String fullName;
+  final String? fullName;
   @override
-  final String customertoken;
+  final String? customertoken;
   @override
-  final String email;
+  final String? email;
   @override
-  final String createdAt;
+  final String? createdAt;
   @override
-  final String updatedAt;
+  final String? updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int accountId;
+  final int? accountId;
 
-  factory _$Customer([void Function(CustomerBuilder) updates]) =>
+  factory _$Customer([void Function(CustomerBuilder)? updates]) =>
       (new CustomerBuilder()..update(updates)).build();
 
   _$Customer._(
@@ -182,76 +189,62 @@ class _$Customer extends Customer {
   int get hashCode {
     return $jf($jc(0, id.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Customer')
-          ..add('id', id)
-          ..add('phone', phone)
-          ..add('fullName', fullName)
-          ..add('customertoken', customertoken)
-          ..add('email', email)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('deletedAt', deletedAt)
-          ..add('accountId', accountId))
-        .toString();
-  }
 }
 
 class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
-  _$Customer _$v;
+  _$Customer? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
-  String _fullName;
-  String get fullName => _$this._fullName;
-  set fullName(String fullName) => _$this._fullName = fullName;
+  String? _fullName;
+  String? get fullName => _$this._fullName;
+  set fullName(String? fullName) => _$this._fullName = fullName;
 
-  String _customertoken;
-  String get customertoken => _$this._customertoken;
-  set customertoken(String customertoken) =>
+  String? _customertoken;
+  String? get customertoken => _$this._customertoken;
+  set customertoken(String? customertoken) =>
       _$this._customertoken = customertoken;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _createdAt;
-  String get createdAt => _$this._createdAt;
-  set createdAt(String createdAt) => _$this._createdAt = createdAt;
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String _updatedAt;
-  String get updatedAt => _$this._updatedAt;
-  set updatedAt(String updatedAt) => _$this._updatedAt = updatedAt;
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _accountId;
-  int get accountId => _$this._accountId;
-  set accountId(int accountId) => _$this._accountId = accountId;
+  int? _accountId;
+  int? get accountId => _$this._accountId;
+  set accountId(int? accountId) => _$this._accountId = accountId;
 
   CustomerBuilder();
 
   CustomerBuilder get _$this {
-    if (_$v != null) {
-      _id = _$v.id;
-      _phone = _$v.phone;
-      _fullName = _$v.fullName;
-      _customertoken = _$v.customertoken;
-      _email = _$v.email;
-      _createdAt = _$v.createdAt;
-      _updatedAt = _$v.updatedAt;
-      _deletedAt = _$v.deletedAt;
-      _accountId = _$v.accountId;
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _phone = $v.phone;
+      _fullName = $v.fullName;
+      _customertoken = $v.customertoken;
+      _email = $v.email;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
+      _deletedAt = $v.deletedAt;
+      _accountId = $v.accountId;
       _$v = null;
     }
     return this;
@@ -259,14 +252,12 @@ class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
 
   @override
   void replace(Customer other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Customer;
   }
 
   @override
-  void update(void Function(CustomerBuilder) updates) {
+  void update(void Function(CustomerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

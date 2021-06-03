@@ -16,9 +16,9 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
   final String wireName = 'VerifyResult';
 
   @override
-  Iterable serialize(Serializers serializers, VerifyResult object,
+  Iterable<Object?> serialize(Serializers serializers, VerifyResult object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'txid',
       serializers.serialize(object.txid, specifiedType: const FullType(int)),
       'txref',
@@ -183,48 +183,55 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(Metadata)])),
     ];
-    if (object.acctcode != null) {
+    Object? value;
+    value = object.acctcode;
+    if (value != null) {
       result
         ..add('acctcode')
-        ..add(serializers.serialize(object.acctcode,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctmessage != null) {
+    value = object.acctmessage;
+    if (value != null) {
       result
         ..add('acctmessage')
-        ..add(serializers.serialize(object.acctmessage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.custphone != null) {
+    value = object.custphone;
+    if (value != null) {
       result
         ..add('custphone')
-        ..add(serializers.serialize(object.custphone,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.acctalias != null) {
+    value = object.acctalias;
+    if (value != null) {
       result
         ..add('acctalias')
-        ..add(serializers.serialize(object.acctalias,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentplan != null) {
+    value = object.paymentplan;
+    if (value != null) {
       result
         ..add('paymentplan')
-        ..add(serializers.serialize(object.paymentplan,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.paymentpage != null) {
+    value = object.paymentpage;
+    if (value != null) {
       result
         ..add('paymentpage')
-        ..add(serializers.serialize(object.paymentpage,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
     return result;
   }
 
   @override
-  VerifyResult deserialize(Serializers serializers, Iterable serialized,
+  VerifyResult deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VerifyResultBuilder();
 
@@ -232,7 +239,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'txid':
           result.txid = serializers.deserialize(value,
@@ -472,12 +479,13 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'card':
           result.card.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Card)) as Card);
+              specifiedType: const FullType(Card))! as Card);
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
-              specifiedType: const FullType(
-                  BuiltList, const [const FullType(Metadata)])) as BuiltList);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Metadata)]))!
+              as BuiltList<Object>);
           break;
       }
     }
@@ -528,9 +536,9 @@ class _$VerifyResult extends VerifyResult {
   @override
   final String authurl;
   @override
-  final String acctcode;
+  final String? acctcode;
   @override
-  final String acctmessage;
+  final String? acctmessage;
   @override
   final String paymenttype;
   @override
@@ -568,7 +576,7 @@ class _$VerifyResult extends VerifyResult {
   @override
   final int customerid;
   @override
-  final String custphone;
+  final String? custphone;
   @override
   final String custnetworkprovider;
   @override
@@ -594,15 +602,15 @@ class _$VerifyResult extends VerifyResult {
   @override
   final String acctvpcmerchant;
   @override
-  final String acctalias;
+  final String? acctalias;
   @override
   final int acctisliveapproved;
   @override
   final String orderref;
   @override
-  final String paymentplan;
+  final String? paymentplan;
   @override
-  final String paymentpage;
+  final String? paymentpage;
   @override
   final String raveref;
   @override
@@ -610,239 +618,165 @@ class _$VerifyResult extends VerifyResult {
   @override
   final BuiltList<Metadata> meta;
 
-  factory _$VerifyResult([void Function(VerifyResultBuilder) updates]) =>
+  factory _$VerifyResult([void Function(VerifyResultBuilder)? updates]) =>
       (new VerifyResultBuilder()..update(updates)).build();
 
   _$VerifyResult._(
-      {this.txid,
-      this.txref,
-      this.flwref,
-      this.devicefingerprint,
-      this.cycle,
-      this.amount,
-      this.currency,
-      this.chargedamount,
-      this.appfee,
-      this.merchantfee,
-      this.merchantbearsfee,
-      this.chargecode,
-      this.chargemessage,
-      this.authmodel,
-      this.ip,
-      this.narration,
-      this.status,
-      this.vbvcode,
-      this.vbvmessage,
-      this.authurl,
+      {required this.txid,
+      required this.txref,
+      required this.flwref,
+      required this.devicefingerprint,
+      required this.cycle,
+      required this.amount,
+      required this.currency,
+      required this.chargedamount,
+      required this.appfee,
+      required this.merchantfee,
+      required this.merchantbearsfee,
+      required this.chargecode,
+      required this.chargemessage,
+      required this.authmodel,
+      required this.ip,
+      required this.narration,
+      required this.status,
+      required this.vbvcode,
+      required this.vbvmessage,
+      required this.authurl,
       this.acctcode,
       this.acctmessage,
-      this.paymenttype,
-      this.paymentid,
-      this.fraudstatus,
-      this.chargetype,
-      this.createdday,
-      this.createddayname,
-      this.createdweek,
-      this.createdmonth,
-      this.createdmonthname,
-      this.createdquarter,
-      this.createdyear,
-      this.createdyearisleap,
-      this.createddayispublicholiday,
-      this.createdhour,
-      this.createdminute,
-      this.createdpmam,
-      this.created,
-      this.customerid,
+      required this.paymenttype,
+      required this.paymentid,
+      required this.fraudstatus,
+      required this.chargetype,
+      required this.createdday,
+      required this.createddayname,
+      required this.createdweek,
+      required this.createdmonth,
+      required this.createdmonthname,
+      required this.createdquarter,
+      required this.createdyear,
+      required this.createdyearisleap,
+      required this.createddayispublicholiday,
+      required this.createdhour,
+      required this.createdminute,
+      required this.createdpmam,
+      required this.created,
+      required this.customerid,
       this.custphone,
-      this.custnetworkprovider,
-      this.custname,
-      this.custemail,
-      this.custemailprovider,
-      this.custcreated,
-      this.accountid,
-      this.acctbusinessname,
-      this.acctcontactperson,
-      this.acctcountry,
-      this.acctbearsfeeattransactiontime,
-      this.acctparent,
-      this.acctvpcmerchant,
+      required this.custnetworkprovider,
+      required this.custname,
+      required this.custemail,
+      required this.custemailprovider,
+      required this.custcreated,
+      required this.accountid,
+      required this.acctbusinessname,
+      required this.acctcontactperson,
+      required this.acctcountry,
+      required this.acctbearsfeeattransactiontime,
+      required this.acctparent,
+      required this.acctvpcmerchant,
       this.acctalias,
-      this.acctisliveapproved,
-      this.orderref,
+      required this.acctisliveapproved,
+      required this.orderref,
       this.paymentplan,
       this.paymentpage,
-      this.raveref,
-      this.card,
-      this.meta})
+      required this.raveref,
+      required this.card,
+      required this.meta})
       : super._() {
-    if (txid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'txid');
-    }
-    if (txref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'txref');
-    }
-    if (flwref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'flwref');
-    }
-    if (devicefingerprint == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'devicefingerprint');
-    }
-    if (cycle == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'cycle');
-    }
-    if (amount == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'amount');
-    }
-    if (currency == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'currency');
-    }
-    if (chargedamount == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargedamount');
-    }
-    if (appfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'appfee');
-    }
-    if (merchantfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'merchantfee');
-    }
-    if (merchantbearsfee == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'merchantbearsfee');
-    }
-    if (chargecode == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargecode');
-    }
-    if (chargemessage == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargemessage');
-    }
-    if (authmodel == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'authmodel');
-    }
-    if (ip == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'ip');
-    }
-    if (narration == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'narration');
-    }
-    if (status == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'status');
-    }
-    if (vbvcode == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'vbvcode');
-    }
-    if (vbvmessage == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'vbvmessage');
-    }
-    if (authurl == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'authurl');
-    }
-    if (paymenttype == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'paymenttype');
-    }
-    if (paymentid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'paymentid');
-    }
-    if (fraudstatus == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'fraudstatus');
-    }
-    if (chargetype == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'chargetype');
-    }
-    if (createdday == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdday');
-    }
-    if (createddayname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createddayname');
-    }
-    if (createdweek == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdweek');
-    }
-    if (createdmonth == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdmonth');
-    }
-    if (createdmonthname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdmonthname');
-    }
-    if (createdquarter == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdquarter');
-    }
-    if (createdyear == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdyear');
-    }
-    if (createdyearisleap == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdyearisleap');
-    }
-    if (createddayispublicholiday == null) {
-      throw new BuiltValueNullFieldError(
-          'VerifyResult', 'createddayispublicholiday');
-    }
-    if (createdhour == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdhour');
-    }
-    if (createdminute == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdminute');
-    }
-    if (createdpmam == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'createdpmam');
-    }
-    if (created == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'created');
-    }
-    if (customerid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'customerid');
-    }
-    if (custnetworkprovider == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custnetworkprovider');
-    }
-    if (custname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custname');
-    }
-    if (custemail == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custemail');
-    }
-    if (custemailprovider == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custemailprovider');
-    }
-    if (custcreated == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'custcreated');
-    }
-    if (accountid == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'accountid');
-    }
-    if (acctbusinessname == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctbusinessname');
-    }
-    if (acctcontactperson == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctcontactperson');
-    }
-    if (acctcountry == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctcountry');
-    }
-    if (acctbearsfeeattransactiontime == null) {
-      throw new BuiltValueNullFieldError(
-          'VerifyResult', 'acctbearsfeeattransactiontime');
-    }
-    if (acctparent == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctparent');
-    }
-    if (acctvpcmerchant == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctvpcmerchant');
-    }
-    if (acctisliveapproved == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'acctisliveapproved');
-    }
-    if (orderref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'orderref');
-    }
-    if (raveref == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'raveref');
-    }
-    if (card == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'card');
-    }
-    if (meta == null) {
-      throw new BuiltValueNullFieldError('VerifyResult', 'meta');
-    }
+    BuiltValueNullFieldError.checkNotNull(txid, 'VerifyResult', 'txid');
+    BuiltValueNullFieldError.checkNotNull(txref, 'VerifyResult', 'txref');
+    BuiltValueNullFieldError.checkNotNull(flwref, 'VerifyResult', 'flwref');
+    BuiltValueNullFieldError.checkNotNull(
+        devicefingerprint, 'VerifyResult', 'devicefingerprint');
+    BuiltValueNullFieldError.checkNotNull(cycle, 'VerifyResult', 'cycle');
+    BuiltValueNullFieldError.checkNotNull(amount, 'VerifyResult', 'amount');
+    BuiltValueNullFieldError.checkNotNull(currency, 'VerifyResult', 'currency');
+    BuiltValueNullFieldError.checkNotNull(
+        chargedamount, 'VerifyResult', 'chargedamount');
+    BuiltValueNullFieldError.checkNotNull(appfee, 'VerifyResult', 'appfee');
+    BuiltValueNullFieldError.checkNotNull(
+        merchantfee, 'VerifyResult', 'merchantfee');
+    BuiltValueNullFieldError.checkNotNull(
+        merchantbearsfee, 'VerifyResult', 'merchantbearsfee');
+    BuiltValueNullFieldError.checkNotNull(
+        chargecode, 'VerifyResult', 'chargecode');
+    BuiltValueNullFieldError.checkNotNull(
+        chargemessage, 'VerifyResult', 'chargemessage');
+    BuiltValueNullFieldError.checkNotNull(
+        authmodel, 'VerifyResult', 'authmodel');
+    BuiltValueNullFieldError.checkNotNull(ip, 'VerifyResult', 'ip');
+    BuiltValueNullFieldError.checkNotNull(
+        narration, 'VerifyResult', 'narration');
+    BuiltValueNullFieldError.checkNotNull(status, 'VerifyResult', 'status');
+    BuiltValueNullFieldError.checkNotNull(vbvcode, 'VerifyResult', 'vbvcode');
+    BuiltValueNullFieldError.checkNotNull(
+        vbvmessage, 'VerifyResult', 'vbvmessage');
+    BuiltValueNullFieldError.checkNotNull(authurl, 'VerifyResult', 'authurl');
+    BuiltValueNullFieldError.checkNotNull(
+        paymenttype, 'VerifyResult', 'paymenttype');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentid, 'VerifyResult', 'paymentid');
+    BuiltValueNullFieldError.checkNotNull(
+        fraudstatus, 'VerifyResult', 'fraudstatus');
+    BuiltValueNullFieldError.checkNotNull(
+        chargetype, 'VerifyResult', 'chargetype');
+    BuiltValueNullFieldError.checkNotNull(
+        createdday, 'VerifyResult', 'createdday');
+    BuiltValueNullFieldError.checkNotNull(
+        createddayname, 'VerifyResult', 'createddayname');
+    BuiltValueNullFieldError.checkNotNull(
+        createdweek, 'VerifyResult', 'createdweek');
+    BuiltValueNullFieldError.checkNotNull(
+        createdmonth, 'VerifyResult', 'createdmonth');
+    BuiltValueNullFieldError.checkNotNull(
+        createdmonthname, 'VerifyResult', 'createdmonthname');
+    BuiltValueNullFieldError.checkNotNull(
+        createdquarter, 'VerifyResult', 'createdquarter');
+    BuiltValueNullFieldError.checkNotNull(
+        createdyear, 'VerifyResult', 'createdyear');
+    BuiltValueNullFieldError.checkNotNull(
+        createdyearisleap, 'VerifyResult', 'createdyearisleap');
+    BuiltValueNullFieldError.checkNotNull(
+        createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday');
+    BuiltValueNullFieldError.checkNotNull(
+        createdhour, 'VerifyResult', 'createdhour');
+    BuiltValueNullFieldError.checkNotNull(
+        createdminute, 'VerifyResult', 'createdminute');
+    BuiltValueNullFieldError.checkNotNull(
+        createdpmam, 'VerifyResult', 'createdpmam');
+    BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created');
+    BuiltValueNullFieldError.checkNotNull(
+        customerid, 'VerifyResult', 'customerid');
+    BuiltValueNullFieldError.checkNotNull(
+        custnetworkprovider, 'VerifyResult', 'custnetworkprovider');
+    BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname');
+    BuiltValueNullFieldError.checkNotNull(
+        custemail, 'VerifyResult', 'custemail');
+    BuiltValueNullFieldError.checkNotNull(
+        custemailprovider, 'VerifyResult', 'custemailprovider');
+    BuiltValueNullFieldError.checkNotNull(
+        custcreated, 'VerifyResult', 'custcreated');
+    BuiltValueNullFieldError.checkNotNull(
+        accountid, 'VerifyResult', 'accountid');
+    BuiltValueNullFieldError.checkNotNull(
+        acctbusinessname, 'VerifyResult', 'acctbusinessname');
+    BuiltValueNullFieldError.checkNotNull(
+        acctcontactperson, 'VerifyResult', 'acctcontactperson');
+    BuiltValueNullFieldError.checkNotNull(
+        acctcountry, 'VerifyResult', 'acctcountry');
+    BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime,
+        'VerifyResult', 'acctbearsfeeattransactiontime');
+    BuiltValueNullFieldError.checkNotNull(
+        acctparent, 'VerifyResult', 'acctparent');
+    BuiltValueNullFieldError.checkNotNull(
+        acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant');
+    BuiltValueNullFieldError.checkNotNull(
+        acctisliveapproved, 'VerifyResult', 'acctisliveapproved');
+    BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref');
+    BuiltValueNullFieldError.checkNotNull(raveref, 'VerifyResult', 'raveref');
+    BuiltValueNullFieldError.checkNotNull(card, 'VerifyResult', 'card');
+    BuiltValueNullFieldError.checkNotNull(meta, 'VerifyResult', 'meta');
   }
 
   @override
@@ -960,406 +894,341 @@ class _$VerifyResult extends VerifyResult {
             card.hashCode),
         meta.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('VerifyResult')
-          ..add('txid', txid)
-          ..add('txref', txref)
-          ..add('flwref', flwref)
-          ..add('devicefingerprint', devicefingerprint)
-          ..add('cycle', cycle)
-          ..add('amount', amount)
-          ..add('currency', currency)
-          ..add('chargedamount', chargedamount)
-          ..add('appfee', appfee)
-          ..add('merchantfee', merchantfee)
-          ..add('merchantbearsfee', merchantbearsfee)
-          ..add('chargecode', chargecode)
-          ..add('chargemessage', chargemessage)
-          ..add('authmodel', authmodel)
-          ..add('ip', ip)
-          ..add('narration', narration)
-          ..add('status', status)
-          ..add('vbvcode', vbvcode)
-          ..add('vbvmessage', vbvmessage)
-          ..add('authurl', authurl)
-          ..add('acctcode', acctcode)
-          ..add('acctmessage', acctmessage)
-          ..add('paymenttype', paymenttype)
-          ..add('paymentid', paymentid)
-          ..add('fraudstatus', fraudstatus)
-          ..add('chargetype', chargetype)
-          ..add('createdday', createdday)
-          ..add('createddayname', createddayname)
-          ..add('createdweek', createdweek)
-          ..add('createdmonth', createdmonth)
-          ..add('createdmonthname', createdmonthname)
-          ..add('createdquarter', createdquarter)
-          ..add('createdyear', createdyear)
-          ..add('createdyearisleap', createdyearisleap)
-          ..add('createddayispublicholiday', createddayispublicholiday)
-          ..add('createdhour', createdhour)
-          ..add('createdminute', createdminute)
-          ..add('createdpmam', createdpmam)
-          ..add('created', created)
-          ..add('customerid', customerid)
-          ..add('custphone', custphone)
-          ..add('custnetworkprovider', custnetworkprovider)
-          ..add('custname', custname)
-          ..add('custemail', custemail)
-          ..add('custemailprovider', custemailprovider)
-          ..add('custcreated', custcreated)
-          ..add('accountid', accountid)
-          ..add('acctbusinessname', acctbusinessname)
-          ..add('acctcontactperson', acctcontactperson)
-          ..add('acctcountry', acctcountry)
-          ..add('acctbearsfeeattransactiontime', acctbearsfeeattransactiontime)
-          ..add('acctparent', acctparent)
-          ..add('acctvpcmerchant', acctvpcmerchant)
-          ..add('acctalias', acctalias)
-          ..add('acctisliveapproved', acctisliveapproved)
-          ..add('orderref', orderref)
-          ..add('paymentplan', paymentplan)
-          ..add('paymentpage', paymentpage)
-          ..add('raveref', raveref)
-          ..add('card', card)
-          ..add('meta', meta))
-        .toString();
-  }
 }
 
 class VerifyResultBuilder
     implements Builder<VerifyResult, VerifyResultBuilder> {
-  _$VerifyResult _$v;
+  _$VerifyResult? _$v;
 
-  int _txid;
-  int get txid => _$this._txid;
-  set txid(int txid) => _$this._txid = txid;
+  int? _txid;
+  int? get txid => _$this._txid;
+  set txid(int? txid) => _$this._txid = txid;
 
-  String _txref;
-  String get txref => _$this._txref;
-  set txref(String txref) => _$this._txref = txref;
+  String? _txref;
+  String? get txref => _$this._txref;
+  set txref(String? txref) => _$this._txref = txref;
 
-  String _flwref;
-  String get flwref => _$this._flwref;
-  set flwref(String flwref) => _$this._flwref = flwref;
+  String? _flwref;
+  String? get flwref => _$this._flwref;
+  set flwref(String? flwref) => _$this._flwref = flwref;
 
-  String _devicefingerprint;
-  String get devicefingerprint => _$this._devicefingerprint;
-  set devicefingerprint(String devicefingerprint) =>
+  String? _devicefingerprint;
+  String? get devicefingerprint => _$this._devicefingerprint;
+  set devicefingerprint(String? devicefingerprint) =>
       _$this._devicefingerprint = devicefingerprint;
 
-  String _cycle;
-  String get cycle => _$this._cycle;
-  set cycle(String cycle) => _$this._cycle = cycle;
+  String? _cycle;
+  String? get cycle => _$this._cycle;
+  set cycle(String? cycle) => _$this._cycle = cycle;
 
-  double _amount;
-  double get amount => _$this._amount;
-  set amount(double amount) => _$this._amount = amount;
+  double? _amount;
+  double? get amount => _$this._amount;
+  set amount(double? amount) => _$this._amount = amount;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  double _chargedamount;
-  double get chargedamount => _$this._chargedamount;
-  set chargedamount(double chargedamount) =>
+  double? _chargedamount;
+  double? get chargedamount => _$this._chargedamount;
+  set chargedamount(double? chargedamount) =>
       _$this._chargedamount = chargedamount;
 
-  double _appfee;
-  double get appfee => _$this._appfee;
-  set appfee(double appfee) => _$this._appfee = appfee;
+  double? _appfee;
+  double? get appfee => _$this._appfee;
+  set appfee(double? appfee) => _$this._appfee = appfee;
 
-  double _merchantfee;
-  double get merchantfee => _$this._merchantfee;
-  set merchantfee(double merchantfee) => _$this._merchantfee = merchantfee;
+  double? _merchantfee;
+  double? get merchantfee => _$this._merchantfee;
+  set merchantfee(double? merchantfee) => _$this._merchantfee = merchantfee;
 
-  double _merchantbearsfee;
-  double get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double merchantbearsfee) =>
+  double? _merchantbearsfee;
+  double? get merchantbearsfee => _$this._merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) =>
       _$this._merchantbearsfee = merchantbearsfee;
 
-  String _chargecode;
-  String get chargecode => _$this._chargecode;
-  set chargecode(String chargecode) => _$this._chargecode = chargecode;
+  String? _chargecode;
+  String? get chargecode => _$this._chargecode;
+  set chargecode(String? chargecode) => _$this._chargecode = chargecode;
 
-  String _chargemessage;
-  String get chargemessage => _$this._chargemessage;
-  set chargemessage(String chargemessage) =>
+  String? _chargemessage;
+  String? get chargemessage => _$this._chargemessage;
+  set chargemessage(String? chargemessage) =>
       _$this._chargemessage = chargemessage;
 
-  String _authmodel;
-  String get authmodel => _$this._authmodel;
-  set authmodel(String authmodel) => _$this._authmodel = authmodel;
+  String? _authmodel;
+  String? get authmodel => _$this._authmodel;
+  set authmodel(String? authmodel) => _$this._authmodel = authmodel;
 
-  String _ip;
-  String get ip => _$this._ip;
-  set ip(String ip) => _$this._ip = ip;
+  String? _ip;
+  String? get ip => _$this._ip;
+  set ip(String? ip) => _$this._ip = ip;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  String _status;
-  String get status => _$this._status;
-  set status(String status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
 
-  String _vbvcode;
-  String get vbvcode => _$this._vbvcode;
-  set vbvcode(String vbvcode) => _$this._vbvcode = vbvcode;
+  String? _vbvcode;
+  String? get vbvcode => _$this._vbvcode;
+  set vbvcode(String? vbvcode) => _$this._vbvcode = vbvcode;
 
-  String _vbvmessage;
-  String get vbvmessage => _$this._vbvmessage;
-  set vbvmessage(String vbvmessage) => _$this._vbvmessage = vbvmessage;
+  String? _vbvmessage;
+  String? get vbvmessage => _$this._vbvmessage;
+  set vbvmessage(String? vbvmessage) => _$this._vbvmessage = vbvmessage;
 
-  String _authurl;
-  String get authurl => _$this._authurl;
-  set authurl(String authurl) => _$this._authurl = authurl;
+  String? _authurl;
+  String? get authurl => _$this._authurl;
+  set authurl(String? authurl) => _$this._authurl = authurl;
 
-  String _acctcode;
-  String get acctcode => _$this._acctcode;
-  set acctcode(String acctcode) => _$this._acctcode = acctcode;
+  String? _acctcode;
+  String? get acctcode => _$this._acctcode;
+  set acctcode(String? acctcode) => _$this._acctcode = acctcode;
 
-  String _acctmessage;
-  String get acctmessage => _$this._acctmessage;
-  set acctmessage(String acctmessage) => _$this._acctmessage = acctmessage;
+  String? _acctmessage;
+  String? get acctmessage => _$this._acctmessage;
+  set acctmessage(String? acctmessage) => _$this._acctmessage = acctmessage;
 
-  String _paymenttype;
-  String get paymenttype => _$this._paymenttype;
-  set paymenttype(String paymenttype) => _$this._paymenttype = paymenttype;
+  String? _paymenttype;
+  String? get paymenttype => _$this._paymenttype;
+  set paymenttype(String? paymenttype) => _$this._paymenttype = paymenttype;
 
-  String _paymentid;
-  String get paymentid => _$this._paymentid;
-  set paymentid(String paymentid) => _$this._paymentid = paymentid;
+  String? _paymentid;
+  String? get paymentid => _$this._paymentid;
+  set paymentid(String? paymentid) => _$this._paymentid = paymentid;
 
-  String _fraudstatus;
-  String get fraudstatus => _$this._fraudstatus;
-  set fraudstatus(String fraudstatus) => _$this._fraudstatus = fraudstatus;
+  String? _fraudstatus;
+  String? get fraudstatus => _$this._fraudstatus;
+  set fraudstatus(String? fraudstatus) => _$this._fraudstatus = fraudstatus;
 
-  String _chargetype;
-  String get chargetype => _$this._chargetype;
-  set chargetype(String chargetype) => _$this._chargetype = chargetype;
+  String? _chargetype;
+  String? get chargetype => _$this._chargetype;
+  set chargetype(String? chargetype) => _$this._chargetype = chargetype;
 
-  int _createdday;
-  int get createdday => _$this._createdday;
-  set createdday(int createdday) => _$this._createdday = createdday;
+  int? _createdday;
+  int? get createdday => _$this._createdday;
+  set createdday(int? createdday) => _$this._createdday = createdday;
 
-  String _createddayname;
-  String get createddayname => _$this._createddayname;
-  set createddayname(String createddayname) =>
+  String? _createddayname;
+  String? get createddayname => _$this._createddayname;
+  set createddayname(String? createddayname) =>
       _$this._createddayname = createddayname;
 
-  int _createdweek;
-  int get createdweek => _$this._createdweek;
-  set createdweek(int createdweek) => _$this._createdweek = createdweek;
+  int? _createdweek;
+  int? get createdweek => _$this._createdweek;
+  set createdweek(int? createdweek) => _$this._createdweek = createdweek;
 
-  int _createdmonth;
-  int get createdmonth => _$this._createdmonth;
-  set createdmonth(int createdmonth) => _$this._createdmonth = createdmonth;
+  int? _createdmonth;
+  int? get createdmonth => _$this._createdmonth;
+  set createdmonth(int? createdmonth) => _$this._createdmonth = createdmonth;
 
-  String _createdmonthname;
-  String get createdmonthname => _$this._createdmonthname;
-  set createdmonthname(String createdmonthname) =>
+  String? _createdmonthname;
+  String? get createdmonthname => _$this._createdmonthname;
+  set createdmonthname(String? createdmonthname) =>
       _$this._createdmonthname = createdmonthname;
 
-  int _createdquarter;
-  int get createdquarter => _$this._createdquarter;
-  set createdquarter(int createdquarter) =>
+  int? _createdquarter;
+  int? get createdquarter => _$this._createdquarter;
+  set createdquarter(int? createdquarter) =>
       _$this._createdquarter = createdquarter;
 
-  int _createdyear;
-  int get createdyear => _$this._createdyear;
-  set createdyear(int createdyear) => _$this._createdyear = createdyear;
+  int? _createdyear;
+  int? get createdyear => _$this._createdyear;
+  set createdyear(int? createdyear) => _$this._createdyear = createdyear;
 
-  bool _createdyearisleap;
-  bool get createdyearisleap => _$this._createdyearisleap;
-  set createdyearisleap(bool createdyearisleap) =>
+  bool? _createdyearisleap;
+  bool? get createdyearisleap => _$this._createdyearisleap;
+  set createdyearisleap(bool? createdyearisleap) =>
       _$this._createdyearisleap = createdyearisleap;
 
-  int _createddayispublicholiday;
-  int get createddayispublicholiday => _$this._createddayispublicholiday;
-  set createddayispublicholiday(int createddayispublicholiday) =>
+  int? _createddayispublicholiday;
+  int? get createddayispublicholiday => _$this._createddayispublicholiday;
+  set createddayispublicholiday(int? createddayispublicholiday) =>
       _$this._createddayispublicholiday = createddayispublicholiday;
 
-  int _createdhour;
-  int get createdhour => _$this._createdhour;
-  set createdhour(int createdhour) => _$this._createdhour = createdhour;
+  int? _createdhour;
+  int? get createdhour => _$this._createdhour;
+  set createdhour(int? createdhour) => _$this._createdhour = createdhour;
 
-  int _createdminute;
-  int get createdminute => _$this._createdminute;
-  set createdminute(int createdminute) => _$this._createdminute = createdminute;
+  int? _createdminute;
+  int? get createdminute => _$this._createdminute;
+  set createdminute(int? createdminute) =>
+      _$this._createdminute = createdminute;
 
-  String _createdpmam;
-  String get createdpmam => _$this._createdpmam;
-  set createdpmam(String createdpmam) => _$this._createdpmam = createdpmam;
+  String? _createdpmam;
+  String? get createdpmam => _$this._createdpmam;
+  set createdpmam(String? createdpmam) => _$this._createdpmam = createdpmam;
 
-  String _created;
-  String get created => _$this._created;
-  set created(String created) => _$this._created = created;
+  String? _created;
+  String? get created => _$this._created;
+  set created(String? created) => _$this._created = created;
 
-  int _customerid;
-  int get customerid => _$this._customerid;
-  set customerid(int customerid) => _$this._customerid = customerid;
+  int? _customerid;
+  int? get customerid => _$this._customerid;
+  set customerid(int? customerid) => _$this._customerid = customerid;
 
-  String _custphone;
-  String get custphone => _$this._custphone;
-  set custphone(String custphone) => _$this._custphone = custphone;
+  String? _custphone;
+  String? get custphone => _$this._custphone;
+  set custphone(String? custphone) => _$this._custphone = custphone;
 
-  String _custnetworkprovider;
-  String get custnetworkprovider => _$this._custnetworkprovider;
-  set custnetworkprovider(String custnetworkprovider) =>
+  String? _custnetworkprovider;
+  String? get custnetworkprovider => _$this._custnetworkprovider;
+  set custnetworkprovider(String? custnetworkprovider) =>
       _$this._custnetworkprovider = custnetworkprovider;
 
-  String _custname;
-  String get custname => _$this._custname;
-  set custname(String custname) => _$this._custname = custname;
+  String? _custname;
+  String? get custname => _$this._custname;
+  set custname(String? custname) => _$this._custname = custname;
 
-  String _custemail;
-  String get custemail => _$this._custemail;
-  set custemail(String custemail) => _$this._custemail = custemail;
+  String? _custemail;
+  String? get custemail => _$this._custemail;
+  set custemail(String? custemail) => _$this._custemail = custemail;
 
-  String _custemailprovider;
-  String get custemailprovider => _$this._custemailprovider;
-  set custemailprovider(String custemailprovider) =>
+  String? _custemailprovider;
+  String? get custemailprovider => _$this._custemailprovider;
+  set custemailprovider(String? custemailprovider) =>
       _$this._custemailprovider = custemailprovider;
 
-  String _custcreated;
-  String get custcreated => _$this._custcreated;
-  set custcreated(String custcreated) => _$this._custcreated = custcreated;
+  String? _custcreated;
+  String? get custcreated => _$this._custcreated;
+  set custcreated(String? custcreated) => _$this._custcreated = custcreated;
 
-  int _accountid;
-  int get accountid => _$this._accountid;
-  set accountid(int accountid) => _$this._accountid = accountid;
+  int? _accountid;
+  int? get accountid => _$this._accountid;
+  set accountid(int? accountid) => _$this._accountid = accountid;
 
-  String _acctbusinessname;
-  String get acctbusinessname => _$this._acctbusinessname;
-  set acctbusinessname(String acctbusinessname) =>
+  String? _acctbusinessname;
+  String? get acctbusinessname => _$this._acctbusinessname;
+  set acctbusinessname(String? acctbusinessname) =>
       _$this._acctbusinessname = acctbusinessname;
 
-  String _acctcontactperson;
-  String get acctcontactperson => _$this._acctcontactperson;
-  set acctcontactperson(String acctcontactperson) =>
+  String? _acctcontactperson;
+  String? get acctcontactperson => _$this._acctcontactperson;
+  set acctcontactperson(String? acctcontactperson) =>
       _$this._acctcontactperson = acctcontactperson;
 
-  String _acctcountry;
-  String get acctcountry => _$this._acctcountry;
-  set acctcountry(String acctcountry) => _$this._acctcountry = acctcountry;
+  String? _acctcountry;
+  String? get acctcountry => _$this._acctcountry;
+  set acctcountry(String? acctcountry) => _$this._acctcountry = acctcountry;
 
-  int _acctbearsfeeattransactiontime;
-  int get acctbearsfeeattransactiontime =>
+  int? _acctbearsfeeattransactiontime;
+  int? get acctbearsfeeattransactiontime =>
       _$this._acctbearsfeeattransactiontime;
-  set acctbearsfeeattransactiontime(int acctbearsfeeattransactiontime) =>
+  set acctbearsfeeattransactiontime(int? acctbearsfeeattransactiontime) =>
       _$this._acctbearsfeeattransactiontime = acctbearsfeeattransactiontime;
 
-  int _acctparent;
-  int get acctparent => _$this._acctparent;
-  set acctparent(int acctparent) => _$this._acctparent = acctparent;
+  int? _acctparent;
+  int? get acctparent => _$this._acctparent;
+  set acctparent(int? acctparent) => _$this._acctparent = acctparent;
 
-  String _acctvpcmerchant;
-  String get acctvpcmerchant => _$this._acctvpcmerchant;
-  set acctvpcmerchant(String acctvpcmerchant) =>
+  String? _acctvpcmerchant;
+  String? get acctvpcmerchant => _$this._acctvpcmerchant;
+  set acctvpcmerchant(String? acctvpcmerchant) =>
       _$this._acctvpcmerchant = acctvpcmerchant;
 
-  String _acctalias;
-  String get acctalias => _$this._acctalias;
-  set acctalias(String acctalias) => _$this._acctalias = acctalias;
+  String? _acctalias;
+  String? get acctalias => _$this._acctalias;
+  set acctalias(String? acctalias) => _$this._acctalias = acctalias;
 
-  int _acctisliveapproved;
-  int get acctisliveapproved => _$this._acctisliveapproved;
-  set acctisliveapproved(int acctisliveapproved) =>
+  int? _acctisliveapproved;
+  int? get acctisliveapproved => _$this._acctisliveapproved;
+  set acctisliveapproved(int? acctisliveapproved) =>
       _$this._acctisliveapproved = acctisliveapproved;
 
-  String _orderref;
-  String get orderref => _$this._orderref;
-  set orderref(String orderref) => _$this._orderref = orderref;
+  String? _orderref;
+  String? get orderref => _$this._orderref;
+  set orderref(String? orderref) => _$this._orderref = orderref;
 
-  String _paymentplan;
-  String get paymentplan => _$this._paymentplan;
-  set paymentplan(String paymentplan) => _$this._paymentplan = paymentplan;
+  String? _paymentplan;
+  String? get paymentplan => _$this._paymentplan;
+  set paymentplan(String? paymentplan) => _$this._paymentplan = paymentplan;
 
-  String _paymentpage;
-  String get paymentpage => _$this._paymentpage;
-  set paymentpage(String paymentpage) => _$this._paymentpage = paymentpage;
+  String? _paymentpage;
+  String? get paymentpage => _$this._paymentpage;
+  set paymentpage(String? paymentpage) => _$this._paymentpage = paymentpage;
 
-  String _raveref;
-  String get raveref => _$this._raveref;
-  set raveref(String raveref) => _$this._raveref = raveref;
+  String? _raveref;
+  String? get raveref => _$this._raveref;
+  set raveref(String? raveref) => _$this._raveref = raveref;
 
-  CardBuilder _card;
+  CardBuilder? _card;
   CardBuilder get card => _$this._card ??= new CardBuilder();
-  set card(CardBuilder card) => _$this._card = card;
+  set card(CardBuilder? card) => _$this._card = card;
 
-  ListBuilder<Metadata> _meta;
+  ListBuilder<Metadata>? _meta;
   ListBuilder<Metadata> get meta =>
       _$this._meta ??= new ListBuilder<Metadata>();
-  set meta(ListBuilder<Metadata> meta) => _$this._meta = meta;
+  set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
   VerifyResultBuilder();
 
   VerifyResultBuilder get _$this {
-    if (_$v != null) {
-      _txid = _$v.txid;
-      _txref = _$v.txref;
-      _flwref = _$v.flwref;
-      _devicefingerprint = _$v.devicefingerprint;
-      _cycle = _$v.cycle;
-      _amount = _$v.amount;
-      _currency = _$v.currency;
-      _chargedamount = _$v.chargedamount;
-      _appfee = _$v.appfee;
-      _merchantfee = _$v.merchantfee;
-      _merchantbearsfee = _$v.merchantbearsfee;
-      _chargecode = _$v.chargecode;
-      _chargemessage = _$v.chargemessage;
-      _authmodel = _$v.authmodel;
-      _ip = _$v.ip;
-      _narration = _$v.narration;
-      _status = _$v.status;
-      _vbvcode = _$v.vbvcode;
-      _vbvmessage = _$v.vbvmessage;
-      _authurl = _$v.authurl;
-      _acctcode = _$v.acctcode;
-      _acctmessage = _$v.acctmessage;
-      _paymenttype = _$v.paymenttype;
-      _paymentid = _$v.paymentid;
-      _fraudstatus = _$v.fraudstatus;
-      _chargetype = _$v.chargetype;
-      _createdday = _$v.createdday;
-      _createddayname = _$v.createddayname;
-      _createdweek = _$v.createdweek;
-      _createdmonth = _$v.createdmonth;
-      _createdmonthname = _$v.createdmonthname;
-      _createdquarter = _$v.createdquarter;
-      _createdyear = _$v.createdyear;
-      _createdyearisleap = _$v.createdyearisleap;
-      _createddayispublicholiday = _$v.createddayispublicholiday;
-      _createdhour = _$v.createdhour;
-      _createdminute = _$v.createdminute;
-      _createdpmam = _$v.createdpmam;
-      _created = _$v.created;
-      _customerid = _$v.customerid;
-      _custphone = _$v.custphone;
-      _custnetworkprovider = _$v.custnetworkprovider;
-      _custname = _$v.custname;
-      _custemail = _$v.custemail;
-      _custemailprovider = _$v.custemailprovider;
-      _custcreated = _$v.custcreated;
-      _accountid = _$v.accountid;
-      _acctbusinessname = _$v.acctbusinessname;
-      _acctcontactperson = _$v.acctcontactperson;
-      _acctcountry = _$v.acctcountry;
-      _acctbearsfeeattransactiontime = _$v.acctbearsfeeattransactiontime;
-      _acctparent = _$v.acctparent;
-      _acctvpcmerchant = _$v.acctvpcmerchant;
-      _acctalias = _$v.acctalias;
-      _acctisliveapproved = _$v.acctisliveapproved;
-      _orderref = _$v.orderref;
-      _paymentplan = _$v.paymentplan;
-      _paymentpage = _$v.paymentpage;
-      _raveref = _$v.raveref;
-      _card = _$v.card?.toBuilder();
-      _meta = _$v.meta?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _txid = $v.txid;
+      _txref = $v.txref;
+      _flwref = $v.flwref;
+      _devicefingerprint = $v.devicefingerprint;
+      _cycle = $v.cycle;
+      _amount = $v.amount;
+      _currency = $v.currency;
+      _chargedamount = $v.chargedamount;
+      _appfee = $v.appfee;
+      _merchantfee = $v.merchantfee;
+      _merchantbearsfee = $v.merchantbearsfee;
+      _chargecode = $v.chargecode;
+      _chargemessage = $v.chargemessage;
+      _authmodel = $v.authmodel;
+      _ip = $v.ip;
+      _narration = $v.narration;
+      _status = $v.status;
+      _vbvcode = $v.vbvcode;
+      _vbvmessage = $v.vbvmessage;
+      _authurl = $v.authurl;
+      _acctcode = $v.acctcode;
+      _acctmessage = $v.acctmessage;
+      _paymenttype = $v.paymenttype;
+      _paymentid = $v.paymentid;
+      _fraudstatus = $v.fraudstatus;
+      _chargetype = $v.chargetype;
+      _createdday = $v.createdday;
+      _createddayname = $v.createddayname;
+      _createdweek = $v.createdweek;
+      _createdmonth = $v.createdmonth;
+      _createdmonthname = $v.createdmonthname;
+      _createdquarter = $v.createdquarter;
+      _createdyear = $v.createdyear;
+      _createdyearisleap = $v.createdyearisleap;
+      _createddayispublicholiday = $v.createddayispublicholiday;
+      _createdhour = $v.createdhour;
+      _createdminute = $v.createdminute;
+      _createdpmam = $v.createdpmam;
+      _created = $v.created;
+      _customerid = $v.customerid;
+      _custphone = $v.custphone;
+      _custnetworkprovider = $v.custnetworkprovider;
+      _custname = $v.custname;
+      _custemail = $v.custemail;
+      _custemailprovider = $v.custemailprovider;
+      _custcreated = $v.custcreated;
+      _accountid = $v.accountid;
+      _acctbusinessname = $v.acctbusinessname;
+      _acctcontactperson = $v.acctcontactperson;
+      _acctcountry = $v.acctcountry;
+      _acctbearsfeeattransactiontime = $v.acctbearsfeeattransactiontime;
+      _acctparent = $v.acctparent;
+      _acctvpcmerchant = $v.acctvpcmerchant;
+      _acctalias = $v.acctalias;
+      _acctisliveapproved = $v.acctisliveapproved;
+      _orderref = $v.orderref;
+      _paymentplan = $v.paymentplan;
+      _paymentpage = $v.paymentpage;
+      _raveref = $v.raveref;
+      _card = $v.card.toBuilder();
+      _meta = $v.meta.toBuilder();
       _$v = null;
     }
     return this;
@@ -1367,14 +1236,12 @@ class VerifyResultBuilder
 
   @override
   void replace(VerifyResult other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$VerifyResult;
   }
 
   @override
-  void update(void Function(VerifyResultBuilder) updates) {
+  void update(void Function(VerifyResultBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1384,69 +1251,78 @@ class VerifyResultBuilder
     try {
       _$result = _$v ??
           new _$VerifyResult._(
-              txid: txid,
-              txref: txref,
-              flwref: flwref,
-              devicefingerprint: devicefingerprint,
-              cycle: cycle,
-              amount: amount,
-              currency: currency,
-              chargedamount: chargedamount,
-              appfee: appfee,
-              merchantfee: merchantfee,
-              merchantbearsfee: merchantbearsfee,
-              chargecode: chargecode,
-              chargemessage: chargemessage,
-              authmodel: authmodel,
-              ip: ip,
-              narration: narration,
-              status: status,
-              vbvcode: vbvcode,
-              vbvmessage: vbvmessage,
-              authurl: authurl,
+              txid: BuiltValueNullFieldError.checkNotNull(
+                  txid, 'VerifyResult', 'txid'),
+              txref: BuiltValueNullFieldError.checkNotNull(
+                  txref, 'VerifyResult', 'txref'),
+              flwref: BuiltValueNullFieldError.checkNotNull(
+                  flwref, 'VerifyResult', 'flwref'),
+              devicefingerprint: BuiltValueNullFieldError.checkNotNull(
+                  devicefingerprint, 'VerifyResult', 'devicefingerprint'),
+              cycle: BuiltValueNullFieldError.checkNotNull(
+                  cycle, 'VerifyResult', 'cycle'),
+              amount: BuiltValueNullFieldError.checkNotNull(
+                  amount, 'VerifyResult', 'amount'),
+              currency: BuiltValueNullFieldError.checkNotNull(
+                  currency, 'VerifyResult', 'currency'),
+              chargedamount: BuiltValueNullFieldError.checkNotNull(
+                  chargedamount, 'VerifyResult', 'chargedamount'),
+              appfee: BuiltValueNullFieldError.checkNotNull(
+                  appfee, 'VerifyResult', 'appfee'),
+              merchantfee: BuiltValueNullFieldError.checkNotNull(merchantfee, 'VerifyResult', 'merchantfee'),
+              merchantbearsfee: BuiltValueNullFieldError.checkNotNull(merchantbearsfee, 'VerifyResult', 'merchantbearsfee'),
+              chargecode: BuiltValueNullFieldError.checkNotNull(chargecode, 'VerifyResult', 'chargecode'),
+              chargemessage: BuiltValueNullFieldError.checkNotNull(chargemessage, 'VerifyResult', 'chargemessage'),
+              authmodel: BuiltValueNullFieldError.checkNotNull(authmodel, 'VerifyResult', 'authmodel'),
+              ip: BuiltValueNullFieldError.checkNotNull(ip, 'VerifyResult', 'ip'),
+              narration: BuiltValueNullFieldError.checkNotNull(narration, 'VerifyResult', 'narration'),
+              status: BuiltValueNullFieldError.checkNotNull(status, 'VerifyResult', 'status'),
+              vbvcode: BuiltValueNullFieldError.checkNotNull(vbvcode, 'VerifyResult', 'vbvcode'),
+              vbvmessage: BuiltValueNullFieldError.checkNotNull(vbvmessage, 'VerifyResult', 'vbvmessage'),
+              authurl: BuiltValueNullFieldError.checkNotNull(authurl, 'VerifyResult', 'authurl'),
               acctcode: acctcode,
               acctmessage: acctmessage,
-              paymenttype: paymenttype,
-              paymentid: paymentid,
-              fraudstatus: fraudstatus,
-              chargetype: chargetype,
-              createdday: createdday,
-              createddayname: createddayname,
-              createdweek: createdweek,
-              createdmonth: createdmonth,
-              createdmonthname: createdmonthname,
-              createdquarter: createdquarter,
-              createdyear: createdyear,
-              createdyearisleap: createdyearisleap,
-              createddayispublicholiday: createddayispublicholiday,
-              createdhour: createdhour,
-              createdminute: createdminute,
-              createdpmam: createdpmam,
-              created: created,
-              customerid: customerid,
+              paymenttype: BuiltValueNullFieldError.checkNotNull(paymenttype, 'VerifyResult', 'paymenttype'),
+              paymentid: BuiltValueNullFieldError.checkNotNull(paymentid, 'VerifyResult', 'paymentid'),
+              fraudstatus: BuiltValueNullFieldError.checkNotNull(fraudstatus, 'VerifyResult', 'fraudstatus'),
+              chargetype: BuiltValueNullFieldError.checkNotNull(chargetype, 'VerifyResult', 'chargetype'),
+              createdday: BuiltValueNullFieldError.checkNotNull(createdday, 'VerifyResult', 'createdday'),
+              createddayname: BuiltValueNullFieldError.checkNotNull(createddayname, 'VerifyResult', 'createddayname'),
+              createdweek: BuiltValueNullFieldError.checkNotNull(createdweek, 'VerifyResult', 'createdweek'),
+              createdmonth: BuiltValueNullFieldError.checkNotNull(createdmonth, 'VerifyResult', 'createdmonth'),
+              createdmonthname: BuiltValueNullFieldError.checkNotNull(createdmonthname, 'VerifyResult', 'createdmonthname'),
+              createdquarter: BuiltValueNullFieldError.checkNotNull(createdquarter, 'VerifyResult', 'createdquarter'),
+              createdyear: BuiltValueNullFieldError.checkNotNull(createdyear, 'VerifyResult', 'createdyear'),
+              createdyearisleap: BuiltValueNullFieldError.checkNotNull(createdyearisleap, 'VerifyResult', 'createdyearisleap'),
+              createddayispublicholiday: BuiltValueNullFieldError.checkNotNull(createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday'),
+              createdhour: BuiltValueNullFieldError.checkNotNull(createdhour, 'VerifyResult', 'createdhour'),
+              createdminute: BuiltValueNullFieldError.checkNotNull(createdminute, 'VerifyResult', 'createdminute'),
+              createdpmam: BuiltValueNullFieldError.checkNotNull(createdpmam, 'VerifyResult', 'createdpmam'),
+              created: BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created'),
+              customerid: BuiltValueNullFieldError.checkNotNull(customerid, 'VerifyResult', 'customerid'),
               custphone: custphone,
-              custnetworkprovider: custnetworkprovider,
-              custname: custname,
-              custemail: custemail,
-              custemailprovider: custemailprovider,
-              custcreated: custcreated,
-              accountid: accountid,
-              acctbusinessname: acctbusinessname,
-              acctcontactperson: acctcontactperson,
-              acctcountry: acctcountry,
-              acctbearsfeeattransactiontime: acctbearsfeeattransactiontime,
-              acctparent: acctparent,
-              acctvpcmerchant: acctvpcmerchant,
+              custnetworkprovider: BuiltValueNullFieldError.checkNotNull(custnetworkprovider, 'VerifyResult', 'custnetworkprovider'),
+              custname: BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname'),
+              custemail: BuiltValueNullFieldError.checkNotNull(custemail, 'VerifyResult', 'custemail'),
+              custemailprovider: BuiltValueNullFieldError.checkNotNull(custemailprovider, 'VerifyResult', 'custemailprovider'),
+              custcreated: BuiltValueNullFieldError.checkNotNull(custcreated, 'VerifyResult', 'custcreated'),
+              accountid: BuiltValueNullFieldError.checkNotNull(accountid, 'VerifyResult', 'accountid'),
+              acctbusinessname: BuiltValueNullFieldError.checkNotNull(acctbusinessname, 'VerifyResult', 'acctbusinessname'),
+              acctcontactperson: BuiltValueNullFieldError.checkNotNull(acctcontactperson, 'VerifyResult', 'acctcontactperson'),
+              acctcountry: BuiltValueNullFieldError.checkNotNull(acctcountry, 'VerifyResult', 'acctcountry'),
+              acctbearsfeeattransactiontime: BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime, 'VerifyResult', 'acctbearsfeeattransactiontime'),
+              acctparent: BuiltValueNullFieldError.checkNotNull(acctparent, 'VerifyResult', 'acctparent'),
+              acctvpcmerchant: BuiltValueNullFieldError.checkNotNull(acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant'),
               acctalias: acctalias,
-              acctisliveapproved: acctisliveapproved,
-              orderref: orderref,
+              acctisliveapproved: BuiltValueNullFieldError.checkNotNull(acctisliveapproved, 'VerifyResult', 'acctisliveapproved'),
+              orderref: BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref'),
               paymentplan: paymentplan,
               paymentpage: paymentpage,
-              raveref: raveref,
+              raveref: BuiltValueNullFieldError.checkNotNull(raveref, 'VerifyResult', 'raveref'),
               card: card.build(),
               meta: meta.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'card';
         card.build();

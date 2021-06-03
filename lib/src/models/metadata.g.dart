@@ -15,51 +15,54 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
   final String wireName = 'Metadata';
 
   @override
-  Iterable serialize(Serializers serializers, Metadata object,
+  Iterable<Object?> serialize(Serializers serializers, Metadata object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'metaname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'metavalue',
       serializers.serialize(object.value,
           specifiedType: const FullType(String)),
     ];
-    if (object.id != null) {
+    Object? value;
+    value = object.id;
+    if (value != null) {
       result
         ..add('id')
-        ..add(serializers.serialize(object.id,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-    if (object.createdAt != null) {
+    value = object.createdAt;
+    if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(object.createdAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
-    if (object.updatedAt != null) {
+    value = object.updatedAt;
+    if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(object.updatedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
-    if (object.deletedAt != null) {
+    value = object.deletedAt;
+    if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(object.deletedAt,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.getpaidTransactionId != null) {
+    value = object.getpaidTransactionId;
+    if (value != null) {
       result
         ..add('getpaidTransactionId')
-        ..add(serializers.serialize(object.getpaidTransactionId,
-            specifiedType: const FullType(int)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
-
     return result;
   }
 
   @override
-  Metadata deserialize(Serializers serializers, Iterable serialized,
+  Metadata deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MetadataBuilder();
 
@@ -67,7 +70,7 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -106,38 +109,34 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
 
 class _$Metadata extends Metadata {
   @override
-  final int id;
+  final int? id;
   @override
   final String name;
   @override
   final String value;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int getpaidTransactionId;
+  final int? getpaidTransactionId;
 
-  factory _$Metadata([void Function(MetadataBuilder) updates]) =>
+  factory _$Metadata([void Function(MetadataBuilder)? updates]) =>
       (new MetadataBuilder()..update(updates)).build();
 
   _$Metadata._(
       {this.id,
-      this.name,
-      this.value,
+      required this.name,
+      required this.value,
       this.createdAt,
       this.updatedAt,
       this.deletedAt,
       this.getpaidTransactionId})
       : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Metadata', 'name');
-    }
-    if (value == null) {
-      throw new BuiltValueNullFieldError('Metadata', 'value');
-    }
+    BuiltValueNullFieldError.checkNotNull(name, 'Metadata', 'name');
+    BuiltValueNullFieldError.checkNotNull(value, 'Metadata', 'value');
   }
 
   @override
@@ -173,64 +172,52 @@ class _$Metadata extends Metadata {
             deletedAt.hashCode),
         getpaidTransactionId.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Metadata')
-          ..add('id', id)
-          ..add('name', name)
-          ..add('value', value)
-          ..add('createdAt', createdAt)
-          ..add('updatedAt', updatedAt)
-          ..add('deletedAt', deletedAt)
-          ..add('getpaidTransactionId', getpaidTransactionId))
-        .toString();
-  }
 }
 
 class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
-  _$Metadata _$v;
+  _$Metadata? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _value;
-  String get value => _$this._value;
-  set value(String value) => _$this._value = value;
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
-  DateTime _createdAt;
-  DateTime get createdAt => _$this._createdAt;
-  set createdAt(DateTime createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime _updatedAt;
-  DateTime get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _getpaidTransactionId;
-  int get getpaidTransactionId => _$this._getpaidTransactionId;
-  set getpaidTransactionId(int getpaidTransactionId) =>
+  int? _getpaidTransactionId;
+  int? get getpaidTransactionId => _$this._getpaidTransactionId;
+  set getpaidTransactionId(int? getpaidTransactionId) =>
       _$this._getpaidTransactionId = getpaidTransactionId;
 
   MetadataBuilder();
 
   MetadataBuilder get _$this {
-    if (_$v != null) {
-      _id = _$v.id;
-      _name = _$v.name;
-      _value = _$v.value;
-      _createdAt = _$v.createdAt;
-      _updatedAt = _$v.updatedAt;
-      _deletedAt = _$v.deletedAt;
-      _getpaidTransactionId = _$v.getpaidTransactionId;
+    final $v = _$v;
+    if ($v != null) {
+      _id = $v.id;
+      _name = $v.name;
+      _value = $v.value;
+      _createdAt = $v.createdAt;
+      _updatedAt = $v.updatedAt;
+      _deletedAt = $v.deletedAt;
+      _getpaidTransactionId = $v.getpaidTransactionId;
       _$v = null;
     }
     return this;
@@ -238,14 +225,12 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
 
   @override
   void replace(Metadata other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Metadata;
   }
 
   @override
-  void update(void Function(MetadataBuilder) updates) {
+  void update(void Function(MetadataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -254,8 +239,10 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
     final _$result = _$v ??
         new _$Metadata._(
             id: id,
-            name: name,
-            value: value,
+            name:
+                BuiltValueNullFieldError.checkNotNull(name, 'Metadata', 'name'),
+            value: BuiltValueNullFieldError.checkNotNull(
+                value, 'Metadata', 'value'),
             createdAt: createdAt,
             updatedAt: updatedAt,
             deletedAt: deletedAt,

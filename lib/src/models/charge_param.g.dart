@@ -15,9 +15,9 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
   final String wireName = 'ChargeParam';
 
   @override
-  Iterable serialize(Serializers serializers, ChargeParam object,
+  Iterable<Object?> serialize(Serializers serializers, ChargeParam object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'amount',
       serializers.serialize(object.amount,
           specifiedType: const FullType(String)),
@@ -34,133 +34,153 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
       serializers.serialize(object.country,
           specifiedType: const FullType(String)),
     ];
-    if (object.lastname != null) {
+    Object? value;
+    value = object.lastname;
+    if (value != null) {
       result
         ..add('lastname')
-        ..add(serializers.serialize(object.lastname,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.redirectUrl != null) {
+    value = object.redirectUrl;
+    if (value != null) {
       result
         ..add('redirectUrl')
-        ..add(serializers.serialize(object.redirectUrl,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.txRef != null) {
+    value = object.txRef;
+    if (value != null) {
       result
         ..add('txRef')
-        ..add(serializers.serialize(object.txRef,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.suggestedAuth != null) {
+    value = object.suggestedAuth;
+    if (value != null) {
       result
         ..add('suggestedAuth')
-        ..add(serializers.serialize(object.suggestedAuth,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.iP != null) {
+    value = object.iP;
+    if (value != null) {
       result
         ..add('iP')
-        ..add(serializers.serialize(object.iP,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.settlementToken != null) {
+    value = object.settlementToken;
+    if (value != null) {
       result
         ..add('settlementToken')
-        ..add(serializers.serialize(object.settlementToken,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.phonenumber != null) {
+    value = object.phonenumber;
+    if (value != null) {
       result
         ..add('phonenumber')
-        ..add(serializers.serialize(object.phonenumber,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.billingzip != null) {
+    value = object.billingzip;
+    if (value != null) {
       result
         ..add('billingzip')
-        ..add(serializers.serialize(object.billingzip,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.narration != null) {
+    value = object.narration;
+    if (value != null) {
       result
         ..add('narration')
-        ..add(serializers.serialize(object.narration,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.meta != null) {
+    value = object.meta;
+    if (value != null) {
       result
         ..add('meta')
-        ..add(serializers.serialize(object.meta,
+        ..add(serializers.serialize(value,
             specifiedType:
                 const FullType(BuiltList, const [const FullType(Metadata)])));
     }
-    if (object.bvn != null) {
+    value = object.bvn;
+    if (value != null) {
       result
         ..add('bvn')
-        ..add(serializers.serialize(object.bvn,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.chargeType != null) {
+    value = object.chargeType;
+    if (value != null) {
       result
         ..add('chargeType')
-        ..add(serializers.serialize(object.chargeType,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.deviceFingerprint != null) {
+    value = object.deviceFingerprint;
+    if (value != null) {
       result
         ..add('deviceFingerprint')
-        ..add(serializers.serialize(object.deviceFingerprint,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.recurringStop != null) {
+    value = object.recurringStop;
+    if (value != null) {
       result
         ..add('recurringStop')
-        ..add(serializers.serialize(object.recurringStop,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.includeIntegrityHash != null) {
+    value = object.includeIntegrityHash;
+    if (value != null) {
       result
         ..add('includeIntegrityHash')
-        ..add(serializers.serialize(object.includeIntegrityHash,
-            specifiedType: const FullType(bool)));
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-    if (object.cardno != null) {
+    value = object.cardno;
+    if (value != null) {
       result
         ..add('cardno')
-        ..add(serializers.serialize(object.cardno,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.cvv != null) {
+    value = object.cvv;
+    if (value != null) {
       result
         ..add('cvv')
-        ..add(serializers.serialize(object.cvv,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.expiryyear != null) {
+    value = object.expiryyear;
+    if (value != null) {
       result
         ..add('expiryyear')
-        ..add(serializers.serialize(object.expiryyear,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.expirymonth != null) {
+    value = object.expirymonth;
+    if (value != null) {
       result
         ..add('expirymonth')
-        ..add(serializers.serialize(object.expirymonth,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.pin != null) {
+    value = object.pin;
+    if (value != null) {
       result
         ..add('pin')
-        ..add(serializers.serialize(object.pin,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-
     return result;
   }
 
   @override
-  ChargeParam deserialize(Serializers serializers, Iterable serialized,
+  ChargeParam deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChargeParamBuilder();
 
@@ -168,7 +188,7 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'amount':
           result.amount = serializers.deserialize(value,
@@ -228,8 +248,9 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
-              specifiedType: const FullType(
-                  BuiltList, const [const FullType(Metadata)])) as BuiltList);
+                  specifiedType: const FullType(
+                      BuiltList, const [const FullType(Metadata)]))!
+              as BuiltList<Object>);
           break;
         case 'bvn':
           result.bvn = serializers.deserialize(value,
@@ -290,55 +311,55 @@ class _$ChargeParam extends ChargeParam {
   @override
   final String country;
   @override
-  final String lastname;
+  final String? lastname;
   @override
-  final String redirectUrl;
+  final String? redirectUrl;
   @override
-  final String txRef;
+  final String? txRef;
   @override
-  final String suggestedAuth;
+  final String? suggestedAuth;
   @override
-  final String iP;
+  final String? iP;
   @override
-  final String settlementToken;
+  final String? settlementToken;
   @override
-  final String phonenumber;
+  final String? phonenumber;
   @override
-  final String billingzip;
+  final String? billingzip;
   @override
-  final String narration;
+  final String? narration;
   @override
-  final BuiltList<Metadata> meta;
+  final BuiltList<Metadata>? meta;
   @override
-  final String bvn;
+  final String? bvn;
   @override
-  final String chargeType;
+  final String? chargeType;
   @override
-  final String deviceFingerprint;
+  final String? deviceFingerprint;
   @override
-  final String recurringStop;
+  final String? recurringStop;
   @override
-  final bool includeIntegrityHash;
+  final bool? includeIntegrityHash;
   @override
-  final String cardno;
+  final String? cardno;
   @override
-  final String cvv;
+  final String? cvv;
   @override
-  final String expiryyear;
+  final String? expiryyear;
   @override
-  final String expirymonth;
+  final String? expirymonth;
   @override
-  final String pin;
+  final String? pin;
 
-  factory _$ChargeParam([void Function(ChargeParamBuilder) updates]) =>
+  factory _$ChargeParam([void Function(ChargeParamBuilder)? updates]) =>
       (new ChargeParamBuilder()..update(updates)).build();
 
   _$ChargeParam._(
-      {this.amount,
-      this.email,
-      this.firstname,
-      this.currency,
-      this.country,
+      {required this.amount,
+      required this.email,
+      required this.firstname,
+      required this.currency,
+      required this.country,
       this.lastname,
       this.redirectUrl,
       this.txRef,
@@ -360,21 +381,12 @@ class _$ChargeParam extends ChargeParam {
       this.expirymonth,
       this.pin})
       : super._() {
-    if (amount == null) {
-      throw new BuiltValueNullFieldError('ChargeParam', 'amount');
-    }
-    if (email == null) {
-      throw new BuiltValueNullFieldError('ChargeParam', 'email');
-    }
-    if (firstname == null) {
-      throw new BuiltValueNullFieldError('ChargeParam', 'firstname');
-    }
-    if (currency == null) {
-      throw new BuiltValueNullFieldError('ChargeParam', 'currency');
-    }
-    if (country == null) {
-      throw new BuiltValueNullFieldError('ChargeParam', 'country');
-    }
+    BuiltValueNullFieldError.checkNotNull(amount, 'ChargeParam', 'amount');
+    BuiltValueNullFieldError.checkNotNull(email, 'ChargeParam', 'email');
+    BuiltValueNullFieldError.checkNotNull(
+        firstname, 'ChargeParam', 'firstname');
+    BuiltValueNullFieldError.checkNotNull(currency, 'ChargeParam', 'currency');
+    BuiltValueNullFieldError.checkNotNull(country, 'ChargeParam', 'country');
   }
 
   @override
@@ -456,177 +468,147 @@ class _$ChargeParam extends ChargeParam {
             expirymonth.hashCode),
         pin.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('ChargeParam')
-          ..add('amount', amount)
-          ..add('email', email)
-          ..add('firstname', firstname)
-          ..add('currency', currency)
-          ..add('country', country)
-          ..add('lastname', lastname)
-          ..add('redirectUrl', redirectUrl)
-          ..add('txRef', txRef)
-          ..add('suggestedAuth', suggestedAuth)
-          ..add('iP', iP)
-          ..add('settlementToken', settlementToken)
-          ..add('phonenumber', phonenumber)
-          ..add('billingzip', billingzip)
-          ..add('narration', narration)
-          ..add('meta', meta)
-          ..add('bvn', bvn)
-          ..add('chargeType', chargeType)
-          ..add('deviceFingerprint', deviceFingerprint)
-          ..add('recurringStop', recurringStop)
-          ..add('includeIntegrityHash', includeIntegrityHash)
-          ..add('cardno', cardno)
-          ..add('cvv', cvv)
-          ..add('expiryyear', expiryyear)
-          ..add('expirymonth', expirymonth)
-          ..add('pin', pin))
-        .toString();
-  }
 }
 
 class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
-  _$ChargeParam _$v;
+  _$ChargeParam? _$v;
 
-  String _amount;
-  String get amount => _$this._amount;
-  set amount(String amount) => _$this._amount = amount;
+  String? _amount;
+  String? get amount => _$this._amount;
+  set amount(String? amount) => _$this._amount = amount;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _firstname;
-  String get firstname => _$this._firstname;
-  set firstname(String firstname) => _$this._firstname = firstname;
+  String? _firstname;
+  String? get firstname => _$this._firstname;
+  set firstname(String? firstname) => _$this._firstname = firstname;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  String _country;
-  String get country => _$this._country;
-  set country(String country) => _$this._country = country;
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
 
-  String _lastname;
-  String get lastname => _$this._lastname;
-  set lastname(String lastname) => _$this._lastname = lastname;
+  String? _lastname;
+  String? get lastname => _$this._lastname;
+  set lastname(String? lastname) => _$this._lastname = lastname;
 
-  String _redirectUrl;
-  String get redirectUrl => _$this._redirectUrl;
-  set redirectUrl(String redirectUrl) => _$this._redirectUrl = redirectUrl;
+  String? _redirectUrl;
+  String? get redirectUrl => _$this._redirectUrl;
+  set redirectUrl(String? redirectUrl) => _$this._redirectUrl = redirectUrl;
 
-  String _txRef;
-  String get txRef => _$this._txRef;
-  set txRef(String txRef) => _$this._txRef = txRef;
+  String? _txRef;
+  String? get txRef => _$this._txRef;
+  set txRef(String? txRef) => _$this._txRef = txRef;
 
-  String _suggestedAuth;
-  String get suggestedAuth => _$this._suggestedAuth;
-  set suggestedAuth(String suggestedAuth) =>
+  String? _suggestedAuth;
+  String? get suggestedAuth => _$this._suggestedAuth;
+  set suggestedAuth(String? suggestedAuth) =>
       _$this._suggestedAuth = suggestedAuth;
 
-  String _iP;
-  String get iP => _$this._iP;
-  set iP(String iP) => _$this._iP = iP;
+  String? _iP;
+  String? get iP => _$this._iP;
+  set iP(String? iP) => _$this._iP = iP;
 
-  String _settlementToken;
-  String get settlementToken => _$this._settlementToken;
-  set settlementToken(String settlementToken) =>
+  String? _settlementToken;
+  String? get settlementToken => _$this._settlementToken;
+  set settlementToken(String? settlementToken) =>
       _$this._settlementToken = settlementToken;
 
-  String _phonenumber;
-  String get phonenumber => _$this._phonenumber;
-  set phonenumber(String phonenumber) => _$this._phonenumber = phonenumber;
+  String? _phonenumber;
+  String? get phonenumber => _$this._phonenumber;
+  set phonenumber(String? phonenumber) => _$this._phonenumber = phonenumber;
 
-  String _billingzip;
-  String get billingzip => _$this._billingzip;
-  set billingzip(String billingzip) => _$this._billingzip = billingzip;
+  String? _billingzip;
+  String? get billingzip => _$this._billingzip;
+  set billingzip(String? billingzip) => _$this._billingzip = billingzip;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  ListBuilder<Metadata> _meta;
+  ListBuilder<Metadata>? _meta;
   ListBuilder<Metadata> get meta =>
       _$this._meta ??= new ListBuilder<Metadata>();
-  set meta(ListBuilder<Metadata> meta) => _$this._meta = meta;
+  set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
-  String _bvn;
-  String get bvn => _$this._bvn;
-  set bvn(String bvn) => _$this._bvn = bvn;
+  String? _bvn;
+  String? get bvn => _$this._bvn;
+  set bvn(String? bvn) => _$this._bvn = bvn;
 
-  String _chargeType;
-  String get chargeType => _$this._chargeType;
-  set chargeType(String chargeType) => _$this._chargeType = chargeType;
+  String? _chargeType;
+  String? get chargeType => _$this._chargeType;
+  set chargeType(String? chargeType) => _$this._chargeType = chargeType;
 
-  String _deviceFingerprint;
-  String get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String deviceFingerprint) =>
+  String? _deviceFingerprint;
+  String? get deviceFingerprint => _$this._deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) =>
       _$this._deviceFingerprint = deviceFingerprint;
 
-  String _recurringStop;
-  String get recurringStop => _$this._recurringStop;
-  set recurringStop(String recurringStop) =>
+  String? _recurringStop;
+  String? get recurringStop => _$this._recurringStop;
+  set recurringStop(String? recurringStop) =>
       _$this._recurringStop = recurringStop;
 
-  bool _includeIntegrityHash;
-  bool get includeIntegrityHash => _$this._includeIntegrityHash;
-  set includeIntegrityHash(bool includeIntegrityHash) =>
+  bool? _includeIntegrityHash;
+  bool? get includeIntegrityHash => _$this._includeIntegrityHash;
+  set includeIntegrityHash(bool? includeIntegrityHash) =>
       _$this._includeIntegrityHash = includeIntegrityHash;
 
-  String _cardno;
-  String get cardno => _$this._cardno;
-  set cardno(String cardno) => _$this._cardno = cardno;
+  String? _cardno;
+  String? get cardno => _$this._cardno;
+  set cardno(String? cardno) => _$this._cardno = cardno;
 
-  String _cvv;
-  String get cvv => _$this._cvv;
-  set cvv(String cvv) => _$this._cvv = cvv;
+  String? _cvv;
+  String? get cvv => _$this._cvv;
+  set cvv(String? cvv) => _$this._cvv = cvv;
 
-  String _expiryyear;
-  String get expiryyear => _$this._expiryyear;
-  set expiryyear(String expiryyear) => _$this._expiryyear = expiryyear;
+  String? _expiryyear;
+  String? get expiryyear => _$this._expiryyear;
+  set expiryyear(String? expiryyear) => _$this._expiryyear = expiryyear;
 
-  String _expirymonth;
-  String get expirymonth => _$this._expirymonth;
-  set expirymonth(String expirymonth) => _$this._expirymonth = expirymonth;
+  String? _expirymonth;
+  String? get expirymonth => _$this._expirymonth;
+  set expirymonth(String? expirymonth) => _$this._expirymonth = expirymonth;
 
-  String _pin;
-  String get pin => _$this._pin;
-  set pin(String pin) => _$this._pin = pin;
+  String? _pin;
+  String? get pin => _$this._pin;
+  set pin(String? pin) => _$this._pin = pin;
 
   ChargeParamBuilder();
 
   ChargeParamBuilder get _$this {
-    if (_$v != null) {
-      _amount = _$v.amount;
-      _email = _$v.email;
-      _firstname = _$v.firstname;
-      _currency = _$v.currency;
-      _country = _$v.country;
-      _lastname = _$v.lastname;
-      _redirectUrl = _$v.redirectUrl;
-      _txRef = _$v.txRef;
-      _suggestedAuth = _$v.suggestedAuth;
-      _iP = _$v.iP;
-      _settlementToken = _$v.settlementToken;
-      _phonenumber = _$v.phonenumber;
-      _billingzip = _$v.billingzip;
-      _narration = _$v.narration;
-      _meta = _$v.meta?.toBuilder();
-      _bvn = _$v.bvn;
-      _chargeType = _$v.chargeType;
-      _deviceFingerprint = _$v.deviceFingerprint;
-      _recurringStop = _$v.recurringStop;
-      _includeIntegrityHash = _$v.includeIntegrityHash;
-      _cardno = _$v.cardno;
-      _cvv = _$v.cvv;
-      _expiryyear = _$v.expiryyear;
-      _expirymonth = _$v.expirymonth;
-      _pin = _$v.pin;
+    final $v = _$v;
+    if ($v != null) {
+      _amount = $v.amount;
+      _email = $v.email;
+      _firstname = $v.firstname;
+      _currency = $v.currency;
+      _country = $v.country;
+      _lastname = $v.lastname;
+      _redirectUrl = $v.redirectUrl;
+      _txRef = $v.txRef;
+      _suggestedAuth = $v.suggestedAuth;
+      _iP = $v.iP;
+      _settlementToken = $v.settlementToken;
+      _phonenumber = $v.phonenumber;
+      _billingzip = $v.billingzip;
+      _narration = $v.narration;
+      _meta = $v.meta?.toBuilder();
+      _bvn = $v.bvn;
+      _chargeType = $v.chargeType;
+      _deviceFingerprint = $v.deviceFingerprint;
+      _recurringStop = $v.recurringStop;
+      _includeIntegrityHash = $v.includeIntegrityHash;
+      _cardno = $v.cardno;
+      _cvv = $v.cvv;
+      _expiryyear = $v.expiryyear;
+      _expirymonth = $v.expirymonth;
+      _pin = $v.pin;
       _$v = null;
     }
     return this;
@@ -634,14 +616,12 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
 
   @override
   void replace(ChargeParam other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ChargeParam;
   }
 
   @override
-  void update(void Function(ChargeParamBuilder) updates) {
+  void update(void Function(ChargeParamBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -651,11 +631,16 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
     try {
       _$result = _$v ??
           new _$ChargeParam._(
-              amount: amount,
-              email: email,
-              firstname: firstname,
-              currency: currency,
-              country: country,
+              amount: BuiltValueNullFieldError.checkNotNull(
+                  amount, 'ChargeParam', 'amount'),
+              email: BuiltValueNullFieldError.checkNotNull(
+                  email, 'ChargeParam', 'email'),
+              firstname: BuiltValueNullFieldError.checkNotNull(
+                  firstname, 'ChargeParam', 'firstname'),
+              currency: BuiltValueNullFieldError.checkNotNull(
+                  currency, 'ChargeParam', 'currency'),
+              country: BuiltValueNullFieldError.checkNotNull(
+                  country, 'ChargeParam', 'country'),
               lastname: lastname,
               redirectUrl: redirectUrl,
               txRef: txRef,
@@ -677,7 +662,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
               expirymonth: expirymonth,
               pin: pin);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'meta';
         _meta?.build();

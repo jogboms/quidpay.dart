@@ -2,18 +2,14 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:quidpay/src/models/card.dart';
+import 'package:quidpay/src/models/main.dart';
 import 'package:quidpay/src/models/metadata.dart';
 import 'package:quidpay/src/models/serializers.dart';
-import 'package:quidpay/src/models/main.dart';
 
 part 'verify_result.g.dart';
 
-abstract class VerifyResult
-    with ModelInterface
-    implements Built<VerifyResult, VerifyResultBuilder> {
-  factory VerifyResult([
-    void updates(VerifyResultBuilder b),
-  ]) = _$VerifyResult;
+abstract class VerifyResult with ModelInterface implements Built<VerifyResult, VerifyResultBuilder> {
+  factory VerifyResult([void Function(VerifyResultBuilder b)? updates]) = _$VerifyResult;
 
   VerifyResult._();
 
@@ -57,11 +53,9 @@ abstract class VerifyResult
 
   String get authurl;
 
-  @nullable
-  String get acctcode;
+  String? get acctcode;
 
-  @nullable
-  String get acctmessage;
+  String? get acctmessage;
 
   String get paymenttype;
 
@@ -99,8 +93,7 @@ abstract class VerifyResult
 
   int get customerid;
 
-  @nullable
-  String get custphone;
+  String? get custphone;
 
   String get custnetworkprovider;
 
@@ -126,18 +119,15 @@ abstract class VerifyResult
 
   String get acctvpcmerchant;
 
-  @nullable
-  String get acctalias;
+  String? get acctalias;
 
   int get acctisliveapproved;
 
   String get orderref;
 
-  @nullable
-  String get paymentplan;
+  String? get paymentplan;
 
-  @nullable
-  String get paymentpage;
+  String? get paymentpage;
 
   String get raveref;
 
@@ -145,14 +135,12 @@ abstract class VerifyResult
 
   BuiltList<Metadata> get meta;
 
-  bool get isSuccessful => status == "successful";
+  bool get isSuccessful => status == 'successful';
 
   @override
-  Map<String, dynamic> toMap() =>
-      serializers.serializeWith(VerifyResult.serializer, this);
+  Map<String, dynamic>? toMap() => serializers.serializeWith(VerifyResult.serializer, this) as Map<String, dynamic>?;
 
-  static VerifyResult fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(VerifyResult.serializer, map);
+  static VerifyResult? fromJson(Map<String, dynamic>? map) => serializers.deserializeWith(VerifyResult.serializer, map);
 
   static Serializer<VerifyResult> get serializer => _$verifyResultSerializer;
 }

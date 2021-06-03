@@ -15,9 +15,9 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
   final String wireName = 'Bank';
 
   @override
-  Iterable serialize(Serializers serializers, Bank object,
+  Iterable<Object?> serialize(Serializers serializers, Bank object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'bankname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'bankcode',
@@ -31,7 +31,7 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
   }
 
   @override
-  Bank deserialize(Serializers serializers, Iterable serialized,
+  Bank deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new BankBuilder();
 
@@ -39,7 +39,7 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'bankname':
           result.name = serializers.deserialize(value,
@@ -68,19 +68,16 @@ class _$Bank extends Bank {
   @override
   final bool internetbanking;
 
-  factory _$Bank([void Function(BankBuilder) updates]) =>
+  factory _$Bank([void Function(BankBuilder)? updates]) =>
       (new BankBuilder()..update(updates)).build();
 
-  _$Bank._({this.name, this.code, this.internetbanking}) : super._() {
-    if (name == null) {
-      throw new BuiltValueNullFieldError('Bank', 'name');
-    }
-    if (code == null) {
-      throw new BuiltValueNullFieldError('Bank', 'code');
-    }
-    if (internetbanking == null) {
-      throw new BuiltValueNullFieldError('Bank', 'internetbanking');
-    }
+  _$Bank._(
+      {required this.name, required this.code, required this.internetbanking})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(name, 'Bank', 'name');
+    BuiltValueNullFieldError.checkNotNull(code, 'Bank', 'code');
+    BuiltValueNullFieldError.checkNotNull(
+        internetbanking, 'Bank', 'internetbanking');
   }
 
   @override
@@ -104,40 +101,32 @@ class _$Bank extends Bank {
     return $jf($jc(
         $jc($jc(0, name.hashCode), code.hashCode), internetbanking.hashCode));
   }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper('Bank')
-          ..add('name', name)
-          ..add('code', code)
-          ..add('internetbanking', internetbanking))
-        .toString();
-  }
 }
 
 class BankBuilder implements Builder<Bank, BankBuilder> {
-  _$Bank _$v;
+  _$Bank? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _code;
-  String get code => _$this._code;
-  set code(String code) => _$this._code = code;
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
 
-  bool _internetbanking;
-  bool get internetbanking => _$this._internetbanking;
-  set internetbanking(bool internetbanking) =>
+  bool? _internetbanking;
+  bool? get internetbanking => _$this._internetbanking;
+  set internetbanking(bool? internetbanking) =>
       _$this._internetbanking = internetbanking;
 
   BankBuilder();
 
   BankBuilder get _$this {
-    if (_$v != null) {
-      _name = _$v.name;
-      _code = _$v.code;
-      _internetbanking = _$v.internetbanking;
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _code = $v.code;
+      _internetbanking = $v.internetbanking;
       _$v = null;
     }
     return this;
@@ -145,21 +134,23 @@ class BankBuilder implements Builder<Bank, BankBuilder> {
 
   @override
   void replace(Bank other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Bank;
   }
 
   @override
-  void update(void Function(BankBuilder) updates) {
+  void update(void Function(BankBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$Bank build() {
     final _$result = _$v ??
-        new _$Bank._(name: name, code: code, internetbanking: internetbanking);
+        new _$Bank._(
+            name: BuiltValueNullFieldError.checkNotNull(name, 'Bank', 'name'),
+            code: BuiltValueNullFieldError.checkNotNull(code, 'Bank', 'code'),
+            internetbanking: BuiltValueNullFieldError.checkNotNull(
+                internetbanking, 'Bank', 'internetbanking'));
     replace(_$result);
     return _$result;
   }
