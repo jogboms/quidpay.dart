@@ -28,11 +28,11 @@ class LocalServer {
 
     final completer = Completer<void>();
 
-    await runZoned(
+    await runZonedGuarded(
       () async {
         _server = await HttpServer.bind(localhost, port, shared: true);
 
-        _server?.listen((HttpRequest request) async {
+        _server!.listen((HttpRequest request) async {
           request.response
             ..statusCode = 200
             ..headers.set('Content-Type', ContentType.html.mimeType)
@@ -47,8 +47,9 @@ class LocalServer {
 
         completer.complete();
       },
-      onError: (dynamic e) {
+      (e, stackTrace) {
         print('Error: $e');
+        print('$stackTrace');
       },
     );
 
@@ -57,7 +58,7 @@ class LocalServer {
 
   Future<void> close() async {
     if (_server != null) {
-      await _server?.close(force: true);
+      await _server!.close(force: true);
 
       _server = null;
     }

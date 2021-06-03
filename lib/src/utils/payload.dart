@@ -3,7 +3,7 @@ import 'dart:convert' show json;
 import 'package:meta/meta.dart';
 import 'package:quidpay/src/quidpay.dart';
 
-typedef PayloadBuilder = dynamic Function(Map<String, dynamic> params);
+typedef PayloadBuilder = Object Function(Map<String, Object> params);
 
 class Keys {
   static const String PublicKey = 'PBFPubKey';
@@ -53,7 +53,7 @@ class Payload {
   }
 
   @visibleForTesting
-  final Map<String, dynamic> hashMap = <String, dynamic>{};
+  final Map<String, Object> hashMap = <String, Object>{};
 
   Payload add(String key, dynamic value) {
     if (value != null) {
@@ -67,7 +67,7 @@ class Payload {
   void addBuilder(String key, PayloadBuilder builder) =>
       add(key, builder(toMap()));
 
-  Map<String, dynamic> toMap() => hashMap;
+  Map<String, Object> toMap() => hashMap;
 
   bool containsKey(String key) => toMap().containsKey(key);
 
