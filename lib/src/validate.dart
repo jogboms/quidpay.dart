@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/constants/auth.dart';
 import 'package:quidpay/src/constants/strings.dart';
 import 'package:quidpay/src/models/validate/validate_result.dart';
@@ -15,15 +14,12 @@ class Validate {
   final HttpWrapper _http;
 
   Future<Response<ValidateResult>> charge({
-    @required String authModelUsed,
-    @required String authUrl,
-    @required String flwRef,
-    @required String otp,
+    required String? authModelUsed,
+    required String? authUrl,
+    required String flwRef,
+    required String otp,
   }) async {
-    assert(flwRef != null);
-    assert(authModelUsed != null);
-
-    final String logTag = "$runtimeType.charge()";
+    final logTag = '$runtimeType.charge()';
 
     if (authUrl != null) {
       Log().debug(
@@ -37,8 +33,8 @@ class Validate {
       throw Exception('No authModel provided');
     }
 
-    String url;
-    Map<String, String> payload = <String, String>{
+    String? url;
+    var payload = <String, String>{
       'PBFPubKey': Quidpay().publicKey,
       'otp': otp
     };
@@ -48,14 +44,14 @@ class Validate {
         Log().debug(logTag, 'Using OTP for ${AuthType.PIN}.');
 
         url = Endpoints.validateCardCharge;
-        payload["transaction_reference"] = flwRef;
+        payload['transaction_reference'] = flwRef;
         break;
 
       case AuthType.AUTH:
         Log().debug(logTag, 'Using OTP for ${AuthType.AUTH}.');
 
         url = Endpoints.validateAccountCharge;
-        payload["transactionreference"] = flwRef;
+        payload['transactionreference'] = flwRef;
         break;
 
       case AuthType.VBVSECURECODE:
@@ -64,7 +60,6 @@ class Validate {
         // Validation for foreign cards
         Log().error(logTag, Strings.authUrlValidationMessage);
         throw Exception(Strings.authUrlValidationMessage);
-        break;
 
       default:
         Log().error(logTag, Strings.invalidValidationMessage);
@@ -80,10 +75,10 @@ class Validate {
 
     final _response = Response<ValidateResult>(
       await _http.post(url, payload),
-      onTransform: (dynamic data, _) => ValidateResult.fromJson(data),
+      onTransform: (dynamic data, _) => ValidateResult.fromJson(data)!,
     );
 
-    Log().debug("$logTag -> Response", _response);
+    Log().debug('$logTag -> Response', _response);
 
     return _response;
   }

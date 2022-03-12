@@ -16,9 +16,9 @@ class _$CardSerializer implements StructuredSerializer<Card> {
   final String wireName = 'Card';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Card object,
+  Iterable<Object?> serialize(Serializers serializers, Card object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'expirymonth',
       serializers.serialize(object.expirymonth,
           specifiedType: const FullType(String)),
@@ -47,7 +47,7 @@ class _$CardSerializer implements StructuredSerializer<Card> {
   }
 
   @override
-  Card deserialize(Serializers serializers, Iterable<Object> serialized,
+  Card deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CardBuilder();
 
@@ -55,7 +55,7 @@ class _$CardSerializer implements StructuredSerializer<Card> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'expirymonth':
           result.expirymonth = serializers.deserialize(value,
@@ -80,8 +80,8 @@ class _$CardSerializer implements StructuredSerializer<Card> {
         case 'card_tokens':
           result.cardTokens.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(CardTokens)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(CardTokens)]))!
+              as BuiltList<Object?>);
           break;
         case 'life_time_token':
           result.lifeTimeToken = serializers.deserialize(value,
@@ -101,10 +101,10 @@ class _$CardTokensSerializer implements StructuredSerializer<CardTokens> {
   final String wireName = 'CardTokens';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, CardTokens object,
+  Iterable<Object?> serialize(Serializers serializers, CardTokens object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.embedtoken;
     if (value != null) {
       result
@@ -130,7 +130,7 @@ class _$CardTokensSerializer implements StructuredSerializer<CardTokens> {
   }
 
   @override
-  CardTokens deserialize(Serializers serializers, Iterable<Object> serialized,
+  CardTokens deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CardTokensBuilder();
 
@@ -138,19 +138,19 @@ class _$CardTokensSerializer implements StructuredSerializer<CardTokens> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'embedtoken':
           result.embedtoken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'shortcode':
           result.shortcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'expiry':
           result.expiry = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -175,17 +175,17 @@ class _$Card extends Card {
   @override
   final String lifeTimeToken;
 
-  factory _$Card([void Function(CardBuilder) updates]) =>
+  factory _$Card([void Function(CardBuilder)? updates]) =>
       (new CardBuilder()..update(updates)).build();
 
   _$Card._(
-      {this.expirymonth,
-      this.expiryyear,
-      this.cardBIN,
-      this.last4digits,
-      this.brand,
-      this.cardTokens,
-      this.lifeTimeToken})
+      {required this.expirymonth,
+      required this.expiryyear,
+      required this.cardBIN,
+      required this.last4digits,
+      required this.brand,
+      required this.cardTokens,
+      required this.lifeTimeToken})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(expirymonth, 'Card', 'expirymonth');
     BuiltValueNullFieldError.checkNotNull(expiryyear, 'Card', 'expiryyear');
@@ -233,37 +233,37 @@ class _$Card extends Card {
 }
 
 class CardBuilder implements Builder<Card, CardBuilder> {
-  _$Card _$v;
+  _$Card? _$v;
 
-  String _expirymonth;
-  String get expirymonth => _$this._expirymonth;
-  set expirymonth(String expirymonth) => _$this._expirymonth = expirymonth;
+  String? _expirymonth;
+  String? get expirymonth => _$this._expirymonth;
+  set expirymonth(String? expirymonth) => _$this._expirymonth = expirymonth;
 
-  String _expiryyear;
-  String get expiryyear => _$this._expiryyear;
-  set expiryyear(String expiryyear) => _$this._expiryyear = expiryyear;
+  String? _expiryyear;
+  String? get expiryyear => _$this._expiryyear;
+  set expiryyear(String? expiryyear) => _$this._expiryyear = expiryyear;
 
-  String _cardBIN;
-  String get cardBIN => _$this._cardBIN;
-  set cardBIN(String cardBIN) => _$this._cardBIN = cardBIN;
+  String? _cardBIN;
+  String? get cardBIN => _$this._cardBIN;
+  set cardBIN(String? cardBIN) => _$this._cardBIN = cardBIN;
 
-  String _last4digits;
-  String get last4digits => _$this._last4digits;
-  set last4digits(String last4digits) => _$this._last4digits = last4digits;
+  String? _last4digits;
+  String? get last4digits => _$this._last4digits;
+  set last4digits(String? last4digits) => _$this._last4digits = last4digits;
 
-  String _brand;
-  String get brand => _$this._brand;
-  set brand(String brand) => _$this._brand = brand;
+  String? _brand;
+  String? get brand => _$this._brand;
+  set brand(String? brand) => _$this._brand = brand;
 
-  ListBuilder<CardTokens> _cardTokens;
+  ListBuilder<CardTokens>? _cardTokens;
   ListBuilder<CardTokens> get cardTokens =>
       _$this._cardTokens ??= new ListBuilder<CardTokens>();
-  set cardTokens(ListBuilder<CardTokens> cardTokens) =>
+  set cardTokens(ListBuilder<CardTokens>? cardTokens) =>
       _$this._cardTokens = cardTokens;
 
-  String _lifeTimeToken;
-  String get lifeTimeToken => _$this._lifeTimeToken;
-  set lifeTimeToken(String lifeTimeToken) =>
+  String? _lifeTimeToken;
+  String? get lifeTimeToken => _$this._lifeTimeToken;
+  set lifeTimeToken(String? lifeTimeToken) =>
       _$this._lifeTimeToken = lifeTimeToken;
 
   CardBuilder();
@@ -290,7 +290,7 @@ class CardBuilder implements Builder<Card, CardBuilder> {
   }
 
   @override
-  void update(void Function(CardBuilder) updates) {
+  void update(void Function(CardBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -314,7 +314,7 @@ class CardBuilder implements Builder<Card, CardBuilder> {
               lifeTimeToken: BuiltValueNullFieldError.checkNotNull(
                   lifeTimeToken, 'Card', 'lifeTimeToken'));
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'cardTokens';
         cardTokens.build();
@@ -331,13 +331,13 @@ class CardBuilder implements Builder<Card, CardBuilder> {
 
 class _$CardTokens extends CardTokens {
   @override
-  final String embedtoken;
+  final String? embedtoken;
   @override
-  final String shortcode;
+  final String? shortcode;
   @override
-  final String expiry;
+  final String? expiry;
 
-  factory _$CardTokens([void Function(CardTokensBuilder) updates]) =>
+  factory _$CardTokens([void Function(CardTokensBuilder)? updates]) =>
       (new CardTokensBuilder()..update(updates)).build();
 
   _$CardTokens._({this.embedtoken, this.shortcode, this.expiry}) : super._();
@@ -366,19 +366,19 @@ class _$CardTokens extends CardTokens {
 }
 
 class CardTokensBuilder implements Builder<CardTokens, CardTokensBuilder> {
-  _$CardTokens _$v;
+  _$CardTokens? _$v;
 
-  String _embedtoken;
-  String get embedtoken => _$this._embedtoken;
-  set embedtoken(String embedtoken) => _$this._embedtoken = embedtoken;
+  String? _embedtoken;
+  String? get embedtoken => _$this._embedtoken;
+  set embedtoken(String? embedtoken) => _$this._embedtoken = embedtoken;
 
-  String _shortcode;
-  String get shortcode => _$this._shortcode;
-  set shortcode(String shortcode) => _$this._shortcode = shortcode;
+  String? _shortcode;
+  String? get shortcode => _$this._shortcode;
+  set shortcode(String? shortcode) => _$this._shortcode = shortcode;
 
-  String _expiry;
-  String get expiry => _$this._expiry;
-  set expiry(String expiry) => _$this._expiry = expiry;
+  String? _expiry;
+  String? get expiry => _$this._expiry;
+  set expiry(String? expiry) => _$this._expiry = expiry;
 
   CardTokensBuilder();
 
@@ -400,7 +400,7 @@ class CardTokensBuilder implements Builder<CardTokens, CardTokensBuilder> {
   }
 
   @override
-  void update(void Function(CardTokensBuilder) updates) {
+  void update(void Function(CardTokensBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -414,4 +414,4 @@ class CardTokensBuilder implements Builder<CardTokens, CardTokensBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

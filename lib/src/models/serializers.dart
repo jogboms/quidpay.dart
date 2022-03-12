@@ -16,7 +16,7 @@ import 'package:quidpay/src/models/verify/verify_result.dart';
 
 part 'serializers.g.dart';
 
-@SerializersFor(const [
+@SerializersFor([
   Result,
   VerifyResult,
   Card,

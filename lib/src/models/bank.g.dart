@@ -15,9 +15,9 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
   final String wireName = 'Bank';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Bank object,
+  Iterable<Object?> serialize(Serializers serializers, Bank object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'bankname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'bankcode',
@@ -31,7 +31,7 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
   }
 
   @override
-  Bank deserialize(Serializers serializers, Iterable<Object> serialized,
+  Bank deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new BankBuilder();
 
@@ -39,7 +39,7 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'bankname':
           result.name = serializers.deserialize(value,
@@ -68,10 +68,12 @@ class _$Bank extends Bank {
   @override
   final bool internetbanking;
 
-  factory _$Bank([void Function(BankBuilder) updates]) =>
+  factory _$Bank([void Function(BankBuilder)? updates]) =>
       (new BankBuilder()..update(updates)).build();
 
-  _$Bank._({this.name, this.code, this.internetbanking}) : super._() {
+  _$Bank._(
+      {required this.name, required this.code, required this.internetbanking})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Bank', 'name');
     BuiltValueNullFieldError.checkNotNull(code, 'Bank', 'code');
     BuiltValueNullFieldError.checkNotNull(
@@ -102,19 +104,19 @@ class _$Bank extends Bank {
 }
 
 class BankBuilder implements Builder<Bank, BankBuilder> {
-  _$Bank _$v;
+  _$Bank? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _code;
-  String get code => _$this._code;
-  set code(String code) => _$this._code = code;
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
 
-  bool _internetbanking;
-  bool get internetbanking => _$this._internetbanking;
-  set internetbanking(bool internetbanking) =>
+  bool? _internetbanking;
+  bool? get internetbanking => _$this._internetbanking;
+  set internetbanking(bool? internetbanking) =>
       _$this._internetbanking = internetbanking;
 
   BankBuilder();
@@ -137,7 +139,7 @@ class BankBuilder implements Builder<Bank, BankBuilder> {
   }
 
   @override
-  void update(void Function(BankBuilder) updates) {
+  void update(void Function(BankBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -154,4 +156,4 @@ class BankBuilder implements Builder<Bank, BankBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

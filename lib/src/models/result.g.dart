@@ -15,10 +15,10 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
   final String wireName = 'Result';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Result object,
+  Iterable<Object?> serialize(Serializers serializers, Result object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.id;
     if (value != null) {
       result
@@ -313,7 +313,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
   }
 
   @override
-  Result deserialize(Serializers serializers, Iterable<Object> serialized,
+  Result deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ResultBuilder();
 
@@ -321,175 +321,175 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'txRef':
           result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'orderRef':
           result.orderRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'flwRef':
           result.flwRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'redirectUrl':
           result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'device_fingerprint':
           result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'settlement_token':
           result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'cycle':
           result.cycle = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'charged_amount':
           result.chargedAmount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'appfee':
           result.appfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'merchantfee':
           result.merchantfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'merchantbearsfee':
           result.merchantbearsfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+              specifiedType: const FullType(double)) as double?;
           break;
         case 'chargeResponseCode':
           result.chargeResponseCode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'raveRef':
           result.raveRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'chargeResponseMessage':
           result.chargeResponseMessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'authModelUsed':
           result.authModelUsed = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'currency':
           result.currency = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'IP':
           result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'narration':
           result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'status':
           result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'modalauditid':
           result.modalauditid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'vbvrespmessage':
           result.vbvrespmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'authurl':
           result.invalidAuthUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'vbvrespcode':
           result.vbvrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'acctvalrespmsg':
           result.acctvalrespmsg = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'acctvalrespcode':
           result.acctvalrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentType':
           result.paymentType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentPlan':
           result.paymentPlan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentPage':
           result.paymentPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentId':
           result.paymentId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'fraud_status':
           result.fraudStatus = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'charge_type':
           result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'is_live':
           result.isLive = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'suggested_auth':
           result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'createdAt':
           result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'updatedAt':
           result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'deletedAt':
           result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'customerId':
           result.customerId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'AccountId':
           result.accountId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'customer':
           result.customer.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Customer)) as Customer);
+              specifiedType: const FullType(Customer))! as Customer);
           break;
         case 'customercandosubsequentnoauth':
           result.customercandosubsequentnoauth = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+              specifiedType: const FullType(bool)) as bool?;
           break;
       }
     }
@@ -500,97 +500,98 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
 
 class _$Result extends Result {
   @override
-  final int id;
+  final int? id;
   @override
-  final String txRef;
+  final String? txRef;
   @override
-  final String orderRef;
+  final String? orderRef;
   @override
-  final String flwRef;
+  final String? flwRef;
   @override
-  final String redirectUrl;
+  final String? redirectUrl;
   @override
-  final String deviceFingerprint;
+  final String? deviceFingerprint;
   @override
-  final String settlementToken;
+  final String? settlementToken;
   @override
-  final String cycle;
+  final String? cycle;
   @override
-  final double amount;
+  final double? amount;
   @override
-  final double chargedAmount;
+  final double? chargedAmount;
   @override
-  final double appfee;
+  final double? appfee;
   @override
-  final double merchantfee;
+  final double? merchantfee;
   @override
-  final double merchantbearsfee;
+  final double? merchantbearsfee;
   @override
-  final String chargeResponseCode;
+  final String? chargeResponseCode;
   @override
-  final String raveRef;
+  final String? raveRef;
   @override
-  final String chargeResponseMessage;
+  final String? chargeResponseMessage;
   @override
-  final String authModelUsed;
+  final String? authModelUsed;
   @override
-  final String currency;
+  final String? currency;
   @override
-  final String iP;
+  final String? iP;
   @override
-  final String narration;
+  final String? narration;
   @override
-  final String status;
+  final String? status;
   @override
-  final String modalauditid;
+  final String? modalauditid;
   @override
-  final String vbvrespmessage;
+  final String? vbvrespmessage;
   @override
-  final String invalidAuthUrl;
+  final String? invalidAuthUrl;
   @override
-  final String vbvrespcode;
+  final String? vbvrespcode;
   @override
-  final String acctvalrespmsg;
+  final String? acctvalrespmsg;
   @override
-  final String acctvalrespcode;
+  final String? acctvalrespcode;
   @override
-  final String paymentType;
+  final String? paymentType;
   @override
-  final String paymentPlan;
+  final String? paymentPlan;
   @override
-  final String paymentPage;
+  final String? paymentPage;
   @override
-  final String paymentId;
+  final String? paymentId;
   @override
-  final String fraudStatus;
+  final String? fraudStatus;
   @override
-  final String chargeType;
+  final String? chargeType;
   @override
-  final int isLive;
+  final int? isLive;
   @override
-  final String suggestedAuth;
+  final String? suggestedAuth;
   @override
-  final String createdAt;
+  final String? createdAt;
   @override
-  final String updatedAt;
+  final String? updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int customerId;
+  final int? customerId;
   @override
-  final int accountId;
+  final int? accountId;
   @override
-  final Customer customer;
+  final Customer? customer;
   @override
-  final bool customercandosubsequentnoauth;
-  bool __requiresValidation;
-  bool __isInternational;
-  bool __isSuccessful;
-  bool __hasValidReferenceAndTrans;
-  bool __hasValidUrl;
-  String __authurl;
+  final bool? customercandosubsequentnoauth;
+  bool? __requiresValidation;
+  bool? __isInternational;
+  bool? __isSuccessful;
+  bool? __hasValidReferenceAndTrans;
+  bool? __hasValidUrl;
+  String? __authurl;
+  bool ___authurl = false;
 
-  factory _$Result([void Function(ResultBuilder) updates]) =>
+  factory _$Result([void Function(ResultBuilder)? updates]) =>
       (new ResultBuilder()..update(updates)).build();
 
   _$Result._(
@@ -656,7 +657,13 @@ class _$Result extends Result {
   bool get hasValidUrl => __hasValidUrl ??= super.hasValidUrl;
 
   @override
-  String get authurl => __authurl ??= super.authurl;
+  String? get authurl {
+    if (!___authurl) {
+      __authurl = super.authurl;
+      ___authurl = true;
+    }
+    return __authurl;
+  }
 
   @override
   Result rebuild(void Function(ResultBuilder) updates) =>
@@ -678,188 +685,188 @@ class _$Result extends Result {
 }
 
 class ResultBuilder implements Builder<Result, ResultBuilder> {
-  _$Result _$v;
+  _$Result? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _txRef;
-  String get txRef => _$this._txRef;
-  set txRef(String txRef) => _$this._txRef = txRef;
+  String? _txRef;
+  String? get txRef => _$this._txRef;
+  set txRef(String? txRef) => _$this._txRef = txRef;
 
-  String _orderRef;
-  String get orderRef => _$this._orderRef;
-  set orderRef(String orderRef) => _$this._orderRef = orderRef;
+  String? _orderRef;
+  String? get orderRef => _$this._orderRef;
+  set orderRef(String? orderRef) => _$this._orderRef = orderRef;
 
-  String _flwRef;
-  String get flwRef => _$this._flwRef;
-  set flwRef(String flwRef) => _$this._flwRef = flwRef;
+  String? _flwRef;
+  String? get flwRef => _$this._flwRef;
+  set flwRef(String? flwRef) => _$this._flwRef = flwRef;
 
-  String _redirectUrl;
-  String get redirectUrl => _$this._redirectUrl;
-  set redirectUrl(String redirectUrl) => _$this._redirectUrl = redirectUrl;
+  String? _redirectUrl;
+  String? get redirectUrl => _$this._redirectUrl;
+  set redirectUrl(String? redirectUrl) => _$this._redirectUrl = redirectUrl;
 
-  String _deviceFingerprint;
-  String get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String deviceFingerprint) =>
+  String? _deviceFingerprint;
+  String? get deviceFingerprint => _$this._deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) =>
       _$this._deviceFingerprint = deviceFingerprint;
 
-  String _settlementToken;
-  String get settlementToken => _$this._settlementToken;
-  set settlementToken(String settlementToken) =>
+  String? _settlementToken;
+  String? get settlementToken => _$this._settlementToken;
+  set settlementToken(String? settlementToken) =>
       _$this._settlementToken = settlementToken;
 
-  String _cycle;
-  String get cycle => _$this._cycle;
-  set cycle(String cycle) => _$this._cycle = cycle;
+  String? _cycle;
+  String? get cycle => _$this._cycle;
+  set cycle(String? cycle) => _$this._cycle = cycle;
 
-  double _amount;
-  double get amount => _$this._amount;
-  set amount(double amount) => _$this._amount = amount;
+  double? _amount;
+  double? get amount => _$this._amount;
+  set amount(double? amount) => _$this._amount = amount;
 
-  double _chargedAmount;
-  double get chargedAmount => _$this._chargedAmount;
-  set chargedAmount(double chargedAmount) =>
+  double? _chargedAmount;
+  double? get chargedAmount => _$this._chargedAmount;
+  set chargedAmount(double? chargedAmount) =>
       _$this._chargedAmount = chargedAmount;
 
-  double _appfee;
-  double get appfee => _$this._appfee;
-  set appfee(double appfee) => _$this._appfee = appfee;
+  double? _appfee;
+  double? get appfee => _$this._appfee;
+  set appfee(double? appfee) => _$this._appfee = appfee;
 
-  double _merchantfee;
-  double get merchantfee => _$this._merchantfee;
-  set merchantfee(double merchantfee) => _$this._merchantfee = merchantfee;
+  double? _merchantfee;
+  double? get merchantfee => _$this._merchantfee;
+  set merchantfee(double? merchantfee) => _$this._merchantfee = merchantfee;
 
-  double _merchantbearsfee;
-  double get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double merchantbearsfee) =>
+  double? _merchantbearsfee;
+  double? get merchantbearsfee => _$this._merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) =>
       _$this._merchantbearsfee = merchantbearsfee;
 
-  String _chargeResponseCode;
-  String get chargeResponseCode => _$this._chargeResponseCode;
-  set chargeResponseCode(String chargeResponseCode) =>
+  String? _chargeResponseCode;
+  String? get chargeResponseCode => _$this._chargeResponseCode;
+  set chargeResponseCode(String? chargeResponseCode) =>
       _$this._chargeResponseCode = chargeResponseCode;
 
-  String _raveRef;
-  String get raveRef => _$this._raveRef;
-  set raveRef(String raveRef) => _$this._raveRef = raveRef;
+  String? _raveRef;
+  String? get raveRef => _$this._raveRef;
+  set raveRef(String? raveRef) => _$this._raveRef = raveRef;
 
-  String _chargeResponseMessage;
-  String get chargeResponseMessage => _$this._chargeResponseMessage;
-  set chargeResponseMessage(String chargeResponseMessage) =>
+  String? _chargeResponseMessage;
+  String? get chargeResponseMessage => _$this._chargeResponseMessage;
+  set chargeResponseMessage(String? chargeResponseMessage) =>
       _$this._chargeResponseMessage = chargeResponseMessage;
 
-  String _authModelUsed;
-  String get authModelUsed => _$this._authModelUsed;
-  set authModelUsed(String authModelUsed) =>
+  String? _authModelUsed;
+  String? get authModelUsed => _$this._authModelUsed;
+  set authModelUsed(String? authModelUsed) =>
       _$this._authModelUsed = authModelUsed;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  String _iP;
-  String get iP => _$this._iP;
-  set iP(String iP) => _$this._iP = iP;
+  String? _iP;
+  String? get iP => _$this._iP;
+  set iP(String? iP) => _$this._iP = iP;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  String _status;
-  String get status => _$this._status;
-  set status(String status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
 
-  String _modalauditid;
-  String get modalauditid => _$this._modalauditid;
-  set modalauditid(String modalauditid) => _$this._modalauditid = modalauditid;
+  String? _modalauditid;
+  String? get modalauditid => _$this._modalauditid;
+  set modalauditid(String? modalauditid) => _$this._modalauditid = modalauditid;
 
-  String _vbvrespmessage;
-  String get vbvrespmessage => _$this._vbvrespmessage;
-  set vbvrespmessage(String vbvrespmessage) =>
+  String? _vbvrespmessage;
+  String? get vbvrespmessage => _$this._vbvrespmessage;
+  set vbvrespmessage(String? vbvrespmessage) =>
       _$this._vbvrespmessage = vbvrespmessage;
 
-  String _invalidAuthUrl;
-  String get invalidAuthUrl => _$this._invalidAuthUrl;
-  set invalidAuthUrl(String invalidAuthUrl) =>
+  String? _invalidAuthUrl;
+  String? get invalidAuthUrl => _$this._invalidAuthUrl;
+  set invalidAuthUrl(String? invalidAuthUrl) =>
       _$this._invalidAuthUrl = invalidAuthUrl;
 
-  String _vbvrespcode;
-  String get vbvrespcode => _$this._vbvrespcode;
-  set vbvrespcode(String vbvrespcode) => _$this._vbvrespcode = vbvrespcode;
+  String? _vbvrespcode;
+  String? get vbvrespcode => _$this._vbvrespcode;
+  set vbvrespcode(String? vbvrespcode) => _$this._vbvrespcode = vbvrespcode;
 
-  String _acctvalrespmsg;
-  String get acctvalrespmsg => _$this._acctvalrespmsg;
-  set acctvalrespmsg(String acctvalrespmsg) =>
+  String? _acctvalrespmsg;
+  String? get acctvalrespmsg => _$this._acctvalrespmsg;
+  set acctvalrespmsg(String? acctvalrespmsg) =>
       _$this._acctvalrespmsg = acctvalrespmsg;
 
-  String _acctvalrespcode;
-  String get acctvalrespcode => _$this._acctvalrespcode;
-  set acctvalrespcode(String acctvalrespcode) =>
+  String? _acctvalrespcode;
+  String? get acctvalrespcode => _$this._acctvalrespcode;
+  set acctvalrespcode(String? acctvalrespcode) =>
       _$this._acctvalrespcode = acctvalrespcode;
 
-  String _paymentType;
-  String get paymentType => _$this._paymentType;
-  set paymentType(String paymentType) => _$this._paymentType = paymentType;
+  String? _paymentType;
+  String? get paymentType => _$this._paymentType;
+  set paymentType(String? paymentType) => _$this._paymentType = paymentType;
 
-  String _paymentPlan;
-  String get paymentPlan => _$this._paymentPlan;
-  set paymentPlan(String paymentPlan) => _$this._paymentPlan = paymentPlan;
+  String? _paymentPlan;
+  String? get paymentPlan => _$this._paymentPlan;
+  set paymentPlan(String? paymentPlan) => _$this._paymentPlan = paymentPlan;
 
-  String _paymentPage;
-  String get paymentPage => _$this._paymentPage;
-  set paymentPage(String paymentPage) => _$this._paymentPage = paymentPage;
+  String? _paymentPage;
+  String? get paymentPage => _$this._paymentPage;
+  set paymentPage(String? paymentPage) => _$this._paymentPage = paymentPage;
 
-  String _paymentId;
-  String get paymentId => _$this._paymentId;
-  set paymentId(String paymentId) => _$this._paymentId = paymentId;
+  String? _paymentId;
+  String? get paymentId => _$this._paymentId;
+  set paymentId(String? paymentId) => _$this._paymentId = paymentId;
 
-  String _fraudStatus;
-  String get fraudStatus => _$this._fraudStatus;
-  set fraudStatus(String fraudStatus) => _$this._fraudStatus = fraudStatus;
+  String? _fraudStatus;
+  String? get fraudStatus => _$this._fraudStatus;
+  set fraudStatus(String? fraudStatus) => _$this._fraudStatus = fraudStatus;
 
-  String _chargeType;
-  String get chargeType => _$this._chargeType;
-  set chargeType(String chargeType) => _$this._chargeType = chargeType;
+  String? _chargeType;
+  String? get chargeType => _$this._chargeType;
+  set chargeType(String? chargeType) => _$this._chargeType = chargeType;
 
-  int _isLive;
-  int get isLive => _$this._isLive;
-  set isLive(int isLive) => _$this._isLive = isLive;
+  int? _isLive;
+  int? get isLive => _$this._isLive;
+  set isLive(int? isLive) => _$this._isLive = isLive;
 
-  String _suggestedAuth;
-  String get suggestedAuth => _$this._suggestedAuth;
-  set suggestedAuth(String suggestedAuth) =>
+  String? _suggestedAuth;
+  String? get suggestedAuth => _$this._suggestedAuth;
+  set suggestedAuth(String? suggestedAuth) =>
       _$this._suggestedAuth = suggestedAuth;
 
-  String _createdAt;
-  String get createdAt => _$this._createdAt;
-  set createdAt(String createdAt) => _$this._createdAt = createdAt;
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String _updatedAt;
-  String get updatedAt => _$this._updatedAt;
-  set updatedAt(String updatedAt) => _$this._updatedAt = updatedAt;
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _customerId;
-  int get customerId => _$this._customerId;
-  set customerId(int customerId) => _$this._customerId = customerId;
+  int? _customerId;
+  int? get customerId => _$this._customerId;
+  set customerId(int? customerId) => _$this._customerId = customerId;
 
-  int _accountId;
-  int get accountId => _$this._accountId;
-  set accountId(int accountId) => _$this._accountId = accountId;
+  int? _accountId;
+  int? get accountId => _$this._accountId;
+  set accountId(int? accountId) => _$this._accountId = accountId;
 
-  CustomerBuilder _customer;
+  CustomerBuilder? _customer;
   CustomerBuilder get customer => _$this._customer ??= new CustomerBuilder();
-  set customer(CustomerBuilder customer) => _$this._customer = customer;
+  set customer(CustomerBuilder? customer) => _$this._customer = customer;
 
-  bool _customercandosubsequentnoauth;
-  bool get customercandosubsequentnoauth =>
+  bool? _customercandosubsequentnoauth;
+  bool? get customercandosubsequentnoauth =>
       _$this._customercandosubsequentnoauth;
-  set customercandosubsequentnoauth(bool customercandosubsequentnoauth) =>
+  set customercandosubsequentnoauth(bool? customercandosubsequentnoauth) =>
       _$this._customercandosubsequentnoauth = customercandosubsequentnoauth;
 
   ResultBuilder();
@@ -921,7 +928,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   }
 
   @override
-  void update(void Function(ResultBuilder) updates) {
+  void update(void Function(ResultBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -974,7 +981,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
               customer: _customer?.build(),
               customercandosubsequentnoauth: customercandosubsequentnoauth);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'customer';
         _customer?.build();
@@ -989,4 +996,4 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

@@ -74,28 +74,6 @@ void main() {
           throwsAssertionError,
         );
       });
-
-      test('-> production = null', () {
-        expect(
-          () => Quidpay.init(
-              production: null, publicKey: PUBK_TEST, secretKey: SECK_TEST),
-          throwsAssertionError,
-        );
-      });
-      test('-> publicKey = null', () {
-        expect(
-          () => Quidpay.init(
-              production: true, publicKey: null, secretKey: SECK_TEST),
-          throwsAssertionError,
-        );
-      });
-      test('-> secretKey = null', () {
-        expect(
-          () => Quidpay.init(
-              production: true, publicKey: PUBK_TEST, secretKey: null),
-          throwsAssertionError,
-        );
-      });
     });
   });
 }

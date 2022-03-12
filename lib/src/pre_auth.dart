@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/charge.dart';
 import 'package:quidpay/src/constants/countries.dart';
 import 'package:quidpay/src/constants/currencies.dart';
@@ -16,39 +15,32 @@ class PreAuth {
   final HttpWrapper _http;
 
   Future<Response<Result>> preauth({
-    @required String cardno,
-    @required String cvv,
-    @required String amount,
-    @required String expiryyear,
-    @required String expirymonth,
-    @required String email,
-    @required String redirectUrl,
-    String country = Countries.NIGERIA,
-    String currency = Currencies.NAIRA,
-    String suggestedAuth,
-    String chargeType,
-    String txRef,
-    String iP,
-    String settlementToken,
-    String phonenumber,
-    String billingzip,
-    String firstname,
-    String lastname,
-    String narration,
-    List<Metadata> meta,
-    String pin,
-    String bvn,
-    String deviceFingerprint,
-    String recurringStop,
-    bool includeIntegrityHash,
+    required String cardno,
+    required String cvv,
+    required String amount,
+    required String expiryyear,
+    required String expirymonth,
+    required String email,
+    required String redirectUrl,
+    String? country = Countries.NIGERIA,
+    String? currency = Currencies.NAIRA,
+    String? suggestedAuth,
+    String? chargeType,
+    String? txRef,
+    String? iP,
+    String? settlementToken,
+    String? phonenumber,
+    String? billingzip,
+    String? firstname,
+    String? lastname,
+    String? narration,
+    List<Metadata>? meta,
+    String? pin,
+    String? bvn,
+    String? deviceFingerprint,
+    String? recurringStop,
+    bool? includeIntegrityHash,
   }) {
-    assert(cardno != null);
-    assert(cvv != null);
-    assert(amount != null);
-    assert(expiryyear != null);
-    assert(expirymonth != null);
-    assert(email != null);
-    assert(redirectUrl != null);
     return Charge.preauth(
       cardno: cardno,
       currency: currency,
@@ -79,8 +71,8 @@ class PreAuth {
   }
 
   Future<Response> _refundOrVoidCard({
-    @required String flwRef,
-    @required String action,
+    required String flwRef,
+    required String action,
   }) async {
     var payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,
@@ -88,7 +80,7 @@ class PreAuth {
       'action': action,
     };
 
-    Log().debug("$runtimeType.refundOrVoidCard()", payload);
+    Log().debug('$runtimeType.refundOrVoidCard()', payload);
 
     final _response = Response<Result>(
       await _http.post(Endpoints.refundOrVoidPreauthorization, payload),
@@ -96,7 +88,7 @@ class PreAuth {
     );
 
     Log().debug(
-      "$runtimeType.refundOrVoidCard($action) -> Response",
+      '$runtimeType.refundOrVoidCard($action) -> Response',
       _response,
     );
 
@@ -124,7 +116,7 @@ class PreAuth {
       'amount': amount,
     };
 
-    Log().debug("$runtimeType.captureCard()", payload);
+    Log().debug('$runtimeType.captureCard()', payload);
 
     final _response = Response<Result>(
       await _http.post(Endpoints.capturePreauthorizeCard, payload),
@@ -132,7 +124,7 @@ class PreAuth {
     );
 
     Log().debug(
-      "$runtimeType.captureCard() -> Response",
+      '$runtimeType.captureCard() -> Response',
       _response,
     );
 

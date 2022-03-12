@@ -12,7 +12,7 @@ abstract class ChargeToken
     implements Built<ChargeToken, ChargeTokenBuilder> {
   ChargeToken._();
 
-  factory ChargeToken([updates(ChargeTokenBuilder b)]) = _$ChargeToken;
+  factory ChargeToken([Function(ChargeTokenBuilder b) updates]) = _$ChargeToken;
 
   @BuiltValueField(wireName: 'user_token', compare: false)
   String get userToken;
@@ -21,9 +21,10 @@ abstract class ChargeToken
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(ChargeToken.serializer, this);
+      serializers.serializeWith(ChargeToken.serializer, this)
+          as Map<String, dynamic>;
 
-  static ChargeToken fromJson(Map<String, dynamic> map) =>
+  static ChargeToken? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(ChargeToken.serializer, map);
 
   static Serializer<ChargeToken> get serializer => _$chargeTokenSerializer;

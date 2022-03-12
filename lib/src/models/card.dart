@@ -11,7 +11,7 @@ part 'card.g.dart';
 abstract class Card with ModelInterface implements Built<Card, CardBuilder> {
   Card._();
 
-  factory Card([updates(CardBuilder b)]) = _$Card;
+  factory Card([Function(CardBuilder b) updates]) = _$Card;
 
   String get expirymonth;
   String get expiryyear;
@@ -25,9 +25,9 @@ abstract class Card with ModelInterface implements Built<Card, CardBuilder> {
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Card.serializer, this);
+      serializers.serializeWith(Card.serializer, this) as Map<String, dynamic>;
 
-  static Card fromJson(Map<String, dynamic> map) =>
+  static Card? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(Card.serializer, map);
 
   static Serializer<Card> get serializer => _$cardSerializer;
@@ -38,22 +38,20 @@ abstract class CardTokens
     implements Built<CardTokens, CardTokensBuilder> {
   CardTokens._();
 
-  factory CardTokens([updates(CardTokensBuilder b)]) = _$CardTokens;
+  factory CardTokens([Function(CardTokensBuilder b) updates]) = _$CardTokens;
 
-  @nullable
-  String get embedtoken;
+  String? get embedtoken;
 
-  @nullable
-  String get shortcode;
+  String? get shortcode;
 
-  @nullable
-  String get expiry;
+  String? get expiry;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(CardTokens.serializer, this);
+      serializers.serializeWith(CardTokens.serializer, this)
+          as Map<String, dynamic>;
 
-  static CardTokens fromJson(Map<String, dynamic> map) =>
+  static CardTokens? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(CardTokens.serializer, map);
 
   static Serializer<CardTokens> get serializer => _$cardTokensSerializer;

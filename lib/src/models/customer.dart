@@ -14,47 +14,39 @@ abstract class Customer
 
   factory Customer([updates(CustomerBuilder b)]) = _$Customer;
 
-  @nullable
-  int get id;
+  int? get id;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get phone;
+  String? get phone;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get fullName;
+  String? get fullName;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get customertoken;
+  String? get customertoken;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get email;
+  String? get email;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get createdAt;
+  String? get createdAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get updatedAt;
+  String? get updatedAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get deletedAt;
+  String? get deletedAt;
 
-  @nullable
   @BuiltValueField(wireName: 'AccountId', compare: false)
-  int get accountId;
+  int? get accountId;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Customer.serializer, this);
+      serializers.serializeWith(Customer.serializer, this)
+          as Map<String, dynamic>;
 
-  static Customer fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Customer.serializer, map);
+  static Customer? fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Customer.serializer, map) as Customer?;
 
   static Serializer<Customer> get serializer => _$customerSerializer;
 }

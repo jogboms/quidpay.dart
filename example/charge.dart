@@ -11,10 +11,10 @@ Future<Response<Result>> card() async {
     email: 'jeremiahogbomo@gmail.com',
     expirymonth: '10',
     expiryyear: '22',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
     meta: [
-      Metadata.named(name: "hello", value: "world"),
+      Metadata.named(name: 'hello', value: 'world'),
     ],
   );
 
@@ -30,12 +30,12 @@ Future<Response<Result>> pin() async {
     expiryyear: '22',
     amount: '12345',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
     txRef: 'LM5GVOUW3TYF',
-    pin: "1234",
+    pin: '1234',
     meta: [
-      Metadata.named(name: "hello", value: "world"),
+      Metadata.named(name: 'hello', value: 'world'),
     ],
   );
 
@@ -46,13 +46,13 @@ Future<Response<Result>> account() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.code;
+  final accessBankCode = banks!.first.code;
 
   final charge = Charge.account(
     amount: '2000',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
     accountbank: accessBankCode,
     accountnumber: '0690000031',
   );
@@ -64,13 +64,13 @@ Future<Response<Result>> ussd() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks.first.code;
+  final accessBankCode = banks!.first.code;
 
   final charge = Charge.ussd(
     amount: '2000',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
     accountbank: accessBankCode,
     accountnumber: '0690000031',
     phonenumber: '081245554343',

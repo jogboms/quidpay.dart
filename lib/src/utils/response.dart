@@ -7,26 +7,28 @@ import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/exceptions.dart';
 import 'package:quidpay/src/utils/log.dart';
 
-typedef T TransformFunction<T>(dynamic data, String status);
+typedef TransformFunction<T> = T Function(dynamic data, String status);
 
 class Response<T> {
   Response(
     this._response, {
-    TransformFunction<T> onTransform,
+    TransformFunction<T>? onTransform,
     bool showThrow = true,
   }) {
     try {
       final dynamic responseJson = json.decode(_response.body);
       status = responseJson != null
-          ? (responseJson is Map && responseJson.containsKey("status")
-              ? responseJson["status"]
-              : _response.statusCode < 300 ? 'success' : 'error')
+          ? (responseJson is Map && responseJson.containsKey('status')
+              ? responseJson['status']
+              : _response.statusCode < 300
+                  ? 'success'
+                  : 'error')
           : 'UNKNOWN';
       message = responseJson != null &&
               responseJson is Map &&
-              responseJson.containsKey("message") &&
-              responseJson["message"] != null
-          ? responseJson["message"]
+              responseJson.containsKey('message') &&
+              responseJson['message'] != null
+          ? responseJson['message']
           : !Quidpay().production
               ? _response.reasonPhrase
               : Strings.errorMessage;
@@ -38,8 +40,8 @@ class Response<T> {
       rawData = _response.statusCode < 300
           ? (responseJson != null &&
                   responseJson is Map &&
-                  responseJson.containsKey("data")
-              ? responseJson["data"]
+                  responseJson.containsKey('data')
+              ? responseJson['data']
               : responseJson)
           : null;
     } on ResponseException catch (e) {
@@ -48,7 +50,7 @@ class Response<T> {
       rawData = null;
       Log().error('ResponseException', e);
     } catch (e) {
-      status = "UNKNOWN";
+      status = 'UNKNOWN';
       message = _response.statusCode == 502 && Quidpay().production
           ? Strings.errorMessage
           : e.toString();
@@ -87,14 +89,14 @@ class Response<T> {
   }
 
   final http.Response _response;
-  String status;
-  String message;
+  late String status;
+  String? message;
   dynamic rawData;
-  T data;
+  late T data;
 
   int get statusCode => _response.statusCode;
 
-  String get reasonPhrase => _response.reasonPhrase;
+  String? get reasonPhrase => _response.reasonPhrase;
 
   bool get isOk {
     if (statusCode >= 200 && statusCode < 300) {
@@ -107,11 +109,11 @@ class Response<T> {
     return false;
   }
 
-  bool get isSuccess => status == "success";
+  bool get isSuccess => status == 'success';
 
-  bool get isError => status == "error";
+  bool get isError => status == 'error';
 
-  bool get isCancel => status == "cancelled";
+  bool get isCancel => status == 'cancelled';
 
   bool get isNotOk => !isOk;
 

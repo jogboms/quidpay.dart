@@ -15,7 +15,7 @@ class HttpWrapper {
 
   Future<http.Response> get(String url) {
     try {
-      Log().debug("HttpWrapper.get() -> $url");
+      Log().debug('HttpWrapper.get() -> $url');
       return http.get(Uri.parse(baseUrl + url), headers: _headers);
     } on TimeoutException {
       throw TimeOutException();
@@ -25,7 +25,7 @@ class HttpWrapper {
   Future<http.Response> post(String url, Map<String, dynamic> data) {
     try {
       final _body = json.encode(data);
-      Log().debug("HttpWrapper.post() -> $url", _body);
+      Log().debug('HttpWrapper.post() -> $url', _body);
       return http.post(
         Uri.parse(baseUrl + url),
         headers: _headers,

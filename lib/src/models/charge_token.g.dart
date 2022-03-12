@@ -15,9 +15,9 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
   final String wireName = 'ChargeToken';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, ChargeToken object,
+  Iterable<Object?> serialize(Serializers serializers, ChargeToken object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'user_token',
       serializers.serialize(object.userToken,
           specifiedType: const FullType(String)),
@@ -30,7 +30,7 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
   }
 
   @override
-  ChargeToken deserialize(Serializers serializers, Iterable<Object> serialized,
+  ChargeToken deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChargeTokenBuilder();
 
@@ -38,7 +38,7 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'user_token':
           result.userToken = serializers.deserialize(value,
@@ -61,10 +61,11 @@ class _$ChargeToken extends ChargeToken {
   @override
   final String embedToken;
 
-  factory _$ChargeToken([void Function(ChargeTokenBuilder) updates]) =>
+  factory _$ChargeToken([void Function(ChargeTokenBuilder)? updates]) =>
       (new ChargeTokenBuilder()..update(updates)).build();
 
-  _$ChargeToken._({this.userToken, this.embedToken}) : super._() {
+  _$ChargeToken._({required this.userToken, required this.embedToken})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
         userToken, 'ChargeToken', 'userToken');
     BuiltValueNullFieldError.checkNotNull(
@@ -91,15 +92,15 @@ class _$ChargeToken extends ChargeToken {
 }
 
 class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
-  _$ChargeToken _$v;
+  _$ChargeToken? _$v;
 
-  String _userToken;
-  String get userToken => _$this._userToken;
-  set userToken(String userToken) => _$this._userToken = userToken;
+  String? _userToken;
+  String? get userToken => _$this._userToken;
+  set userToken(String? userToken) => _$this._userToken = userToken;
 
-  String _embedToken;
-  String get embedToken => _$this._embedToken;
-  set embedToken(String embedToken) => _$this._embedToken = embedToken;
+  String? _embedToken;
+  String? get embedToken => _$this._embedToken;
+  set embedToken(String? embedToken) => _$this._embedToken = embedToken;
 
   ChargeTokenBuilder();
 
@@ -120,7 +121,7 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
   }
 
   @override
-  void update(void Function(ChargeTokenBuilder) updates) {
+  void update(void Function(ChargeTokenBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -137,4 +138,4 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

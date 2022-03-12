@@ -15,9 +15,9 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
   final String wireName = 'Tx';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Tx object,
+  Iterable<Object?> serialize(Serializers serializers, Tx object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(int)),
       'txRef',
@@ -109,7 +109,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
       serializers.serialize(object.accountId,
           specifiedType: const FullType(int)),
     ];
-    Object value;
+    Object? value;
     value = object.settlementToken;
     if (value != null) {
       result
@@ -183,7 +183,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
   }
 
   @override
-  Tx deserialize(Serializers serializers, Iterable<Object> serialized,
+  Tx deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TxBuilder();
 
@@ -191,7 +191,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -219,7 +219,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'settlement_token':
           result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'cycle':
           result.cycle = serializers.deserialize(value,
@@ -287,7 +287,7 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'authurl':
           result.authurl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'vbvrespcode':
           result.vbvrespcode = serializers.deserialize(value,
@@ -295,11 +295,11 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'acctvalrespmsg':
           result.acctvalrespmsg = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'acctvalrespcode':
           result.acctvalrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentType':
           result.paymentType = serializers.deserialize(value,
@@ -307,11 +307,11 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'paymentPlan':
           result.paymentPlan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentPage':
           result.paymentPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentId':
           result.paymentId = serializers.deserialize(value,
@@ -339,11 +339,11 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'deletedAt':
           result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'customerId':
           result.customerId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'AccountId':
           result.accountId = serializers.deserialize(value,
@@ -351,11 +351,11 @@ class _$TxSerializer implements StructuredSerializer<Tx> {
           break;
         case 'customer':
           result.customer.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Customer)) as Customer);
+              specifiedType: const FullType(Customer))! as Customer);
           break;
         case 'chargeToken':
           result.chargeToken.replace(serializers.deserialize(value,
-              specifiedType: const FullType(ChargeToken)) as ChargeToken);
+              specifiedType: const FullType(ChargeToken))! as ChargeToken);
           break;
       }
     }
@@ -378,7 +378,7 @@ class _$Tx extends Tx {
   @override
   final String deviceFingerprint;
   @override
-  final String settlementToken;
+  final String? settlementToken;
   @override
   final String cycle;
   @override
@@ -412,19 +412,19 @@ class _$Tx extends Tx {
   @override
   final String vbvrespmessage;
   @override
-  final String authurl;
+  final String? authurl;
   @override
   final String vbvrespcode;
   @override
-  final String acctvalrespmsg;
+  final String? acctvalrespmsg;
   @override
-  final String acctvalrespcode;
+  final String? acctvalrespcode;
   @override
   final String paymentType;
   @override
-  final String paymentPlan;
+  final String? paymentPlan;
   @override
-  final String paymentPage;
+  final String? paymentPage;
   @override
   final String paymentId;
   @override
@@ -438,59 +438,59 @@ class _$Tx extends Tx {
   @override
   final String updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int customerId;
+  final int? customerId;
   @override
   final int accountId;
   @override
-  final Customer customer;
+  final Customer? customer;
   @override
-  final ChargeToken chargeToken;
+  final ChargeToken? chargeToken;
 
-  factory _$Tx([void Function(TxBuilder) updates]) =>
+  factory _$Tx([void Function(TxBuilder)? updates]) =>
       (new TxBuilder()..update(updates)).build();
 
   _$Tx._(
-      {this.id,
-      this.txRef,
-      this.orderRef,
-      this.flwRef,
-      this.redirectUrl,
-      this.deviceFingerprint,
+      {required this.id,
+      required this.txRef,
+      required this.orderRef,
+      required this.flwRef,
+      required this.redirectUrl,
+      required this.deviceFingerprint,
       this.settlementToken,
-      this.cycle,
-      this.amount,
-      this.chargedAmount,
-      this.appfee,
-      this.merchantfee,
-      this.merchantbearsfee,
-      this.chargeResponseCode,
-      this.raveRef,
-      this.chargeResponseMessage,
-      this.authModelUsed,
-      this.currency,
-      this.iP,
-      this.narration,
-      this.status,
-      this.modalauditid,
-      this.vbvrespmessage,
+      required this.cycle,
+      required this.amount,
+      required this.chargedAmount,
+      required this.appfee,
+      required this.merchantfee,
+      required this.merchantbearsfee,
+      required this.chargeResponseCode,
+      required this.raveRef,
+      required this.chargeResponseMessage,
+      required this.authModelUsed,
+      required this.currency,
+      required this.iP,
+      required this.narration,
+      required this.status,
+      required this.modalauditid,
+      required this.vbvrespmessage,
       this.authurl,
-      this.vbvrespcode,
+      required this.vbvrespcode,
       this.acctvalrespmsg,
       this.acctvalrespcode,
-      this.paymentType,
+      required this.paymentType,
       this.paymentPlan,
       this.paymentPage,
-      this.paymentId,
-      this.fraudStatus,
-      this.chargeType,
-      this.isLive,
-      this.createdAt,
-      this.updatedAt,
+      required this.paymentId,
+      required this.fraudStatus,
+      required this.chargeType,
+      required this.isLive,
+      required this.createdAt,
+      required this.updatedAt,
       this.deletedAt,
       this.customerId,
-      this.accountId,
+      required this.accountId,
       this.customer,
       this.chargeToken})
       : super._() {
@@ -552,182 +552,182 @@ class _$Tx extends Tx {
 }
 
 class TxBuilder implements Builder<Tx, TxBuilder> {
-  _$Tx _$v;
+  _$Tx? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _txRef;
-  String get txRef => _$this._txRef;
-  set txRef(String txRef) => _$this._txRef = txRef;
+  String? _txRef;
+  String? get txRef => _$this._txRef;
+  set txRef(String? txRef) => _$this._txRef = txRef;
 
-  String _orderRef;
-  String get orderRef => _$this._orderRef;
-  set orderRef(String orderRef) => _$this._orderRef = orderRef;
+  String? _orderRef;
+  String? get orderRef => _$this._orderRef;
+  set orderRef(String? orderRef) => _$this._orderRef = orderRef;
 
-  String _flwRef;
-  String get flwRef => _$this._flwRef;
-  set flwRef(String flwRef) => _$this._flwRef = flwRef;
+  String? _flwRef;
+  String? get flwRef => _$this._flwRef;
+  set flwRef(String? flwRef) => _$this._flwRef = flwRef;
 
-  String _redirectUrl;
-  String get redirectUrl => _$this._redirectUrl;
-  set redirectUrl(String redirectUrl) => _$this._redirectUrl = redirectUrl;
+  String? _redirectUrl;
+  String? get redirectUrl => _$this._redirectUrl;
+  set redirectUrl(String? redirectUrl) => _$this._redirectUrl = redirectUrl;
 
-  String _deviceFingerprint;
-  String get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String deviceFingerprint) =>
+  String? _deviceFingerprint;
+  String? get deviceFingerprint => _$this._deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) =>
       _$this._deviceFingerprint = deviceFingerprint;
 
-  String _settlementToken;
-  String get settlementToken => _$this._settlementToken;
-  set settlementToken(String settlementToken) =>
+  String? _settlementToken;
+  String? get settlementToken => _$this._settlementToken;
+  set settlementToken(String? settlementToken) =>
       _$this._settlementToken = settlementToken;
 
-  String _cycle;
-  String get cycle => _$this._cycle;
-  set cycle(String cycle) => _$this._cycle = cycle;
+  String? _cycle;
+  String? get cycle => _$this._cycle;
+  set cycle(String? cycle) => _$this._cycle = cycle;
 
-  double _amount;
-  double get amount => _$this._amount;
-  set amount(double amount) => _$this._amount = amount;
+  double? _amount;
+  double? get amount => _$this._amount;
+  set amount(double? amount) => _$this._amount = amount;
 
-  double _chargedAmount;
-  double get chargedAmount => _$this._chargedAmount;
-  set chargedAmount(double chargedAmount) =>
+  double? _chargedAmount;
+  double? get chargedAmount => _$this._chargedAmount;
+  set chargedAmount(double? chargedAmount) =>
       _$this._chargedAmount = chargedAmount;
 
-  double _appfee;
-  double get appfee => _$this._appfee;
-  set appfee(double appfee) => _$this._appfee = appfee;
+  double? _appfee;
+  double? get appfee => _$this._appfee;
+  set appfee(double? appfee) => _$this._appfee = appfee;
 
-  double _merchantfee;
-  double get merchantfee => _$this._merchantfee;
-  set merchantfee(double merchantfee) => _$this._merchantfee = merchantfee;
+  double? _merchantfee;
+  double? get merchantfee => _$this._merchantfee;
+  set merchantfee(double? merchantfee) => _$this._merchantfee = merchantfee;
 
-  double _merchantbearsfee;
-  double get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double merchantbearsfee) =>
+  double? _merchantbearsfee;
+  double? get merchantbearsfee => _$this._merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) =>
       _$this._merchantbearsfee = merchantbearsfee;
 
-  String _chargeResponseCode;
-  String get chargeResponseCode => _$this._chargeResponseCode;
-  set chargeResponseCode(String chargeResponseCode) =>
+  String? _chargeResponseCode;
+  String? get chargeResponseCode => _$this._chargeResponseCode;
+  set chargeResponseCode(String? chargeResponseCode) =>
       _$this._chargeResponseCode = chargeResponseCode;
 
-  String _raveRef;
-  String get raveRef => _$this._raveRef;
-  set raveRef(String raveRef) => _$this._raveRef = raveRef;
+  String? _raveRef;
+  String? get raveRef => _$this._raveRef;
+  set raveRef(String? raveRef) => _$this._raveRef = raveRef;
 
-  String _chargeResponseMessage;
-  String get chargeResponseMessage => _$this._chargeResponseMessage;
-  set chargeResponseMessage(String chargeResponseMessage) =>
+  String? _chargeResponseMessage;
+  String? get chargeResponseMessage => _$this._chargeResponseMessage;
+  set chargeResponseMessage(String? chargeResponseMessage) =>
       _$this._chargeResponseMessage = chargeResponseMessage;
 
-  String _authModelUsed;
-  String get authModelUsed => _$this._authModelUsed;
-  set authModelUsed(String authModelUsed) =>
+  String? _authModelUsed;
+  String? get authModelUsed => _$this._authModelUsed;
+  set authModelUsed(String? authModelUsed) =>
       _$this._authModelUsed = authModelUsed;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  String _iP;
-  String get iP => _$this._iP;
-  set iP(String iP) => _$this._iP = iP;
+  String? _iP;
+  String? get iP => _$this._iP;
+  set iP(String? iP) => _$this._iP = iP;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  String _status;
-  String get status => _$this._status;
-  set status(String status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
 
-  String _modalauditid;
-  String get modalauditid => _$this._modalauditid;
-  set modalauditid(String modalauditid) => _$this._modalauditid = modalauditid;
+  String? _modalauditid;
+  String? get modalauditid => _$this._modalauditid;
+  set modalauditid(String? modalauditid) => _$this._modalauditid = modalauditid;
 
-  String _vbvrespmessage;
-  String get vbvrespmessage => _$this._vbvrespmessage;
-  set vbvrespmessage(String vbvrespmessage) =>
+  String? _vbvrespmessage;
+  String? get vbvrespmessage => _$this._vbvrespmessage;
+  set vbvrespmessage(String? vbvrespmessage) =>
       _$this._vbvrespmessage = vbvrespmessage;
 
-  String _authurl;
-  String get authurl => _$this._authurl;
-  set authurl(String authurl) => _$this._authurl = authurl;
+  String? _authurl;
+  String? get authurl => _$this._authurl;
+  set authurl(String? authurl) => _$this._authurl = authurl;
 
-  String _vbvrespcode;
-  String get vbvrespcode => _$this._vbvrespcode;
-  set vbvrespcode(String vbvrespcode) => _$this._vbvrespcode = vbvrespcode;
+  String? _vbvrespcode;
+  String? get vbvrespcode => _$this._vbvrespcode;
+  set vbvrespcode(String? vbvrespcode) => _$this._vbvrespcode = vbvrespcode;
 
-  String _acctvalrespmsg;
-  String get acctvalrespmsg => _$this._acctvalrespmsg;
-  set acctvalrespmsg(String acctvalrespmsg) =>
+  String? _acctvalrespmsg;
+  String? get acctvalrespmsg => _$this._acctvalrespmsg;
+  set acctvalrespmsg(String? acctvalrespmsg) =>
       _$this._acctvalrespmsg = acctvalrespmsg;
 
-  String _acctvalrespcode;
-  String get acctvalrespcode => _$this._acctvalrespcode;
-  set acctvalrespcode(String acctvalrespcode) =>
+  String? _acctvalrespcode;
+  String? get acctvalrespcode => _$this._acctvalrespcode;
+  set acctvalrespcode(String? acctvalrespcode) =>
       _$this._acctvalrespcode = acctvalrespcode;
 
-  String _paymentType;
-  String get paymentType => _$this._paymentType;
-  set paymentType(String paymentType) => _$this._paymentType = paymentType;
+  String? _paymentType;
+  String? get paymentType => _$this._paymentType;
+  set paymentType(String? paymentType) => _$this._paymentType = paymentType;
 
-  String _paymentPlan;
-  String get paymentPlan => _$this._paymentPlan;
-  set paymentPlan(String paymentPlan) => _$this._paymentPlan = paymentPlan;
+  String? _paymentPlan;
+  String? get paymentPlan => _$this._paymentPlan;
+  set paymentPlan(String? paymentPlan) => _$this._paymentPlan = paymentPlan;
 
-  String _paymentPage;
-  String get paymentPage => _$this._paymentPage;
-  set paymentPage(String paymentPage) => _$this._paymentPage = paymentPage;
+  String? _paymentPage;
+  String? get paymentPage => _$this._paymentPage;
+  set paymentPage(String? paymentPage) => _$this._paymentPage = paymentPage;
 
-  String _paymentId;
-  String get paymentId => _$this._paymentId;
-  set paymentId(String paymentId) => _$this._paymentId = paymentId;
+  String? _paymentId;
+  String? get paymentId => _$this._paymentId;
+  set paymentId(String? paymentId) => _$this._paymentId = paymentId;
 
-  String _fraudStatus;
-  String get fraudStatus => _$this._fraudStatus;
-  set fraudStatus(String fraudStatus) => _$this._fraudStatus = fraudStatus;
+  String? _fraudStatus;
+  String? get fraudStatus => _$this._fraudStatus;
+  set fraudStatus(String? fraudStatus) => _$this._fraudStatus = fraudStatus;
 
-  String _chargeType;
-  String get chargeType => _$this._chargeType;
-  set chargeType(String chargeType) => _$this._chargeType = chargeType;
+  String? _chargeType;
+  String? get chargeType => _$this._chargeType;
+  set chargeType(String? chargeType) => _$this._chargeType = chargeType;
 
-  int _isLive;
-  int get isLive => _$this._isLive;
-  set isLive(int isLive) => _$this._isLive = isLive;
+  int? _isLive;
+  int? get isLive => _$this._isLive;
+  set isLive(int? isLive) => _$this._isLive = isLive;
 
-  String _createdAt;
-  String get createdAt => _$this._createdAt;
-  set createdAt(String createdAt) => _$this._createdAt = createdAt;
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String _updatedAt;
-  String get updatedAt => _$this._updatedAt;
-  set updatedAt(String updatedAt) => _$this._updatedAt = updatedAt;
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _customerId;
-  int get customerId => _$this._customerId;
-  set customerId(int customerId) => _$this._customerId = customerId;
+  int? _customerId;
+  int? get customerId => _$this._customerId;
+  set customerId(int? customerId) => _$this._customerId = customerId;
 
-  int _accountId;
-  int get accountId => _$this._accountId;
-  set accountId(int accountId) => _$this._accountId = accountId;
+  int? _accountId;
+  int? get accountId => _$this._accountId;
+  set accountId(int? accountId) => _$this._accountId = accountId;
 
-  CustomerBuilder _customer;
+  CustomerBuilder? _customer;
   CustomerBuilder get customer => _$this._customer ??= new CustomerBuilder();
-  set customer(CustomerBuilder customer) => _$this._customer = customer;
+  set customer(CustomerBuilder? customer) => _$this._customer = customer;
 
-  ChargeTokenBuilder _chargeToken;
+  ChargeTokenBuilder? _chargeToken;
   ChargeTokenBuilder get chargeToken =>
       _$this._chargeToken ??= new ChargeTokenBuilder();
-  set chargeToken(ChargeTokenBuilder chargeToken) =>
+  set chargeToken(ChargeTokenBuilder? chargeToken) =>
       _$this._chargeToken = chargeToken;
 
   TxBuilder();
@@ -788,7 +788,7 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
   }
 
   @override
-  void update(void Function(TxBuilder) updates) {
+  void update(void Function(TxBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -853,7 +853,7 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
               customer: _customer?.build(),
               chargeToken: _chargeToken?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'customer';
         _customer?.build();
@@ -869,4 +869,4 @@ class TxBuilder implements Builder<Tx, TxBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

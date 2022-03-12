@@ -15,16 +15,16 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
   final String wireName = 'Metadata';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Metadata object,
+  Iterable<Object?> serialize(Serializers serializers, Metadata object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'metaname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'metavalue',
       serializers.serialize(object.value,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.id;
     if (value != null) {
       result
@@ -62,7 +62,7 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
   }
 
   @override
-  Metadata deserialize(Serializers serializers, Iterable<Object> serialized,
+  Metadata deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MetadataBuilder();
 
@@ -70,11 +70,11 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'metaname':
           result.name = serializers.deserialize(value,
@@ -86,19 +86,19 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
           break;
         case 'createdAt':
           result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'updatedAt':
           result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
+              specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'deletedAt':
           result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'getpaidTransactionId':
           result.getpaidTransactionId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -109,27 +109,27 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
 
 class _$Metadata extends Metadata {
   @override
-  final int id;
+  final int? id;
   @override
   final String name;
   @override
   final String value;
   @override
-  final DateTime createdAt;
+  final DateTime? createdAt;
   @override
-  final DateTime updatedAt;
+  final DateTime? updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int getpaidTransactionId;
+  final int? getpaidTransactionId;
 
-  factory _$Metadata([void Function(MetadataBuilder) updates]) =>
+  factory _$Metadata([void Function(MetadataBuilder)? updates]) =>
       (new MetadataBuilder()..update(updates)).build();
 
   _$Metadata._(
       {this.id,
-      this.name,
-      this.value,
+      required this.name,
+      required this.value,
       this.createdAt,
       this.updatedAt,
       this.deletedAt,
@@ -175,35 +175,35 @@ class _$Metadata extends Metadata {
 }
 
 class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
-  _$Metadata _$v;
+  _$Metadata? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _value;
-  String get value => _$this._value;
-  set value(String value) => _$this._value = value;
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
-  DateTime _createdAt;
-  DateTime get createdAt => _$this._createdAt;
-  set createdAt(DateTime createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime _updatedAt;
-  DateTime get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _getpaidTransactionId;
-  int get getpaidTransactionId => _$this._getpaidTransactionId;
-  set getpaidTransactionId(int getpaidTransactionId) =>
+  int? _getpaidTransactionId;
+  int? get getpaidTransactionId => _$this._getpaidTransactionId;
+  set getpaidTransactionId(int? getpaidTransactionId) =>
       _$this._getpaidTransactionId = getpaidTransactionId;
 
   MetadataBuilder();
@@ -230,7 +230,7 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
   }
 
   @override
-  void update(void Function(MetadataBuilder) updates) {
+  void update(void Function(MetadataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -252,4 +252,4 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

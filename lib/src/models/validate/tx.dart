@@ -12,7 +12,7 @@ part 'tx.g.dart';
 abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   Tx._();
 
-  factory Tx([updates(TxBuilder b)]) = _$Tx;
+  factory Tx([Function(TxBuilder b) updates]) = _$Tx;
 
   int get id;
 
@@ -31,9 +31,8 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   @BuiltValueField(wireName: 'device_fingerprint', compare: false)
   String get deviceFingerprint;
 
-  @nullable
   @BuiltValueField(wireName: 'settlement_token', compare: false)
-  String get settlementToken;
+  String? get settlementToken;
 
   @BuiltValueField(compare: false)
   String get cycle;
@@ -83,31 +82,26 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   @BuiltValueField(compare: false)
   String get vbvrespmessage;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get authurl;
+  String? get authurl;
 
   @BuiltValueField(compare: false)
   String get vbvrespcode;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get acctvalrespmsg;
+  String? get acctvalrespmsg;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get acctvalrespcode;
+  String? get acctvalrespcode;
 
   @BuiltValueField(compare: false)
   String get paymentType;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentPlan;
+  String? get paymentPlan;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentPage;
+  String? get paymentPage;
 
   @BuiltValueField(compare: false)
   String get paymentId;
@@ -127,30 +121,26 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   @BuiltValueField(compare: false)
   String get updatedAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get deletedAt;
+  String? get deletedAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  int get customerId;
+  int? get customerId;
 
   @BuiltValueField(wireName: 'AccountId', compare: false)
   int get accountId;
 
-  @nullable
   @BuiltValueField(compare: false)
-  Customer get customer;
+  Customer? get customer;
 
-  @nullable
   @BuiltValueField(compare: false)
-  ChargeToken get chargeToken;
+  ChargeToken? get chargeToken;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Tx.serializer, this);
+      serializers.serializeWith(Tx.serializer, this) as Map<String, dynamic>;
 
-  static Tx fromJson(Map<String, dynamic> map) =>
+  static Tx? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(Tx.serializer, map);
 
   static Serializer<Tx> get serializer => _$txSerializer;

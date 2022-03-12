@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:quidpay/src/utils/response.dart';
 import 'package:quidpay/src/quidpay.dart';
 import 'package:quidpay/src/utils/endpoints.dart';
@@ -12,15 +11,11 @@ class Disburse {
 
   // TODO
   Future<Response<dynamic>> disburse({
-    @required String bankCode,
-    @required String accountNumber,
-    @required String currency,
-    @required String amount,
+    required String bankCode,
+    required String accountNumber,
+    required String currency,
+    required String amount,
   }) async {
-    assert(bankCode != null);
-    assert(accountNumber != null);
-    assert(currency != null);
-    assert(amount != null);
 
     var payload = <String, dynamic>{
       'seckey': Quidpay().secretKey,
@@ -30,14 +25,14 @@ class Disburse {
       'amount': amount,
     };
 
-    Log().debug("$runtimeType.disburse()", payload);
+    Log().debug('$runtimeType.disburse()', payload);
 
     final _response = Response<dynamic>(
       await _http.post(Endpoints.disburse, payload),
       onTransform: (dynamic data, _) => data,
     );
 
-    Log().debug("$runtimeType.disburse() -> Response", _response);
+    Log().debug('$runtimeType.disburse() -> Response', _response);
 
     return _response;
   }

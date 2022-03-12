@@ -10,10 +10,10 @@ void preauth() async {
     expiryyear: '21',
     amount: '2000',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
-    pin: "1111",
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
+    pin: '1111',
+    redirectUrl: 'https://rave-web.herokuapp.com/receivepayment',
   );
 }
 
@@ -25,13 +25,13 @@ void voidCard() async {
     expiryyear: '21',
     amount: '2000',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
-    pin: "1111",
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
+    pin: '1111',
+    redirectUrl: 'https://rave-web.herokuapp.com/receivepayment',
   );
 
-  await PreAuth().voidCard(_charge.data.flwRef);
+  await PreAuth().voidCard(_charge.data!.flwRef!);
 }
 
 void refundCard() async {
@@ -42,13 +42,13 @@ void refundCard() async {
     expiryyear: '21',
     amount: '2000',
     email: 'jeremiahogbomo@gmail.com',
-    firstname: "Jeremiah",
-    lastname: "Ogbomo",
-    pin: "1111",
-    redirectUrl: "https://rave-web.herokuapp.com/receivepayment",
+    firstname: 'Jeremiah',
+    lastname: 'Ogbomo',
+    pin: '1111',
+    redirectUrl: 'https://rave-web.herokuapp.com/receivepayment',
   );
 
-  await PreAuth().refundCard(_charge.data.flwRef);
+  await PreAuth().refundCard(_charge.data!.flwRef!);
 }
 
 void main() async {

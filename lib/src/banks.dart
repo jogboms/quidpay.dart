@@ -16,12 +16,12 @@ class Banks {
       onTransform: (dynamic data, _) {
         return Model.generator<Bank>(
           data,
-          (dynamic bank) => Bank.fromJson(bank),
+          (dynamic bank) => Bank.fromJson(bank)!,
         );
       },
     );
 
-    Log().debug("$runtimeType.fetch() -> Response", _response);
+    Log().debug('$runtimeType.fetch() -> Response', _response);
 
     return _response;
   }

@@ -16,9 +16,9 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
   final String wireName = 'VerifyResult';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, VerifyResult object,
+  Iterable<Object?> serialize(Serializers serializers, VerifyResult object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'txid',
       serializers.serialize(object.txid, specifiedType: const FullType(int)),
       'txref',
@@ -183,7 +183,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           specifiedType:
               const FullType(BuiltList, const [const FullType(Metadata)])),
     ];
-    Object value;
+    Object? value;
     value = object.acctcode;
     if (value != null) {
       result
@@ -230,7 +230,8 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
   }
 
   @override
-  VerifyResult deserialize(Serializers serializers, Iterable<Object> serialized,
+  VerifyResult deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VerifyResultBuilder();
 
@@ -238,7 +239,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'txid':
           result.txid = serializers.deserialize(value,
@@ -322,11 +323,11 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'acctcode':
           result.acctcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'acctmessage':
           result.acctmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymenttype':
           result.paymenttype = serializers.deserialize(value,
@@ -402,7 +403,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'custphone':
           result.custphone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'custnetworkprovider':
           result.custnetworkprovider = serializers.deserialize(value,
@@ -454,7 +455,7 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'acctalias':
           result.acctalias = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'acctisliveapproved':
           result.acctisliveapproved = serializers.deserialize(value,
@@ -466,11 +467,11 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'paymentplan':
           result.paymentplan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'paymentpage':
           result.paymentpage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'raveref':
           result.raveref = serializers.deserialize(value,
@@ -478,13 +479,13 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
           break;
         case 'card':
           result.card.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Card)) as Card);
+              specifiedType: const FullType(Card))! as Card);
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Metadata)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Metadata)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -535,9 +536,9 @@ class _$VerifyResult extends VerifyResult {
   @override
   final String authurl;
   @override
-  final String acctcode;
+  final String? acctcode;
   @override
-  final String acctmessage;
+  final String? acctmessage;
   @override
   final String paymenttype;
   @override
@@ -575,7 +576,7 @@ class _$VerifyResult extends VerifyResult {
   @override
   final int customerid;
   @override
-  final String custphone;
+  final String? custphone;
   @override
   final String custnetworkprovider;
   @override
@@ -601,15 +602,15 @@ class _$VerifyResult extends VerifyResult {
   @override
   final String acctvpcmerchant;
   @override
-  final String acctalias;
+  final String? acctalias;
   @override
   final int acctisliveapproved;
   @override
   final String orderref;
   @override
-  final String paymentplan;
+  final String? paymentplan;
   @override
-  final String paymentpage;
+  final String? paymentpage;
   @override
   final String raveref;
   @override
@@ -617,71 +618,71 @@ class _$VerifyResult extends VerifyResult {
   @override
   final BuiltList<Metadata> meta;
 
-  factory _$VerifyResult([void Function(VerifyResultBuilder) updates]) =>
+  factory _$VerifyResult([void Function(VerifyResultBuilder)? updates]) =>
       (new VerifyResultBuilder()..update(updates)).build();
 
   _$VerifyResult._(
-      {this.txid,
-      this.txref,
-      this.flwref,
-      this.devicefingerprint,
-      this.cycle,
-      this.amount,
-      this.currency,
-      this.chargedamount,
-      this.appfee,
-      this.merchantfee,
-      this.merchantbearsfee,
-      this.chargecode,
-      this.chargemessage,
-      this.authmodel,
-      this.ip,
-      this.narration,
-      this.status,
-      this.vbvcode,
-      this.vbvmessage,
-      this.authurl,
+      {required this.txid,
+      required this.txref,
+      required this.flwref,
+      required this.devicefingerprint,
+      required this.cycle,
+      required this.amount,
+      required this.currency,
+      required this.chargedamount,
+      required this.appfee,
+      required this.merchantfee,
+      required this.merchantbearsfee,
+      required this.chargecode,
+      required this.chargemessage,
+      required this.authmodel,
+      required this.ip,
+      required this.narration,
+      required this.status,
+      required this.vbvcode,
+      required this.vbvmessage,
+      required this.authurl,
       this.acctcode,
       this.acctmessage,
-      this.paymenttype,
-      this.paymentid,
-      this.fraudstatus,
-      this.chargetype,
-      this.createdday,
-      this.createddayname,
-      this.createdweek,
-      this.createdmonth,
-      this.createdmonthname,
-      this.createdquarter,
-      this.createdyear,
-      this.createdyearisleap,
-      this.createddayispublicholiday,
-      this.createdhour,
-      this.createdminute,
-      this.createdpmam,
-      this.created,
-      this.customerid,
+      required this.paymenttype,
+      required this.paymentid,
+      required this.fraudstatus,
+      required this.chargetype,
+      required this.createdday,
+      required this.createddayname,
+      required this.createdweek,
+      required this.createdmonth,
+      required this.createdmonthname,
+      required this.createdquarter,
+      required this.createdyear,
+      required this.createdyearisleap,
+      required this.createddayispublicholiday,
+      required this.createdhour,
+      required this.createdminute,
+      required this.createdpmam,
+      required this.created,
+      required this.customerid,
       this.custphone,
-      this.custnetworkprovider,
-      this.custname,
-      this.custemail,
-      this.custemailprovider,
-      this.custcreated,
-      this.accountid,
-      this.acctbusinessname,
-      this.acctcontactperson,
-      this.acctcountry,
-      this.acctbearsfeeattransactiontime,
-      this.acctparent,
-      this.acctvpcmerchant,
+      required this.custnetworkprovider,
+      required this.custname,
+      required this.custemail,
+      required this.custemailprovider,
+      required this.custcreated,
+      required this.accountid,
+      required this.acctbusinessname,
+      required this.acctcontactperson,
+      required this.acctcountry,
+      required this.acctbearsfeeattransactiontime,
+      required this.acctparent,
+      required this.acctvpcmerchant,
       this.acctalias,
-      this.acctisliveapproved,
-      this.orderref,
+      required this.acctisliveapproved,
+      required this.orderref,
       this.paymentplan,
       this.paymentpage,
-      this.raveref,
-      this.card,
-      this.meta})
+      required this.raveref,
+      required this.card,
+      required this.meta})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(txid, 'VerifyResult', 'txid');
     BuiltValueNullFieldError.checkNotNull(txref, 'VerifyResult', 'txref');
@@ -897,269 +898,270 @@ class _$VerifyResult extends VerifyResult {
 
 class VerifyResultBuilder
     implements Builder<VerifyResult, VerifyResultBuilder> {
-  _$VerifyResult _$v;
+  _$VerifyResult? _$v;
 
-  int _txid;
-  int get txid => _$this._txid;
-  set txid(int txid) => _$this._txid = txid;
+  int? _txid;
+  int? get txid => _$this._txid;
+  set txid(int? txid) => _$this._txid = txid;
 
-  String _txref;
-  String get txref => _$this._txref;
-  set txref(String txref) => _$this._txref = txref;
+  String? _txref;
+  String? get txref => _$this._txref;
+  set txref(String? txref) => _$this._txref = txref;
 
-  String _flwref;
-  String get flwref => _$this._flwref;
-  set flwref(String flwref) => _$this._flwref = flwref;
+  String? _flwref;
+  String? get flwref => _$this._flwref;
+  set flwref(String? flwref) => _$this._flwref = flwref;
 
-  String _devicefingerprint;
-  String get devicefingerprint => _$this._devicefingerprint;
-  set devicefingerprint(String devicefingerprint) =>
+  String? _devicefingerprint;
+  String? get devicefingerprint => _$this._devicefingerprint;
+  set devicefingerprint(String? devicefingerprint) =>
       _$this._devicefingerprint = devicefingerprint;
 
-  String _cycle;
-  String get cycle => _$this._cycle;
-  set cycle(String cycle) => _$this._cycle = cycle;
+  String? _cycle;
+  String? get cycle => _$this._cycle;
+  set cycle(String? cycle) => _$this._cycle = cycle;
 
-  double _amount;
-  double get amount => _$this._amount;
-  set amount(double amount) => _$this._amount = amount;
+  double? _amount;
+  double? get amount => _$this._amount;
+  set amount(double? amount) => _$this._amount = amount;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  double _chargedamount;
-  double get chargedamount => _$this._chargedamount;
-  set chargedamount(double chargedamount) =>
+  double? _chargedamount;
+  double? get chargedamount => _$this._chargedamount;
+  set chargedamount(double? chargedamount) =>
       _$this._chargedamount = chargedamount;
 
-  double _appfee;
-  double get appfee => _$this._appfee;
-  set appfee(double appfee) => _$this._appfee = appfee;
+  double? _appfee;
+  double? get appfee => _$this._appfee;
+  set appfee(double? appfee) => _$this._appfee = appfee;
 
-  double _merchantfee;
-  double get merchantfee => _$this._merchantfee;
-  set merchantfee(double merchantfee) => _$this._merchantfee = merchantfee;
+  double? _merchantfee;
+  double? get merchantfee => _$this._merchantfee;
+  set merchantfee(double? merchantfee) => _$this._merchantfee = merchantfee;
 
-  double _merchantbearsfee;
-  double get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double merchantbearsfee) =>
+  double? _merchantbearsfee;
+  double? get merchantbearsfee => _$this._merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) =>
       _$this._merchantbearsfee = merchantbearsfee;
 
-  String _chargecode;
-  String get chargecode => _$this._chargecode;
-  set chargecode(String chargecode) => _$this._chargecode = chargecode;
+  String? _chargecode;
+  String? get chargecode => _$this._chargecode;
+  set chargecode(String? chargecode) => _$this._chargecode = chargecode;
 
-  String _chargemessage;
-  String get chargemessage => _$this._chargemessage;
-  set chargemessage(String chargemessage) =>
+  String? _chargemessage;
+  String? get chargemessage => _$this._chargemessage;
+  set chargemessage(String? chargemessage) =>
       _$this._chargemessage = chargemessage;
 
-  String _authmodel;
-  String get authmodel => _$this._authmodel;
-  set authmodel(String authmodel) => _$this._authmodel = authmodel;
+  String? _authmodel;
+  String? get authmodel => _$this._authmodel;
+  set authmodel(String? authmodel) => _$this._authmodel = authmodel;
 
-  String _ip;
-  String get ip => _$this._ip;
-  set ip(String ip) => _$this._ip = ip;
+  String? _ip;
+  String? get ip => _$this._ip;
+  set ip(String? ip) => _$this._ip = ip;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  String _status;
-  String get status => _$this._status;
-  set status(String status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
 
-  String _vbvcode;
-  String get vbvcode => _$this._vbvcode;
-  set vbvcode(String vbvcode) => _$this._vbvcode = vbvcode;
+  String? _vbvcode;
+  String? get vbvcode => _$this._vbvcode;
+  set vbvcode(String? vbvcode) => _$this._vbvcode = vbvcode;
 
-  String _vbvmessage;
-  String get vbvmessage => _$this._vbvmessage;
-  set vbvmessage(String vbvmessage) => _$this._vbvmessage = vbvmessage;
+  String? _vbvmessage;
+  String? get vbvmessage => _$this._vbvmessage;
+  set vbvmessage(String? vbvmessage) => _$this._vbvmessage = vbvmessage;
 
-  String _authurl;
-  String get authurl => _$this._authurl;
-  set authurl(String authurl) => _$this._authurl = authurl;
+  String? _authurl;
+  String? get authurl => _$this._authurl;
+  set authurl(String? authurl) => _$this._authurl = authurl;
 
-  String _acctcode;
-  String get acctcode => _$this._acctcode;
-  set acctcode(String acctcode) => _$this._acctcode = acctcode;
+  String? _acctcode;
+  String? get acctcode => _$this._acctcode;
+  set acctcode(String? acctcode) => _$this._acctcode = acctcode;
 
-  String _acctmessage;
-  String get acctmessage => _$this._acctmessage;
-  set acctmessage(String acctmessage) => _$this._acctmessage = acctmessage;
+  String? _acctmessage;
+  String? get acctmessage => _$this._acctmessage;
+  set acctmessage(String? acctmessage) => _$this._acctmessage = acctmessage;
 
-  String _paymenttype;
-  String get paymenttype => _$this._paymenttype;
-  set paymenttype(String paymenttype) => _$this._paymenttype = paymenttype;
+  String? _paymenttype;
+  String? get paymenttype => _$this._paymenttype;
+  set paymenttype(String? paymenttype) => _$this._paymenttype = paymenttype;
 
-  String _paymentid;
-  String get paymentid => _$this._paymentid;
-  set paymentid(String paymentid) => _$this._paymentid = paymentid;
+  String? _paymentid;
+  String? get paymentid => _$this._paymentid;
+  set paymentid(String? paymentid) => _$this._paymentid = paymentid;
 
-  String _fraudstatus;
-  String get fraudstatus => _$this._fraudstatus;
-  set fraudstatus(String fraudstatus) => _$this._fraudstatus = fraudstatus;
+  String? _fraudstatus;
+  String? get fraudstatus => _$this._fraudstatus;
+  set fraudstatus(String? fraudstatus) => _$this._fraudstatus = fraudstatus;
 
-  String _chargetype;
-  String get chargetype => _$this._chargetype;
-  set chargetype(String chargetype) => _$this._chargetype = chargetype;
+  String? _chargetype;
+  String? get chargetype => _$this._chargetype;
+  set chargetype(String? chargetype) => _$this._chargetype = chargetype;
 
-  int _createdday;
-  int get createdday => _$this._createdday;
-  set createdday(int createdday) => _$this._createdday = createdday;
+  int? _createdday;
+  int? get createdday => _$this._createdday;
+  set createdday(int? createdday) => _$this._createdday = createdday;
 
-  String _createddayname;
-  String get createddayname => _$this._createddayname;
-  set createddayname(String createddayname) =>
+  String? _createddayname;
+  String? get createddayname => _$this._createddayname;
+  set createddayname(String? createddayname) =>
       _$this._createddayname = createddayname;
 
-  int _createdweek;
-  int get createdweek => _$this._createdweek;
-  set createdweek(int createdweek) => _$this._createdweek = createdweek;
+  int? _createdweek;
+  int? get createdweek => _$this._createdweek;
+  set createdweek(int? createdweek) => _$this._createdweek = createdweek;
 
-  int _createdmonth;
-  int get createdmonth => _$this._createdmonth;
-  set createdmonth(int createdmonth) => _$this._createdmonth = createdmonth;
+  int? _createdmonth;
+  int? get createdmonth => _$this._createdmonth;
+  set createdmonth(int? createdmonth) => _$this._createdmonth = createdmonth;
 
-  String _createdmonthname;
-  String get createdmonthname => _$this._createdmonthname;
-  set createdmonthname(String createdmonthname) =>
+  String? _createdmonthname;
+  String? get createdmonthname => _$this._createdmonthname;
+  set createdmonthname(String? createdmonthname) =>
       _$this._createdmonthname = createdmonthname;
 
-  int _createdquarter;
-  int get createdquarter => _$this._createdquarter;
-  set createdquarter(int createdquarter) =>
+  int? _createdquarter;
+  int? get createdquarter => _$this._createdquarter;
+  set createdquarter(int? createdquarter) =>
       _$this._createdquarter = createdquarter;
 
-  int _createdyear;
-  int get createdyear => _$this._createdyear;
-  set createdyear(int createdyear) => _$this._createdyear = createdyear;
+  int? _createdyear;
+  int? get createdyear => _$this._createdyear;
+  set createdyear(int? createdyear) => _$this._createdyear = createdyear;
 
-  bool _createdyearisleap;
-  bool get createdyearisleap => _$this._createdyearisleap;
-  set createdyearisleap(bool createdyearisleap) =>
+  bool? _createdyearisleap;
+  bool? get createdyearisleap => _$this._createdyearisleap;
+  set createdyearisleap(bool? createdyearisleap) =>
       _$this._createdyearisleap = createdyearisleap;
 
-  int _createddayispublicholiday;
-  int get createddayispublicholiday => _$this._createddayispublicholiday;
-  set createddayispublicholiday(int createddayispublicholiday) =>
+  int? _createddayispublicholiday;
+  int? get createddayispublicholiday => _$this._createddayispublicholiday;
+  set createddayispublicholiday(int? createddayispublicholiday) =>
       _$this._createddayispublicholiday = createddayispublicholiday;
 
-  int _createdhour;
-  int get createdhour => _$this._createdhour;
-  set createdhour(int createdhour) => _$this._createdhour = createdhour;
+  int? _createdhour;
+  int? get createdhour => _$this._createdhour;
+  set createdhour(int? createdhour) => _$this._createdhour = createdhour;
 
-  int _createdminute;
-  int get createdminute => _$this._createdminute;
-  set createdminute(int createdminute) => _$this._createdminute = createdminute;
+  int? _createdminute;
+  int? get createdminute => _$this._createdminute;
+  set createdminute(int? createdminute) =>
+      _$this._createdminute = createdminute;
 
-  String _createdpmam;
-  String get createdpmam => _$this._createdpmam;
-  set createdpmam(String createdpmam) => _$this._createdpmam = createdpmam;
+  String? _createdpmam;
+  String? get createdpmam => _$this._createdpmam;
+  set createdpmam(String? createdpmam) => _$this._createdpmam = createdpmam;
 
-  String _created;
-  String get created => _$this._created;
-  set created(String created) => _$this._created = created;
+  String? _created;
+  String? get created => _$this._created;
+  set created(String? created) => _$this._created = created;
 
-  int _customerid;
-  int get customerid => _$this._customerid;
-  set customerid(int customerid) => _$this._customerid = customerid;
+  int? _customerid;
+  int? get customerid => _$this._customerid;
+  set customerid(int? customerid) => _$this._customerid = customerid;
 
-  String _custphone;
-  String get custphone => _$this._custphone;
-  set custphone(String custphone) => _$this._custphone = custphone;
+  String? _custphone;
+  String? get custphone => _$this._custphone;
+  set custphone(String? custphone) => _$this._custphone = custphone;
 
-  String _custnetworkprovider;
-  String get custnetworkprovider => _$this._custnetworkprovider;
-  set custnetworkprovider(String custnetworkprovider) =>
+  String? _custnetworkprovider;
+  String? get custnetworkprovider => _$this._custnetworkprovider;
+  set custnetworkprovider(String? custnetworkprovider) =>
       _$this._custnetworkprovider = custnetworkprovider;
 
-  String _custname;
-  String get custname => _$this._custname;
-  set custname(String custname) => _$this._custname = custname;
+  String? _custname;
+  String? get custname => _$this._custname;
+  set custname(String? custname) => _$this._custname = custname;
 
-  String _custemail;
-  String get custemail => _$this._custemail;
-  set custemail(String custemail) => _$this._custemail = custemail;
+  String? _custemail;
+  String? get custemail => _$this._custemail;
+  set custemail(String? custemail) => _$this._custemail = custemail;
 
-  String _custemailprovider;
-  String get custemailprovider => _$this._custemailprovider;
-  set custemailprovider(String custemailprovider) =>
+  String? _custemailprovider;
+  String? get custemailprovider => _$this._custemailprovider;
+  set custemailprovider(String? custemailprovider) =>
       _$this._custemailprovider = custemailprovider;
 
-  String _custcreated;
-  String get custcreated => _$this._custcreated;
-  set custcreated(String custcreated) => _$this._custcreated = custcreated;
+  String? _custcreated;
+  String? get custcreated => _$this._custcreated;
+  set custcreated(String? custcreated) => _$this._custcreated = custcreated;
 
-  int _accountid;
-  int get accountid => _$this._accountid;
-  set accountid(int accountid) => _$this._accountid = accountid;
+  int? _accountid;
+  int? get accountid => _$this._accountid;
+  set accountid(int? accountid) => _$this._accountid = accountid;
 
-  String _acctbusinessname;
-  String get acctbusinessname => _$this._acctbusinessname;
-  set acctbusinessname(String acctbusinessname) =>
+  String? _acctbusinessname;
+  String? get acctbusinessname => _$this._acctbusinessname;
+  set acctbusinessname(String? acctbusinessname) =>
       _$this._acctbusinessname = acctbusinessname;
 
-  String _acctcontactperson;
-  String get acctcontactperson => _$this._acctcontactperson;
-  set acctcontactperson(String acctcontactperson) =>
+  String? _acctcontactperson;
+  String? get acctcontactperson => _$this._acctcontactperson;
+  set acctcontactperson(String? acctcontactperson) =>
       _$this._acctcontactperson = acctcontactperson;
 
-  String _acctcountry;
-  String get acctcountry => _$this._acctcountry;
-  set acctcountry(String acctcountry) => _$this._acctcountry = acctcountry;
+  String? _acctcountry;
+  String? get acctcountry => _$this._acctcountry;
+  set acctcountry(String? acctcountry) => _$this._acctcountry = acctcountry;
 
-  int _acctbearsfeeattransactiontime;
-  int get acctbearsfeeattransactiontime =>
+  int? _acctbearsfeeattransactiontime;
+  int? get acctbearsfeeattransactiontime =>
       _$this._acctbearsfeeattransactiontime;
-  set acctbearsfeeattransactiontime(int acctbearsfeeattransactiontime) =>
+  set acctbearsfeeattransactiontime(int? acctbearsfeeattransactiontime) =>
       _$this._acctbearsfeeattransactiontime = acctbearsfeeattransactiontime;
 
-  int _acctparent;
-  int get acctparent => _$this._acctparent;
-  set acctparent(int acctparent) => _$this._acctparent = acctparent;
+  int? _acctparent;
+  int? get acctparent => _$this._acctparent;
+  set acctparent(int? acctparent) => _$this._acctparent = acctparent;
 
-  String _acctvpcmerchant;
-  String get acctvpcmerchant => _$this._acctvpcmerchant;
-  set acctvpcmerchant(String acctvpcmerchant) =>
+  String? _acctvpcmerchant;
+  String? get acctvpcmerchant => _$this._acctvpcmerchant;
+  set acctvpcmerchant(String? acctvpcmerchant) =>
       _$this._acctvpcmerchant = acctvpcmerchant;
 
-  String _acctalias;
-  String get acctalias => _$this._acctalias;
-  set acctalias(String acctalias) => _$this._acctalias = acctalias;
+  String? _acctalias;
+  String? get acctalias => _$this._acctalias;
+  set acctalias(String? acctalias) => _$this._acctalias = acctalias;
 
-  int _acctisliveapproved;
-  int get acctisliveapproved => _$this._acctisliveapproved;
-  set acctisliveapproved(int acctisliveapproved) =>
+  int? _acctisliveapproved;
+  int? get acctisliveapproved => _$this._acctisliveapproved;
+  set acctisliveapproved(int? acctisliveapproved) =>
       _$this._acctisliveapproved = acctisliveapproved;
 
-  String _orderref;
-  String get orderref => _$this._orderref;
-  set orderref(String orderref) => _$this._orderref = orderref;
+  String? _orderref;
+  String? get orderref => _$this._orderref;
+  set orderref(String? orderref) => _$this._orderref = orderref;
 
-  String _paymentplan;
-  String get paymentplan => _$this._paymentplan;
-  set paymentplan(String paymentplan) => _$this._paymentplan = paymentplan;
+  String? _paymentplan;
+  String? get paymentplan => _$this._paymentplan;
+  set paymentplan(String? paymentplan) => _$this._paymentplan = paymentplan;
 
-  String _paymentpage;
-  String get paymentpage => _$this._paymentpage;
-  set paymentpage(String paymentpage) => _$this._paymentpage = paymentpage;
+  String? _paymentpage;
+  String? get paymentpage => _$this._paymentpage;
+  set paymentpage(String? paymentpage) => _$this._paymentpage = paymentpage;
 
-  String _raveref;
-  String get raveref => _$this._raveref;
-  set raveref(String raveref) => _$this._raveref = raveref;
+  String? _raveref;
+  String? get raveref => _$this._raveref;
+  set raveref(String? raveref) => _$this._raveref = raveref;
 
-  CardBuilder _card;
+  CardBuilder? _card;
   CardBuilder get card => _$this._card ??= new CardBuilder();
-  set card(CardBuilder card) => _$this._card = card;
+  set card(CardBuilder? card) => _$this._card = card;
 
-  ListBuilder<Metadata> _meta;
+  ListBuilder<Metadata>? _meta;
   ListBuilder<Metadata> get meta =>
       _$this._meta ??= new ListBuilder<Metadata>();
-  set meta(ListBuilder<Metadata> meta) => _$this._meta = meta;
+  set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
   VerifyResultBuilder();
 
@@ -1239,7 +1241,7 @@ class VerifyResultBuilder
   }
 
   @override
-  void update(void Function(VerifyResultBuilder) updates) {
+  void update(void Function(VerifyResultBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1320,7 +1322,7 @@ class VerifyResultBuilder
               card: card.build(),
               meta: meta.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'card';
         card.build();
@@ -1337,4 +1339,4 @@ class VerifyResultBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

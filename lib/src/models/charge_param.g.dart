@@ -15,9 +15,9 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
   final String wireName = 'ChargeParam';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, ChargeParam object,
+  Iterable<Object?> serialize(Serializers serializers, ChargeParam object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'amount',
       serializers.serialize(object.amount,
           specifiedType: const FullType(String)),
@@ -34,7 +34,7 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
       serializers.serialize(object.country,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.lastname;
     if (value != null) {
       result
@@ -180,7 +180,7 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
   }
 
   @override
-  ChargeParam deserialize(Serializers serializers, Iterable<Object> serialized,
+  ChargeParam deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChargeParamBuilder();
 
@@ -188,7 +188,7 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'amount':
           result.amount = serializers.deserialize(value,
@@ -212,85 +212,85 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
           break;
         case 'lastname':
           result.lastname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'redirectUrl':
           result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'txRef':
           result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'suggestedAuth':
           result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'iP':
           result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'settlementToken':
           result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'phonenumber':
           result.phonenumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'billingzip':
           result.billingzip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'narration':
           result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Metadata)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Metadata)]))!
+              as BuiltList<Object?>);
           break;
         case 'bvn':
           result.bvn = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'chargeType':
           result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'deviceFingerprint':
           result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'recurringStop':
           result.recurringStop = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'includeIntegrityHash':
           result.includeIntegrityHash = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+              specifiedType: const FullType(bool)) as bool?;
           break;
         case 'cardno':
           result.cardno = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'cvv':
           result.cvv = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'expiryyear':
           result.expiryyear = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'expirymonth':
           result.expirymonth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'pin':
           result.pin = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -311,55 +311,55 @@ class _$ChargeParam extends ChargeParam {
   @override
   final String country;
   @override
-  final String lastname;
+  final String? lastname;
   @override
-  final String redirectUrl;
+  final String? redirectUrl;
   @override
-  final String txRef;
+  final String? txRef;
   @override
-  final String suggestedAuth;
+  final String? suggestedAuth;
   @override
-  final String iP;
+  final String? iP;
   @override
-  final String settlementToken;
+  final String? settlementToken;
   @override
-  final String phonenumber;
+  final String? phonenumber;
   @override
-  final String billingzip;
+  final String? billingzip;
   @override
-  final String narration;
+  final String? narration;
   @override
-  final BuiltList<Metadata> meta;
+  final BuiltList<Metadata>? meta;
   @override
-  final String bvn;
+  final String? bvn;
   @override
-  final String chargeType;
+  final String? chargeType;
   @override
-  final String deviceFingerprint;
+  final String? deviceFingerprint;
   @override
-  final String recurringStop;
+  final String? recurringStop;
   @override
-  final bool includeIntegrityHash;
+  final bool? includeIntegrityHash;
   @override
-  final String cardno;
+  final String? cardno;
   @override
-  final String cvv;
+  final String? cvv;
   @override
-  final String expiryyear;
+  final String? expiryyear;
   @override
-  final String expirymonth;
+  final String? expirymonth;
   @override
-  final String pin;
+  final String? pin;
 
-  factory _$ChargeParam([void Function(ChargeParamBuilder) updates]) =>
+  factory _$ChargeParam([void Function(ChargeParamBuilder)? updates]) =>
       (new ChargeParamBuilder()..update(updates)).build();
 
   _$ChargeParam._(
-      {this.amount,
-      this.email,
-      this.firstname,
-      this.currency,
-      this.country,
+      {required this.amount,
+      required this.email,
+      required this.firstname,
+      required this.currency,
+      required this.country,
       this.lastname,
       this.redirectUrl,
       this.txRef,
@@ -471,113 +471,113 @@ class _$ChargeParam extends ChargeParam {
 }
 
 class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
-  _$ChargeParam _$v;
+  _$ChargeParam? _$v;
 
-  String _amount;
-  String get amount => _$this._amount;
-  set amount(String amount) => _$this._amount = amount;
+  String? _amount;
+  String? get amount => _$this._amount;
+  set amount(String? amount) => _$this._amount = amount;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _firstname;
-  String get firstname => _$this._firstname;
-  set firstname(String firstname) => _$this._firstname = firstname;
+  String? _firstname;
+  String? get firstname => _$this._firstname;
+  set firstname(String? firstname) => _$this._firstname = firstname;
 
-  String _currency;
-  String get currency => _$this._currency;
-  set currency(String currency) => _$this._currency = currency;
+  String? _currency;
+  String? get currency => _$this._currency;
+  set currency(String? currency) => _$this._currency = currency;
 
-  String _country;
-  String get country => _$this._country;
-  set country(String country) => _$this._country = country;
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
 
-  String _lastname;
-  String get lastname => _$this._lastname;
-  set lastname(String lastname) => _$this._lastname = lastname;
+  String? _lastname;
+  String? get lastname => _$this._lastname;
+  set lastname(String? lastname) => _$this._lastname = lastname;
 
-  String _redirectUrl;
-  String get redirectUrl => _$this._redirectUrl;
-  set redirectUrl(String redirectUrl) => _$this._redirectUrl = redirectUrl;
+  String? _redirectUrl;
+  String? get redirectUrl => _$this._redirectUrl;
+  set redirectUrl(String? redirectUrl) => _$this._redirectUrl = redirectUrl;
 
-  String _txRef;
-  String get txRef => _$this._txRef;
-  set txRef(String txRef) => _$this._txRef = txRef;
+  String? _txRef;
+  String? get txRef => _$this._txRef;
+  set txRef(String? txRef) => _$this._txRef = txRef;
 
-  String _suggestedAuth;
-  String get suggestedAuth => _$this._suggestedAuth;
-  set suggestedAuth(String suggestedAuth) =>
+  String? _suggestedAuth;
+  String? get suggestedAuth => _$this._suggestedAuth;
+  set suggestedAuth(String? suggestedAuth) =>
       _$this._suggestedAuth = suggestedAuth;
 
-  String _iP;
-  String get iP => _$this._iP;
-  set iP(String iP) => _$this._iP = iP;
+  String? _iP;
+  String? get iP => _$this._iP;
+  set iP(String? iP) => _$this._iP = iP;
 
-  String _settlementToken;
-  String get settlementToken => _$this._settlementToken;
-  set settlementToken(String settlementToken) =>
+  String? _settlementToken;
+  String? get settlementToken => _$this._settlementToken;
+  set settlementToken(String? settlementToken) =>
       _$this._settlementToken = settlementToken;
 
-  String _phonenumber;
-  String get phonenumber => _$this._phonenumber;
-  set phonenumber(String phonenumber) => _$this._phonenumber = phonenumber;
+  String? _phonenumber;
+  String? get phonenumber => _$this._phonenumber;
+  set phonenumber(String? phonenumber) => _$this._phonenumber = phonenumber;
 
-  String _billingzip;
-  String get billingzip => _$this._billingzip;
-  set billingzip(String billingzip) => _$this._billingzip = billingzip;
+  String? _billingzip;
+  String? get billingzip => _$this._billingzip;
+  set billingzip(String? billingzip) => _$this._billingzip = billingzip;
 
-  String _narration;
-  String get narration => _$this._narration;
-  set narration(String narration) => _$this._narration = narration;
+  String? _narration;
+  String? get narration => _$this._narration;
+  set narration(String? narration) => _$this._narration = narration;
 
-  ListBuilder<Metadata> _meta;
+  ListBuilder<Metadata>? _meta;
   ListBuilder<Metadata> get meta =>
       _$this._meta ??= new ListBuilder<Metadata>();
-  set meta(ListBuilder<Metadata> meta) => _$this._meta = meta;
+  set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
-  String _bvn;
-  String get bvn => _$this._bvn;
-  set bvn(String bvn) => _$this._bvn = bvn;
+  String? _bvn;
+  String? get bvn => _$this._bvn;
+  set bvn(String? bvn) => _$this._bvn = bvn;
 
-  String _chargeType;
-  String get chargeType => _$this._chargeType;
-  set chargeType(String chargeType) => _$this._chargeType = chargeType;
+  String? _chargeType;
+  String? get chargeType => _$this._chargeType;
+  set chargeType(String? chargeType) => _$this._chargeType = chargeType;
 
-  String _deviceFingerprint;
-  String get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String deviceFingerprint) =>
+  String? _deviceFingerprint;
+  String? get deviceFingerprint => _$this._deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) =>
       _$this._deviceFingerprint = deviceFingerprint;
 
-  String _recurringStop;
-  String get recurringStop => _$this._recurringStop;
-  set recurringStop(String recurringStop) =>
+  String? _recurringStop;
+  String? get recurringStop => _$this._recurringStop;
+  set recurringStop(String? recurringStop) =>
       _$this._recurringStop = recurringStop;
 
-  bool _includeIntegrityHash;
-  bool get includeIntegrityHash => _$this._includeIntegrityHash;
-  set includeIntegrityHash(bool includeIntegrityHash) =>
+  bool? _includeIntegrityHash;
+  bool? get includeIntegrityHash => _$this._includeIntegrityHash;
+  set includeIntegrityHash(bool? includeIntegrityHash) =>
       _$this._includeIntegrityHash = includeIntegrityHash;
 
-  String _cardno;
-  String get cardno => _$this._cardno;
-  set cardno(String cardno) => _$this._cardno = cardno;
+  String? _cardno;
+  String? get cardno => _$this._cardno;
+  set cardno(String? cardno) => _$this._cardno = cardno;
 
-  String _cvv;
-  String get cvv => _$this._cvv;
-  set cvv(String cvv) => _$this._cvv = cvv;
+  String? _cvv;
+  String? get cvv => _$this._cvv;
+  set cvv(String? cvv) => _$this._cvv = cvv;
 
-  String _expiryyear;
-  String get expiryyear => _$this._expiryyear;
-  set expiryyear(String expiryyear) => _$this._expiryyear = expiryyear;
+  String? _expiryyear;
+  String? get expiryyear => _$this._expiryyear;
+  set expiryyear(String? expiryyear) => _$this._expiryyear = expiryyear;
 
-  String _expirymonth;
-  String get expirymonth => _$this._expirymonth;
-  set expirymonth(String expirymonth) => _$this._expirymonth = expirymonth;
+  String? _expirymonth;
+  String? get expirymonth => _$this._expirymonth;
+  set expirymonth(String? expirymonth) => _$this._expirymonth = expirymonth;
 
-  String _pin;
-  String get pin => _$this._pin;
-  set pin(String pin) => _$this._pin = pin;
+  String? _pin;
+  String? get pin => _$this._pin;
+  set pin(String? pin) => _$this._pin = pin;
 
   ChargeParamBuilder();
 
@@ -621,7 +621,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
   }
 
   @override
-  void update(void Function(ChargeParamBuilder) updates) {
+  void update(void Function(ChargeParamBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -662,7 +662,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
               expirymonth: expirymonth,
               pin: pin);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'meta';
         _meta?.build();
@@ -677,4 +677,4 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

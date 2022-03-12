@@ -16,43 +16,39 @@ abstract class Metadata
   factory Metadata([updates(MetadataBuilder b)]) = _$Metadata;
 
   factory Metadata.named({
-    @required String name,
-    @required String value,
+    required String name,
+    required String value,
   }) {
     return Metadata(
       (b) => b
-        ..name = "hello"
-        ..value = "world",
+        ..name = 'hello'
+        ..value = 'world',
     );
   }
 
-  @nullable
-  int get id;
+  int? get id;
 
-  @BuiltValueField(wireName: "metaname")
+  @BuiltValueField(wireName: 'metaname')
   String get name;
 
-  @BuiltValueField(wireName: "metavalue")
+  @BuiltValueField(wireName: 'metavalue')
   String get value;
 
-  @nullable
-  DateTime get createdAt;
+  DateTime? get createdAt;
 
-  @nullable
-  DateTime get updatedAt;
+  DateTime? get updatedAt;
 
-  @nullable
-  String get deletedAt;
+  String? get deletedAt;
 
-  @nullable
-  int get getpaidTransactionId;
+  int? get getpaidTransactionId;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Metadata.serializer, this);
+      serializers.serializeWith(Metadata.serializer, this)
+          as Map<String, dynamic>;
 
-  static Metadata fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Metadata.serializer, map);
+  static Metadata? fromJson(Map<String, dynamic> map) =>
+      serializers.deserializeWith(Metadata.serializer, map) as Metadata?;
 
   static Serializer<Metadata> get serializer => _$metadataSerializer;
 }

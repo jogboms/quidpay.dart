@@ -15,10 +15,10 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
   final String wireName = 'Customer';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Customer object,
+  Iterable<Object?> serialize(Serializers serializers, Customer object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.id;
     if (value != null) {
       result
@@ -84,7 +84,7 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
   }
 
   @override
-  Customer deserialize(Serializers serializers, Iterable<Object> serialized,
+  Customer deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CustomerBuilder();
 
@@ -92,43 +92,43 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'fullName':
           result.fullName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'customertoken':
           result.customertoken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'createdAt':
           result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'updatedAt':
           result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'deletedAt':
           result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'AccountId':
           result.accountId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -139,25 +139,25 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
 
 class _$Customer extends Customer {
   @override
-  final int id;
+  final int? id;
   @override
-  final String phone;
+  final String? phone;
   @override
-  final String fullName;
+  final String? fullName;
   @override
-  final String customertoken;
+  final String? customertoken;
   @override
-  final String email;
+  final String? email;
   @override
-  final String createdAt;
+  final String? createdAt;
   @override
-  final String updatedAt;
+  final String? updatedAt;
   @override
-  final String deletedAt;
+  final String? deletedAt;
   @override
-  final int accountId;
+  final int? accountId;
 
-  factory _$Customer([void Function(CustomerBuilder) updates]) =>
+  factory _$Customer([void Function(CustomerBuilder)? updates]) =>
       (new CustomerBuilder()..update(updates)).build();
 
   _$Customer._(
@@ -192,44 +192,44 @@ class _$Customer extends Customer {
 }
 
 class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
-  _$Customer _$v;
+  _$Customer? _$v;
 
-  int _id;
-  int get id => _$this._id;
-  set id(int id) => _$this._id = id;
+  int? _id;
+  int? get id => _$this._id;
+  set id(int? id) => _$this._id = id;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
-  String _fullName;
-  String get fullName => _$this._fullName;
-  set fullName(String fullName) => _$this._fullName = fullName;
+  String? _fullName;
+  String? get fullName => _$this._fullName;
+  set fullName(String? fullName) => _$this._fullName = fullName;
 
-  String _customertoken;
-  String get customertoken => _$this._customertoken;
-  set customertoken(String customertoken) =>
+  String? _customertoken;
+  String? get customertoken => _$this._customertoken;
+  set customertoken(String? customertoken) =>
       _$this._customertoken = customertoken;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _createdAt;
-  String get createdAt => _$this._createdAt;
-  set createdAt(String createdAt) => _$this._createdAt = createdAt;
+  String? _createdAt;
+  String? get createdAt => _$this._createdAt;
+  set createdAt(String? createdAt) => _$this._createdAt = createdAt;
 
-  String _updatedAt;
-  String get updatedAt => _$this._updatedAt;
-  set updatedAt(String updatedAt) => _$this._updatedAt = updatedAt;
+  String? _updatedAt;
+  String? get updatedAt => _$this._updatedAt;
+  set updatedAt(String? updatedAt) => _$this._updatedAt = updatedAt;
 
-  String _deletedAt;
-  String get deletedAt => _$this._deletedAt;
-  set deletedAt(String deletedAt) => _$this._deletedAt = deletedAt;
+  String? _deletedAt;
+  String? get deletedAt => _$this._deletedAt;
+  set deletedAt(String? deletedAt) => _$this._deletedAt = deletedAt;
 
-  int _accountId;
-  int get accountId => _$this._accountId;
-  set accountId(int accountId) => _$this._accountId = accountId;
+  int? _accountId;
+  int? get accountId => _$this._accountId;
+  set accountId(int? accountId) => _$this._accountId = accountId;
 
   CustomerBuilder();
 
@@ -257,7 +257,7 @@ class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
   }
 
   @override
-  void update(void Function(CustomerBuilder) updates) {
+  void update(void Function(CustomerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -279,4 +279,4 @@ class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

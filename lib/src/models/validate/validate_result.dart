@@ -13,7 +13,7 @@ abstract class ValidateResult
     implements Built<ValidateResult, ValidateResultBuilder> {
   ValidateResult._();
 
-  factory ValidateResult([updates(ValidateResultBuilder b)]) = _$ValidateResult;
+  factory ValidateResult([Function(ValidateResultBuilder b) updates]) = _$ValidateResult;
 
   @BuiltValueField(compare: false)
   Data get data;
@@ -21,17 +21,17 @@ abstract class ValidateResult
   @BuiltValueField(compare: false)
   Tx get tx;
 
-  @nullable
   @BuiltValueField(wireName: 'airtime_flag', compare: false)
-  String get airtimeFlag;
+  String? get airtimeFlag;
 
-  bool get isSuccessful => tx.status == "successful";
+  bool get isSuccessful => tx.status == 'successful';
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(ValidateResult.serializer, this);
+      serializers.serializeWith(ValidateResult.serializer, this)
+          as Map<String, dynamic>;
 
-  static ValidateResult fromJson(Map<String, dynamic> map) =>
+  static ValidateResult? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(ValidateResult.serializer, map);
 
   static Serializer<ValidateResult> get serializer =>
@@ -41,18 +41,17 @@ abstract class ValidateResult
 abstract class Data with ModelInterface implements Built<Data, DataBuilder> {
   Data._();
 
-  factory Data([updates(DataBuilder b)]) = _$Data;
+  factory Data([Function(DataBuilder b) updates]) = _$Data;
 
-  @nullable
   String get responsetoken;
   String get responsecode;
   String get responsemessage;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Data.serializer, this);
+      serializers.serializeWith(Data.serializer, this) as Map<String, dynamic>;
 
-  static Data fromJson(Map<String, dynamic> map) =>
+  static Data? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(Data.serializer, map);
 
   static Serializer<Data> get serializer => _$dataSerializer;

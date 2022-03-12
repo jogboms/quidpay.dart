@@ -11,7 +11,7 @@ abstract class ChargeParam
     with ModelInterface
     implements Built<ChargeParam, ChargeParamBuilder> {
   factory ChargeParam([
-    void updates(ChargeParamBuilder b),
+    void Function(ChargeParamBuilder b) updates,
   ]) = _$ChargeParam;
 
   ChargeParam._();
@@ -21,54 +21,35 @@ abstract class ChargeParam
   String get firstname;
   String get currency;
   String get country;
-  @nullable
-  String get lastname;
-  @nullable
-  String get redirectUrl;
+  String? get lastname;
+  String? get redirectUrl;
 
-  @nullable
-  String get txRef;
-  @nullable
-  String get suggestedAuth;
-  @nullable
-  String get iP;
-  @nullable
-  String get settlementToken;
-  @nullable
-  String get phonenumber;
-  @nullable
-  String get billingzip;
-  @nullable
-  String get narration;
-  @nullable
-  BuiltList<Metadata> get meta;
-  @nullable
-  String get bvn;
-  @nullable
-  String get chargeType;
-  @nullable
-  String get deviceFingerprint;
-  @nullable
-  String get recurringStop;
-  @nullable
-  bool get includeIntegrityHash;
+  String? get txRef;
+  String? get suggestedAuth;
+  String? get iP;
+  String? get settlementToken;
+  String? get phonenumber;
+  String? get billingzip;
+  String? get narration;
+  BuiltList<Metadata>? get meta;
+  String? get bvn;
+  String? get chargeType;
+  String? get deviceFingerprint;
+  String? get recurringStop;
+  bool? get includeIntegrityHash;
 
-  @nullable
-  String get cardno;
-  @nullable
-  String get cvv;
-  @nullable
-  String get expiryyear;
-  @nullable
-  String get expirymonth;
-  @nullable
-  String get pin;
+  String? get cardno;
+  String? get cvv;
+  String? get expiryyear;
+  String? get expirymonth;
+  String? get pin;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(ChargeParam.serializer, this);
+      serializers.serializeWith(ChargeParam.serializer, this)
+          as Map<String, dynamic>;
 
-  static ChargeParam fromJson(Map<String, dynamic> map) =>
+  static ChargeParam? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(ChargeParam.serializer, map);
 
   static Serializer<ChargeParam> get serializer => _$chargeParamSerializer;

@@ -14,212 +14,172 @@ abstract class Result
     implements Built<Result, ResultBuilder> {
   Result._();
 
-  factory Result([updates(ResultBuilder b)]) = _$Result;
+  factory Result([Function(ResultBuilder b) updates]) = _$Result;
 
-  @nullable
-  int get id;
+  int? get id;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get txRef;
+  String? get txRef;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get orderRef;
+  String? get orderRef;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get flwRef;
+  String? get flwRef;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get redirectUrl;
+  String? get redirectUrl;
 
-  @nullable
   @BuiltValueField(wireName: 'device_fingerprint', compare: false)
-  String get deviceFingerprint;
+  String? get deviceFingerprint;
 
-  @nullable
   @BuiltValueField(wireName: 'settlement_token', compare: false)
-  String get settlementToken;
+  String? get settlementToken;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get cycle;
+  String? get cycle;
 
-  @nullable
   @BuiltValueField(compare: false)
-  double get amount;
+  double? get amount;
 
-  @nullable
   @BuiltValueField(wireName: 'charged_amount', compare: false)
-  double get chargedAmount;
+  double? get chargedAmount;
 
-  @nullable
   @BuiltValueField(compare: false)
-  double get appfee;
+  double? get appfee;
 
-  @nullable
   @BuiltValueField(compare: false)
-  double get merchantfee;
+  double? get merchantfee;
 
-  @nullable
   @BuiltValueField(compare: false)
-  double get merchantbearsfee;
+  double? get merchantbearsfee;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get chargeResponseCode;
+  String? get chargeResponseCode;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get raveRef;
+  String? get raveRef;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get chargeResponseMessage;
+  String? get chargeResponseMessage;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get authModelUsed;
+  String? get authModelUsed;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get currency;
+  String? get currency;
 
-  @nullable
   @BuiltValueField(wireName: 'IP', compare: false)
-  String get iP;
+  String? get iP;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get narration;
+  String? get narration;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get status;
+  String? get status;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get modalauditid;
+  String? get modalauditid;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get vbvrespmessage;
+  String? get vbvrespmessage;
 
-  @nullable
   @BuiltValueField(wireName: 'authurl', compare: false)
-  String get invalidAuthUrl;
+  String? get invalidAuthUrl;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get vbvrespcode;
+  String? get vbvrespcode;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get acctvalrespmsg;
+  String? get acctvalrespmsg;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get acctvalrespcode;
+  String? get acctvalrespcode;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentType;
+  String? get paymentType;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentPlan;
+  String? get paymentPlan;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentPage;
+  String? get paymentPage;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get paymentId;
+  String? get paymentId;
 
-  @nullable
   @BuiltValueField(wireName: 'fraud_status', compare: false)
-  String get fraudStatus;
+  String? get fraudStatus;
 
-  @nullable
   @BuiltValueField(wireName: 'charge_type', compare: false)
-  String get chargeType;
+  String? get chargeType;
 
-  @nullable
   @BuiltValueField(wireName: 'is_live', compare: false)
-  int get isLive;
+  int? get isLive;
 
-  @nullable
   @BuiltValueField(wireName: 'suggested_auth', compare: false)
-  String get suggestedAuth;
+  String? get suggestedAuth;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get createdAt;
+  String? get createdAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get updatedAt;
+  String? get updatedAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  String get deletedAt;
+  String? get deletedAt;
 
-  @nullable
   @BuiltValueField(compare: false)
-  int get customerId;
+  int? get customerId;
 
-  @nullable
   @BuiltValueField(wireName: 'AccountId', compare: false)
-  int get accountId;
+  int? get accountId;
 
-  @nullable
   @BuiltValueField(compare: false)
-  Customer get customer;
+  Customer? get customer;
 
-  @nullable
   @BuiltValueField(compare: false)
-  bool get customercandosubsequentnoauth;
+  bool? get customercandosubsequentnoauth;
 
   @memoized
   bool get requiresValidation =>
-      (chargeResponseCode == "02") ||
+      (chargeResponseCode == '02') ||
       (chargeResponseCode == null &&
           suggestedAuth != null &&
-          suggestedAuth.toLowerCase() == AuthType.PIN);
+          suggestedAuth!.toLowerCase() == AuthType.PIN);
 
   @memoized
   bool get isInternational =>
       chargeResponseCode == null &&
       suggestedAuth != null &&
-      (suggestedAuth.toLowerCase() == AuthType.NOAUTH_INTERNATIONAL ||
-          suggestedAuth.toLowerCase() == AuthType.AVS_VBVSECURECODE);
+      (suggestedAuth!.toLowerCase() == AuthType.NOAUTH_INTERNATIONAL ||
+          suggestedAuth!.toLowerCase() == AuthType.AVS_VBVSECURECODE);
 
   @memoized
-  bool get isSuccessful => status.toUpperCase() == "SUCCESSFUL";
+  bool get isSuccessful => status?.toUpperCase() == 'SUCCESSFUL';
 
   @memoized
   bool get hasValidReferenceAndTrans => (txRef != null) && (id != null);
 
   @memoized
   bool get hasValidUrl {
-    if (invalidAuthUrl == null || invalidAuthUrl.isEmpty) {
+    if (invalidAuthUrl == null || invalidAuthUrl!.isEmpty) {
       return false;
     }
 
-    return RegExp(r'^https?://', caseSensitive: false).hasMatch(invalidAuthUrl);
+    return RegExp(r'^https?://', caseSensitive: false)
+        .hasMatch(invalidAuthUrl!);
   }
 
   @memoized
-  String get authurl => hasValidUrl ? invalidAuthUrl : null;
+  String? get authurl => hasValidUrl ? invalidAuthUrl : null;
 
   @override
   Map<String, dynamic> toMap() =>
-      serializers.serializeWith(Result.serializer, this);
+      serializers.serializeWith(Result.serializer, this)
+          as Map<String, dynamic>;
 
-  static Result fromJson(Map<String, dynamic> map) =>
+  static Result? fromJson(Map<String, dynamic> map) =>
       serializers.deserializeWith(Result.serializer, map);
 
   static Serializer<Result> get serializer => _$resultSerializer;
