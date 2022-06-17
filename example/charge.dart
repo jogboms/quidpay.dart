@@ -46,7 +46,7 @@ Future<Response<Result>> account() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks!.first.code;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.account(
     amount: '2000',
@@ -64,7 +64,7 @@ Future<Response<Result>> ussd() async {
   final _banks = await Banks().fetch();
   final banks = _banks.data;
 
-  final accessBankCode = banks!.first.code;
+  final accessBankCode = banks.first.code;
 
   final charge = Charge.ussd(
     amount: '2000',
