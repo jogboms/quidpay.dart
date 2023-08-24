@@ -36,8 +36,7 @@ class LocalServer {
           request.response
             ..statusCode = 200
             ..headers.set('Content-Type', ContentType.html.mimeType)
-            ..write(
-                '<html><h1><center>You can now close this window.</center></h1></html>');
+            ..write('<html><h1><center>You can now close this window.</center></h1></html>');
 
           _completer.complete(request.requestedUri.queryParameters);
 

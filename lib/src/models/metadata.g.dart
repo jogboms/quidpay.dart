@@ -21,8 +21,7 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
       'metaname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'metavalue',
-      serializers.serialize(object.value,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.value, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.id;
@@ -35,22 +34,19 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
     if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(DateTime)));
     }
     value = object.updatedAt;
     if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(DateTime)));
     }
     value = object.deletedAt;
     if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.getpaidTransactionId;
     if (value != null) {
@@ -73,32 +69,25 @@ class _$MetadataSerializer implements StructuredSerializer<Metadata> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'metaname':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'metavalue':
-          result.value = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.value = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdAt':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'updatedAt':
-          result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime?;
+          result.updatedAt = serializers.deserialize(value, specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'deletedAt':
-          result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.deletedAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'getpaidTransactionId':
-          result.getpaidTransactionId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+          result.getpaidTransactionId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -123,8 +112,7 @@ class _$Metadata extends Metadata {
   @override
   final int? getpaidTransactionId;
 
-  factory _$Metadata([void Function(MetadataBuilder)? updates]) =>
-      (new MetadataBuilder()..update(updates)).build();
+  factory _$Metadata([void Function(MetadataBuilder)? updates]) => (new MetadataBuilder()..update(updates)).build();
 
   _$Metadata._(
       {this.id,
@@ -140,8 +128,7 @@ class _$Metadata extends Metadata {
   }
 
   @override
-  Metadata rebuild(void Function(MetadataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Metadata rebuild(void Function(MetadataBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   MetadataBuilder toBuilder() => new MetadataBuilder()..replace(this);
@@ -163,11 +150,7 @@ class _$Metadata extends Metadata {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, id.hashCode), name.hashCode),
-                        value.hashCode),
-                    createdAt.hashCode),
+            $jc($jc($jc($jc($jc(0, id.hashCode), name.hashCode), value.hashCode), createdAt.hashCode),
                 updatedAt.hashCode),
             deletedAt.hashCode),
         getpaidTransactionId.hashCode));
@@ -203,8 +186,7 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
 
   int? _getpaidTransactionId;
   int? get getpaidTransactionId => _$this._getpaidTransactionId;
-  set getpaidTransactionId(int? getpaidTransactionId) =>
-      _$this._getpaidTransactionId = getpaidTransactionId;
+  set getpaidTransactionId(int? getpaidTransactionId) => _$this._getpaidTransactionId = getpaidTransactionId;
 
   MetadataBuilder();
 
@@ -239,10 +221,8 @@ class MetadataBuilder implements Builder<Metadata, MetadataBuilder> {
     final _$result = _$v ??
         new _$Metadata._(
             id: id,
-            name:
-                BuiltValueNullFieldError.checkNotNull(name, 'Metadata', 'name'),
-            value: BuiltValueNullFieldError.checkNotNull(
-                value, 'Metadata', 'value'),
+            name: BuiltValueNullFieldError.checkNotNull(name, 'Metadata', 'name'),
+            value: BuiltValueNullFieldError.checkNotNull(value, 'Metadata', 'value'),
             createdAt: createdAt,
             updatedAt: updatedAt,
             deletedAt: deletedAt,

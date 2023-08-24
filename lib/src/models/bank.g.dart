@@ -15,16 +15,14 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
   final String wireName = 'Bank';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Bank object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Bank object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'bankname',
       serializers.serialize(object.name, specifiedType: const FullType(String)),
       'bankcode',
       serializers.serialize(object.code, specifiedType: const FullType(String)),
       'internetbanking',
-      serializers.serialize(object.internetbanking,
-          specifiedType: const FullType(bool)),
+      serializers.serialize(object.internetbanking, specifiedType: const FullType(bool)),
     ];
 
     return result;
@@ -42,16 +40,13 @@ class _$BankSerializer implements StructuredSerializer<Bank> {
       final Object? value = iterator.current;
       switch (key) {
         case 'bankname':
-          result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.name = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'bankcode':
-          result.code = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.code = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'internetbanking':
-          result.internetbanking = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+          result.internetbanking = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -68,21 +63,16 @@ class _$Bank extends Bank {
   @override
   final bool internetbanking;
 
-  factory _$Bank([void Function(BankBuilder)? updates]) =>
-      (new BankBuilder()..update(updates)).build();
+  factory _$Bank([void Function(BankBuilder)? updates]) => (new BankBuilder()..update(updates)).build();
 
-  _$Bank._(
-      {required this.name, required this.code, required this.internetbanking})
-      : super._() {
+  _$Bank._({required this.name, required this.code, required this.internetbanking}) : super._() {
     BuiltValueNullFieldError.checkNotNull(name, 'Bank', 'name');
     BuiltValueNullFieldError.checkNotNull(code, 'Bank', 'code');
-    BuiltValueNullFieldError.checkNotNull(
-        internetbanking, 'Bank', 'internetbanking');
+    BuiltValueNullFieldError.checkNotNull(internetbanking, 'Bank', 'internetbanking');
   }
 
   @override
-  Bank rebuild(void Function(BankBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Bank rebuild(void Function(BankBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   BankBuilder toBuilder() => new BankBuilder()..replace(this);
@@ -90,16 +80,12 @@ class _$Bank extends Bank {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Bank &&
-        name == other.name &&
-        code == other.code &&
-        internetbanking == other.internetbanking;
+    return other is Bank && name == other.name && code == other.code && internetbanking == other.internetbanking;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, name.hashCode), code.hashCode), internetbanking.hashCode));
+    return $jf($jc($jc($jc(0, name.hashCode), code.hashCode), internetbanking.hashCode));
   }
 }
 
@@ -116,8 +102,7 @@ class BankBuilder implements Builder<Bank, BankBuilder> {
 
   bool? _internetbanking;
   bool? get internetbanking => _$this._internetbanking;
-  set internetbanking(bool? internetbanking) =>
-      _$this._internetbanking = internetbanking;
+  set internetbanking(bool? internetbanking) => _$this._internetbanking = internetbanking;
 
   BankBuilder();
 
@@ -149,8 +134,7 @@ class BankBuilder implements Builder<Bank, BankBuilder> {
         new _$Bank._(
             name: BuiltValueNullFieldError.checkNotNull(name, 'Bank', 'name'),
             code: BuiltValueNullFieldError.checkNotNull(code, 'Bank', 'code'),
-            internetbanking: BuiltValueNullFieldError.checkNotNull(
-                internetbanking, 'Bank', 'internetbanking'));
+            internetbanking: BuiltValueNullFieldError.checkNotNull(internetbanking, 'Bank', 'internetbanking'));
     replace(_$result);
     return _$result;
   }

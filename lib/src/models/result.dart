@@ -9,9 +9,7 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'result.g.dart';
 
-abstract class Result
-    with ModelInterface
-    implements Built<Result, ResultBuilder> {
+abstract class Result with ModelInterface implements Built<Result, ResultBuilder> {
   Result._();
 
   factory Result([Function(ResultBuilder b)? updates]) = _$Result;
@@ -144,9 +142,7 @@ abstract class Result
   @memoized
   bool get requiresValidation =>
       (chargeResponseCode == '02') ||
-      (chargeResponseCode == null &&
-          suggestedAuth != null &&
-          suggestedAuth!.toLowerCase() == AuthType.PIN);
+      (chargeResponseCode == null && suggestedAuth != null && suggestedAuth!.toLowerCase() == AuthType.PIN);
 
   @memoized
   bool get isInternational =>
@@ -167,20 +163,16 @@ abstract class Result
       return false;
     }
 
-    return RegExp(r'^https?://', caseSensitive: false)
-        .hasMatch(invalidAuthUrl!);
+    return RegExp(r'^https?://', caseSensitive: false).hasMatch(invalidAuthUrl!);
   }
 
   @memoized
   String? get authurl => hasValidUrl ? invalidAuthUrl : null;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Result.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Result.serializer, this) as Map<String, dynamic>?;
 
-  static Result? fromJson(Map<String, dynamic>? map) =>
-      serializers.deserializeWith(Result.serializer, map);
+  static Result? fromJson(Map<String, dynamic>? map) => serializers.deserializeWith(Result.serializer, map);
 
   static Serializer<Result> get serializer => _$resultSerializer;
 }

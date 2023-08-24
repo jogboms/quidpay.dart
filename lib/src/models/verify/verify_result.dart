@@ -8,11 +8,8 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'verify_result.g.dart';
 
-abstract class VerifyResult
-    with ModelInterface
-    implements Built<VerifyResult, VerifyResultBuilder> {
-  factory VerifyResult([void Function(VerifyResultBuilder b)? updates]) =
-      _$VerifyResult;
+abstract class VerifyResult with ModelInterface implements Built<VerifyResult, VerifyResultBuilder> {
+  factory VerifyResult([void Function(VerifyResultBuilder b)? updates]) = _$VerifyResult;
 
   VerifyResult._();
 
@@ -141,12 +138,9 @@ abstract class VerifyResult
   bool get isSuccessful => status == 'successful';
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(VerifyResult.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(VerifyResult.serializer, this) as Map<String, dynamic>?;
 
-  static VerifyResult? fromJson(Map<String, dynamic>? map) =>
-      serializers.deserializeWith(VerifyResult.serializer, map);
+  static VerifyResult? fromJson(Map<String, dynamic>? map) => serializers.deserializeWith(VerifyResult.serializer, map);
 
   static Serializer<VerifyResult> get serializer => _$verifyResultSerializer;
 }

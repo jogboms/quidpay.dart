@@ -7,9 +7,7 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'customer.g.dart';
 
-abstract class Customer
-    with ModelInterface
-    implements Built<Customer, CustomerBuilder> {
+abstract class Customer with ModelInterface implements Built<Customer, CustomerBuilder> {
   Customer._();
 
   factory Customer([Function(CustomerBuilder b)? updates]) = _$Customer;
@@ -41,12 +39,9 @@ abstract class Customer
   int? get accountId;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Customer.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Customer.serializer, this) as Map<String, dynamic>?;
 
-  static Customer? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Customer.serializer, map);
+  static Customer? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(Customer.serializer, map);
 
   static Serializer<Customer> get serializer => _$customerSerializer;
 }

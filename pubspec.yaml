@@ -1,28 +1,27 @@
 name: quidpay
 description: Quidpay payment SDK for Dart
 version: 0.5.0
-author: Jeremiah Ogbomo <jeremiahogbomo@gmail.com>
 homepage: https://github.com/jogboms/quidpay.dart
 
 publish_to: none
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.15.0 <4.0.0"
 
 dependencies:
-  crypto: ^3.0.1
+  crypto: ^3.0.2
   tripledes:
-    git: 
+    git:
       url: https://github.com/wilburt/tripledes-dart.git
       ref: null-safety
   http: ^0.13.4
   built_value: ^8.1.4
   built_collection: ^5.1.1
   meta: ^1.7.0
-  convert: ^3.0.1
+  convert: ^3.1.0
 
 dev_dependencies:
-  test: ^1.20.1
+  test: ^1.24.6
   pedantic: ^1.11.1
   build_runner: ^2.1.7
   built_value_generator: ^8.1.4

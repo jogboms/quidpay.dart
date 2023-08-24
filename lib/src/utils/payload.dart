@@ -57,15 +57,12 @@ class Payload {
 
   Payload add(String key, dynamic value) {
     if (value != null) {
-      hashMap.containsKey(key)
-          ? hashMap[key] = value
-          : hashMap.putIfAbsent(key, () => value);
+      hashMap.containsKey(key) ? hashMap[key] = value : hashMap.putIfAbsent(key, () => value);
     }
     return this;
   }
 
-  void addBuilder(String key, PayloadBuilder builder) =>
-      add(key, builder(toMap()));
+  void addBuilder(String key, PayloadBuilder builder) => add(key, builder(toMap()));
 
   Map<String, Object> toMap() => hashMap;
 

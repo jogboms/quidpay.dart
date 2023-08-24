@@ -3,8 +3,7 @@ import 'dart:io';
 import 'package:quidpay/src/constants/strings.dart';
 
 class RedirectException extends ResponseException {
-  RedirectException(this.url, [String? message])
-      : super(HttpStatus.temporaryRedirect, 'Temporary Redirect', message);
+  RedirectException(this.url, [String? message]) : super(HttpStatus.temporaryRedirect, 'Temporary Redirect', message);
 
   final String url;
 
@@ -13,24 +12,19 @@ class RedirectException extends ResponseException {
 }
 
 class ForbiddenException extends ResponseException {
-  ForbiddenException(String status, [String? message])
-      : super(HttpStatus.forbidden, status, message);
+  ForbiddenException(String status, [String? message]) : super(HttpStatus.forbidden, status, message);
 }
 
 class TimeOutException extends ResponseException {
-  TimeOutException()
-      : super(
-            HttpStatus.requestTimeout, 'UNKNOWN', Strings.timeoutErrorMessage);
+  TimeOutException() : super(HttpStatus.requestTimeout, 'UNKNOWN', Strings.timeoutErrorMessage);
 }
 
 class BadRequestException extends ResponseException {
-  BadRequestException(String status, [String? message])
-      : super(HttpStatus.badRequest, status, message);
+  BadRequestException(String status, [String? message]) : super(HttpStatus.badRequest, status, message);
 }
 
 class NotAuthorisedException extends ResponseException {
-  NotAuthorisedException(String status, [String? message])
-      : super(HttpStatus.unauthorized, status, message);
+  NotAuthorisedException(String status, [String? message]) : super(HttpStatus.unauthorized, status, message);
 }
 
 class ResponseException implements Exception {

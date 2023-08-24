@@ -15,8 +15,7 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
   final String wireName = 'Result';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Result object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Result object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
     value = object.id;
@@ -29,225 +28,193 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
     if (value != null) {
       result
         ..add('txRef')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.orderRef;
     if (value != null) {
       result
         ..add('orderRef')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.flwRef;
     if (value != null) {
       result
         ..add('flwRef')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.redirectUrl;
     if (value != null) {
       result
         ..add('redirectUrl')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.deviceFingerprint;
     if (value != null) {
       result
         ..add('device_fingerprint')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.settlementToken;
     if (value != null) {
       result
         ..add('settlement_token')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.cycle;
     if (value != null) {
       result
         ..add('cycle')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.amount;
     if (value != null) {
       result
         ..add('amount')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
     }
     value = object.chargedAmount;
     if (value != null) {
       result
         ..add('charged_amount')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
     }
     value = object.appfee;
     if (value != null) {
       result
         ..add('appfee')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
     }
     value = object.merchantfee;
     if (value != null) {
       result
         ..add('merchantfee')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
     }
     value = object.merchantbearsfee;
     if (value != null) {
       result
         ..add('merchantbearsfee')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(double)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(double)));
     }
     value = object.chargeResponseCode;
     if (value != null) {
       result
         ..add('chargeResponseCode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.raveRef;
     if (value != null) {
       result
         ..add('raveRef')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.chargeResponseMessage;
     if (value != null) {
       result
         ..add('chargeResponseMessage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.authModelUsed;
     if (value != null) {
       result
         ..add('authModelUsed')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.currency;
     if (value != null) {
       result
         ..add('currency')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.iP;
     if (value != null) {
       result
         ..add('IP')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.narration;
     if (value != null) {
       result
         ..add('narration')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.status;
     if (value != null) {
       result
         ..add('status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.modalauditid;
     if (value != null) {
       result
         ..add('modalauditid')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.vbvrespmessage;
     if (value != null) {
       result
         ..add('vbvrespmessage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.invalidAuthUrl;
     if (value != null) {
       result
         ..add('authurl')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.vbvrespcode;
     if (value != null) {
       result
         ..add('vbvrespcode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.acctvalrespmsg;
     if (value != null) {
       result
         ..add('acctvalrespmsg')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.acctvalrespcode;
     if (value != null) {
       result
         ..add('acctvalrespcode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentType;
     if (value != null) {
       result
         ..add('paymentType')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentPlan;
     if (value != null) {
       result
         ..add('paymentPlan')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentPage;
     if (value != null) {
       result
         ..add('paymentPage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentId;
     if (value != null) {
       result
         ..add('paymentId')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.fraudStatus;
     if (value != null) {
       result
         ..add('fraud_status')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.chargeType;
     if (value != null) {
       result
         ..add('charge_type')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.isLive;
     if (value != null) {
@@ -259,29 +226,25 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
     if (value != null) {
       result
         ..add('suggested_auth')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.createdAt;
     if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.updatedAt;
     if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.deletedAt;
     if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.customerId;
     if (value != null) {
@@ -299,15 +262,13 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
     if (value != null) {
       result
         ..add('customer')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Customer)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(Customer)));
     }
     value = object.customercandosubsequentnoauth;
     if (value != null) {
       result
         ..add('customercandosubsequentnoauth')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     return result;
   }
@@ -324,172 +285,132 @@ class _$ResultSerializer implements StructuredSerializer<Result> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'txRef':
-          result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.txRef = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'orderRef':
-          result.orderRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.orderRef = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'flwRef':
-          result.flwRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.flwRef = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'redirectUrl':
-          result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.redirectUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'device_fingerprint':
-          result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.deviceFingerprint = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'settlement_token':
-          result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.settlementToken = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'cycle':
-          result.cycle = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.cycle = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'amount':
-          result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.amount = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'charged_amount':
-          result.chargedAmount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.chargedAmount = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'appfee':
-          result.appfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.appfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'merchantfee':
-          result.merchantfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.merchantfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'merchantbearsfee':
-          result.merchantbearsfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.merchantbearsfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'chargeResponseCode':
-          result.chargeResponseCode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargeResponseCode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'raveRef':
-          result.raveRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.raveRef = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'chargeResponseMessage':
-          result.chargeResponseMessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargeResponseMessage =
+              serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'authModelUsed':
-          result.authModelUsed = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.authModelUsed = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'currency':
-          result.currency = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.currency = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'IP':
-          result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.iP = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'narration':
-          result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.narration = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.status = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'modalauditid':
-          result.modalauditid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.modalauditid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'vbvrespmessage':
-          result.vbvrespmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.vbvrespmessage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'authurl':
-          result.invalidAuthUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.invalidAuthUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'vbvrespcode':
-          result.vbvrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.vbvrespcode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctvalrespmsg':
-          result.acctvalrespmsg = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctvalrespmsg = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctvalrespcode':
-          result.acctvalrespcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctvalrespcode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentType':
-          result.paymentType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentType = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentPlan':
-          result.paymentPlan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentPlan = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentPage':
-          result.paymentPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentPage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentId':
-          result.paymentId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentId = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'fraud_status':
-          result.fraudStatus = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.fraudStatus = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'charge_type':
-          result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargeType = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'is_live':
-          result.isLive = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.isLive = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'suggested_auth':
-          result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.suggestedAuth = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdAt':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'updatedAt':
-          result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.updatedAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'deletedAt':
-          result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.deletedAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'customerId':
-          result.customerId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.customerId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'AccountId':
-          result.accountId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.accountId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'customer':
-          result.customer.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Customer))! as Customer);
+          result.customer.replace(serializers.deserialize(value, specifiedType: const FullType(Customer))! as Customer);
           break;
         case 'customercandosubsequentnoauth':
-          result.customercandosubsequentnoauth = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+          result.customercandosubsequentnoauth =
+              serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -591,8 +512,7 @@ class _$Result extends Result {
   String? __authurl;
   bool ___authurl = false;
 
-  factory _$Result([void Function(ResultBuilder)? updates]) =>
-      (new ResultBuilder()..update(updates)).build();
+  factory _$Result([void Function(ResultBuilder)? updates]) => (new ResultBuilder()..update(updates)).build();
 
   _$Result._(
       {this.id,
@@ -640,8 +560,7 @@ class _$Result extends Result {
       : super._();
 
   @override
-  bool get requiresValidation =>
-      __requiresValidation ??= super.requiresValidation;
+  bool get requiresValidation => __requiresValidation ??= super.requiresValidation;
 
   @override
   bool get isInternational => __isInternational ??= super.isInternational;
@@ -650,8 +569,7 @@ class _$Result extends Result {
   bool get isSuccessful => __isSuccessful ??= super.isSuccessful;
 
   @override
-  bool get hasValidReferenceAndTrans =>
-      __hasValidReferenceAndTrans ??= super.hasValidReferenceAndTrans;
+  bool get hasValidReferenceAndTrans => __hasValidReferenceAndTrans ??= super.hasValidReferenceAndTrans;
 
   @override
   bool get hasValidUrl => __hasValidUrl ??= super.hasValidUrl;
@@ -666,8 +584,7 @@ class _$Result extends Result {
   }
 
   @override
-  Result rebuild(void Function(ResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Result rebuild(void Function(ResultBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   ResultBuilder toBuilder() => new ResultBuilder()..replace(this);
@@ -709,13 +626,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   String? _deviceFingerprint;
   String? get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String? deviceFingerprint) =>
-      _$this._deviceFingerprint = deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) => _$this._deviceFingerprint = deviceFingerprint;
 
   String? _settlementToken;
   String? get settlementToken => _$this._settlementToken;
-  set settlementToken(String? settlementToken) =>
-      _$this._settlementToken = settlementToken;
+  set settlementToken(String? settlementToken) => _$this._settlementToken = settlementToken;
 
   String? _cycle;
   String? get cycle => _$this._cycle;
@@ -727,8 +642,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   double? _chargedAmount;
   double? get chargedAmount => _$this._chargedAmount;
-  set chargedAmount(double? chargedAmount) =>
-      _$this._chargedAmount = chargedAmount;
+  set chargedAmount(double? chargedAmount) => _$this._chargedAmount = chargedAmount;
 
   double? _appfee;
   double? get appfee => _$this._appfee;
@@ -740,13 +654,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   double? _merchantbearsfee;
   double? get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double? merchantbearsfee) =>
-      _$this._merchantbearsfee = merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) => _$this._merchantbearsfee = merchantbearsfee;
 
   String? _chargeResponseCode;
   String? get chargeResponseCode => _$this._chargeResponseCode;
-  set chargeResponseCode(String? chargeResponseCode) =>
-      _$this._chargeResponseCode = chargeResponseCode;
+  set chargeResponseCode(String? chargeResponseCode) => _$this._chargeResponseCode = chargeResponseCode;
 
   String? _raveRef;
   String? get raveRef => _$this._raveRef;
@@ -754,13 +666,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   String? _chargeResponseMessage;
   String? get chargeResponseMessage => _$this._chargeResponseMessage;
-  set chargeResponseMessage(String? chargeResponseMessage) =>
-      _$this._chargeResponseMessage = chargeResponseMessage;
+  set chargeResponseMessage(String? chargeResponseMessage) => _$this._chargeResponseMessage = chargeResponseMessage;
 
   String? _authModelUsed;
   String? get authModelUsed => _$this._authModelUsed;
-  set authModelUsed(String? authModelUsed) =>
-      _$this._authModelUsed = authModelUsed;
+  set authModelUsed(String? authModelUsed) => _$this._authModelUsed = authModelUsed;
 
   String? _currency;
   String? get currency => _$this._currency;
@@ -784,13 +694,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   String? _vbvrespmessage;
   String? get vbvrespmessage => _$this._vbvrespmessage;
-  set vbvrespmessage(String? vbvrespmessage) =>
-      _$this._vbvrespmessage = vbvrespmessage;
+  set vbvrespmessage(String? vbvrespmessage) => _$this._vbvrespmessage = vbvrespmessage;
 
   String? _invalidAuthUrl;
   String? get invalidAuthUrl => _$this._invalidAuthUrl;
-  set invalidAuthUrl(String? invalidAuthUrl) =>
-      _$this._invalidAuthUrl = invalidAuthUrl;
+  set invalidAuthUrl(String? invalidAuthUrl) => _$this._invalidAuthUrl = invalidAuthUrl;
 
   String? _vbvrespcode;
   String? get vbvrespcode => _$this._vbvrespcode;
@@ -798,13 +706,11 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   String? _acctvalrespmsg;
   String? get acctvalrespmsg => _$this._acctvalrespmsg;
-  set acctvalrespmsg(String? acctvalrespmsg) =>
-      _$this._acctvalrespmsg = acctvalrespmsg;
+  set acctvalrespmsg(String? acctvalrespmsg) => _$this._acctvalrespmsg = acctvalrespmsg;
 
   String? _acctvalrespcode;
   String? get acctvalrespcode => _$this._acctvalrespcode;
-  set acctvalrespcode(String? acctvalrespcode) =>
-      _$this._acctvalrespcode = acctvalrespcode;
+  set acctvalrespcode(String? acctvalrespcode) => _$this._acctvalrespcode = acctvalrespcode;
 
   String? _paymentType;
   String? get paymentType => _$this._paymentType;
@@ -836,8 +742,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
 
   String? _suggestedAuth;
   String? get suggestedAuth => _$this._suggestedAuth;
-  set suggestedAuth(String? suggestedAuth) =>
-      _$this._suggestedAuth = suggestedAuth;
+  set suggestedAuth(String? suggestedAuth) => _$this._suggestedAuth = suggestedAuth;
 
   String? _createdAt;
   String? get createdAt => _$this._createdAt;
@@ -864,8 +769,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
   set customer(CustomerBuilder? customer) => _$this._customer = customer;
 
   bool? _customercandosubsequentnoauth;
-  bool? get customercandosubsequentnoauth =>
-      _$this._customercandosubsequentnoauth;
+  bool? get customercandosubsequentnoauth => _$this._customercandosubsequentnoauth;
   set customercandosubsequentnoauth(bool? customercandosubsequentnoauth) =>
       _$this._customercandosubsequentnoauth = customercandosubsequentnoauth;
 
@@ -986,8 +890,7 @@ class ResultBuilder implements Builder<Result, ResultBuilder> {
         _$failedField = 'customer';
         _customer?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'Result', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('Result', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -6,12 +6,10 @@ part of validate_result;
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<ValidateResult> _$validateResultSerializer =
-    new _$ValidateResultSerializer();
+Serializer<ValidateResult> _$validateResultSerializer = new _$ValidateResultSerializer();
 Serializer<Data> _$dataSerializer = new _$DataSerializer();
 
-class _$ValidateResultSerializer
-    implements StructuredSerializer<ValidateResult> {
+class _$ValidateResultSerializer implements StructuredSerializer<ValidateResult> {
   @override
   final Iterable<Type> types = const [ValidateResult, _$ValidateResult];
   @override
@@ -31,15 +29,13 @@ class _$ValidateResultSerializer
     if (value != null) {
       result
         ..add('airtime_flag')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  ValidateResult deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+  ValidateResult deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ValidateResultBuilder();
 
@@ -50,16 +46,13 @@ class _$ValidateResultSerializer
       final Object? value = iterator.current;
       switch (key) {
         case 'data':
-          result.data.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Data))! as Data);
+          result.data.replace(serializers.deserialize(value, specifiedType: const FullType(Data))! as Data);
           break;
         case 'tx':
-          result.tx.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Tx))! as Tx);
+          result.tx.replace(serializers.deserialize(value, specifiedType: const FullType(Tx))! as Tx);
           break;
         case 'airtime_flag':
-          result.airtimeFlag = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.airtimeFlag = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -75,23 +68,19 @@ class _$DataSerializer implements StructuredSerializer<Data> {
   final String wireName = 'Data';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Data object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Data object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'responsecode',
-      serializers.serialize(object.responsecode,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.responsecode, specifiedType: const FullType(String)),
       'responsemessage',
-      serializers.serialize(object.responsemessage,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.responsemessage, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.responsetoken;
     if (value != null) {
       result
         ..add('responsetoken')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -108,16 +97,13 @@ class _$DataSerializer implements StructuredSerializer<Data> {
       final Object? value = iterator.current;
       switch (key) {
         case 'responsetoken':
-          result.responsetoken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.responsetoken = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'responsecode':
-          result.responsecode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.responsecode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'responsemessage':
-          result.responsemessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.responsemessage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -137,19 +123,16 @@ class _$ValidateResult extends ValidateResult {
   factory _$ValidateResult([void Function(ValidateResultBuilder)? updates]) =>
       (new ValidateResultBuilder()..update(updates)).build();
 
-  _$ValidateResult._({required this.data, required this.tx, this.airtimeFlag})
-      : super._() {
+  _$ValidateResult._({required this.data, required this.tx, this.airtimeFlag}) : super._() {
     BuiltValueNullFieldError.checkNotNull(data, 'ValidateResult', 'data');
     BuiltValueNullFieldError.checkNotNull(tx, 'ValidateResult', 'tx');
   }
 
   @override
-  ValidateResult rebuild(void Function(ValidateResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  ValidateResult rebuild(void Function(ValidateResultBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
-  ValidateResultBuilder toBuilder() =>
-      new ValidateResultBuilder()..replace(this);
+  ValidateResultBuilder toBuilder() => new ValidateResultBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -163,8 +146,7 @@ class _$ValidateResult extends ValidateResult {
   }
 }
 
-class ValidateResultBuilder
-    implements Builder<ValidateResult, ValidateResultBuilder> {
+class ValidateResultBuilder implements Builder<ValidateResult, ValidateResultBuilder> {
   _$ValidateResult? _$v;
 
   DataBuilder? _data;
@@ -207,9 +189,7 @@ class ValidateResultBuilder
   _$ValidateResult build() {
     _$ValidateResult _$result;
     try {
-      _$result = _$v ??
-          new _$ValidateResult._(
-              data: data.build(), tx: tx.build(), airtimeFlag: airtimeFlag);
+      _$result = _$v ?? new _$ValidateResult._(data: data.build(), tx: tx.build(), airtimeFlag: airtimeFlag);
     } catch (_) {
       late String _$failedField;
       try {
@@ -218,8 +198,7 @@ class ValidateResultBuilder
         _$failedField = 'tx';
         tx.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'ValidateResult', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('ValidateResult', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -236,22 +215,15 @@ class _$Data extends Data {
   @override
   final String responsemessage;
 
-  factory _$Data([void Function(DataBuilder)? updates]) =>
-      (new DataBuilder()..update(updates)).build();
+  factory _$Data([void Function(DataBuilder)? updates]) => (new DataBuilder()..update(updates)).build();
 
-  _$Data._(
-      {this.responsetoken,
-      required this.responsecode,
-      required this.responsemessage})
-      : super._() {
+  _$Data._({this.responsetoken, required this.responsecode, required this.responsemessage}) : super._() {
     BuiltValueNullFieldError.checkNotNull(responsecode, 'Data', 'responsecode');
-    BuiltValueNullFieldError.checkNotNull(
-        responsemessage, 'Data', 'responsemessage');
+    BuiltValueNullFieldError.checkNotNull(responsemessage, 'Data', 'responsemessage');
   }
 
   @override
-  Data rebuild(void Function(DataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Data rebuild(void Function(DataBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   DataBuilder toBuilder() => new DataBuilder()..replace(this);
@@ -267,8 +239,7 @@ class _$Data extends Data {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, responsetoken.hashCode), responsecode.hashCode),
-        responsemessage.hashCode));
+    return $jf($jc($jc($jc(0, responsetoken.hashCode), responsecode.hashCode), responsemessage.hashCode));
   }
 }
 
@@ -277,8 +248,7 @@ class DataBuilder implements Builder<Data, DataBuilder> {
 
   String? _responsetoken;
   String? get responsetoken => _$this._responsetoken;
-  set responsetoken(String? responsetoken) =>
-      _$this._responsetoken = responsetoken;
+  set responsetoken(String? responsetoken) => _$this._responsetoken = responsetoken;
 
   String? _responsecode;
   String? get responsecode => _$this._responsecode;
@@ -286,8 +256,7 @@ class DataBuilder implements Builder<Data, DataBuilder> {
 
   String? _responsemessage;
   String? get responsemessage => _$this._responsemessage;
-  set responsemessage(String? responsemessage) =>
-      _$this._responsemessage = responsemessage;
+  set responsemessage(String? responsemessage) => _$this._responsemessage = responsemessage;
 
   DataBuilder();
 
@@ -318,10 +287,8 @@ class DataBuilder implements Builder<Data, DataBuilder> {
     final _$result = _$v ??
         new _$Data._(
             responsetoken: responsetoken,
-            responsecode: BuiltValueNullFieldError.checkNotNull(
-                responsecode, 'Data', 'responsecode'),
-            responsemessage: BuiltValueNullFieldError.checkNotNull(
-                responsemessage, 'Data', 'responsemessage'));
+            responsecode: BuiltValueNullFieldError.checkNotNull(responsecode, 'Data', 'responsecode'),
+            responsemessage: BuiltValueNullFieldError.checkNotNull(responsemessage, 'Data', 'responsemessage'));
     replace(_$result);
     return _$result;
   }

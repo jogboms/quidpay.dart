@@ -7,13 +7,10 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'charge_token.g.dart';
 
-abstract class ChargeToken
-    with ModelInterface
-    implements Built<ChargeToken, ChargeTokenBuilder> {
+abstract class ChargeToken with ModelInterface implements Built<ChargeToken, ChargeTokenBuilder> {
   ChargeToken._();
 
-  factory ChargeToken([Function(ChargeTokenBuilder b)? updates]) =
-      _$ChargeToken;
+  factory ChargeToken([Function(ChargeTokenBuilder b)? updates]) = _$ChargeToken;
 
   @BuiltValueField(wireName: 'user_token', compare: false)
   String get userToken;
@@ -22,12 +19,9 @@ abstract class ChargeToken
   String get embedToken;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(ChargeToken.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(ChargeToken.serializer, this) as Map<String, dynamic>?;
 
-  static ChargeToken? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(ChargeToken.serializer, map);
+  static ChargeToken? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(ChargeToken.serializer, map);
 
   static Serializer<ChargeToken> get serializer => _$chargeTokenSerializer;
 }

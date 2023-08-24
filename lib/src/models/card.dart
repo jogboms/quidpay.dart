@@ -24,18 +24,14 @@ abstract class Card with ModelInterface implements Built<Card, CardBuilder> {
   String get lifeTimeToken;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Card.serializer, this) as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Card.serializer, this) as Map<String, dynamic>?;
 
-  static Card? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Card.serializer, map);
+  static Card? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(Card.serializer, map);
 
   static Serializer<Card> get serializer => _$cardSerializer;
 }
 
-abstract class CardTokens
-    with ModelInterface
-    implements Built<CardTokens, CardTokensBuilder> {
+abstract class CardTokens with ModelInterface implements Built<CardTokens, CardTokensBuilder> {
   CardTokens._();
 
   factory CardTokens([Function(CardTokensBuilder b)? updates]) = _$CardTokens;
@@ -47,12 +43,9 @@ abstract class CardTokens
   String? get expiry;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(CardTokens.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(CardTokens.serializer, this) as Map<String, dynamic>?;
 
-  static CardTokens? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(CardTokens.serializer, map);
+  static CardTokens? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(CardTokens.serializer, map);
 
   static Serializer<CardTokens> get serializer => _$cardTokensSerializer;
 }

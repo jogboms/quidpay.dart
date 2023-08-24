@@ -7,11 +7,8 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'charge_param.g.dart';
 
-abstract class ChargeParam
-    with ModelInterface
-    implements Built<ChargeParam, ChargeParamBuilder> {
-  factory ChargeParam([void Function(ChargeParamBuilder b)? updates]) =
-      _$ChargeParam;
+abstract class ChargeParam with ModelInterface implements Built<ChargeParam, ChargeParamBuilder> {
+  factory ChargeParam([void Function(ChargeParamBuilder b)? updates]) = _$ChargeParam;
 
   ChargeParam._();
 
@@ -44,12 +41,9 @@ abstract class ChargeParam
   String? get pin;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(ChargeParam.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(ChargeParam.serializer, this) as Map<String, dynamic>?;
 
-  static ChargeParam? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(ChargeParam.serializer, map);
+  static ChargeParam? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(ChargeParam.serializer, map);
 
   static Serializer<ChargeParam> get serializer => _$chargeParamSerializer;
 }

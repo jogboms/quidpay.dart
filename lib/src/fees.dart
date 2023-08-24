@@ -1,4 +1,5 @@
-nts.dart';
+import 'package:quidpay/src/quidpay.dart';
+import 'package:quidpay/src/utils/endpoints.dart';
 import 'package:quidpay/src/utils/http_wrapper.dart';
 import 'package:quidpay/src/utils/log.dart';
 import 'package:quidpay/src/utils/response.dart';
