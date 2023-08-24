@@ -22,17 +22,12 @@ class Validate {
     final logTag = '$runtimeType.charge()';
 
     if (authUrl != null) {
-      Log().debug(
-          logTag, Strings.authUrlProvidedValidationMessage + ' ' + authUrl);
-      throw RedirectException(
-          authUrl, Strings.authUrlProvidedValidationMessage);
+      Log().debug(logTag, Strings.authUrlProvidedValidationMessage + ' ' + authUrl);
+      throw RedirectException(authUrl, Strings.authUrlProvidedValidationMessage);
     }
 
     late String url;
-    var payload = <String, String>{
-      'PBFPubKey': Quidpay().publicKey,
-      'otp': otp
-    };
+    var payload = <String, String>{'PBFPubKey': Quidpay().publicKey, 'otp': otp};
 
     switch (authModelUsed.toLowerCase()) {
       case AuthType.PIN:

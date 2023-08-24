@@ -7,9 +7,7 @@ import 'package:quidpay/src/models/serializers.dart';
 
 part 'metadata.g.dart';
 
-abstract class Metadata
-    with ModelInterface
-    implements Built<Metadata, MetadataBuilder> {
+abstract class Metadata with ModelInterface implements Built<Metadata, MetadataBuilder> {
   Metadata._();
 
   factory Metadata([Function(MetadataBuilder b)? updates]) = _$Metadata;
@@ -42,12 +40,9 @@ abstract class Metadata
   int? get getpaidTransactionId;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Metadata.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Metadata.serializer, this) as Map<String, dynamic>?;
 
-  static Metadata? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Metadata.serializer, map);
+  static Metadata? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(Metadata.serializer, map);
 
   static Serializer<Metadata> get serializer => _$metadataSerializer;
 }

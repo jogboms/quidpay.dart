@@ -29,50 +29,43 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
     if (value != null) {
       result
         ..add('phone')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.fullName;
     if (value != null) {
       result
         ..add('fullName')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.customertoken;
     if (value != null) {
       result
         ..add('customertoken')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.email;
     if (value != null) {
       result
         ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.createdAt;
     if (value != null) {
       result
         ..add('createdAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.updatedAt;
     if (value != null) {
       result
         ..add('updatedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.deletedAt;
     if (value != null) {
       result
         ..add('deletedAt')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.accountId;
     if (value != null) {
@@ -95,40 +88,31 @@ class _$CustomerSerializer implements StructuredSerializer<Customer> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
         case 'phone':
-          result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.phone = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'fullName':
-          result.fullName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.fullName = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'customertoken':
-          result.customertoken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.customertoken = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'createdAt':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'updatedAt':
-          result.updatedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.updatedAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'deletedAt':
-          result.deletedAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
+          result.deletedAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String?;
           break;
         case 'AccountId':
-          result.accountId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int?;
+          result.accountId = serializers.deserialize(value, specifiedType: const FullType(int)) as int?;
           break;
       }
     }
@@ -157,8 +141,7 @@ class _$Customer extends Customer {
   @override
   final int? accountId;
 
-  factory _$Customer([void Function(CustomerBuilder)? updates]) =>
-      (new CustomerBuilder()..update(updates)).build();
+  factory _$Customer([void Function(CustomerBuilder)? updates]) => (new CustomerBuilder()..update(updates)).build();
 
   _$Customer._(
       {this.id,
@@ -173,8 +156,7 @@ class _$Customer extends Customer {
       : super._();
 
   @override
-  Customer rebuild(void Function(CustomerBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Customer rebuild(void Function(CustomerBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   CustomerBuilder toBuilder() => new CustomerBuilder()..replace(this);
@@ -208,8 +190,7 @@ class CustomerBuilder implements Builder<Customer, CustomerBuilder> {
 
   String? _customertoken;
   String? get customertoken => _$this._customertoken;
-  set customertoken(String? customertoken) =>
-      _$this._customertoken = customertoken;
+  set customertoken(String? customertoken) => _$this._customertoken = customertoken;
 
   String? _email;
   String? get email => _$this._email;

@@ -19,8 +19,7 @@ class Encryption {
   final String secretKey;
 
   String encrypt(Map<String, dynamic> data) {
-    return BlockCipher(TripleDESEngine(), generateKey(secretKey))
-        .encodeB64(json.encode(data));
+    return BlockCipher(TripleDESEngine(), generateKey(secretKey)).encodeB64(json.encode(data));
   }
 
   Map<String, dynamic>? decrypt(String data) {
@@ -56,7 +55,6 @@ class Encryption {
       _hash.length,
     );
 
-    return seckey.replaceAll(TARGET, '').substring(0, SUB_STRING_LENGTH) +
-        _uniqueHash;
+    return seckey.replaceAll(TARGET, '').substring(0, SUB_STRING_LENGTH) + _uniqueHash;
   }
 }

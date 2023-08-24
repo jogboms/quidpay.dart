@@ -19,11 +19,9 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'user_token',
-      serializers.serialize(object.userToken,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.userToken, specifiedType: const FullType(String)),
       'embed_token',
-      serializers.serialize(object.embedToken,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.embedToken, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -41,12 +39,10 @@ class _$ChargeTokenSerializer implements StructuredSerializer<ChargeToken> {
       final Object? value = iterator.current;
       switch (key) {
         case 'user_token':
-          result.userToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.userToken = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'embed_token':
-          result.embedToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.embedToken = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -64,17 +60,13 @@ class _$ChargeToken extends ChargeToken {
   factory _$ChargeToken([void Function(ChargeTokenBuilder)? updates]) =>
       (new ChargeTokenBuilder()..update(updates)).build();
 
-  _$ChargeToken._({required this.userToken, required this.embedToken})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        userToken, 'ChargeToken', 'userToken');
-    BuiltValueNullFieldError.checkNotNull(
-        embedToken, 'ChargeToken', 'embedToken');
+  _$ChargeToken._({required this.userToken, required this.embedToken}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(userToken, 'ChargeToken', 'userToken');
+    BuiltValueNullFieldError.checkNotNull(embedToken, 'ChargeToken', 'embedToken');
   }
 
   @override
-  ChargeToken rebuild(void Function(ChargeTokenBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  ChargeToken rebuild(void Function(ChargeTokenBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   ChargeTokenBuilder toBuilder() => new ChargeTokenBuilder()..replace(this);
@@ -129,10 +121,8 @@ class ChargeTokenBuilder implements Builder<ChargeToken, ChargeTokenBuilder> {
   _$ChargeToken build() {
     final _$result = _$v ??
         new _$ChargeToken._(
-            userToken: BuiltValueNullFieldError.checkNotNull(
-                userToken, 'ChargeToken', 'userToken'),
-            embedToken: BuiltValueNullFieldError.checkNotNull(
-                embedToken, 'ChargeToken', 'embedToken'));
+            userToken: BuiltValueNullFieldError.checkNotNull(userToken, 'ChargeToken', 'userToken'),
+            embedToken: BuiltValueNullFieldError.checkNotNull(embedToken, 'ChargeToken', 'embedToken'));
     replace(_$result);
     return _$result;
   }

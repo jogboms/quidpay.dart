@@ -1,5 +1,4 @@
 import 'package:quidpay/quidpay.dart';
-import 'package:quidpay/src/models/validate/validate_result.dart';
 
 import '_bootstrap.dart';
 import 'charge.dart' as charge;

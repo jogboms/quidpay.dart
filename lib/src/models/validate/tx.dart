@@ -137,11 +137,9 @@ abstract class Tx with ModelInterface implements Built<Tx, TxBuilder> {
   ChargeToken? get chargeToken;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Tx.serializer, this) as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Tx.serializer, this) as Map<String, dynamic>?;
 
-  static Tx? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Tx.serializer, map);
+  static Tx? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(Tx.serializer, map);
 
   static Serializer<Tx> get serializer => _$txSerializer;
 }

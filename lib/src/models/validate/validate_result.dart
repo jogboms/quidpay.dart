@@ -8,13 +8,10 @@ import 'package:quidpay/src/models/validate/tx.dart';
 
 part 'validate_result.g.dart';
 
-abstract class ValidateResult
-    with ModelInterface
-    implements Built<ValidateResult, ValidateResultBuilder> {
+abstract class ValidateResult with ModelInterface implements Built<ValidateResult, ValidateResultBuilder> {
   ValidateResult._();
 
-  factory ValidateResult([Function(ValidateResultBuilder b)? updates]) =
-      _$ValidateResult;
+  factory ValidateResult([Function(ValidateResultBuilder b)? updates]) = _$ValidateResult;
 
   @BuiltValueField(compare: false)
   Data get data;
@@ -28,15 +25,12 @@ abstract class ValidateResult
   bool get isSuccessful => tx.status == 'successful';
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(ValidateResult.serializer, this)
-          as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(ValidateResult.serializer, this) as Map<String, dynamic>?;
 
   static ValidateResult? fromJson(Map<String, dynamic>? map) =>
       serializers.deserializeWith(ValidateResult.serializer, map);
 
-  static Serializer<ValidateResult> get serializer =>
-      _$validateResultSerializer;
+  static Serializer<ValidateResult> get serializer => _$validateResultSerializer;
 }
 
 abstract class Data with ModelInterface implements Built<Data, DataBuilder> {
@@ -49,11 +43,9 @@ abstract class Data with ModelInterface implements Built<Data, DataBuilder> {
   String get responsemessage;
 
   @override
-  Map<String, dynamic>? toMap() =>
-      serializers.serializeWith(Data.serializer, this) as Map<String, dynamic>?;
+  Map<String, dynamic>? toMap() => serializers.serializeWith(Data.serializer, this) as Map<String, dynamic>?;
 
-  static Data? fromJson(Map<String, dynamic> map) =>
-      serializers.deserializeWith(Data.serializer, map);
+  static Data? fromJson(Map<String, dynamic> map) => serializers.deserializeWith(Data.serializer, map);
 
   static Serializer<Data> get serializer => _$dataSerializer;
 }

@@ -6,8 +6,7 @@ part of 'verify_result.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<VerifyResult> _$verifyResultSerializer =
-    new _$VerifyResultSerializer();
+Serializer<VerifyResult> _$verifyResultSerializer = new _$VerifyResultSerializer();
 
 class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
   @override
@@ -22,216 +21,156 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
       'txid',
       serializers.serialize(object.txid, specifiedType: const FullType(int)),
       'txref',
-      serializers.serialize(object.txref,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.txref, specifiedType: const FullType(String)),
       'flwref',
-      serializers.serialize(object.flwref,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.flwref, specifiedType: const FullType(String)),
       'devicefingerprint',
-      serializers.serialize(object.devicefingerprint,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.devicefingerprint, specifiedType: const FullType(String)),
       'cycle',
-      serializers.serialize(object.cycle,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.cycle, specifiedType: const FullType(String)),
       'amount',
-      serializers.serialize(object.amount,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.amount, specifiedType: const FullType(double)),
       'currency',
-      serializers.serialize(object.currency,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.currency, specifiedType: const FullType(String)),
       'chargedamount',
-      serializers.serialize(object.chargedamount,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.chargedamount, specifiedType: const FullType(double)),
       'appfee',
-      serializers.serialize(object.appfee,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.appfee, specifiedType: const FullType(double)),
       'merchantfee',
-      serializers.serialize(object.merchantfee,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.merchantfee, specifiedType: const FullType(double)),
       'merchantbearsfee',
-      serializers.serialize(object.merchantbearsfee,
-          specifiedType: const FullType(double)),
+      serializers.serialize(object.merchantbearsfee, specifiedType: const FullType(double)),
       'chargecode',
-      serializers.serialize(object.chargecode,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.chargecode, specifiedType: const FullType(String)),
       'chargemessage',
-      serializers.serialize(object.chargemessage,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.chargemessage, specifiedType: const FullType(String)),
       'authmodel',
-      serializers.serialize(object.authmodel,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.authmodel, specifiedType: const FullType(String)),
       'ip',
       serializers.serialize(object.ip, specifiedType: const FullType(String)),
       'narration',
-      serializers.serialize(object.narration,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.narration, specifiedType: const FullType(String)),
       'status',
-      serializers.serialize(object.status,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.status, specifiedType: const FullType(String)),
       'vbvcode',
-      serializers.serialize(object.vbvcode,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.vbvcode, specifiedType: const FullType(String)),
       'vbvmessage',
-      serializers.serialize(object.vbvmessage,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.vbvmessage, specifiedType: const FullType(String)),
       'authurl',
-      serializers.serialize(object.authurl,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.authurl, specifiedType: const FullType(String)),
       'paymenttype',
-      serializers.serialize(object.paymenttype,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.paymenttype, specifiedType: const FullType(String)),
       'paymentid',
-      serializers.serialize(object.paymentid,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.paymentid, specifiedType: const FullType(String)),
       'fraudstatus',
-      serializers.serialize(object.fraudstatus,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.fraudstatus, specifiedType: const FullType(String)),
       'chargetype',
-      serializers.serialize(object.chargetype,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.chargetype, specifiedType: const FullType(String)),
       'createdday',
-      serializers.serialize(object.createdday,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdday, specifiedType: const FullType(int)),
       'createddayname',
-      serializers.serialize(object.createddayname,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.createddayname, specifiedType: const FullType(String)),
       'createdweek',
-      serializers.serialize(object.createdweek,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdweek, specifiedType: const FullType(int)),
       'createdmonth',
-      serializers.serialize(object.createdmonth,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdmonth, specifiedType: const FullType(int)),
       'createdmonthname',
-      serializers.serialize(object.createdmonthname,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.createdmonthname, specifiedType: const FullType(String)),
       'createdquarter',
-      serializers.serialize(object.createdquarter,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdquarter, specifiedType: const FullType(int)),
       'createdyear',
-      serializers.serialize(object.createdyear,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdyear, specifiedType: const FullType(int)),
       'createdyearisleap',
-      serializers.serialize(object.createdyearisleap,
-          specifiedType: const FullType(bool)),
+      serializers.serialize(object.createdyearisleap, specifiedType: const FullType(bool)),
       'createddayispublicholiday',
-      serializers.serialize(object.createddayispublicholiday,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createddayispublicholiday, specifiedType: const FullType(int)),
       'createdhour',
-      serializers.serialize(object.createdhour,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdhour, specifiedType: const FullType(int)),
       'createdminute',
-      serializers.serialize(object.createdminute,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.createdminute, specifiedType: const FullType(int)),
       'createdpmam',
-      serializers.serialize(object.createdpmam,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.createdpmam, specifiedType: const FullType(String)),
       'created',
-      serializers.serialize(object.created,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.created, specifiedType: const FullType(String)),
       'customerid',
-      serializers.serialize(object.customerid,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.customerid, specifiedType: const FullType(int)),
       'custnetworkprovider',
-      serializers.serialize(object.custnetworkprovider,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.custnetworkprovider, specifiedType: const FullType(String)),
       'custname',
-      serializers.serialize(object.custname,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.custname, specifiedType: const FullType(String)),
       'custemail',
-      serializers.serialize(object.custemail,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.custemail, specifiedType: const FullType(String)),
       'custemailprovider',
-      serializers.serialize(object.custemailprovider,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.custemailprovider, specifiedType: const FullType(String)),
       'custcreated',
-      serializers.serialize(object.custcreated,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.custcreated, specifiedType: const FullType(String)),
       'accountid',
-      serializers.serialize(object.accountid,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.accountid, specifiedType: const FullType(int)),
       'acctbusinessname',
-      serializers.serialize(object.acctbusinessname,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.acctbusinessname, specifiedType: const FullType(String)),
       'acctcontactperson',
-      serializers.serialize(object.acctcontactperson,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.acctcontactperson, specifiedType: const FullType(String)),
       'acctcountry',
-      serializers.serialize(object.acctcountry,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.acctcountry, specifiedType: const FullType(String)),
       'acctbearsfeeattransactiontime',
-      serializers.serialize(object.acctbearsfeeattransactiontime,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.acctbearsfeeattransactiontime, specifiedType: const FullType(int)),
       'acctparent',
-      serializers.serialize(object.acctparent,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.acctparent, specifiedType: const FullType(int)),
       'acctvpcmerchant',
-      serializers.serialize(object.acctvpcmerchant,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.acctvpcmerchant, specifiedType: const FullType(String)),
       'acctisliveapproved',
-      serializers.serialize(object.acctisliveapproved,
-          specifiedType: const FullType(int)),
+      serializers.serialize(object.acctisliveapproved, specifiedType: const FullType(int)),
       'orderref',
-      serializers.serialize(object.orderref,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.orderref, specifiedType: const FullType(String)),
       'raveref',
-      serializers.serialize(object.raveref,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.raveref, specifiedType: const FullType(String)),
       'card',
       serializers.serialize(object.card, specifiedType: const FullType(Card)),
       'meta',
-      serializers.serialize(object.meta,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Metadata)])),
+      serializers.serialize(object.meta, specifiedType: const FullType(BuiltList, const [const FullType(Metadata)])),
     ];
     Object? value;
     value = object.acctcode;
     if (value != null) {
       result
         ..add('acctcode')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.acctmessage;
     if (value != null) {
       result
         ..add('acctmessage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.custphone;
     if (value != null) {
       result
         ..add('custphone')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.acctalias;
     if (value != null) {
       result
         ..add('acctalias')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentplan;
     if (value != null) {
       result
         ..add('paymentplan')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.paymentpage;
     if (value != null) {
       result
         ..add('paymentpage')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  VerifyResult deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+  VerifyResult deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VerifyResultBuilder();
 
@@ -242,250 +181,189 @@ class _$VerifyResultSerializer implements StructuredSerializer<VerifyResult> {
       final Object? value = iterator.current;
       switch (key) {
         case 'txid':
-          result.txid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.txid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'txref':
-          result.txref = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.txref = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'flwref':
-          result.flwref = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.flwref = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'devicefingerprint':
-          result.devicefingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.devicefingerprint = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'cycle':
-          result.cycle = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.cycle = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'amount':
-          result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.amount = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'currency':
-          result.currency = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.currency = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'chargedamount':
-          result.chargedamount = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.chargedamount = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'appfee':
-          result.appfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.appfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'merchantfee':
-          result.merchantfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.merchantfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'merchantbearsfee':
-          result.merchantbearsfee = serializers.deserialize(value,
-              specifiedType: const FullType(double)) as double;
+          result.merchantbearsfee = serializers.deserialize(value, specifiedType: const FullType(double)) as double;
           break;
         case 'chargecode':
-          result.chargecode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargecode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'chargemessage':
-          result.chargemessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargemessage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'authmodel':
-          result.authmodel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.authmodel = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'ip':
-          result.ip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.ip = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'narration':
-          result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.narration = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'status':
-          result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.status = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'vbvcode':
-          result.vbvcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.vbvcode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'vbvmessage':
-          result.vbvmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.vbvmessage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'authurl':
-          result.authurl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.authurl = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctcode':
-          result.acctcode = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctcode = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctmessage':
-          result.acctmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctmessage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymenttype':
-          result.paymenttype = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymenttype = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentid':
-          result.paymentid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentid = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'fraudstatus':
-          result.fraudstatus = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.fraudstatus = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'chargetype':
-          result.chargetype = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargetype = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdday':
-          result.createdday = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdday = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createddayname':
-          result.createddayname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.createddayname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdweek':
-          result.createdweek = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdweek = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdmonth':
-          result.createdmonth = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdmonth = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdmonthname':
-          result.createdmonthname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.createdmonthname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'createdquarter':
-          result.createdquarter = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdquarter = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdyear':
-          result.createdyear = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdyear = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdyearisleap':
-          result.createdyearisleap = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+          result.createdyearisleap = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
         case 'createddayispublicholiday':
-          result.createddayispublicholiday = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createddayispublicholiday = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdhour':
-          result.createdhour = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdhour = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdminute':
-          result.createdminute = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.createdminute = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'createdpmam':
-          result.createdpmam = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.createdpmam = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'created':
-          result.created = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.created = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'customerid':
-          result.customerid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.customerid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'custphone':
-          result.custphone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custphone = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'custnetworkprovider':
-          result.custnetworkprovider = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custnetworkprovider = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'custname':
-          result.custname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'custemail':
-          result.custemail = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custemail = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'custemailprovider':
-          result.custemailprovider = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custemailprovider = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'custcreated':
-          result.custcreated = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.custcreated = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'accountid':
-          result.accountid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.accountid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'acctbusinessname':
-          result.acctbusinessname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctbusinessname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctcontactperson':
-          result.acctcontactperson = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctcontactperson = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctcountry':
-          result.acctcountry = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctcountry = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctbearsfeeattransactiontime':
-          result.acctbearsfeeattransactiontime = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.acctbearsfeeattransactiontime =
+              serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'acctparent':
-          result.acctparent = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.acctparent = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'acctvpcmerchant':
-          result.acctvpcmerchant = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctvpcmerchant = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctalias':
-          result.acctalias = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.acctalias = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'acctisliveapproved':
-          result.acctisliveapproved = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.acctisliveapproved = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'orderref':
-          result.orderref = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.orderref = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentplan':
-          result.paymentplan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentplan = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'paymentpage':
-          result.paymentpage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.paymentpage = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'raveref':
-          result.raveref = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.raveref = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'card':
-          result.card.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Card))! as Card);
+          result.card.replace(serializers.deserialize(value, specifiedType: const FullType(Card))! as Card);
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(Metadata)]))!
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Metadata)]))! as BuiltList<Object>);
           break;
       }
     }
@@ -687,92 +565,55 @@ class _$VerifyResult extends VerifyResult {
     BuiltValueNullFieldError.checkNotNull(txid, 'VerifyResult', 'txid');
     BuiltValueNullFieldError.checkNotNull(txref, 'VerifyResult', 'txref');
     BuiltValueNullFieldError.checkNotNull(flwref, 'VerifyResult', 'flwref');
-    BuiltValueNullFieldError.checkNotNull(
-        devicefingerprint, 'VerifyResult', 'devicefingerprint');
+    BuiltValueNullFieldError.checkNotNull(devicefingerprint, 'VerifyResult', 'devicefingerprint');
     BuiltValueNullFieldError.checkNotNull(cycle, 'VerifyResult', 'cycle');
     BuiltValueNullFieldError.checkNotNull(amount, 'VerifyResult', 'amount');
     BuiltValueNullFieldError.checkNotNull(currency, 'VerifyResult', 'currency');
-    BuiltValueNullFieldError.checkNotNull(
-        chargedamount, 'VerifyResult', 'chargedamount');
+    BuiltValueNullFieldError.checkNotNull(chargedamount, 'VerifyResult', 'chargedamount');
     BuiltValueNullFieldError.checkNotNull(appfee, 'VerifyResult', 'appfee');
-    BuiltValueNullFieldError.checkNotNull(
-        merchantfee, 'VerifyResult', 'merchantfee');
-    BuiltValueNullFieldError.checkNotNull(
-        merchantbearsfee, 'VerifyResult', 'merchantbearsfee');
-    BuiltValueNullFieldError.checkNotNull(
-        chargecode, 'VerifyResult', 'chargecode');
-    BuiltValueNullFieldError.checkNotNull(
-        chargemessage, 'VerifyResult', 'chargemessage');
-    BuiltValueNullFieldError.checkNotNull(
-        authmodel, 'VerifyResult', 'authmodel');
+    BuiltValueNullFieldError.checkNotNull(merchantfee, 'VerifyResult', 'merchantfee');
+    BuiltValueNullFieldError.checkNotNull(merchantbearsfee, 'VerifyResult', 'merchantbearsfee');
+    BuiltValueNullFieldError.checkNotNull(chargecode, 'VerifyResult', 'chargecode');
+    BuiltValueNullFieldError.checkNotNull(chargemessage, 'VerifyResult', 'chargemessage');
+    BuiltValueNullFieldError.checkNotNull(authmodel, 'VerifyResult', 'authmodel');
     BuiltValueNullFieldError.checkNotNull(ip, 'VerifyResult', 'ip');
-    BuiltValueNullFieldError.checkNotNull(
-        narration, 'VerifyResult', 'narration');
+    BuiltValueNullFieldError.checkNotNull(narration, 'VerifyResult', 'narration');
     BuiltValueNullFieldError.checkNotNull(status, 'VerifyResult', 'status');
     BuiltValueNullFieldError.checkNotNull(vbvcode, 'VerifyResult', 'vbvcode');
-    BuiltValueNullFieldError.checkNotNull(
-        vbvmessage, 'VerifyResult', 'vbvmessage');
+    BuiltValueNullFieldError.checkNotNull(vbvmessage, 'VerifyResult', 'vbvmessage');
     BuiltValueNullFieldError.checkNotNull(authurl, 'VerifyResult', 'authurl');
-    BuiltValueNullFieldError.checkNotNull(
-        paymenttype, 'VerifyResult', 'paymenttype');
-    BuiltValueNullFieldError.checkNotNull(
-        paymentid, 'VerifyResult', 'paymentid');
-    BuiltValueNullFieldError.checkNotNull(
-        fraudstatus, 'VerifyResult', 'fraudstatus');
-    BuiltValueNullFieldError.checkNotNull(
-        chargetype, 'VerifyResult', 'chargetype');
-    BuiltValueNullFieldError.checkNotNull(
-        createdday, 'VerifyResult', 'createdday');
-    BuiltValueNullFieldError.checkNotNull(
-        createddayname, 'VerifyResult', 'createddayname');
-    BuiltValueNullFieldError.checkNotNull(
-        createdweek, 'VerifyResult', 'createdweek');
-    BuiltValueNullFieldError.checkNotNull(
-        createdmonth, 'VerifyResult', 'createdmonth');
-    BuiltValueNullFieldError.checkNotNull(
-        createdmonthname, 'VerifyResult', 'createdmonthname');
-    BuiltValueNullFieldError.checkNotNull(
-        createdquarter, 'VerifyResult', 'createdquarter');
-    BuiltValueNullFieldError.checkNotNull(
-        createdyear, 'VerifyResult', 'createdyear');
-    BuiltValueNullFieldError.checkNotNull(
-        createdyearisleap, 'VerifyResult', 'createdyearisleap');
-    BuiltValueNullFieldError.checkNotNull(
-        createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday');
-    BuiltValueNullFieldError.checkNotNull(
-        createdhour, 'VerifyResult', 'createdhour');
-    BuiltValueNullFieldError.checkNotNull(
-        createdminute, 'VerifyResult', 'createdminute');
-    BuiltValueNullFieldError.checkNotNull(
-        createdpmam, 'VerifyResult', 'createdpmam');
+    BuiltValueNullFieldError.checkNotNull(paymenttype, 'VerifyResult', 'paymenttype');
+    BuiltValueNullFieldError.checkNotNull(paymentid, 'VerifyResult', 'paymentid');
+    BuiltValueNullFieldError.checkNotNull(fraudstatus, 'VerifyResult', 'fraudstatus');
+    BuiltValueNullFieldError.checkNotNull(chargetype, 'VerifyResult', 'chargetype');
+    BuiltValueNullFieldError.checkNotNull(createdday, 'VerifyResult', 'createdday');
+    BuiltValueNullFieldError.checkNotNull(createddayname, 'VerifyResult', 'createddayname');
+    BuiltValueNullFieldError.checkNotNull(createdweek, 'VerifyResult', 'createdweek');
+    BuiltValueNullFieldError.checkNotNull(createdmonth, 'VerifyResult', 'createdmonth');
+    BuiltValueNullFieldError.checkNotNull(createdmonthname, 'VerifyResult', 'createdmonthname');
+    BuiltValueNullFieldError.checkNotNull(createdquarter, 'VerifyResult', 'createdquarter');
+    BuiltValueNullFieldError.checkNotNull(createdyear, 'VerifyResult', 'createdyear');
+    BuiltValueNullFieldError.checkNotNull(createdyearisleap, 'VerifyResult', 'createdyearisleap');
+    BuiltValueNullFieldError.checkNotNull(createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday');
+    BuiltValueNullFieldError.checkNotNull(createdhour, 'VerifyResult', 'createdhour');
+    BuiltValueNullFieldError.checkNotNull(createdminute, 'VerifyResult', 'createdminute');
+    BuiltValueNullFieldError.checkNotNull(createdpmam, 'VerifyResult', 'createdpmam');
     BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created');
-    BuiltValueNullFieldError.checkNotNull(
-        customerid, 'VerifyResult', 'customerid');
-    BuiltValueNullFieldError.checkNotNull(
-        custnetworkprovider, 'VerifyResult', 'custnetworkprovider');
+    BuiltValueNullFieldError.checkNotNull(customerid, 'VerifyResult', 'customerid');
+    BuiltValueNullFieldError.checkNotNull(custnetworkprovider, 'VerifyResult', 'custnetworkprovider');
     BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname');
+    BuiltValueNullFieldError.checkNotNull(custemail, 'VerifyResult', 'custemail');
+    BuiltValueNullFieldError.checkNotNull(custemailprovider, 'VerifyResult', 'custemailprovider');
+    BuiltValueNullFieldError.checkNotNull(custcreated, 'VerifyResult', 'custcreated');
+    BuiltValueNullFieldError.checkNotNull(accountid, 'VerifyResult', 'accountid');
+    BuiltValueNullFieldError.checkNotNull(acctbusinessname, 'VerifyResult', 'acctbusinessname');
+    BuiltValueNullFieldError.checkNotNull(acctcontactperson, 'VerifyResult', 'acctcontactperson');
+    BuiltValueNullFieldError.checkNotNull(acctcountry, 'VerifyResult', 'acctcountry');
     BuiltValueNullFieldError.checkNotNull(
-        custemail, 'VerifyResult', 'custemail');
-    BuiltValueNullFieldError.checkNotNull(
-        custemailprovider, 'VerifyResult', 'custemailprovider');
-    BuiltValueNullFieldError.checkNotNull(
-        custcreated, 'VerifyResult', 'custcreated');
-    BuiltValueNullFieldError.checkNotNull(
-        accountid, 'VerifyResult', 'accountid');
-    BuiltValueNullFieldError.checkNotNull(
-        acctbusinessname, 'VerifyResult', 'acctbusinessname');
-    BuiltValueNullFieldError.checkNotNull(
-        acctcontactperson, 'VerifyResult', 'acctcontactperson');
-    BuiltValueNullFieldError.checkNotNull(
-        acctcountry, 'VerifyResult', 'acctcountry');
-    BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime,
-        'VerifyResult', 'acctbearsfeeattransactiontime');
-    BuiltValueNullFieldError.checkNotNull(
-        acctparent, 'VerifyResult', 'acctparent');
-    BuiltValueNullFieldError.checkNotNull(
-        acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant');
-    BuiltValueNullFieldError.checkNotNull(
-        acctisliveapproved, 'VerifyResult', 'acctisliveapproved');
+        acctbearsfeeattransactiontime, 'VerifyResult', 'acctbearsfeeattransactiontime');
+    BuiltValueNullFieldError.checkNotNull(acctparent, 'VerifyResult', 'acctparent');
+    BuiltValueNullFieldError.checkNotNull(acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant');
+    BuiltValueNullFieldError.checkNotNull(acctisliveapproved, 'VerifyResult', 'acctisliveapproved');
     BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref');
     BuiltValueNullFieldError.checkNotNull(raveref, 'VerifyResult', 'raveref');
     BuiltValueNullFieldError.checkNotNull(card, 'VerifyResult', 'card');
@@ -780,8 +621,7 @@ class _$VerifyResult extends VerifyResult {
   }
 
   @override
-  VerifyResult rebuild(void Function(VerifyResultBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  VerifyResult rebuild(void Function(VerifyResultBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   VerifyResultBuilder toBuilder() => new VerifyResultBuilder()..replace(this);
@@ -873,7 +713,27 @@ class _$VerifyResult extends VerifyResult {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, txid.hashCode), txref.hashCode), flwref.hashCode), devicefingerprint.hashCode), cycle.hashCode), amount.hashCode), currency.hashCode), chargedamount.hashCode), appfee.hashCode), merchantfee.hashCode), merchantbearsfee.hashCode), chargecode.hashCode), chargemessage.hashCode), authmodel.hashCode), ip.hashCode), narration.hashCode), status.hashCode), vbvcode.hashCode), vbvmessage.hashCode), authurl.hashCode), acctcode.hashCode), acctmessage.hashCode), paymenttype.hashCode), paymentid.hashCode), fraudstatus.hashCode), chargetype.hashCode), createdday.hashCode), createddayname.hashCode), createdweek.hashCode), createdmonth.hashCode), createdmonthname.hashCode), createdquarter.hashCode), createdyear.hashCode), createdyearisleap.hashCode), createddayispublicholiday.hashCode), createdhour.hashCode), createdminute.hashCode), createdpmam.hashCode), created.hashCode), customerid.hashCode), custphone.hashCode), custnetworkprovider.hashCode),
+                                                                            $jc(
+                                                                                $jc(
+                                                                                    $jc(
+                                                                                        $jc(
+                                                                                            $jc(
+                                                                                                $jc(
+                                                                                                    $jc(
+                                                                                                        $jc(
+                                                                                                            $jc(
+                                                                                                                $jc(
+                                                                                                                    $jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc($jc(0, txid.hashCode), txref.hashCode), flwref.hashCode), devicefingerprint.hashCode), cycle.hashCode), amount.hashCode), currency.hashCode), chargedamount.hashCode), appfee.hashCode), merchantfee.hashCode), merchantbearsfee.hashCode), chargecode.hashCode), chargemessage.hashCode), authmodel.hashCode), ip.hashCode), narration.hashCode), status.hashCode), vbvcode.hashCode), vbvmessage.hashCode), authurl.hashCode), acctcode.hashCode), acctmessage.hashCode), paymenttype.hashCode), paymentid.hashCode), fraudstatus.hashCode), chargetype.hashCode), createdday.hashCode), createddayname.hashCode), createdweek.hashCode), createdmonth.hashCode), createdmonthname.hashCode), createdquarter.hashCode),
+                                                                                                                        createdyear.hashCode),
+                                                                                                                    createdyearisleap.hashCode),
+                                                                                                                createddayispublicholiday.hashCode),
+                                                                                                            createdhour.hashCode),
+                                                                                                        createdminute.hashCode),
+                                                                                                    createdpmam.hashCode),
+                                                                                                created.hashCode),
+                                                                                            customerid.hashCode),
+                                                                                        custphone.hashCode),
+                                                                                    custnetworkprovider.hashCode),
                                                                                 custname.hashCode),
                                                                             custemail.hashCode),
                                                                         custemailprovider.hashCode),
@@ -896,8 +756,7 @@ class _$VerifyResult extends VerifyResult {
   }
 }
 
-class VerifyResultBuilder
-    implements Builder<VerifyResult, VerifyResultBuilder> {
+class VerifyResultBuilder implements Builder<VerifyResult, VerifyResultBuilder> {
   _$VerifyResult? _$v;
 
   int? _txid;
@@ -914,8 +773,7 @@ class VerifyResultBuilder
 
   String? _devicefingerprint;
   String? get devicefingerprint => _$this._devicefingerprint;
-  set devicefingerprint(String? devicefingerprint) =>
-      _$this._devicefingerprint = devicefingerprint;
+  set devicefingerprint(String? devicefingerprint) => _$this._devicefingerprint = devicefingerprint;
 
   String? _cycle;
   String? get cycle => _$this._cycle;
@@ -931,8 +789,7 @@ class VerifyResultBuilder
 
   double? _chargedamount;
   double? get chargedamount => _$this._chargedamount;
-  set chargedamount(double? chargedamount) =>
-      _$this._chargedamount = chargedamount;
+  set chargedamount(double? chargedamount) => _$this._chargedamount = chargedamount;
 
   double? _appfee;
   double? get appfee => _$this._appfee;
@@ -944,8 +801,7 @@ class VerifyResultBuilder
 
   double? _merchantbearsfee;
   double? get merchantbearsfee => _$this._merchantbearsfee;
-  set merchantbearsfee(double? merchantbearsfee) =>
-      _$this._merchantbearsfee = merchantbearsfee;
+  set merchantbearsfee(double? merchantbearsfee) => _$this._merchantbearsfee = merchantbearsfee;
 
   String? _chargecode;
   String? get chargecode => _$this._chargecode;
@@ -953,8 +809,7 @@ class VerifyResultBuilder
 
   String? _chargemessage;
   String? get chargemessage => _$this._chargemessage;
-  set chargemessage(String? chargemessage) =>
-      _$this._chargemessage = chargemessage;
+  set chargemessage(String? chargemessage) => _$this._chargemessage = chargemessage;
 
   String? _authmodel;
   String? get authmodel => _$this._authmodel;
@@ -1014,8 +869,7 @@ class VerifyResultBuilder
 
   String? _createddayname;
   String? get createddayname => _$this._createddayname;
-  set createddayname(String? createddayname) =>
-      _$this._createddayname = createddayname;
+  set createddayname(String? createddayname) => _$this._createddayname = createddayname;
 
   int? _createdweek;
   int? get createdweek => _$this._createdweek;
@@ -1027,13 +881,11 @@ class VerifyResultBuilder
 
   String? _createdmonthname;
   String? get createdmonthname => _$this._createdmonthname;
-  set createdmonthname(String? createdmonthname) =>
-      _$this._createdmonthname = createdmonthname;
+  set createdmonthname(String? createdmonthname) => _$this._createdmonthname = createdmonthname;
 
   int? _createdquarter;
   int? get createdquarter => _$this._createdquarter;
-  set createdquarter(int? createdquarter) =>
-      _$this._createdquarter = createdquarter;
+  set createdquarter(int? createdquarter) => _$this._createdquarter = createdquarter;
 
   int? _createdyear;
   int? get createdyear => _$this._createdyear;
@@ -1041,8 +893,7 @@ class VerifyResultBuilder
 
   bool? _createdyearisleap;
   bool? get createdyearisleap => _$this._createdyearisleap;
-  set createdyearisleap(bool? createdyearisleap) =>
-      _$this._createdyearisleap = createdyearisleap;
+  set createdyearisleap(bool? createdyearisleap) => _$this._createdyearisleap = createdyearisleap;
 
   int? _createddayispublicholiday;
   int? get createddayispublicholiday => _$this._createddayispublicholiday;
@@ -1055,8 +906,7 @@ class VerifyResultBuilder
 
   int? _createdminute;
   int? get createdminute => _$this._createdminute;
-  set createdminute(int? createdminute) =>
-      _$this._createdminute = createdminute;
+  set createdminute(int? createdminute) => _$this._createdminute = createdminute;
 
   String? _createdpmam;
   String? get createdpmam => _$this._createdpmam;
@@ -1076,8 +926,7 @@ class VerifyResultBuilder
 
   String? _custnetworkprovider;
   String? get custnetworkprovider => _$this._custnetworkprovider;
-  set custnetworkprovider(String? custnetworkprovider) =>
-      _$this._custnetworkprovider = custnetworkprovider;
+  set custnetworkprovider(String? custnetworkprovider) => _$this._custnetworkprovider = custnetworkprovider;
 
   String? _custname;
   String? get custname => _$this._custname;
@@ -1089,8 +938,7 @@ class VerifyResultBuilder
 
   String? _custemailprovider;
   String? get custemailprovider => _$this._custemailprovider;
-  set custemailprovider(String? custemailprovider) =>
-      _$this._custemailprovider = custemailprovider;
+  set custemailprovider(String? custemailprovider) => _$this._custemailprovider = custemailprovider;
 
   String? _custcreated;
   String? get custcreated => _$this._custcreated;
@@ -1102,21 +950,18 @@ class VerifyResultBuilder
 
   String? _acctbusinessname;
   String? get acctbusinessname => _$this._acctbusinessname;
-  set acctbusinessname(String? acctbusinessname) =>
-      _$this._acctbusinessname = acctbusinessname;
+  set acctbusinessname(String? acctbusinessname) => _$this._acctbusinessname = acctbusinessname;
 
   String? _acctcontactperson;
   String? get acctcontactperson => _$this._acctcontactperson;
-  set acctcontactperson(String? acctcontactperson) =>
-      _$this._acctcontactperson = acctcontactperson;
+  set acctcontactperson(String? acctcontactperson) => _$this._acctcontactperson = acctcontactperson;
 
   String? _acctcountry;
   String? get acctcountry => _$this._acctcountry;
   set acctcountry(String? acctcountry) => _$this._acctcountry = acctcountry;
 
   int? _acctbearsfeeattransactiontime;
-  int? get acctbearsfeeattransactiontime =>
-      _$this._acctbearsfeeattransactiontime;
+  int? get acctbearsfeeattransactiontime => _$this._acctbearsfeeattransactiontime;
   set acctbearsfeeattransactiontime(int? acctbearsfeeattransactiontime) =>
       _$this._acctbearsfeeattransactiontime = acctbearsfeeattransactiontime;
 
@@ -1126,8 +971,7 @@ class VerifyResultBuilder
 
   String? _acctvpcmerchant;
   String? get acctvpcmerchant => _$this._acctvpcmerchant;
-  set acctvpcmerchant(String? acctvpcmerchant) =>
-      _$this._acctvpcmerchant = acctvpcmerchant;
+  set acctvpcmerchant(String? acctvpcmerchant) => _$this._acctvpcmerchant = acctvpcmerchant;
 
   String? _acctalias;
   String? get acctalias => _$this._acctalias;
@@ -1135,8 +979,7 @@ class VerifyResultBuilder
 
   int? _acctisliveapproved;
   int? get acctisliveapproved => _$this._acctisliveapproved;
-  set acctisliveapproved(int? acctisliveapproved) =>
-      _$this._acctisliveapproved = acctisliveapproved;
+  set acctisliveapproved(int? acctisliveapproved) => _$this._acctisliveapproved = acctisliveapproved;
 
   String? _orderref;
   String? get orderref => _$this._orderref;
@@ -1159,8 +1002,7 @@ class VerifyResultBuilder
   set card(CardBuilder? card) => _$this._card = card;
 
   ListBuilder<Metadata>? _meta;
-  ListBuilder<Metadata> get meta =>
-      _$this._meta ??= new ListBuilder<Metadata>();
+  ListBuilder<Metadata> get meta => _$this._meta ??= new ListBuilder<Metadata>();
   set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
   VerifyResultBuilder();
@@ -1251,26 +1093,19 @@ class VerifyResultBuilder
     try {
       _$result = _$v ??
           new _$VerifyResult._(
-              txid: BuiltValueNullFieldError.checkNotNull(
-                  txid, 'VerifyResult', 'txid'),
-              txref: BuiltValueNullFieldError.checkNotNull(
-                  txref, 'VerifyResult', 'txref'),
-              flwref: BuiltValueNullFieldError.checkNotNull(
-                  flwref, 'VerifyResult', 'flwref'),
-              devicefingerprint: BuiltValueNullFieldError.checkNotNull(
-                  devicefingerprint, 'VerifyResult', 'devicefingerprint'),
-              cycle: BuiltValueNullFieldError.checkNotNull(
-                  cycle, 'VerifyResult', 'cycle'),
-              amount: BuiltValueNullFieldError.checkNotNull(
-                  amount, 'VerifyResult', 'amount'),
-              currency: BuiltValueNullFieldError.checkNotNull(
-                  currency, 'VerifyResult', 'currency'),
-              chargedamount: BuiltValueNullFieldError.checkNotNull(
-                  chargedamount, 'VerifyResult', 'chargedamount'),
-              appfee: BuiltValueNullFieldError.checkNotNull(
-                  appfee, 'VerifyResult', 'appfee'),
+              txid: BuiltValueNullFieldError.checkNotNull(txid, 'VerifyResult', 'txid'),
+              txref: BuiltValueNullFieldError.checkNotNull(txref, 'VerifyResult', 'txref'),
+              flwref: BuiltValueNullFieldError.checkNotNull(flwref, 'VerifyResult', 'flwref'),
+              devicefingerprint:
+                  BuiltValueNullFieldError.checkNotNull(devicefingerprint, 'VerifyResult', 'devicefingerprint'),
+              cycle: BuiltValueNullFieldError.checkNotNull(cycle, 'VerifyResult', 'cycle'),
+              amount: BuiltValueNullFieldError.checkNotNull(amount, 'VerifyResult', 'amount'),
+              currency: BuiltValueNullFieldError.checkNotNull(currency, 'VerifyResult', 'currency'),
+              chargedamount: BuiltValueNullFieldError.checkNotNull(chargedamount, 'VerifyResult', 'chargedamount'),
+              appfee: BuiltValueNullFieldError.checkNotNull(appfee, 'VerifyResult', 'appfee'),
               merchantfee: BuiltValueNullFieldError.checkNotNull(merchantfee, 'VerifyResult', 'merchantfee'),
-              merchantbearsfee: BuiltValueNullFieldError.checkNotNull(merchantbearsfee, 'VerifyResult', 'merchantbearsfee'),
+              merchantbearsfee:
+                  BuiltValueNullFieldError.checkNotNull(merchantbearsfee, 'VerifyResult', 'merchantbearsfee'),
               chargecode: BuiltValueNullFieldError.checkNotNull(chargecode, 'VerifyResult', 'chargecode'),
               chargemessage: BuiltValueNullFieldError.checkNotNull(chargemessage, 'VerifyResult', 'chargemessage'),
               authmodel: BuiltValueNullFieldError.checkNotNull(authmodel, 'VerifyResult', 'authmodel'),
@@ -1290,31 +1125,41 @@ class VerifyResultBuilder
               createddayname: BuiltValueNullFieldError.checkNotNull(createddayname, 'VerifyResult', 'createddayname'),
               createdweek: BuiltValueNullFieldError.checkNotNull(createdweek, 'VerifyResult', 'createdweek'),
               createdmonth: BuiltValueNullFieldError.checkNotNull(createdmonth, 'VerifyResult', 'createdmonth'),
-              createdmonthname: BuiltValueNullFieldError.checkNotNull(createdmonthname, 'VerifyResult', 'createdmonthname'),
+              createdmonthname:
+                  BuiltValueNullFieldError.checkNotNull(createdmonthname, 'VerifyResult', 'createdmonthname'),
               createdquarter: BuiltValueNullFieldError.checkNotNull(createdquarter, 'VerifyResult', 'createdquarter'),
               createdyear: BuiltValueNullFieldError.checkNotNull(createdyear, 'VerifyResult', 'createdyear'),
-              createdyearisleap: BuiltValueNullFieldError.checkNotNull(createdyearisleap, 'VerifyResult', 'createdyearisleap'),
-              createddayispublicholiday: BuiltValueNullFieldError.checkNotNull(createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday'),
+              createdyearisleap:
+                  BuiltValueNullFieldError.checkNotNull(createdyearisleap, 'VerifyResult', 'createdyearisleap'),
+              createddayispublicholiday: BuiltValueNullFieldError.checkNotNull(
+                  createddayispublicholiday, 'VerifyResult', 'createddayispublicholiday'),
               createdhour: BuiltValueNullFieldError.checkNotNull(createdhour, 'VerifyResult', 'createdhour'),
               createdminute: BuiltValueNullFieldError.checkNotNull(createdminute, 'VerifyResult', 'createdminute'),
               createdpmam: BuiltValueNullFieldError.checkNotNull(createdpmam, 'VerifyResult', 'createdpmam'),
               created: BuiltValueNullFieldError.checkNotNull(created, 'VerifyResult', 'created'),
               customerid: BuiltValueNullFieldError.checkNotNull(customerid, 'VerifyResult', 'customerid'),
               custphone: custphone,
-              custnetworkprovider: BuiltValueNullFieldError.checkNotNull(custnetworkprovider, 'VerifyResult', 'custnetworkprovider'),
+              custnetworkprovider:
+                  BuiltValueNullFieldError.checkNotNull(custnetworkprovider, 'VerifyResult', 'custnetworkprovider'),
               custname: BuiltValueNullFieldError.checkNotNull(custname, 'VerifyResult', 'custname'),
               custemail: BuiltValueNullFieldError.checkNotNull(custemail, 'VerifyResult', 'custemail'),
-              custemailprovider: BuiltValueNullFieldError.checkNotNull(custemailprovider, 'VerifyResult', 'custemailprovider'),
+              custemailprovider:
+                  BuiltValueNullFieldError.checkNotNull(custemailprovider, 'VerifyResult', 'custemailprovider'),
               custcreated: BuiltValueNullFieldError.checkNotNull(custcreated, 'VerifyResult', 'custcreated'),
               accountid: BuiltValueNullFieldError.checkNotNull(accountid, 'VerifyResult', 'accountid'),
-              acctbusinessname: BuiltValueNullFieldError.checkNotNull(acctbusinessname, 'VerifyResult', 'acctbusinessname'),
-              acctcontactperson: BuiltValueNullFieldError.checkNotNull(acctcontactperson, 'VerifyResult', 'acctcontactperson'),
+              acctbusinessname:
+                  BuiltValueNullFieldError.checkNotNull(acctbusinessname, 'VerifyResult', 'acctbusinessname'),
+              acctcontactperson:
+                  BuiltValueNullFieldError.checkNotNull(acctcontactperson, 'VerifyResult', 'acctcontactperson'),
               acctcountry: BuiltValueNullFieldError.checkNotNull(acctcountry, 'VerifyResult', 'acctcountry'),
-              acctbearsfeeattransactiontime: BuiltValueNullFieldError.checkNotNull(acctbearsfeeattransactiontime, 'VerifyResult', 'acctbearsfeeattransactiontime'),
+              acctbearsfeeattransactiontime: BuiltValueNullFieldError.checkNotNull(
+                  acctbearsfeeattransactiontime, 'VerifyResult', 'acctbearsfeeattransactiontime'),
               acctparent: BuiltValueNullFieldError.checkNotNull(acctparent, 'VerifyResult', 'acctparent'),
-              acctvpcmerchant: BuiltValueNullFieldError.checkNotNull(acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant'),
+              acctvpcmerchant:
+                  BuiltValueNullFieldError.checkNotNull(acctvpcmerchant, 'VerifyResult', 'acctvpcmerchant'),
               acctalias: acctalias,
-              acctisliveapproved: BuiltValueNullFieldError.checkNotNull(acctisliveapproved, 'VerifyResult', 'acctisliveapproved'),
+              acctisliveapproved:
+                  BuiltValueNullFieldError.checkNotNull(acctisliveapproved, 'VerifyResult', 'acctisliveapproved'),
               orderref: BuiltValueNullFieldError.checkNotNull(orderref, 'VerifyResult', 'orderref'),
               paymentplan: paymentplan,
               paymentpage: paymentpage,
@@ -1329,8 +1174,7 @@ class VerifyResultBuilder
         _$failedField = 'meta';
         meta.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'VerifyResult', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('VerifyResult', _$failedField, e.toString());
       }
       rethrow;
     }

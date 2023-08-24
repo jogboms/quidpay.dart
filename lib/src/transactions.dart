@@ -14,8 +14,7 @@ class Transactions {
     String? flwRef,
     String? txRef,
   }) async {
-    assert(!(flwRef == null && txRef == null),
-        'You must pass either flwRef or txRef');
+    assert(!(flwRef == null && txRef == null), 'You must pass either flwRef or txRef');
 
     var payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,
@@ -41,8 +40,7 @@ class Transactions {
     String? lastAttempt,
     String? onlySuccessful,
   }) async {
-    assert(!(flwRef == null && txRef == null),
-        'You must pass either flwRef or txRef');
+    assert(!(flwRef == null && txRef == null), 'You must pass either flwRef or txRef');
 
     final payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,

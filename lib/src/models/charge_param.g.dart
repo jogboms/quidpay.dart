@@ -19,162 +19,136 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'amount',
-      serializers.serialize(object.amount,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.amount, specifiedType: const FullType(String)),
       'email',
-      serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.email, specifiedType: const FullType(String)),
       'firstname',
-      serializers.serialize(object.firstname,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.firstname, specifiedType: const FullType(String)),
       'currency',
-      serializers.serialize(object.currency,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.currency, specifiedType: const FullType(String)),
       'country',
-      serializers.serialize(object.country,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.country, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.lastname;
     if (value != null) {
       result
         ..add('lastname')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.redirectUrl;
     if (value != null) {
       result
         ..add('redirectUrl')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.txRef;
     if (value != null) {
       result
         ..add('txRef')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.suggestedAuth;
     if (value != null) {
       result
         ..add('suggestedAuth')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.iP;
     if (value != null) {
       result
         ..add('iP')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.settlementToken;
     if (value != null) {
       result
         ..add('settlementToken')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.phonenumber;
     if (value != null) {
       result
         ..add('phonenumber')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.billingzip;
     if (value != null) {
       result
         ..add('billingzip')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.narration;
     if (value != null) {
       result
         ..add('narration')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.meta;
     if (value != null) {
       result
         ..add('meta')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(Metadata)])));
+        ..add(serializers.serialize(value, specifiedType: const FullType(BuiltList, const [const FullType(Metadata)])));
     }
     value = object.bvn;
     if (value != null) {
       result
         ..add('bvn')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.chargeType;
     if (value != null) {
       result
         ..add('chargeType')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.deviceFingerprint;
     if (value != null) {
       result
         ..add('deviceFingerprint')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.recurringStop;
     if (value != null) {
       result
         ..add('recurringStop')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.includeIntegrityHash;
     if (value != null) {
       result
         ..add('includeIntegrityHash')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     value = object.cardno;
     if (value != null) {
       result
         ..add('cardno')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.cvv;
     if (value != null) {
       result
         ..add('cvv')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.expiryyear;
     if (value != null) {
       result
         ..add('expiryyear')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.expirymonth;
     if (value != null) {
       result
         ..add('expirymonth')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     value = object.pin;
     if (value != null) {
       result
         ..add('pin')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+        ..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -191,106 +165,80 @@ class _$ChargeParamSerializer implements StructuredSerializer<ChargeParam> {
       final Object? value = iterator.current;
       switch (key) {
         case 'amount':
-          result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.amount = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.email = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'firstname':
-          result.firstname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.firstname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'currency':
-          result.currency = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.currency = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'country':
-          result.country = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.country = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'lastname':
-          result.lastname = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.lastname = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'redirectUrl':
-          result.redirectUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.redirectUrl = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'txRef':
-          result.txRef = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.txRef = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'suggestedAuth':
-          result.suggestedAuth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.suggestedAuth = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'iP':
-          result.iP = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.iP = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'settlementToken':
-          result.settlementToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.settlementToken = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'phonenumber':
-          result.phonenumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.phonenumber = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'billingzip':
-          result.billingzip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.billingzip = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'narration':
-          result.narration = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.narration = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'meta':
           result.meta.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(Metadata)]))!
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Metadata)]))! as BuiltList<Object>);
           break;
         case 'bvn':
-          result.bvn = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.bvn = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'chargeType':
-          result.chargeType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.chargeType = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'deviceFingerprint':
-          result.deviceFingerprint = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.deviceFingerprint = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'recurringStop':
-          result.recurringStop = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.recurringStop = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'includeIntegrityHash':
-          result.includeIntegrityHash = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
+          result.includeIntegrityHash = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
           break;
         case 'cardno':
-          result.cardno = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.cardno = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'cvv':
-          result.cvv = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.cvv = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'expiryyear':
-          result.expiryyear = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.expiryyear = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'expirymonth':
-          result.expirymonth = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.expirymonth = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'pin':
-          result.pin = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.pin = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -383,15 +331,13 @@ class _$ChargeParam extends ChargeParam {
       : super._() {
     BuiltValueNullFieldError.checkNotNull(amount, 'ChargeParam', 'amount');
     BuiltValueNullFieldError.checkNotNull(email, 'ChargeParam', 'email');
-    BuiltValueNullFieldError.checkNotNull(
-        firstname, 'ChargeParam', 'firstname');
+    BuiltValueNullFieldError.checkNotNull(firstname, 'ChargeParam', 'firstname');
     BuiltValueNullFieldError.checkNotNull(currency, 'ChargeParam', 'currency');
     BuiltValueNullFieldError.checkNotNull(country, 'ChargeParam', 'country');
   }
 
   @override
-  ChargeParam rebuild(void Function(ChargeParamBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  ChargeParam rebuild(void Function(ChargeParamBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   ChargeParamBuilder toBuilder() => new ChargeParamBuilder()..replace(this);
@@ -447,7 +393,21 @@ class _$ChargeParam extends ChargeParam {
                                                                 $jc(
                                                                     $jc(
                                                                         $jc(
-                                                                            $jc($jc($jc($jc($jc($jc($jc(0, amount.hashCode), email.hashCode), firstname.hashCode), currency.hashCode), country.hashCode), lastname.hashCode),
+                                                                            $jc(
+                                                                                $jc(
+                                                                                    $jc(
+                                                                                        $jc(
+                                                                                            $jc(
+                                                                                                $jc(
+                                                                                                    $jc(
+                                                                                                        0,
+                                                                                                        amount
+                                                                                                            .hashCode),
+                                                                                                    email.hashCode),
+                                                                                                firstname.hashCode),
+                                                                                            currency.hashCode),
+                                                                                        country.hashCode),
+                                                                                    lastname.hashCode),
                                                                                 redirectUrl.hashCode),
                                                                             txRef.hashCode),
                                                                         suggestedAuth.hashCode),
@@ -507,8 +467,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
 
   String? _suggestedAuth;
   String? get suggestedAuth => _$this._suggestedAuth;
-  set suggestedAuth(String? suggestedAuth) =>
-      _$this._suggestedAuth = suggestedAuth;
+  set suggestedAuth(String? suggestedAuth) => _$this._suggestedAuth = suggestedAuth;
 
   String? _iP;
   String? get iP => _$this._iP;
@@ -516,8 +475,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
 
   String? _settlementToken;
   String? get settlementToken => _$this._settlementToken;
-  set settlementToken(String? settlementToken) =>
-      _$this._settlementToken = settlementToken;
+  set settlementToken(String? settlementToken) => _$this._settlementToken = settlementToken;
 
   String? _phonenumber;
   String? get phonenumber => _$this._phonenumber;
@@ -532,8 +490,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
   set narration(String? narration) => _$this._narration = narration;
 
   ListBuilder<Metadata>? _meta;
-  ListBuilder<Metadata> get meta =>
-      _$this._meta ??= new ListBuilder<Metadata>();
+  ListBuilder<Metadata> get meta => _$this._meta ??= new ListBuilder<Metadata>();
   set meta(ListBuilder<Metadata>? meta) => _$this._meta = meta;
 
   String? _bvn;
@@ -546,18 +503,15 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
 
   String? _deviceFingerprint;
   String? get deviceFingerprint => _$this._deviceFingerprint;
-  set deviceFingerprint(String? deviceFingerprint) =>
-      _$this._deviceFingerprint = deviceFingerprint;
+  set deviceFingerprint(String? deviceFingerprint) => _$this._deviceFingerprint = deviceFingerprint;
 
   String? _recurringStop;
   String? get recurringStop => _$this._recurringStop;
-  set recurringStop(String? recurringStop) =>
-      _$this._recurringStop = recurringStop;
+  set recurringStop(String? recurringStop) => _$this._recurringStop = recurringStop;
 
   bool? _includeIntegrityHash;
   bool? get includeIntegrityHash => _$this._includeIntegrityHash;
-  set includeIntegrityHash(bool? includeIntegrityHash) =>
-      _$this._includeIntegrityHash = includeIntegrityHash;
+  set includeIntegrityHash(bool? includeIntegrityHash) => _$this._includeIntegrityHash = includeIntegrityHash;
 
   String? _cardno;
   String? get cardno => _$this._cardno;
@@ -631,16 +585,11 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
     try {
       _$result = _$v ??
           new _$ChargeParam._(
-              amount: BuiltValueNullFieldError.checkNotNull(
-                  amount, 'ChargeParam', 'amount'),
-              email: BuiltValueNullFieldError.checkNotNull(
-                  email, 'ChargeParam', 'email'),
-              firstname: BuiltValueNullFieldError.checkNotNull(
-                  firstname, 'ChargeParam', 'firstname'),
-              currency: BuiltValueNullFieldError.checkNotNull(
-                  currency, 'ChargeParam', 'currency'),
-              country: BuiltValueNullFieldError.checkNotNull(
-                  country, 'ChargeParam', 'country'),
+              amount: BuiltValueNullFieldError.checkNotNull(amount, 'ChargeParam', 'amount'),
+              email: BuiltValueNullFieldError.checkNotNull(email, 'ChargeParam', 'email'),
+              firstname: BuiltValueNullFieldError.checkNotNull(firstname, 'ChargeParam', 'firstname'),
+              currency: BuiltValueNullFieldError.checkNotNull(currency, 'ChargeParam', 'currency'),
+              country: BuiltValueNullFieldError.checkNotNull(country, 'ChargeParam', 'country'),
               lastname: lastname,
               redirectUrl: redirectUrl,
               txRef: txRef,
@@ -667,8 +616,7 @@ class ChargeParamBuilder implements Builder<ChargeParam, ChargeParamBuilder> {
         _$failedField = 'meta';
         _meta?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'ChargeParam', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('ChargeParam', _$failedField, e.toString());
       }
       rethrow;
     }

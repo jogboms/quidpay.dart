@@ -38,23 +38,18 @@ class Response<T> {
       }
 
       rawData = _response.statusCode < 300
-          ? (responseJson != null &&
-                  responseJson is Map &&
-                  responseJson.containsKey('data')
+          ? (responseJson != null && responseJson is Map && responseJson.containsKey('data')
               ? responseJson['data']
               : responseJson)
           : null;
     } on ResponseException catch (e) {
       status = e.status;
-      message = e.message ??
-          (Quidpay().production ? Strings.errorMessage : e.toString());
+      message = e.message ?? (Quidpay().production ? Strings.errorMessage : e.toString());
       rawData = null;
       Log().error('ResponseException', e);
     } catch (e) {
       status = 'UNKNOWN';
-      message = _response.statusCode == 502 && Quidpay().production
-          ? Strings.errorMessage
-          : e.toString();
+      message = _response.statusCode == 502 && Quidpay().production ? Strings.errorMessage : e.toString();
       rawData = null;
       Log().error('Response.catch', e);
       if (showThrow) {
@@ -130,8 +125,7 @@ class Response<T> {
 
   bool get isTooLarge => statusCode == 413;
 
-  Map<String, dynamic>? toMap() =>
-      rawData is Map ? rawData : <String, dynamic>{':( Rave': rawData};
+  Map<String, dynamic>? toMap() => rawData is Map ? rawData : <String, dynamic>{':( Rave': rawData};
 
   @override
   String toString() => Model.mapToString(toMap());
