@@ -141,8 +141,8 @@ class Charge {
   factory Charge.account({
     required String amount,
     required String email,
-    required String accountbank,
-    required String accountnumber,
+    required String? accountbank,
+    required String? accountnumber,
     required String firstname,
     required String lastname,
     String? redirectUrl,

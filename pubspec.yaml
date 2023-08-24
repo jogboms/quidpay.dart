@@ -24,8 +24,5 @@ dependencies:
 dev_dependencies:
   test: ^1.20.1
   pedantic: ^1.11.1
-  test_coverage:
-    git:
-      url: https://github.com/timsneath/test-coverage.git
   build_runner: ^2.1.7
   built_value_generator: ^8.1.4
