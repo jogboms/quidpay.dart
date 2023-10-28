@@ -6,7 +6,6 @@ import 'validate.dart' as validate;
 Future<Response<VerifyResult?>> verify() async {
   final response = await validate.card();
   final resp = await Transactions().verify(
-    flwRef: response.data!.tx.flwRef,
     txRef: response.data!.tx.txRef,
   );
   print('isSuccessful:--> ' + resp.data!.isSuccessful.toString());

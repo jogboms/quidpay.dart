@@ -11,14 +11,10 @@ class Transactions {
   final HttpWrapper _http;
 
   Future<Response<VerifyResult?>> verify({
-    String? flwRef,
-    String? txRef,
+    required String txRef,
   }) async {
-    assert(!(flwRef == null && txRef == null), 'You must pass either flwRef or txRef');
-
     var payload = <String, dynamic>{
       'SECKEY': Quidpay().secretKey,
-      'flwref': flwRef,
       'txref': txRef,
     };
 
